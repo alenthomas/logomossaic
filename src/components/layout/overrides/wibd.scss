@@ -1,0 +1,26 @@
+.regularlayout {
+  &.wibd {
+    .dashboard-header {
+      .left-icon {
+        img {
+          max-width: 115px;
+        }
+      }
+
+      .right-icon {
+        top: 35px;
+        img {
+          max-width: 185px;
+        }
+      }
+    }
+
+    .dashboard-footer {
+      .right {
+        img {
+          max-width: 310px;
+        }
+      }
+    }
+  }
+}

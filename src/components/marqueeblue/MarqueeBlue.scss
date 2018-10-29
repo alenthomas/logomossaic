@@ -1,0 +1,80 @@
+@-webkit-keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+.marquee-blue-container {
+  .left {
+    background-image: url(/assets/marquee/Marquee_bg_1.png);
+    background-repeat: repeat-x;
+    background: #005073;
+  }
+
+  .left {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    .tweet {
+      display: inline-block;
+
+      .tweet-content {
+        display: flex;
+        align-items: center;
+
+        .avatar {
+          width: 60px;
+          height: 65px;
+          padding-left: 25px;
+
+          img, object {
+            border: 1px solid #DDD;
+            width: 64px;
+            height: 64px;
+          }
+        }
+
+        .handle, .text, .timeago {
+          font-family: CiscoSansBold;
+          font-weight: bold;
+        }
+
+        .handle, .text, .timeago {
+          color: #FFF;
+        }
+
+        .handle {
+          font-size: 34px;
+          font-family: CiscoSansBold;
+          padding-left: 35px;
+        }
+
+        .text {
+          padding-left: 32px;
+          font-size: 31px;
+          font-family: CiscoSans;
+        }
+
+        .timeago {
+          padding-left: 37px;
+          font-size: 19px;
+        }
+
+        .twitter-bird {
+          height: 64px;
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+}

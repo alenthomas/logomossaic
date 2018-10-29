@@ -1,0 +1,64 @@
+.regularlayout {
+  &.cisco-mktgvelocity {
+    .dashboard-header {
+       background: rgba(0, 0, 0, 0);
+       .left-icon {
+          img {
+            padding: 15px 0 0 20px;
+
+            max-width: 230px;
+            max-height: max-content;
+          }
+        }
+
+        .right-icon {
+          img {
+            padding: 45px 0 0 45px;
+            max-width: 250px;
+            max-height: max-content;
+          }
+        }
+    }
+
+    .dashboard-title {
+        color: #00bceb;
+        font-weight: bold;
+      }
+
+    .dashboard-footer {
+      .logo {
+        bottom: 30px;
+        right: 35px !important;
+
+        img {
+          max-width: 150px;
+          top: 28px;
+        }
+      }
+    }
+
+    &.carousel-container {
+      .tweet-card {
+        background: url(/assets/cisco-mktgvelocity/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #FFF;
+            }
+          }
+          .timestamp {
+            color: #FFF;
+          }
+        }
+        .tweet-card-middle {
+          color: #FFF;
+        }
+        .tweet-card-bottom {
+          .likes, .shares {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}

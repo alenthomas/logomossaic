@@ -1,0 +1,41 @@
+@keyframes scrollphotos{
+  0% {
+    transform: translate(0, 0);
+  }
+  99.9% {
+    transform: translate(0, -90%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.photogridtile {
+  height: 100%;
+  box-sizing: border-box;
+
+  .body {
+    overflow: hidden;
+
+    .photos {
+      font-size: 0;
+      width: 50%;
+      float: left;
+      height: 10000px;
+      animation: scrollphotos 180s linear infinite;
+
+      img {
+        break-inside: avoid;
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      img.hide {
+        transform: rotateY(360deg) scale(0);
+        transition: all 2s ease;
+        width: 0;
+      }
+    }
+  }
+}

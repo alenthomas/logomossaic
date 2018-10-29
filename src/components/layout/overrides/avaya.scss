@@ -1,0 +1,67 @@
+.regularlayout {
+  &.avaya {
+    .dashboard-header {
+        width: 1920px;
+        height: 104px;
+        object-fit: contain;
+        mix-blend-mode: undefined;
+        background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to top, #d7d7d7, #ffffff);
+        box-shadow: 0px 4px 3px 0 rgba(0, 0, 0, 0.09);
+        .left-icon {
+          img {
+            padding: 15px 0 0 20px;
+
+            max-width: 230px;
+            max-height: max-content;
+          }
+        }
+
+        .right-icon {
+          img {
+            max-width: 245px;
+            max-height: max-content;
+          }
+        }
+        .dashboard-title {
+          color: #e4222a;
+          font-weight: bold;
+        }
+    }
+
+    .dashboard-footer {
+      .logo {
+        bottom: 30px;
+        right: 35px !important;
+
+        img {
+          max-width: 150px;
+          top: 28px;
+        }
+      }
+    }
+
+    &.carousel-container {
+      .tweet-card {
+        background: url(/assets/avaya/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #FFF;
+            }
+          }
+          .timestamp {
+            color: #FFF;
+          }
+        }
+        .tweet-card-middle {
+          color: #FFF;
+        }
+        .tweet-card-bottom {
+          .likes, .shares {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.regularlayout {
+  &.cisco-mwc {
+    .dashboard-header {
+      background: rgba(0, 0, 0, 0);
+      .left-icon {
+        img {
+          padding: 15px 0 0 20px;
+
+          max-width: 230px;
+          max-height: max-content;
+        }
+      }
+    }
+
+    .dashboard-footer {
+      .logo {
+        bottom: 30px;
+        right: 35px !important;
+
+        img {
+          max-width: 150px;
+          top: 28px;
+        }
+      }
+    }
+
+    &.carousel-container {
+      .tweet-card {
+        background: url(/assets/cisco-mwc/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #464545;
+            }
+          }
+          .timestamp {
+            color: #464545;
+          }
+        }
+        .tweet-card-middle {
+          color: #464545;
+        }
+        .tweet-card-bottom {
+          .likes, .shares {
+            color: #464545;
+          }
+        }
+      }
+    }
+  }
+}

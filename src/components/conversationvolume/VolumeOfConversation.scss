@@ -1,0 +1,57 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.volume {
+  .dashboard-content {
+    width: 1480px;
+  }
+
+  .chart-container {
+    font-family: CiscoSansExtraLight;
+
+    height: 780px;
+    width: 1480px;
+
+    background: #FFF;
+    @include border-radius(10px);
+
+    svg {
+      transform: translateY(5px);
+    }
+
+    .volume-chart-container {
+      margin: 20px 30px 0px 30px;
+
+      height: 760px;
+      width: 1420px;
+
+      .recharts-x-axis {
+        font-size: 20px;
+
+        g.recharts-cartesian-axis-tick {
+          transform: translate(-7px, -10px);
+        }
+      }
+
+      .recharts-y-axis {
+        font-size: 22px;
+
+        g.recharts-cartesian-axis-tick {
+          transform: translate(-10px, 15px);
+        }
+      }
+
+      &.chart-groupby-day {
+        .recharts-x-axis {
+          g.recharts-cartesian-axis-tick {
+            transform: translate(-15px, -10px);
+          }
+        }
+      }
+    }
+  }
+}

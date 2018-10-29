@@ -1,0 +1,32 @@
+.regularlayout {
+  &.ciscolive-cancun {
+    .dashboard-header {
+      .left-icon {
+        img {
+          padding-left: 20px;
+
+          max-width: 110px;
+          max-height: max-content;
+        }
+      }
+
+      .right-icon {
+        img {
+          max-width: 200px;
+        }
+      }
+    }
+
+    .dashboard-footer {
+      .logo {
+        bottom: 30px;
+        right: 35px !important;
+
+        img {
+          max-width: 220px;
+          top: 28px;
+        }
+      }
+    }
+  }
+}

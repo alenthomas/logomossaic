@@ -1,0 +1,46 @@
+.threecolumnlayout {
+  background-size: cover;
+  height: 100vh;
+
+  .header {
+    height: 12vh;
+    background-color: rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    align-self: center;
+  }
+
+  .nba-logo {
+    height: 55%;
+    width: auto;
+    padding: 0 2vw;
+    margin-left: 2vw;
+  }
+
+  .dashboard-title {
+    font-size: 55px;
+    color: #fff;
+    font-family: CiscoSansThin;
+    height: 100%;
+  }
+
+  .cisco-logo{
+    height: 60%;
+    padding: 2vh 2vw;
+    margin-top: 1vh;
+    margin-right: 2vw;
+  }
+
+  .powered-by {
+    text-align: center;
+    position: absolute;
+    bottom: 2vh;
+    width: 100%;
+    img {
+      width: 13vw;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.regularlayout {
+  &.paloalto {
+    .dashboard-header {
+      height: 100px;
+      background-image: linear-gradient(to bottom, #ffffff, #d7d7d7);
+      box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.09);
+
+      .left-icon {
+        img {
+          padding: 5px 0 0 20px;
+
+          max-width: 260px;
+          max-height: max-content;
+        }
+      }
+
+      .dashboard-title {
+        padding-top: 10px;
+        color: #336989;
+        font-family: roboto;
+        font-weight: 900;
+        font-style: italic
+      }
+    }
+
+    .dashboard-footer {
+      .logo {
+        bottom: 30px;
+        right: 35px !important;
+
+        img {
+          max-width: 150px;
+          top: 28px;
+        }
+      }
+    }
+
+    &.carousel-container {
+      .tweet-card {
+        background: url(/assets/paloalto/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #FFF;
+            }
+          }
+          .timestamp {
+            color: #FFF;
+          }
+        }
+        .tweet-card-middle {
+          color: #FFF;
+        }
+        .tweet-card-bottom {
+          .likes, .shares {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}

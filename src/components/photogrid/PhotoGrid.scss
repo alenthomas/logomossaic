@@ -1,0 +1,50 @@
+@mixin shadow($h, $v, $blur-radius, $spread-radius, $color) {
+  -webkit-box-shadow: $h $v $blur-radius $spread-radius $color;
+     -moz-box-shadow: $h $v $blur-radius $spread-radius $color;
+          box-shadow: $h $v $blur-radius $spread-radius $color;
+}
+
+.photo-grid {
+  .dashboard-content {
+    width: 1560px;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+
+    .grid-row {
+      width: inherit;
+
+      display: flex;
+      align-content: space-around;
+
+      .photo-tile {
+        display: block;
+        margin: 10px;
+        background: white;
+
+        @include shadow(1px, 1px, 5px, 0px, rgba(0, 0, 0, 0.3));
+      }
+
+      .photo-tile-rotateX-appear {
+        transform: rotateX(90deg);
+      }
+
+      .photo-tile-rotateX-appear.photo-tile-rotateX-appear-active {
+        transform: rotateX(0deg);
+        transition: all .8s ease-in;
+      }
+
+      .photo-tile-rotateY-appear {
+        transform: rotateY(90deg);
+      }
+
+      .photo-tile-rotateY-appear.photo-tile-rotateY-appear-active {
+        transform: rotateY(0deg);
+        transition: all .8s ease-in;
+      }
+    }
+  }
+}

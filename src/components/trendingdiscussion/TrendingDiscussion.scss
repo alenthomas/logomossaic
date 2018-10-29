@@ -1,0 +1,14 @@
+.trending-discussion {
+  .dashboard-content {
+    text-align: center;
+    background-color: rgba(0,0,0,0.75);
+    border-radius: 50%;
+  }
+
+  .word-cloud {
+    font-family: CiscoSans;
+    text {
+      transition: transform 0.5s ease-in;
+    }
+  }
+}

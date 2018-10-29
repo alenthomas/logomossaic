@@ -1,0 +1,60 @@
+.regularlayout {
+  &.westernunion {
+    .dashboard-header {
+      background: url(/assets/westernunion/dashboardHeader.jpg) no-repeat;
+      .left-icon {
+        top: 30px;
+
+        img {
+          max-width: 270px;
+          max-height: max-content;
+        }
+      }
+
+      .dashboard-title {
+        font-family: roboto;
+        font-size: 50px;
+      }
+
+      .right-icon {
+        top: 30px;
+      }
+    }
+
+    .dashboard-footer {
+      .logo {
+        bottom: 30px;
+        right: 35px !important;
+
+        img {
+          max-width: 150px;
+          top: 28px;
+        }
+      }
+    }
+
+    &.carousel-container {
+      .tweet-card {
+        background: url(/assets/westernunion/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #FFF;
+            }
+          }
+          .timestamp {
+            color: #FFF;
+          }
+        }
+        .tweet-card-middle {
+          color: #FFF;
+        }
+        .tweet-card-bottom {
+          .likes, .shares {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.regularlayout {
+  &.nba-allstar {
+    .dashboard-header {
+      top: 30px;
+      right: 45px;
+      background: none;
+
+      .left-icon {
+        img {
+          max-width: 150px;
+          max-height: max-content;
+        }
+      }
+
+      .right-icon {
+        img {
+          max-width: 215px;
+          max-height: max-content;
+        }
+      }
+
+      .dashboard-title {
+        padding-top: 10px;
+        color: rgb(234,30,79);
+        font-family: roboto;
+        font-weight: 900;
+        font-style: italic
+      }
+    }
+
+    .dashboard-footer {
+      .logo {
+        bottom: 30px;
+        right: 35px !important;
+
+        img {
+          max-width: 150px;
+          top: 28px;
+        }
+      }
+    }
+
+    &.carousel-container {
+      .tweet-card {
+        background: url(/assets/nba-allstar/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #FFF;
+            }
+          }
+          .timestamp {
+            color: #FFF;
+          }
+        }
+        .tweet-card-middle {
+          color: #FFF;
+        }
+        .tweet-card-bottom {
+          .likes, .shares {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}

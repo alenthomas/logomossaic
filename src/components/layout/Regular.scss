@@ -1,0 +1,44 @@
+.regularlayout {
+  position: absolute;
+  font-family: CiscoSansThin;
+
+  .content-transition-appear {
+    opacity: 0.01;
+  }
+
+  .content-transition-appear-active {
+    opacity: 1;
+    transition: opacity 4s ease-in;
+  }
+}
+
+
+@import 'overrides/ciscolive-cancun.scss';
+@import 'overrides/netflix.scss';
+@import 'overrides/ownit.scss';
+@import 'overrides/servicenow.scss';
+@import 'overrides/vyoma.scss';
+@import 'overrides/wibd.scss';
+@import 'overrides/paloalto.scss';
+@import 'overrides/westernunion.scss';
+@import 'overrides/nba-allstar.scss';
+@import 'overrides/cisco-mwc.scss';
+@import 'overrides/sfl.scss';
+@import 'overrides/dellebc-sv.scss';
+@import 'overrides/cisco-pcw.scss';
+@import 'overrides/vyoma-demo.scss';
+@import 'overrides/statefarm.scss';
+@import 'overrides/morganstanley.scss';
+@import 'overrides/freedomrvusa.scss';
+@import 'overrides/cisco-mktgvelocity.scss';
+@import 'overrides/clus2018.scss';
+@import 'overrides/avaya.scss';
+@import 'overrides/ciscostore.scss';
+@import 'overrides/indiatoday.scss';
+@import 'overrides/boston-celtics.scss';
+@import 'overrides/cisco-cxc.scss';
+@import 'overrides/harker.scss';
+@import 'overrides/vmware.scss';
+@import 'overrides/cloudflare.scss';
+@import 'overrides/nike.scss';
+
