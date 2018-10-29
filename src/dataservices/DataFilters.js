@@ -5,6 +5,10 @@ function isNonMediaData(datum) {
   return datum.content.sections[0].embed.type !== 'media';
 }
 
+export const protoRelativeUrl = (url) => {
+  return location.protocol+url.replace(/^https?:/i, "")
+}
+
 export const removeBrokenMedia = (data, done) => {
   let groupedData = lodash.groupBy(data, d => isNonMediaData(d))
   let valid = groupedData.true || []
@@ -25,10 +29,6 @@ export const removeBrokenMedia = (data, done) => {
     valid = lodash.orderBy(valid, 'content.sections[0].embed.createdAt', 'desc');
     done(valid)
   })
-}
-
-export const protoRelativeUrl = (url) => {
-  return location.protocol+url.replace(/^https?:/i, "")
 }
 
 export const removeVideoMedia = (data) => {

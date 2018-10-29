@@ -27,7 +27,6 @@ export default class IndexComponent extends Component {
   }
 
   render() {
-    const { ticker: componentConfig } = this.props.config;
     return (
       <Ticker feed={this.state.feed}/>
     )
