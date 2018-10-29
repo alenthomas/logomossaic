@@ -33,7 +33,7 @@ test('should transform the data for easy visualizing', () => {
     {
       type: "stat",
       values: [
-        {label: 'Authors', count: 10, icon: "/assets/clus2018/twitter.png"},
+        {label: 'Tweeters', count: 10, icon: "/assets/clus2018/twitter.png"},
         {label: 'Images', count: 20, icon: "/assets/clus2018/picture.png"},
         {label: 'Videos', count: 30, icon: "/assets/clus2018/play.png"}
       ]
@@ -55,11 +55,15 @@ test('should transform the data for easy visualizing', () => {
   statsData.loadStats(statsCount)
   statsData.loadTopTweets(topTweets)
   statsData.loadTopHashtags(hashtags)
-
-  expect(statsData.next()).toEqual(expected[0]);
-  expect(statsData.next()).toEqual(expected[1]);
-  expect(statsData.next()).toEqual(expected[2]);
-  expect(statsData.next()).toEqual(expected[3]);
+  
+  expect(statsData.get()).toEqual(expected[0]);
+  statsData.next()
+  expect(statsData.get()).toEqual(expected[1]);
+  statsData.next()
+  expect(statsData.get()).toEqual(expected[2]);
+  statsData.next()
+  expect(statsData.get()).toEqual(expected[3]);
   // should cycle through the data
-  expect(statsData.next()).toEqual(expected[0]);
+  statsData.next()
+  expect(statsData.get()).toEqual(expected[0]);
 })
