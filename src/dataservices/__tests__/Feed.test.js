@@ -1,4 +1,4 @@
-import Feed from '../feed.js';
+import Feed from '../Feed.js';
 
 test('should calculate deltas appropriately', () => {
   let feed = new Feed()
