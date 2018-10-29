@@ -1,4 +1,4 @@
-# Animable
+# Digital Signage (Formerly 'Animable')
 
 React app built to run in wall displays to show the content for different experiences
 
