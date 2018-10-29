@@ -1,0 +1,60 @@
+version: 2
+jobs:
+  build_and_test:
+    docker:
+      - image: circleci/node:9
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn build
+      - run: yarn test
+      - store_artifacts:
+          path: build
+          destination: build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+  dev_deploy:
+    machine:
+      enabled: true
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: "Deploy to DEV over SSH"
+          command: |
+            ssh -t ${TEST_MACHINE} "rm -rf /home/devops/apps/digital-signage/*"
+            scp -r /tmp/workspace/build/* ${TEST_MACHINE}:/home/devops/apps/digital-signage/
+  prod_deploy:
+    machine: true
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: "Deploy to PROD over SSH"
+          command: |
+            ssh -t ${PROD_MACHINE} "rm -rf /home/devops/apps/digital-signage/*"
+            scp -r /tmp/workspace/build/* ${PROD_MACHINE}:/home/devops/apps/digital-signage/
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build_and_test
+      - dev_deploy:
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: master
+      - release:
+          type: approval
+          requires:
+            - dev_deploy
+      - prod_deploy:
+          requires:
+            - release
+          filters:
+            branches:
+              only: master
