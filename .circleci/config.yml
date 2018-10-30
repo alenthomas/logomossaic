@@ -6,9 +6,8 @@ jobs:
     steps:
       - checkout
       - run: yarn install
-      - run: yarn build
-      - run: yarn test
       - run: REACT_APP_ENV='dev' yarn build
+      - run: yarn test
       - run: mv build dev-build
       - run: REACT_APP_ENV='prod' yarn build
       - run: mv build prod-build
