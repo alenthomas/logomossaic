@@ -8,13 +8,21 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn test
+      - run: REACT_APP_ENV='dev' yarn build
+      - run: mv build dev-build
+      - run: REACT_APP_ENV='prod' yarn build
+      - run: mv build prod-build
       - store_artifacts:
-          path: build
-          destination: build
+          path: dev-build
+          destination: dev-build
+      - store_artifacts:
+          path: prod-build
+          destination: prod-build
       - persist_to_workspace:
           root: .
           paths:
-            - build
+            - dev-build
+            - prod-build
   dev_deploy:
     machine:
       enabled: true
@@ -25,7 +33,7 @@ jobs:
           name: "Deploy to DEV over SSH"
           command: |
             ssh -t ${TEST_MACHINE} "rm -rf /home/devops/apps/digital-signage/*"
-            scp -r /tmp/workspace/build/* ${TEST_MACHINE}:/home/devops/apps/digital-signage/
+            scp -r /tmp/workspace/dev-build/* ${TEST_MACHINE}:/home/devops/apps/digital-signage/
   prod_deploy:
     machine: true
     steps:
@@ -35,7 +43,7 @@ jobs:
           name: "Deploy to PROD over SSH"
           command: |
             ssh -t ${PROD_MACHINE} "rm -rf /home/devops/apps/digital-signage/*"
-            scp -r /tmp/workspace/build/* ${PROD_MACHINE}:/home/devops/apps/digital-signage/
+            scp -r /tmp/workspace/prod-build/* ${PROD_MACHINE}:/home/devops/apps/digital-signage/
 
 workflows:
   version: 2
