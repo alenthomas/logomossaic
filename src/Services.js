@@ -2,12 +2,11 @@ import qs from 'qs';
 import lodash from 'lodash';
 import { queryString, getGroupBy } from './Helper.js'
 import { default as Photo } from './models/Photo.js'
-import { default as config } from './config.js';
+import {getApiConfig} from './config/ConfigLoader.js';
 import Feed from './dataservices/Feed.js';
 import { removeBrokenMedia, removeVideoMedia, protoRelativeUrl } from './dataservices/DataFilters.js'
 
-const REACT_APP_ENV = process.env.REACT_APP_ENV || "local";
-export const API_CONFIG = config.api[REACT_APP_ENV];
+export const API_CONFIG = getApiConfig();
 const BASE_URL = API_CONFIG.BASE_URL;
 const PHOTO_URL = API_CONFIG.PHOTO_URL;
 const REFRESH_RATE = 5000;

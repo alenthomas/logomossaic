@@ -9,7 +9,7 @@ import lodash from "lodash";
 import './App.css';
 import './CiscoSans.css';
 import 'flexboxgrid';
-import config from './config.js';
+import {getCtagsConfig} from './config/ConfigLoader.js';
 import { queryString } from './Helper.js'
 
 import Leaderboard from "./components/leaderboard/IndexComponent.js";
@@ -28,8 +28,8 @@ import StatsView from './components/stats/IndexComponent.js';
 import Ticker from './components/ticker/IndexComponent.js';
 
 const { ctag } = queryString();
-const defaultConfig = config.ctag.default;
-const ctagConfig = lodash.merge(defaultConfig, config.ctag[ctag]);
+const allCtagsConfig = getCtagsConfig();
+const ctagConfig = lodash.merge(allCtagsConfig.default, allCtagsConfig[ctag]);
 
 class App extends Component {
   render() {
