@@ -31,7 +31,7 @@ export default class Tweet extends Component {
       <div className='tweet-content'>
         <TwitterAvatar image={embed.author.photo} />
         <div className='handle'>@{embed.author.alias}</div>
-        { imgUrl ? <div className='image'><img src={imgUrl} alt='img' onError={(e) => this.handleError(e)} /></div> : null}
+        <div className='image'><img src={imgUrl} alt='img' onError={(e) => this.handleError(e)} /></div>
         <div className='text'>{removeLinks(embed.text)}</div>
         <div className='timeago'>{twitterTimeAgo(new Date(Date.parse(embed.createdAt)))} ago</div>
         <img className="twitter-bird" src="/assets/logo/twitter.svg" alt="Twitter bird"/>
