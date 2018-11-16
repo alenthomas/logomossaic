@@ -27,6 +27,16 @@ export function getMediaUrl(embed) {
   return false;
 };
 
+export function getThumbNailUrl(embed) {
+  if(embed.media && embed.media[0] && embed.media[0].thumbUrl) {
+    return embed.media[0].thumbUrl;
+  }
+  if(embed.media && embed.media[0] && embed.media[0].url) {
+    return embed.media[0].url // fallback url
+  }
+  return false;
+}
+
 export function getCreatedAt(data) {
   return new Date(Date.parse(lodash.get(data, 'content.sections[0].embed.createdAt')));
 }

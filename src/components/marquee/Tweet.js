@@ -3,7 +3,7 @@ import twitterTimeAgo from 'twitter-timeago';
 
 import TwitterAvatar from './../mediacarousel/TwitterAvatar.js';
 
-import { removeLinks } from './../mediacarousel/helpers.js';
+import { removeLinks, getThumbNailUrl } from './../mediacarousel/helpers.js';
 
 export default class Tweet extends Component {
 
@@ -12,20 +12,10 @@ export default class Tweet extends Component {
     e.target.style.display = 'none';
   }
 
-  getImage = (embed) => {
-    if(embed.media && embed.media[0] && embed.media[0].thumbUrl) {
-      return embed.media[0].thumbUrl;
-    }
-    if(embed.media && embed.media[0] && embed.media[0].url) {
-      return embed.media[0].url
-    }
-    return false;
-  }
-
   render() {
     const { tweet } = this.props;
     const { embed } = tweet.content.sections[0];
-    const imgUrl = this.getImage(embed);
+    const imgUrl = getThumbNailUrl(embed);
 
     return <div className='tweet'>
       <div className='tweet-content'>
