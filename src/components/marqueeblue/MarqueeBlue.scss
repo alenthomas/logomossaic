@@ -71,6 +71,11 @@
           padding-left: 32px;
           font-size: 31px;
           font-family: CiscoSans;
+          .emoji {
+            width: 28px;
+            height: 28px;
+            padding: 0;
+          }
         }
 
         .timeago {

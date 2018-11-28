@@ -4,6 +4,7 @@ import twitterTimeAgo from 'twitter-timeago';
 import TwitterAvatar from './../mediacarousel/TwitterAvatar.js';
 
 import { removeLinks, getThumbNailUrl } from './../mediacarousel/helpers.js';
+import { parseEmoji } from '../../Helper.js';
 
 export default class Tweet extends Component {
 
@@ -20,9 +21,9 @@ export default class Tweet extends Component {
     return <div className='tweet'>
       <div className='tweet-content'>
         <TwitterAvatar image={embed.author.photo} />
-        <div className='handle'>@{embed.author.alias}</div>
+        <div className='handle' dangerouslySetInnerHTML={{ __html: parseEmoji(`@${embed.author.alias}`) }} />
         <div className='image'><img src={imgUrl} alt='img' onError={(e) => this.handleError(e)}/></div>
-        <div className='text'>{removeLinks(embed.text)}</div>
+        <div className='text' dangerouslySetInnerHTML={{ __html: parseEmoji(removeLinks(embed.text))}} />
         <div className='timeago'>{twitterTimeAgo(new Date(Date.parse(embed.createdAt)))} ago</div>
         <img className="twitter-bird" src="/assets/logo/twitter.svg" alt="Twitter bird"/>
       </div>
