@@ -3,11 +3,11 @@ import twitterTimeAgo from 'twitter-timeago';
 
 import TwitterAvatar from './../mediacarousel/TwitterAvatar.js';
 
-import { removeLinks } from './../mediacarousel/helpers.js';
 import { SCROLL_SPEED } from './Ticker.js';
+import ParsedText from '../ParsedText.js';
 
 export default class Tweet extends Component {
-  
+
   getWidth() {
     let tweetDom = this.refs.tweet;
     return tweetDom && tweetDom.getBoundingClientRect().width;
@@ -26,7 +26,7 @@ export default class Tweet extends Component {
       <div className='tweet-content'>
         <TwitterAvatar image={embed.author.photo} />
         <div className='handle'>@{embed.author.alias}</div>
-        <div className='text'>{removeLinks(embed.text)}</div>
+        <ParsedText className='text' data={embed.text} />
         <div className='timeago'>{twitterTimeAgo(new Date(Date.parse(embed.createdAt)))} ago</div>
         <img className="twitter-bird" src="/assets/logo/twitter.svg" alt="Twitter bird"/>
       </div>

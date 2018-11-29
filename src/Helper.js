@@ -2,6 +2,8 @@ import lodash from 'lodash';
 import qs from 'qs';
 import twemoji from 'twemoji';
 
+const urlRegexp = /(?:https?|ftp):\/\/[\n\S]+/g;
+
 const DEFAULT_CTAG = "cisco.com:group=ciscolive";
 const DEFAULT_GROUP_BY = "day";
 
@@ -51,4 +53,8 @@ export function generateGrid(photos, tileWidth, tileHeight) {
 
 export function parseEmoji(string) {
   return twemoji.parse(string);
+}
+
+export function removeLinks(text) {
+  return (text || "").replace(urlRegexp, '');
 }

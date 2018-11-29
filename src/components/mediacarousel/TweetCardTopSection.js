@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import twitterTimeAgo from 'twitter-timeago';
-import { sanitizeText } from './helpers.js';
-
 
 import TwitterAvatar from './TwitterAvatar.js';
+import ParsedText from '../ParsedText.js';
 
 export default class TweetCardTopSection extends Component {
   render() {
@@ -13,7 +12,7 @@ export default class TweetCardTopSection extends Component {
       <TwitterAvatar image={embed.author.photo} />
 
       <div className="profile">
-        <div className="name" dangerouslySetInnerHTML={{ __html: sanitizeText(embed.author.name) }} />
+        <ParsedText className="name" data={embed.author.name} />
         <div className="handle">@{embed.author.alias}</div>
       </div>
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {getRandomFloat, getRandomInt, parseEmoji} from '../../Helper.js'
+import {getRandomFloat, getRandomInt } from '../../Helper.js'
 import classNames from 'classnames'
+import ParsedText from '../ParsedText.js';
 
 const TILE_SIZE = {
   DEFAULT: { WIDTH: 150, HEIGHT: 150},
@@ -84,10 +85,10 @@ class Tile extends Component {
         <div className={classNames('info', {'visible': this.state.showInfo})}>
           <div className='head'>
             <img src={photo.getAuthorPhoto()} alt="" />
-            <span dangerouslySetInnerHTML={{ __html: parseEmoji(photo.getAuthorName()) }} />
+            <ParsedText tag='span' data={photo.getAuthorName()} />
             <span className='handle'>{photo.getAuthorHandle()}</span>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: parseEmoji(text) }} />
+          <ParsedText data={text} />
         </div>
       )
     }
@@ -103,7 +104,7 @@ class Tile extends Component {
       <div className={this.getTileClass()} style={tileStyle}>
         <img src={photo.getThumbnailUrl()} style={this.getImageStyle()} alt=""/>
         {this.getInfo()}
-        <div className='caption' style={captionStyle} dangerouslySetInnerHTML={{ __html: parseEmoji(caption) }} />
+        <ParsedText className='caption' style={captionStyle} data={caption} />
       </div>
     )
   }

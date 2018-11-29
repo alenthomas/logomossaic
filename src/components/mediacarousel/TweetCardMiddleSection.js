@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import { sanitizeText } from './helpers.js';
+import ParsedText from '../ParsedText.js';
 
 export default class TweetCardMiddleSection extends Component {
 
@@ -13,8 +13,7 @@ export default class TweetCardMiddleSection extends Component {
           <div className="image" style={{backgroundImage: `url("${media[0].url}")`}}></div>
           : null
       }
-
-      <div className="text-content" dangerouslySetInnerHTML={{ __html: sanitizeText(embed.text) }} />
+      <ParsedText className="text-content" data={embed.text} />
     </div>;
   }
 };

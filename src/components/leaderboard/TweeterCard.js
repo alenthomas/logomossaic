@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 
 import TweetCount from "./TweetCount.js";
 import TweeterImage from "./TweeterImage.js";
+import ParsedText from '../ParsedText.js';
 
 class TweeterCard extends Component {
   constructor(props) {
@@ -25,8 +26,8 @@ class TweeterCard extends Component {
         <div className="tweeter-details">
           <TweeterImage image={tweeter.img}/>
           <div className="details">
-            <div className="name">{tweeter.name}</div>
-            <div className="twitter-handle">{"@" + tweeter.handle}</div>
+            <ParsedText className="name" data={tweeter.name} />
+            <div className="twitter-handle">{`@${tweeter.handle}`}</div>
           </div>
         </div>
         <TweetCount key={tweeter.count} tweetCount={tweeter.count}/>

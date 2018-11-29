@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import TweetCount from "./TweetCount.js";
+import ParsedText from '../ParsedText.js';
 
 class RankedTweeterDetails extends Component {
   render() {
@@ -11,8 +12,8 @@ class RankedTweeterDetails extends Component {
       <div
         className="card-element tweeter-details">
         <div className={`medal medal-${index}`}/>
-        <div className="name">{tweeter.name}</div>
-        <div className="twitter-handle">{"@" + tweeter.handle}</div>
+        <ParsedText className="name" data={tweeter.name} />
+        <div className="twitter-handle">{`@${tweeter.handle}`}</div>
         <TweetCount key={tweeter.count} tweetCount={tweeter.count}/>
       </div>
     );
