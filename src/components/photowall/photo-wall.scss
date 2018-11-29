@@ -61,6 +61,11 @@
           margin-left: 10px;
         }
       }
+      .emoji {
+        width: 25px;
+        height: 25px;
+        padding: 0;
+      }
     }
     &.show {
       transform: translateZ(0px) !important;
