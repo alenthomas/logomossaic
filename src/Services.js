@@ -2,7 +2,7 @@ import qs from 'qs';
 import lodash from 'lodash';
 import { queryString, getGroupBy } from './Helper.js'
 import { default as Photo } from './models/Photo.js'
-import {getApiConfig} from './config/ConfigLoader.js';
+import {getApiConfig, getCtagsConfig} from './config/ConfigLoader.js';
 import Feed from './dataservices/Feed.js';
 import { removeBrokenMedia, removeVideoMedia, protoRelativeUrl } from './dataservices/DataFilters.js'
 
@@ -87,6 +87,21 @@ export const getPhotos = (success, failure) => {
       success(photoObjects);
     })
   }, failure);
+}
+
+export const getLatestPhotos = (success, failure) => {
+  const allCtagsConfig = getCtagsConfig();
+  const ctagConfig = allCtagsConfig[ctag];
+  if(ctagConfig.sprinklrApi) {
+    const { topicId } = queryString();
+    const url = `${BASE_URL}sprinklr/phototweets?topicId=${topicId}`
+    get(url, (data) => {
+      const photoObjects = lodash.map(data, datum => new Photo(datum));
+      success(photoObjects);
+    })
+  } else {
+    getPhotos(success, failure);
+  }
 }
 
 // Depricated: Use pollFeatured instead
