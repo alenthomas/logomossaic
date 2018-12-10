@@ -41,8 +41,8 @@ jobs:
       - run:
           name: "Deploy to PROD over SSH"
           command: |
-            ssh -t ${PROD_MACHINE} "rm -rf /home/devops/apps/digital-signage/*"
-            scp -r /tmp/workspace/prod-build/* ${PROD_MACHINE}:/home/devops/apps/digital-signage/
+            ssh -t ${PROD_MACHINE} "rm -rf /home/devops/git/web/digital-signage/*"
+            scp -r /tmp/workspace/prod-build/* ${PROD_MACHINE}:/home/devops/git/web/digital-signage/
 
 workflows:
   version: 2

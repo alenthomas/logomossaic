@@ -111,7 +111,6 @@ export default class Carousel extends Component {
   }
 
   render() {
-    console.log('new')
     let carouselRotation = -this.state.rotationIndex * this.state.rotateY;
     let carouselStyle = {
       transform: `translate(-50%, -50%) translateZ(${this.computeZoomOut()}px) rotateY(${carouselRotation}deg)`
