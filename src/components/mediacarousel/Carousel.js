@@ -39,7 +39,7 @@ export default class Carousel extends Component {
     this.setState(newState);
   }
 
-  componentDidMount() { 
+  componentDidMount() {
     this.rotateTimer = setInterval(this.rotate.bind(this), ROTATE_INTERVAL);
     window.rotate = this.rotate.bind(this); // To debug, enable this line and control rotation manually
   }
@@ -52,7 +52,7 @@ export default class Carousel extends Component {
     let allData = this.props.feed.getAll();
     return (this.props.type === "cube") ?  Math.min(allData.length, 4) : Math.min(allData.length, 16);
   }
-  
+
   computeTransformations(sides) {
     let cardWidth = 1020;
     let gapBetweenCards = 200;
@@ -88,7 +88,7 @@ export default class Carousel extends Component {
       if(toRemove.length === 0) {
         cardsToAdd.push(cardToSwap); // Queue it to the end to show it later
       }
-    }    
+    }
     this.setState({rotationIndex, cardsToAdd, cardsToRemove, currentCards});
   }
 
@@ -102,7 +102,7 @@ export default class Carousel extends Component {
         upcomingHiddenCardCreatedAt = getCreatedAt(upcomingHiddenCard);
     let newCardToAdd = this.state.cardsToAdd[0],
         newCardCreatedAt = getCreatedAt(newCardToAdd);
-    
+
     if(newCardCreatedAt > upcomingHiddenCardCreatedAt) {
       return upcomingHiddenCardIndex;
     } else {
@@ -111,6 +111,7 @@ export default class Carousel extends Component {
   }
 
   render() {
+    console.log('new')
     let carouselRotation = -this.state.rotationIndex * this.state.rotateY;
     let carouselStyle = {
       transform: `translate(-50%, -50%) translateZ(${this.computeZoomOut()}px) rotateY(${carouselRotation}deg)`
