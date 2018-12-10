@@ -5,6 +5,7 @@ import { watchSocial } from '../../Services.js'
 import MarqueeBlue from './MarqueeBlue.js';
 
 import './MarqueeBlue.css';
+import { handleError } from '../../Helper.js';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchSocial(this.loadData);
+    watchSocial(this.loadData, handleError);
   }
 
   componentDidMount() {

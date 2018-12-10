@@ -4,6 +4,7 @@ import lodash from 'lodash';
 import {getTweetStats, getTopTweets, getTopHashtags} from '../../Services.js';
 import StatsView from './StatsView.js';
 import RegularLayout from "./../layout/Regular.js";
+import { handleError } from '../../Helper.js';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -21,14 +22,14 @@ class IndexComponent extends Component {
     const { tweetcounts: componentConfig } = this.props.config;
     getTweetStats((stats) => {
       this.setState({stats: stats})
-    })
+    }, handleError)
     getTopTweets((tweets) => {
       let topTweets = tweets || []
       this.setState({tweets: topTweets.slice(0,3)})
-    })
+    }, handleError)
     getTopHashtags(componentConfig.filterHashtags, (hashtags = []) => {
       this.setState({hashtags: hashtags.slice(0,3)})
-    })
+    }, handleError)
   }
 
   isReady() {

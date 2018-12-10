@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
 
-import {generateGrid} from '../../Helper.js';
+import {generateGrid, handleError} from '../../Helper.js';
 import PhotoWall from "./PhotoWall.js";
 import RegularLayout from "./../layout/Regular.js";
 import {getPhotos} from '../../Services.js';
@@ -23,7 +23,7 @@ class IndexComponent extends Component {
     getPhotos((photos) => {
       let grid = generateGrid(photos, TILE_SIZE.DEFAULT.WIDTH, TILE_SIZE.DEFAULT.HEIGHT);
       this.setState({photosGrid: grid});
-    });
+    }, handleError);
   }
 
   render() {

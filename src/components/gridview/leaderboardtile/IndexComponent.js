@@ -6,6 +6,7 @@ import './LeaderboardTile.css';
 
 import LeaderRow from './LeaderRow.js';
 import TileComponent from '../tile/TileComponent.js';
+import { handleError } from '../../../Helper.js';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchLeaderboardInfo(this.loadData)
+    watchLeaderboardInfo(this.loadData, handleError)
     this.props.markReady({'LeaderboardTile': false});
   }
 

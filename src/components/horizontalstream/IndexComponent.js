@@ -10,6 +10,7 @@ import RegularLayout from "./../layout/Regular.js";
 
 import './../mediacarousel/MediaCarousel.css';
 import './HorizontalStream.css';
+import { handleError } from '../../Helper.js';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchSocial(this.loadData);
+    watchSocial(this.loadData, handleError);
   }
 
   render() {

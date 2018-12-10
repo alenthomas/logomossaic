@@ -5,6 +5,7 @@ import Ticker from './Ticker.js';
 import Feed from '../../dataservices/Feed.js';
 
 import './Ticker.css';
+import { handleError } from '../../Helper.js';
 
 export default class IndexComponent extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ export default class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    pollTextTweets(this.loadData.bind(this));
+    pollTextTweets(this.loadData.bind(this), handleError);
   }
 
   loadData(feed) {

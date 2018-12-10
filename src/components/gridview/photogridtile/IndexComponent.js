@@ -5,6 +5,7 @@ import {watchPhotos} from './../../../Services.js';
 import TileComponent from '../tile/TileComponent.js';
 
 import './PhotoGridTile.css';
+import { handleError } from '../../../Helper.js';
 
 class IndexComponent extends Component {
 
@@ -17,12 +18,12 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchPhotos(this.loadData)
+    watchPhotos(this.loadData, handleError)
     this.props.markReady({'PhotoGridTile': false});
   }
 
   divideImagesToColumns(photos) {
-    let {col1, col2} = lodash.reduce(photos, (acc, p, i) => { 
+    let {col1, col2} = lodash.reduce(photos, (acc, p, i) => {
       (i%2 === 0) ? acc.col1.push(p) : acc.col2.push(p);
       return acc;
     }, {col1: [], col2: []});

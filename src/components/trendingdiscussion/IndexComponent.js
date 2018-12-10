@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import WordCloud from 'react-d3-cloud';
 
 import { watchWordcloud } from '../../Services.js'
+import { handleError } from '../../Helper';
 import RegularLayout from "./../layout/Regular.js";
 
 import './TrendingDiscussion.css';
@@ -26,7 +27,7 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchWordcloud(this.loadData);
+    watchWordcloud(this.loadData, handleError);
   }
 
   getData() {

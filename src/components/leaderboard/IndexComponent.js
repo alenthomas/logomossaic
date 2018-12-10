@@ -8,6 +8,7 @@ import TweeterCard from "./TweeterCard.js";
 import RegularLayout from "./../layout/Regular.js";
 
 import './Leaderboard.css';
+import { handleError } from '../../Helper.js';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchLeaderboard(this.loadData);
+    watchLeaderboard(this.loadData, handleError);
   }
 
   getAllTweeters() {

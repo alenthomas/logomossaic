@@ -5,6 +5,7 @@ import {watchFeatured} from './../../../Services.js';
 import TweetCard from './../../mediacarousel/TweetCard.js';
 
 import './MediaCarouselTile.css';
+import { handleError } from '../../../Helper.js';
 
 const HIDE_INTERVAL = 9000;
 
@@ -20,7 +21,7 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchFeatured(this.loadData)
+    watchFeatured(this.loadData, handleError)
     this.props.markReady({'MediaCarouselTile': false});
   }
 

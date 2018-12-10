@@ -1,5 +1,6 @@
 import {buildDatum} from '../TestHelpers.js';
 import {pollFeatured, getTopHashtags} from '../Services.js';
+import { handleError } from '../Helper.js';
 
 test('pollFeatured | should cleanse data and return a feed object', (done) => {
   let data = [buildDatum(), buildDatum(), buildDatum()];
@@ -10,7 +11,7 @@ test('pollFeatured | should cleanse data and return a feed object', (done) => {
     expect(feed.getAdded()).toEqual(data)
     expect(feed.getRemoved()).toEqual([])
     done()
-  })
+  }, handleError)
 })
 
 

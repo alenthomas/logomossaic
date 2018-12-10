@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
 
-import { getGroupBy } from '../../Helper.js'
+import { getGroupBy, handleError } from '../../Helper.js'
 import { watchVolume } from '../../Services.js';
 
 import VolumeOfConversationChart from "./VolumeOfConversationChart.js";
@@ -27,11 +27,11 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchVolume(this.loadData);
+    watchVolume(this.loadData, handleError);
   }
 
   componentWillReceiveProps() {
-    watchVolume(this.loadData);
+    watchVolume(this.loadData, handleError);
   }
 
   render() {

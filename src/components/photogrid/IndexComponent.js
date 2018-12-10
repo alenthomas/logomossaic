@@ -1,5 +1,6 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
+import {handleError} from '../../Helper';
 
 import PhotoGrid from "./PhotoGrid.js";
 import RegularLayout from "./../layout/Regular.js";
@@ -18,7 +19,7 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchPhotos(this.loadData);
+    watchPhotos(this.loadData, handleError);
   }
 
   loadData = (photos) => {

@@ -58,3 +58,7 @@ export function parseEmoji(string) {
 export function removeLinks(text) {
   return (text || "").replace(urlRegexp, '');
 }
+
+export function handleError(error) {
+  console.error(error);
+}
