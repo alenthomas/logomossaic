@@ -62,6 +62,33 @@ export default {
     }
   },
 
+  "CiscoSprinklr": {
+    "sprinklrApi": true,
+    "containerCssClassname": "ciscostore",
+    "background": "url(/assets/ciscostore/bg.png)",
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/ciscostore/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-blue.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "photowall": {
+      "title": "#CiscoStore Social Pulse",
+      "tileBgText": "#CiscoStore",
+      "hideBgWave": true
+    }
+  },
+
   "basketball.na.usa:team=bos": {
     "containerCssClassname": "boston-celtics",
     "background": "url(/assets/celtics/bg.jpg)",
