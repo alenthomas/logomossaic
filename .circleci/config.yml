@@ -31,8 +31,8 @@ jobs:
       - run:
           name: "Deploy to DEV over SSH"
           command: |
-            ssh -t ${TEST_MACHINE} "rm -rf /home/devops/apps/digital-signage/*"
-            scp -r /tmp/workspace/dev-build/* ${TEST_MACHINE}:/home/devops/apps/digital-signage/
+            ssh -t ${TEST_MACHINE} "rm -rf /home/devops/git/web/digital-signage/*"
+            scp -r /tmp/workspace/dev-build/* ${TEST_MACHINE}:/home/devops/git/web/digital-signage/
   prod_deploy:
     machine: true
     steps:
