@@ -6,6 +6,7 @@ import Feed from '../../dataservices/Feed.js';
 
 import './Ticker.css';
 import { handleError } from '../../Helper.js';
+import { timeoutCollection } from 'time-events-manager';
 
 export default class IndexComponent extends Component {
   constructor(props) {
@@ -17,6 +18,10 @@ export default class IndexComponent extends Component {
 
   componentWillMount() {
     pollTextTweets(this.loadData.bind(this), handleError);
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   loadData(feed) {

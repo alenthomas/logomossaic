@@ -6,6 +6,7 @@ import MarqueeBlue from './MarqueeBlue.js';
 
 import './MarqueeBlue.css';
 import { handleError } from '../../Helper.js';
+import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -26,7 +27,11 @@ class IndexComponent extends Component {
   }
 
   componentDidMount() {
-    document.getElementById('root').style.background = "none";
+     document.getElementById('root').style.background = "none";
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   render() {

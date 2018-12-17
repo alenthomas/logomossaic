@@ -6,6 +6,7 @@ import TileComponent from '../tile/TileComponent.js';
 
 import './PhotoGridTile.css';
 import { handleError } from '../../../Helper.js';
+import { timeoutCollection } from 'time-events-manager'
 
 class IndexComponent extends Component {
 
@@ -20,6 +21,10 @@ class IndexComponent extends Component {
   componentWillMount() {
     watchPhotos(this.loadData, handleError)
     this.props.markReady({'PhotoGridTile': false});
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   divideImagesToColumns(photos) {

@@ -6,6 +6,7 @@ import WordCloud from 'react-d3-cloud';
 import { watchWordcloud } from '../../Services.js'
 import { handleError } from '../../Helper';
 import RegularLayout from "./../layout/Regular.js";
+import { timeoutCollection } from 'time-events-manager';
 
 import './TrendingDiscussion.css';
 
@@ -28,6 +29,10 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     watchWordcloud(this.loadData, handleError);
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   getData() {

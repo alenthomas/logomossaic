@@ -6,6 +6,7 @@ import TweetCard from './../../mediacarousel/TweetCard.js';
 
 import './MediaCarouselTile.css';
 import { handleError } from '../../../Helper.js';
+import { timeoutCollection } from 'time-events-manager';
 
 const HIDE_INTERVAL = 9000;
 
@@ -30,7 +31,8 @@ class IndexComponent extends Component {
     // window.loadNext = this.loadNext;
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
     clearInterval(this.hideTimer);
   }
 

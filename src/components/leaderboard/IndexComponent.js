@@ -9,6 +9,7 @@ import RegularLayout from "./../layout/Regular.js";
 
 import './Leaderboard.css';
 import { handleError } from '../../Helper.js';
+import { timeoutCollection } from 'time-events-manager'
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -25,6 +26,10 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     watchLeaderboard(this.loadData, handleError);
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   getAllTweeters() {

@@ -44,7 +44,7 @@ export default class Carousel extends Component {
     window.rotate = this.rotate.bind(this); // To debug, enable this line and control rotation manually
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     clearInterval(this.rotateTimer);
   }
 

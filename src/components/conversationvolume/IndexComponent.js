@@ -6,6 +6,7 @@ import { watchVolume } from '../../Services.js';
 
 import VolumeOfConversationChart from "./VolumeOfConversationChart.js";
 import RegularLayout from "./../layout/Regular.js";
+import { timeoutCollection } from 'time-events-manager';
 
 import './VolumeOfConversation.css';
 
@@ -28,6 +29,10 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     watchVolume(this.loadData, handleError);
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   componentWillReceiveProps() {

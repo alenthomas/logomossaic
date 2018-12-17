@@ -20,6 +20,7 @@
     "recharts": "^0.22.4",
     "three": "^0.85.2",
     "three-canvas-renderer": "^2.0.0",
+    "time-events-manager": "^0.1.1",
     "twemoji": "^11.0.1",
     "twitter-timeago": "^1.0.2",
     "whatwg-fetch": "^2.0.3"

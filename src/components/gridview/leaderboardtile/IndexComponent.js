@@ -7,6 +7,7 @@ import './LeaderboardTile.css';
 import LeaderRow from './LeaderRow.js';
 import TileComponent from '../tile/TileComponent.js';
 import { handleError } from '../../../Helper.js';
+import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -19,6 +20,10 @@ class IndexComponent extends Component {
   componentWillMount() {
     watchLeaderboardInfo(this.loadData, handleError)
     this.props.markReady({'LeaderboardTile': false});
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   loadData = (json) => {

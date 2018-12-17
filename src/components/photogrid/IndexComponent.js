@@ -8,6 +8,7 @@ import RegularLayout from "./../layout/Regular.js";
 import './PhotoGrid.css';
 
 import {watchPhotos} from '../../Services.js';
+import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -20,6 +21,10 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     watchPhotos(this.loadData, handleError);
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   loadData = (photos) => {

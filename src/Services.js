@@ -5,6 +5,9 @@ import { default as Photo } from './models/Photo.js'
 import {getApiConfig, getCtagsConfig} from './config/ConfigLoader.js';
 import Feed from './dataservices/Feed.js';
 import { removeBrokenMedia, removeVideoMedia, protoRelativeUrl } from './dataservices/DataFilters.js'
+// eslint-disable-next-line
+import { timeoutCollection } from 'time-events-manager'; // provides a wrapper for setTimeout calls
+// https://github.com/bargoldi/time-events-manager/blob/master/src/timeout/timeout-decorator.ts
 
 export const API_CONFIG = getApiConfig();
 const BASE_URL = API_CONFIG.BASE_URL;

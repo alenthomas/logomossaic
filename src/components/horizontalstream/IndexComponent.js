@@ -11,6 +11,7 @@ import RegularLayout from "./../layout/Regular.js";
 import './../mediacarousel/MediaCarousel.css';
 import './HorizontalStream.css';
 import { handleError } from '../../Helper.js';
+import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -29,6 +30,10 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     watchSocial(this.loadData, handleError);
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   render() {

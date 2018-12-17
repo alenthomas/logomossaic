@@ -3,6 +3,7 @@ import Carousel from './Carousel.js';
 import RegularLayout from "./../layout/Regular.js";
 import { pollFeatured } from '../../Services.js';
 import { queryString, handleError } from '../../Helper.js';
+import { timeoutCollection } from 'time-events-manager';
 
 import './MediaCarousel.css';
 import Feed from '../../dataservices/Feed.js';
@@ -18,6 +19,10 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     pollFeatured(this.loadData.bind(this), handleError);
+  }
+
+  componentWillUnmount() {
+    timeoutCollection.removeAll();
   }
 
   loadData(feed) {
