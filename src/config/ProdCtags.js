@@ -198,7 +198,8 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#CLUS Highlights"
+      "title": "#CLUS Highlights",
+      "hideBgWave": true
     },
     "photogrid": {
       "title": "#CLUS Visuals"
