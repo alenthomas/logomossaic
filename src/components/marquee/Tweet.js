@@ -14,8 +14,7 @@ export default class Tweet extends Component {
   }
 
   render() {
-    const { tweet } = this.props;
-    const { embed } = tweet.content.sections[0];
+    const embed = this.props.tweet;
     const imgUrl = getThumbNailUrl(embed);
 
     return <div className='tweet'>

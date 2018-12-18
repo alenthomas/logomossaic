@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import lodash from 'lodash';
 import classNames from 'classnames';
 
 import TweetCardTopSection from './TweetCardTopSection.js'
@@ -20,7 +19,7 @@ class TweetCard extends Component {
 
   render() {
     const { data, className } = this.props;
-    let embed = lodash.get(data, 'content.sections[0].embed');
+    let embed = data
     let cardType = findCardType(data);
 
     return <div className={classNames("tweet-card", className)}

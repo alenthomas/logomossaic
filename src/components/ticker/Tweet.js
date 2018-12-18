@@ -15,7 +15,7 @@ export default class Tweet extends Component {
 
   render() {
     const { tweet, scroll } = this.props;
-    const { embed } = tweet.content.sections[0];
+    const embed = tweet;
     let width = this.getWidth();
     let style = {
       left: scroll ? `-${width}px` : "100%",

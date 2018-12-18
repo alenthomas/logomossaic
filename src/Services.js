@@ -15,7 +15,7 @@ const PHOTO_URL = API_CONFIG.PHOTO_URL;
 const REFRESH_RATE = 5000;
 const FAILURE_RETRY_RATE = 2000;
 const { ctag, filter } = queryString();
-const params = qs.stringify({ctag, filter});
+const params = qs.stringify({ctag, filter, format : 'flat'});
 
 let get = (url, success, failure) => {
   return fetch(protoRelativeUrl(url))
@@ -53,11 +53,11 @@ export const watchTrendingWords = (success, failure) => {
 
 // Depricated: User pollPhotos instead
 export const watchPhotos = (success, failure) => {
-  let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
+  let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   let massage = (payload) => {
     let photos = lodash(payload)
-      .filter("content.sections[0].embed.media")
+      .filter("media")
       .map((datum) => new Photo(datum).transform())
       .filter("photoSize")
       .value();
@@ -68,7 +68,7 @@ export const watchPhotos = (success, failure) => {
 
 let photosFeed = new Feed();
 export const pollPhotos = (success, failure) => {
-  let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
+  let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   poll(url, (data) => {
     removeBrokenMedia(data, (cleansedData) => {
@@ -81,7 +81,7 @@ export const pollPhotos = (success, failure) => {
 }
 
 export const getPhotos = (success, failure) => {
-  let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
+  let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   get(url, (data) => {
     removeBrokenMedia(data, (cleansedData) => {
@@ -145,7 +145,7 @@ export const pollTextTweets = (success, failure) => {
   let url = `${PHOTO_URL}social?${params}`;
   poll(url, (data) => {
     let textTweets = lodash.filter(data, d => {
-      let embed = lodash.get(d, 'content.sections[0].embed');
+      let embed = d;
       return embed && embed.type !== 'media';
     });
     TextTweetsFeed.load(textTweets);
@@ -168,7 +168,7 @@ let statParams = qs.stringify({ctag})
 }
 
 export const getTopTweets = (success, failure) => {
-  let params = qs.stringify({ctag: ctag, filter: "top"}),
+  let params = qs.stringify({ctag: ctag, filter: "top", format: "flat"}),
       url = `${PHOTO_URL}social?${params}`;
   get(url, success, failure);
 }
