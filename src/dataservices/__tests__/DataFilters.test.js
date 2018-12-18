@@ -32,7 +32,7 @@ test('removeVideoMedia | should remove the video content', () => {
   ]
 
   removeVideoMedia(data)
-  expect(data.map(d => d.content.sections[0].embed.media[0].url)).toEqual([
+  expect(data.map(d => d.media[0].url)).toEqual([
     'http://test1', 'http://test2', 'http://test4'
   ])
 })
