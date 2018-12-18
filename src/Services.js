@@ -15,7 +15,7 @@ const PHOTO_URL = API_CONFIG.PHOTO_URL;
 const REFRESH_RATE = 5000;
 const FAILURE_RETRY_RATE = 2000;
 const { ctag, filter } = queryString();
-const params = qs.stringify({ctag, filter, format : 'flat'});
+const params = qs.stringify({ctag, filter});
 
 let get = (url, success, failure) => {
   return fetch(protoRelativeUrl(url))
@@ -109,13 +109,15 @@ export const getLatestPhotos = (success, failure) => {
 
 // Depricated: Use pollFeatured instead
 export const watchFeatured = (success, failure) => {
-  let url = `${PHOTO_URL}social?${params}`
+  let photoParams = qs.stringify({ctag, filter, format : 'flat'});
+  let url = `${PHOTO_URL}social?${photoParams}`
   poll(url, success, failure);
 }
 
 let featuredFeed = new Feed();
 export const pollFeatured = (success, failure) => {
-  let url = `${PHOTO_URL}social?${params}`;
+  let photoParams = qs.stringify({ctag, filter, format : 'flat'});
+  let url = `${PHOTO_URL}social?${photoParams}`;
   poll(url, (data) => {
     removeBrokenMedia(data, (cleansedData) => {
       removeVideoMedia(cleansedData);
@@ -137,12 +139,14 @@ export const watchVolume = (success, failure) => {
 }
 
 export const watchSocial = (success, failure) => {
-  poll(`${PHOTO_URL}social?${params}`, success, failure, REFRESH_RATE*5);
+  let photoParams = qs.stringify({ctag, filter, format : 'flat'});
+  poll(`${PHOTO_URL}social?${photoParams}`, success, failure, REFRESH_RATE*5);
 }
 
 let TextTweetsFeed = new Feed();
+let photoParams = qs.stringify({ctag, filter, format : 'flat'});
 export const pollTextTweets = (success, failure) => {
-  let url = `${PHOTO_URL}social?${params}`;
+  let url = `${PHOTO_URL}social?${photoParams}`;
   poll(url, (data) => {
     let textTweets = lodash.filter(data, d => {
       let embed = d;
