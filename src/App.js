@@ -4,7 +4,6 @@ import {
   HashRouter as Router,
   Route
 } from 'react-router-dom';
-import lodash from "lodash";
 
 import './App.css';
 import './CiscoSans.css';
