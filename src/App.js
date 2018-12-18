@@ -9,8 +9,7 @@ import lodash from "lodash";
 import './App.css';
 import './CiscoSans.css';
 import 'flexboxgrid';
-import {getCtagsConfig} from './config/ConfigLoader.js';
-import { queryString } from './Helper.js'
+import { getConfig } from './Helper.js'
 
 import Leaderboard from "./components/leaderboard/IndexComponent.js";
 import VolumeOfConversation from "./components/conversationvolume/IndexComponent.js";
@@ -27,30 +26,26 @@ import PhotoWall from './components/photowall/IndexComponent.js';
 import StatsView from './components/stats/IndexComponent.js';
 import Ticker from './components/ticker/IndexComponent.js';
 
-const { ctag } = queryString();
-const allCtagsConfig = getCtagsConfig();
-const ctagConfig = lodash.merge(allCtagsConfig.default, allCtagsConfig[ctag]);
-
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="app-container">
-          <Route path="/leaderboard" render={() => <Leaderboard config={ctagConfig} />}/>
-          <Route path="/volume" render={() => <VolumeOfConversation config={ctagConfig} />}/>
-          <Route path="/trending" render={() => <TrendingDiscussion config={ctagConfig} />}/>
-          <Route path="/carousel" render={() => <MediaCarousel config={ctagConfig} />}/>
-          <Route path="/photogrid" render={() => <PhotoGrid config={ctagConfig} />}/>
-          <Route path="/photogridFill" render={() => <PhotoGrid objectFit="fill" config={ctagConfig} />}/>
-          <Route path="/hstream" render={() => <HorizontalStream config={ctagConfig} />}/>
-          <Route path="/mstream" render={() => <MasonaryStream config={ctagConfig} />}/>
-          <Route path="/marquee" render={() => <Marquee config={ctagConfig} />}/>
-          <Route path="/marqueeBlue" render={() => <MarqueeBlue config={ctagConfig} />}/>
-          <Route path="/capsule" render={() => <Capsule config={ctagConfig} />}/>
-          <Route path="/gridview" render={() => <GridView config={ctagConfig} />} />
-          <Route path="/photowall" render={() => <PhotoWall config={ctagConfig} />} />
-          <Route path="/counter" render={() => <StatsView config={ctagConfig} />} />
-          <Route path="/ticker" render={() => <Ticker config={ctagConfig} />} />
+          <Route path="/leaderboard" render={() => <Leaderboard config={getConfig()}  />}/>
+          <Route path="/volume" render={() => <VolumeOfConversation config={getConfig()} />}/>
+          <Route path="/trending" render={() => <TrendingDiscussion config={getConfig()} />}/>
+          <Route path="/carousel" render={() => <MediaCarousel config={getConfig()} />}/>
+          <Route path="/photogrid" render={() => <PhotoGrid config={getConfig()} />}/>
+          <Route path="/photogridFill" render={() => <PhotoGrid objectFit="fill" config={getConfig()} />}/>
+          <Route path="/hstream" render={() => <HorizontalStream config={getConfig()} />}/>
+          <Route path="/mstream" render={() => <MasonaryStream config={getConfig()} />}/>
+          <Route path="/marquee" render={() => <Marquee config={getConfig()}/>}/>
+          <Route path="/marqueeBlue" render={() => <MarqueeBlue config={getConfig()} />}/>
+          <Route path="/capsule" render={() => <Capsule config={getConfig()} />}/>
+          <Route path="/gridview" render={() => <GridView config={getConfig()} />} />
+          <Route path="/photowall" render={() => <PhotoWall config={getConfig()} />} />
+          <Route path="/counter" render={() => <StatsView config={getConfig()} />} />
+          <Route path="/ticker" render={() => <Ticker config={getConfig()} />} />
         </div>
       </Router>
     );

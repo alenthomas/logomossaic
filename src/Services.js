@@ -1,12 +1,12 @@
 import qs from 'qs';
 import lodash from 'lodash';
-import { queryString, getGroupBy } from './Helper.js'
+import { queryString, getGroupBy, getParams } from './Helper.js'
 import { default as Photo } from './models/Photo.js'
 import {getApiConfig, getCtagsConfig} from './config/ConfigLoader.js';
 import Feed from './dataservices/Feed.js';
 import { removeBrokenMedia, removeVideoMedia, protoRelativeUrl } from './dataservices/DataFilters.js'
-// eslint-disable-next-line
-import { timeoutCollection } from 'time-events-manager'; // provides a wrapper for setTimeout calls
+import { timeoutCollection } from 'time-events-manager';
+// provides a wrapper for setTimeout calls
 // https://github.com/bargoldi/time-events-manager/blob/master/src/timeout/timeout-decorator.ts
 
 export const API_CONFIG = getApiConfig();
@@ -14,8 +14,6 @@ const BASE_URL = API_CONFIG.BASE_URL;
 const PHOTO_URL = API_CONFIG.PHOTO_URL;
 const REFRESH_RATE = 5000;
 const FAILURE_RETRY_RATE = 2000;
-const { ctag, filter } = queryString();
-const params = qs.stringify({ctag, filter});
 
 let get = (url, success, failure) => {
   return fetch(protoRelativeUrl(url))
@@ -28,14 +26,14 @@ let get = (url, success, failure) => {
 
 let poll = (url, success, failure, refreshRate = REFRESH_RATE) => {
   let successHandler = (payload) => {
-    setTimeout(() => {
+    timeoutCollection.add(() => {
       poll(url, success, failure, refreshRate);
     }, refreshRate);
     success(payload);
   }
   let failureHandler = (payload) => {
     console.error(`API call failed for ${url}`, payload)
-    setTimeout(() => {
+    timeoutCollection.add(() => {
       poll(url, success, failure, refreshRate);
     }, FAILURE_RETRY_RATE);
     failure && failure(payload);
@@ -44,15 +42,16 @@ let poll = (url, success, failure, refreshRate = REFRESH_RATE) => {
 }
 
 export const watchLeaderboardInfo = (success, failure) => {
-  poll(`${BASE_URL}leaderboard?${params}`, success, failure);
+  poll(`${BASE_URL}leaderboard?${getParams()}`, success, failure);
 }
 
 export const watchTrendingWords = (success, failure) => {
-  poll(`${BASE_URL}wordcloud?${params}`, success, failure);
+  poll(`${BASE_URL}wordcloud?${getParams()}`, success, failure);
 }
 
 // Depricated: User pollPhotos instead
 export const watchPhotos = (success, failure) => {
+  let {ctag, filter} = queryString();
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   let massage = (payload) => {
@@ -68,6 +67,7 @@ export const watchPhotos = (success, failure) => {
 
 let photosFeed = new Feed();
 export const pollPhotos = (success, failure) => {
+  let {ctag, filter} = queryString();
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   poll(url, (data) => {
@@ -81,6 +81,7 @@ export const pollPhotos = (success, failure) => {
 }
 
 export const getPhotos = (success, failure) => {
+  let {ctag, filter} = queryString();
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   get(url, (data) => {
@@ -93,6 +94,7 @@ export const getPhotos = (success, failure) => {
 }
 
 export const getLatestPhotos = (success, failure) => {
+  let {ctag} = queryString();
   const allCtagsConfig = getCtagsConfig();
   const ctagConfig = allCtagsConfig[ctag];
   if(ctagConfig.sprinklrApi) {
@@ -109,13 +111,13 @@ export const getLatestPhotos = (success, failure) => {
 
 // Depricated: Use pollFeatured instead
 export const watchFeatured = (success, failure) => {
-  let url = `${PHOTO_URL}social?${params}`
+  let url = `${PHOTO_URL}social?${getParams()}`
   poll(url, success, failure);
 }
 
 let featuredFeed = new Feed();
 export const pollFeatured = (success, failure) => {
-  let url = `${PHOTO_URL}social?${params}`;
+  let url = `${PHOTO_URL}social?${getParams()}`;
   poll(url, (data) => {
     removeBrokenMedia(data, (cleansedData) => {
       removeVideoMedia(cleansedData);
@@ -126,23 +128,24 @@ export const pollFeatured = (success, failure) => {
 }
 
 export const watchTweetCount = (success, failure) => {
-  let url = `${BASE_URL}tweetcounter?${params}`
+  let url = `${BASE_URL}tweetcounter?${getParams()}`
   poll(url, success, failure);
 }
 
 export const watchVolume = (success, failure) => {
-  let params = qs.stringify({ctag: ctag, groupBy: getGroupBy()})
-  let url = `${BASE_URL}volume?${params}`
+  let params = getParams()
+  let urlParams = qs.stringify({...{params}, groupBy: getGroupBy()})
+  let url = `${BASE_URL}volume?${urlParams}`
   poll(url, success, failure, REFRESH_RATE*3)
 }
 
 export const watchSocial = (success, failure) => {
-  poll(`${PHOTO_URL}social?${params}`, success, failure, REFRESH_RATE*5);
+  poll(`${PHOTO_URL}social?${getParams()}`, success, failure, REFRESH_RATE*5);
 }
 
 let TextTweetsFeed = new Feed();
 export const pollTextTweets = (success, failure) => {
-  let url = `${PHOTO_URL}social?${params}`;
+  let url = `${PHOTO_URL}social?${getParams()}`;
   poll(url, (data) => {
     let textTweets = lodash.filter(data, d => {
       let embed = lodash.get(d, 'content.sections[0].embed');
@@ -153,28 +156,31 @@ export const pollTextTweets = (success, failure) => {
   }, failure)
 }
 
-export const watchLeaderboard = (success, failure) => {
-  poll(`${BASE_URL}leaderboard?${params}`, success, failure, REFRESH_RATE*2);
+export const watchLeaderboard = ( success, failure) => {
+  poll(`${BASE_URL}leaderboard?${getParams()}`, success, failure, REFRESH_RATE*2);
 }
 
 export const watchWordcloud = (success, failure) => {
-  poll(`${BASE_URL}wordcloud?${params}`, success, failure, REFRESH_RATE*5);
+  poll(`${BASE_URL}wordcloud?${getParams()}`, success, failure, REFRESH_RATE*5);
 }
 
 export const getTweetStats = (success, failure) => {
-let statParams = qs.stringify({ctag})
+  let {ctag} = queryString();
+  let statParams = qs.stringify({ctag});
   let url = `${PHOTO_URL}social/aggregates?${statParams}`;
   get(url, success, failure);
 }
 
 export const getTopTweets = (success, failure) => {
-  let params = qs.stringify({ctag: ctag, filter: "top"}),
+  let {ctag} = queryString();
+  let params = qs.stringify({ctag, filter: "top"}),
       url = `${PHOTO_URL}social?${params}`;
   get(url, success, failure);
 }
 
 export const getTopHashtags = (filterHashtags = [], success, failure) => {
-  let params = qs.stringify({ctag: ctag}),
+  let {ctag} = queryString();
+  let params = qs.stringify({ctag}),
       url = `${BASE_URL}hashtags?${params}`;
   get(url, (result) => {
     let filteredResult = lodash.filter(result, r => filterHashtags.indexOf(r.hashtag) === -1 )
