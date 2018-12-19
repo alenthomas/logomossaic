@@ -16,7 +16,7 @@ test('removeBrokenMedia | should loop through all the media urls and remove the 
 })
 
 test('removeBrokenMedia | Should not filter any non media content', () => {
-  let data = [buildDatum('http://test', false, 'text')]
+  let data = [buildDatum('http://test', 'text')]
 
   removeBrokenMedia(data, (cleanedData) => {
     expect(cleanedData).toEqual(data)
@@ -27,7 +27,7 @@ test('removeVideoMedia | should remove the video content', () => {
   let data = [
     buildDatum('http://test1'),
     buildDatum('http://test2'),
-    buildDatum('http://test3', true),
+    buildDatum('http://test3', 'video'),
     buildDatum('http://test4')
   ]
 

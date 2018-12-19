@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import lodash from 'lodash';
 
 function isNonMediaData(datum) {
-  return datum.type !== 'media';
+  return datum.type === 'text';
 }
 
 function createInvestigations(data) {

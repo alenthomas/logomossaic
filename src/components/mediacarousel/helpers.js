@@ -5,7 +5,7 @@ import Photo from '../../models/Photo.js';
 const urlRegexp = /(?:https?|ftp):\/\/[\n\S]+/g;
 
 export function findCardType(data) {
-  if(data && data.type !== 'media') {
+  if(data && data.type === 'text') {
     return 'text';
   }
 
@@ -14,12 +14,12 @@ export function findCardType(data) {
 };
 
 export function hasVideoMedia(data) {
-  return lodash.get(data, 'playable', false);
+  return data.type === "video";
 }
 
 
 export function getMediaUrl(embed) {
-  if(embed.type === "media") {
+  if(embed.type !== "text") {
     return embed.media[0].url;
   }
 

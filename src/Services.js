@@ -150,7 +150,7 @@ export const pollTextTweets = (success, failure) => {
   poll(url, (data) => {
     let textTweets = lodash.filter(data, d => {
       let embed = d;
-      return embed && embed.type !== 'media';
+      return embed && embed.type === 'text';
     });
     TextTweetsFeed.load(textTweets);
     success(TextTweetsFeed);

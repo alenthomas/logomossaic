@@ -2,7 +2,7 @@ import lodash from 'lodash';
 
 
 function isNonMediaData(datum) {
-  return datum.type !== 'media';
+  return datum.type === 'text';
 }
 
 export const protoRelativeUrl = (url) => {
@@ -32,5 +32,5 @@ export const removeBrokenMedia = (data, done) => {
 }
 
 export const removeVideoMedia = (data) => {
-  lodash.remove(data, (d) => lodash.get(d, 'playable', false));
+  lodash.remove(data, (d) => d.type === 'video');
 }

@@ -1,4 +1,4 @@
-export const buildDatum = (url = 'http://twitter.com/awer2344', playable = false, type = 'media') => {
+export const buildDatum = (url = 'http://twitter.com/awer2344', type = 'image') => {
   let datum = {
     id: Math.random(),
     author: {},
@@ -6,7 +6,6 @@ export const buildDatum = (url = 'http://twitter.com/awer2344', playable = false
       name: 'Twitter'
     },
     type: type,
-    playable: playable,
     createdAt: new Date().toString(),
     media: [
       {
@@ -19,7 +18,7 @@ export const buildDatum = (url = 'http://twitter.com/awer2344', playable = false
     ]
   }
 
-  if (type != 'media') {
+  if (type === 'text') {
     delete datum.media
   }
   return datum
