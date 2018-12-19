@@ -1,6 +1,7 @@
 import lodash from 'lodash';
 import qs from 'qs';
 import twemoji from 'twemoji';
+import { getCtagsConfig } from './config/ConfigLoader';
 
 const urlRegexp = /(?:https?|ftp):\/\/[\n\S]+/g;
 
@@ -13,6 +14,14 @@ export function queryString(queryStringDefaults = {}) {
 
   queryStringDefaults.ctag = DEFAULT_CTAG;
   const queryStringParsed = qs.parse(location);
+
+  return lodash.merge(queryStringDefaults, queryStringParsed);
+}
+
+export function getQueryString(location, queryStringDefaults = {}) {
+  let params = location.replace(/\?/, '');
+  queryStringDefaults.ctag = DEFAULT_CTAG;
+  const queryStringParsed = qs.parse(params);
 
   return lodash.merge(queryStringDefaults, queryStringParsed);
 }
@@ -61,4 +70,11 @@ export function removeLinks(text) {
 
 export function handleError(error) {
   console.error(error);
+}
+
+export function getConfig () {
+  const { ctag } = queryString();
+  const allCtagsConfig = getCtagsConfig();
+  const ctagConfig = lodash.merge(allCtagsConfig.default, allCtagsConfig[ctag]);
+  return ctagConfig;
 }

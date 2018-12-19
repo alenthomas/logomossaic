@@ -4,7 +4,8 @@ import lodash from 'lodash';
 import {getTweetStats, getTopTweets, getTopHashtags} from '../../Services.js';
 import StatsView from './StatsView.js';
 import RegularLayout from "./../layout/Regular.js";
-import { handleError } from '../../Helper.js';
+import { handleError, getQueryString } from '../../Helper.js';
+import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -20,16 +21,35 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     const { tweetcounts: componentConfig } = this.props.config;
-    getTweetStats((stats) => {
+    let params = getQueryString(this.props.location.search);
+    getTweetStats(params.ctag, (stats) => {
       this.setState({stats: stats})
     }, handleError)
-    getTopTweets((tweets) => {
+    getTopTweets(params.ctag, (tweets) => {
       let topTweets = tweets || []
       this.setState({tweets: topTweets.slice(0,3)})
     }, handleError)
-    getTopHashtags(componentConfig.filterHashtags, (hashtags = []) => {
+    getTopHashtags(params.ctag, componentConfig.filterHashtags, (hashtags = []) => {
       this.setState({hashtags: hashtags.slice(0,3)})
     }, handleError)
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      const { tweetcounts: componentConfig } = this.props.config;
+      let params = getQueryString(this.props.location.search);
+      getTweetStats(params.ctag, (stats) => {
+        this.setState({stats: stats})
+      }, handleError)
+      getTopTweets(params.ctag, (tweets) => {
+        let topTweets = tweets || []
+        this.setState({tweets: topTweets.slice(0,3)})
+      }, handleError)
+      getTopHashtags(params.ctag, componentConfig.filterHashtags, (hashtags = []) => {
+        this.setState({hashtags: hashtags.slice(0,3)})
+      }, handleError)
+    }
   }
 
   isReady() {
