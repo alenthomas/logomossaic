@@ -5,7 +5,7 @@ import Ticker from './Ticker.js';
 import Feed from '../../dataservices/Feed.js';
 
 import './Ticker.css';
-import { handleError } from '../../Helper.js';
+import { handleError, getQs } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
 export default class IndexComponent extends Component {
@@ -17,14 +17,23 @@ export default class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    pollTextTweets(this.loadData.bind(this), handleError);
+    let params = getQs(this.props.location.search);
+    pollTextTweets(params, this.loadData, handleError);
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      let params = getQs(this.props.location.search);
+      pollTextTweets(params, this.loadData, handleError);
+    }
   }
 
   componentWillUnmount() {
     timeoutCollection.removeAll();
   }
 
-  loadData(feed) {
+  loadData = (feed) => {
     this.setState({feed: feed})
   }
 

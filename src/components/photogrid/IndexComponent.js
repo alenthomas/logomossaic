@@ -1,13 +1,13 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
-import {handleError} from '../../Helper';
+import { handleError, getQs } from '../../Helper';
 
 import PhotoGrid from "./PhotoGrid.js";
 import RegularLayout from "./../layout/Regular.js";
 
 import './PhotoGrid.css';
 
-import {watchPhotos} from '../../Services.js';
+import { watchPhotos } from '../../Services.js';
 import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
@@ -20,7 +20,16 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchPhotos(this.loadData, handleError);
+    let params = getQs(this.props.location.search);
+    watchPhotos(params, this.loadData, handleError);
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      let params = getQs(this.props.location.search);
+      watchPhotos(params, this.loadData, handleError);
+    }
   }
 
   componentWillUnmount() {

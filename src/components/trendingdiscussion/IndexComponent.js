@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import WordCloud from 'react-d3-cloud';
 
 import { watchWordcloud } from '../../Services.js'
-import { handleError } from '../../Helper';
+import { handleError, getQs } from '../../Helper';
 import RegularLayout from "./../layout/Regular.js";
 import { timeoutCollection } from 'time-events-manager';
 
@@ -28,7 +28,16 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchWordcloud(this.loadData, handleError);
+    let params = getQs(this.props.location.search);
+    watchWordcloud(params, this.loadData, handleError);
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      let params = getQs(this.props.location.search);
+      watchWordcloud(params, this.loadData, handleError);
+    }
   }
 
   componentWillUnmount() {

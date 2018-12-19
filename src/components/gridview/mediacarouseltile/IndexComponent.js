@@ -5,7 +5,7 @@ import {watchFeatured} from './../../../Services.js';
 import TweetCard from './../../mediacarousel/TweetCard.js';
 
 import './MediaCarouselTile.css';
-import { handleError } from '../../../Helper.js';
+import { handleError, getQs } from '../../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
 const HIDE_INTERVAL = 9000;
@@ -22,13 +22,22 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchFeatured(this.loadData, handleError)
+    let params = getQs(this.props.location.search);
+    watchFeatured(params, this.loadData, handleError)
     this.props.markReady({'MediaCarouselTile': false});
   }
 
   componentDidMount() {
     this.hideTimer = setInterval(this.loadNext, HIDE_INTERVAL);
     // window.loadNext = this.loadNext;
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      let params = getQs(this.props.location.search);
+      watchFeatured(params, this.loadData, handleError);
+    }
   }
 
   componentWillUnmount() {

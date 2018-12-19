@@ -5,7 +5,7 @@ import { watchSocial } from '../../Services.js'
 import MarqueeBlue from './MarqueeBlue.js';
 
 import './MarqueeBlue.css';
-import { handleError } from '../../Helper.js';
+import { handleError, getQs } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
@@ -23,7 +23,16 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchSocial(this.loadData, handleError);
+    let params = getQs(this.props.location.search);
+    watchSocial(params, this.loadData, handleError);
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      let params = getQs(this.props.location.search);
+      watchSocial(params, this.loadData, handleError);
+    }
   }
 
   componentDidMount() {

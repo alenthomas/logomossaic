@@ -18,6 +18,14 @@ export function queryString(queryStringDefaults = {}) {
   return lodash.merge(queryStringDefaults, queryStringParsed);
 }
 
+export function getQs(location, queryStringDefaults = {}) {
+  let params = location.replace(/\?/, '');
+  queryStringDefaults.ctag = DEFAULT_CTAG;
+  const queryStringParsed = qs.parse(params);
+
+  return lodash.merge(queryStringDefaults, queryStringParsed);
+}
+
 export function getGroupBy() {
   const { groupBy } = queryString();
   return groupBy || DEFAULT_GROUP_BY;
