@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Carousel from './Carousel.js';
 import RegularLayout from "./../layout/Regular.js";
 import { pollFeatured } from '../../Services.js';
-import { queryString, handleError } from '../../Helper.js';
+import { queryString, handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
 import './MediaCarousel.css';
@@ -18,14 +18,23 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    pollFeatured(this.loadData.bind(this), handleError);
+    let params = getQueryString(this.props.location.search);
+    pollFeatured(params.ctag, params.filter, this.loadData, handleError);
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      let params = getQueryString(this.props.location.search);
+      pollFeatured(params.ctag, params.filter, this.loadData, handleError);
+    }
   }
 
   componentWillUnmount() {
     timeoutCollection.removeAll();
   }
 
-  loadData(feed) {
+  loadData = (feed) => {
     this.setState({feed: feed})
   }
 

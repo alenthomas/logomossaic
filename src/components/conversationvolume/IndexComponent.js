@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
 
-import { getGroupBy, handleError } from '../../Helper.js'
+import { getGroupBy, handleError, getQueryString } from '../../Helper.js'
 import { watchVolume } from '../../Services.js';
 
 import VolumeOfConversationChart from "./VolumeOfConversationChart.js";
@@ -28,15 +28,20 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    watchVolume(this.loadData, handleError);
+    let params = getQueryString(this.props.location.search);
+    watchVolume(params.ctag, params.filter, this.loadData, handleError);
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      let params = getQueryString(this.props.location.search);
+      watchVolume(params.ctag, params.filter, this.loadData, handleError);
+    }
   }
 
   componentWillUnmount() {
     timeoutCollection.removeAll();
-  }
-
-  componentWillReceiveProps() {
-    watchVolume(this.loadData, handleError);
   }
 
   render() {

@@ -30,21 +30,21 @@ class App extends Component {
     return (
       <Router>
         <div className="app-container">
-          <Route path="/leaderboard" render={() => <Leaderboard config={getConfig()}  />}/>
-          <Route path="/volume" render={() => <VolumeOfConversation config={getConfig()} />}/>
-          <Route path="/trending" render={() => <TrendingDiscussion config={getConfig()} />}/>
-          <Route path="/carousel" render={() => <MediaCarousel config={getConfig()} />}/>
-          <Route path="/photogrid" render={() => <PhotoGrid config={getConfig()} />}/>
-          <Route path="/photogridFill" render={() => <PhotoGrid objectFit="fill" config={getConfig()} />}/>
-          <Route path="/hstream" render={() => <HorizontalStream config={getConfig()} />}/>
-          <Route path="/mstream" render={() => <MasonaryStream config={getConfig()} />}/>
-          <Route path="/marquee" render={() => <Marquee config={getConfig()}/>}/>
-          <Route path="/marqueeBlue" render={() => <MarqueeBlue config={getConfig()} />}/>
-          <Route path="/capsule" render={() => <Capsule config={getConfig()} />}/>
-          <Route path="/gridview" render={() => <GridView config={getConfig()} />} />
-          <Route path="/photowall" render={() => <PhotoWall config={getConfig()} />} />
-          <Route path="/counter" render={() => <StatsView config={getConfig()} />} />
-          <Route path="/ticker" render={() => <Ticker config={getConfig()} />} />
+          <Route path="/leaderboard" render={(props) => <Leaderboard config={getConfig()} {...props} />}/>
+          <Route path="/volume" render={(props) => <VolumeOfConversation config={getConfig()} {...props} />}/>
+          <Route path="/trending" render={(props) => <TrendingDiscussion config={getConfig()} {...props} />}/>
+          <Route path="/carousel" render={(props) => <MediaCarousel config={getConfig()} {...props} />}/>
+          <Route path="/photogrid" render={(props) => <PhotoGrid config={getConfig()} {...props} />}/>
+          <Route path="/photogridFill" render={(props) => <PhotoGrid objectFit="fill" config={getConfig()} {...props} />}/>
+          <Route path="/hstream" render={(props) => <HorizontalStream config={getConfig()} {...props} />}/>
+          <Route path="/mstream" render={(props) => <MasonaryStream config={getConfig()} {...props} />}/>
+          <Route path="/marquee" render={(props) => <Marquee config={getConfig()} {...props} />}/>
+          <Route path="/marqueeBlue" render={(props) => <MarqueeBlue config={getConfig()} {...props} />}/>
+          <Route path="/capsule" render={(props) => <Capsule config={getConfig()} {...props} />}/>
+          <Route path="/gridview" render={(props) => <GridView config={getConfig()} {...props} />} />
+          <Route path="/photowall" render={(props) => <PhotoWall config={getConfig()} {...props} />} />
+          <Route path="/counter" render={(props) => <StatsView config={getConfig()} {...props} />} />
+          <Route path="/ticker" render={(props) => <Ticker config={getConfig()} {...props} />} />
         </div>
       </Router>
     );

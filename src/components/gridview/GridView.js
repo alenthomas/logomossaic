@@ -32,16 +32,16 @@ class GridView extends Component {
       <ThreeColumnLayout isReady={this.isReady()} config={config}>
           <div className="row">
             <div className="col-sm-12 col-md-4 left-column" style={{height: '85vh'}}>
-              <PhotoGridTile markReady={this.markReady} config={config} />
+              <PhotoGridTile markReady={this.markReady} {...this.props} />
             </div>
             <div className="col-sm-12 col-md-4 center-column">
-              <MediaCarouselTile markReady={this.markReady} />
+              <MediaCarouselTile markReady={this.markReady} {...this.props} />
             </div>
             <div className="col-sm-12 col-md-4 right-column" style={{height: '85vh'}}>
-              <LeaderboardTile markReady={this.markReady} config={config} />
+              <LeaderboardTile markReady={this.markReady} {...this.props} />
             </div>
           </div>
-      </ThreeColumnLayout>
+       </ThreeColumnLayout>
     );
   }
 }
