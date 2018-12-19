@@ -5,7 +5,7 @@ import {watchPhotos} from './../../../Services.js';
 import TileComponent from '../tile/TileComponent.js';
 
 import './PhotoGridTile.css';
-import { handleError, getQs } from '../../../Helper.js';
+import { handleError, getQueryString } from '../../../Helper.js';
 import { timeoutCollection } from 'time-events-manager'
 
 class IndexComponent extends Component {
@@ -19,16 +19,16 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    let params = getQs(this.props.location.search);
-    watchPhotos(params, this.loadData, handleError)
+    let params = getQueryString(this.props.location.search);
+    watchPhotos(params.ctag, params.filter, this.loadData, handleError)
     this.props.markReady({'PhotoGridTile': false});
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      let params = getQs(this.props.location.search);
-      watchPhotos(params, this.loadData, handleError);
+      let params = getQueryString(this.props.location.search);
+      watchPhotos(params.ctag, params.filter, this.loadData, handleError);
     }
   }
 

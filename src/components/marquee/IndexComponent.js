@@ -5,7 +5,7 @@ import { watchSocial } from '../../Services.js'
 import MarqueeStream from './Marquee.js';
 
 import './Marquee.css';
-import { handleError, getQs } from '../../Helper.js';
+import { handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
@@ -23,15 +23,15 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    let params = getQs(this.props.location.search);
-    watchSocial(params, this.loadData, handleError);
+    let params = getQueryString(this.props.location.search);
+    watchSocial(params.ctag, params.filter, this.loadData, handleError);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      let params = getQs(this.props.location.search);
-      watchSocial(params, this.loadData, handleError);
+      let params = getQueryString(this.props.location.search);
+      watchSocial(params.ctag, params.filter, this.loadData, handleError);
     }
   }
 

@@ -17,12 +17,6 @@ const FAILURE_RETRY_RATE = 2000;
 
 let get = (url, success, failure) => {
   return fetch(protoRelativeUrl(url))
-  .then((response) => {
-    if(response.status === 200) {
-      return response;
-    }
-    throw new Error(`${response.status} ${response.statusText}`);
-  })
   .then((response) => response.text().then((text) => text ? JSON.parse(text) : []))
   .then(
     payload => success(payload),
@@ -47,17 +41,14 @@ let poll = (url, success, failure, refreshRate = REFRESH_RATE) => {
   get(url, successHandler, failureHandler);
 }
 
-export const watchLeaderboardInfo = ({ctag, filter}, success, failure) => {
+export const watchLeaderboardInfo = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter});
   poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure);
 }
 
-// export const watchTrendingWords = (success, failure) => {
-//   poll(`${BASE_URL}wordcloud?${getParams()}`, success, failure);
-// }
 
 // Depricated: Use pollPhotos instead
-export const watchPhotos = ({ctag, filter}, success, failure) => {
+export const watchPhotos = (ctag, filter, success, failure) => {
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   let massage = (payload) => {
@@ -72,7 +63,7 @@ export const watchPhotos = ({ctag, filter}, success, failure) => {
 }
 
 let photosFeed = new Feed();
-export const pollPhotos = ({ctag, filter}, success, failure) => {
+export const pollPhotos = (ctag, filter, success, failure) => {
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   poll(url, (data) => {
@@ -85,7 +76,7 @@ export const pollPhotos = ({ctag, filter}, success, failure) => {
   }, failure)
 }
 
-export const getPhotos = ({ctag, filter}, success, failure) => {
+export const getPhotos = (ctag, filter, success, failure) => {
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   get(url, (data) => {
@@ -97,7 +88,7 @@ export const getPhotos = ({ctag, filter}, success, failure) => {
   }, failure);
 }
 
-export const getLatestPhotos = ({ctag, filter, topicId}, success, failure) => {
+export const getLatestPhotos = (ctag, filter, topicId, success, failure) => {
   const allCtagsConfig = getCtagsConfig();
   const ctagConfig = allCtagsConfig[ctag];
   if(ctagConfig.sprinklrApi) {
@@ -107,19 +98,19 @@ export const getLatestPhotos = ({ctag, filter, topicId}, success, failure) => {
       success(photoObjects);
     })
   } else {
-    getPhotos({ctag, filter}, success, failure);
+    getPhotos(ctag, filter, success, failure);
   }
 }
 
 // Depricated: Use pollFeatured instead
-export const watchFeatured = ({ctag, filter}, success, failure) => {
+export const watchFeatured = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter});
   let url = `${PHOTO_URL}social?${urlParams}`
   poll(url, success, failure);
 }
 
 let featuredFeed = new Feed();
-export const pollFeatured = ({ctag, filter}, success, failure) => {
+export const pollFeatured = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
@@ -131,24 +122,19 @@ export const pollFeatured = ({ctag, filter}, success, failure) => {
   }, failure)
 }
 
-// export const watchTweetCount = (success, failure) => {
-//   let url = `${BASE_URL}tweetcounter?${getParams()}`
-//   poll(url, success, failure);
-// }
-
-export const watchVolume = ({ctag, filter}, success, failure) => {
+export const watchVolume = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter, groupBy: getGroupBy()})
   let url = `${BASE_URL}volume?${urlParams}`
   poll(url, success, failure, REFRESH_RATE*3)
 }
 
-export const watchSocial = ({ctag, filter}, success, failure) => {
+export const watchSocial = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter});
   poll(`${PHOTO_URL}social?${urlParams}`, success, failure, REFRESH_RATE*5);
 }
 
 let TextTweetsFeed = new Feed();
-export const pollTextTweets = ({ctag, filter}, success, failure) => {
+export const pollTextTweets = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
@@ -161,29 +147,29 @@ export const pollTextTweets = ({ctag, filter}, success, failure) => {
   }, failure)
 }
 
-export const watchLeaderboard = ({ctag, filter}, success, failure) => {
+export const watchLeaderboard = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter});
   poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, REFRESH_RATE*2);
 }
 
-export const watchWordcloud = ({ctag, filter}, success, failure) => {
+export const watchWordcloud = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter});
   poll(`${BASE_URL}wordcloud?${urlParams}`, success, failure, REFRESH_RATE*5);
 }
 
-export const getTweetStats = ({ctag}, success, failure) => {
+export const getTweetStats = (ctag, success, failure) => {
   let statParams = qs.stringify({ctag});
   let url = `${PHOTO_URL}social/aggregates?${statParams}`;
   get(url, success, failure);
 }
 
-export const getTopTweets = ({ctag}, success, failure) => {
+export const getTopTweets = (ctag, success, failure) => {
   let urlParams = qs.stringify({ctag, filter: 'top'}),
       url = `${PHOTO_URL}social?${urlParams}`;
   get(url, success, failure);
 }
 
-export const getTopHashtags = ({ctag}, filterHashtags = [], success, failure) => {
+export const getTopHashtags = (ctag, filterHashtags = [], success, failure) => {
   let urlParams = qs.stringify({ctag}),
       url = `${BASE_URL}hashtags?${urlParams}`;
   get(url, (result) => {

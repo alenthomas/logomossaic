@@ -18,7 +18,7 @@ export function queryString(queryStringDefaults = {}) {
   return lodash.merge(queryStringDefaults, queryStringParsed);
 }
 
-export function getQs(location, queryStringDefaults = {}) {
+export function getQueryString(location, queryStringDefaults = {}) {
   let params = location.replace(/\?/, '');
   queryStringDefaults.ctag = DEFAULT_CTAG;
   const queryStringParsed = qs.parse(params);
@@ -77,10 +77,4 @@ export function getConfig () {
   const allCtagsConfig = getCtagsConfig();
   const ctagConfig = lodash.merge(allCtagsConfig.default, allCtagsConfig[ctag]);
   return ctagConfig;
-}
-
-export function getParams() {
-  const { ctag, filter, limit } = queryString();
-  const params = qs.stringify({ctag, filter, limit});
-  return params;
 }

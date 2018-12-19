@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
 
-import {generateGrid, handleError, getQs} from '../../Helper.js';
+import {generateGrid, handleError, getQueryString} from '../../Helper.js';
 import PhotoWall from "./PhotoWall.js";
 import RegularLayout from "./../layout/Regular.js";
 import {getLatestPhotos} from '../../Services.js';
@@ -21,8 +21,8 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    let params = getQs(this.props.location.search);
-    getLatestPhotos(params, (photos) => {
+    let params = getQueryString(this.props.location.search);
+    getLatestPhotos(params.ctag, params.filter, params.topicId, (photos) => {
       let grid = generateGrid(photos, TILE_SIZE.DEFAULT.WIDTH, TILE_SIZE.DEFAULT.HEIGHT);
       this.setState({photosGrid: grid});
     }, handleError);
@@ -31,8 +31,8 @@ class IndexComponent extends Component {
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      let params = getQs(this.props.location.search);
-      getLatestPhotos(params, (photos) => {
+      let params = getQueryString(this.props.location.search);
+      getLatestPhotos(params.ctag, params.filter, params.topicId, (photos) => {
         let grid = generateGrid(photos, TILE_SIZE.DEFAULT.WIDTH, TILE_SIZE.DEFAULT.HEIGHT);
         this.setState({photosGrid: grid});
       }, handleError);

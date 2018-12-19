@@ -4,7 +4,7 @@ import lodash from 'lodash';
 import {getTweetStats, getTopTweets, getTopHashtags} from '../../Services.js';
 import StatsView from './StatsView.js';
 import RegularLayout from "./../layout/Regular.js";
-import { handleError, getQs } from '../../Helper.js';
+import { handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
 class IndexComponent extends Component {
@@ -21,15 +21,15 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     const { tweetcounts: componentConfig } = this.props.config;
-    let params = getQs(this.props.location.search);
-    getTweetStats(params, (stats) => {
+    let params = getQueryString(this.props.location.search);
+    getTweetStats(params.ctag, (stats) => {
       this.setState({stats: stats})
     }, handleError)
-    getTopTweets(params, (tweets) => {
+    getTopTweets(params.ctag, (tweets) => {
       let topTweets = tweets || []
       this.setState({tweets: topTweets.slice(0,3)})
     }, handleError)
-    getTopHashtags(params, componentConfig.filterHashtags, (hashtags = []) => {
+    getTopHashtags(params.ctag, componentConfig.filterHashtags, (hashtags = []) => {
       this.setState({hashtags: hashtags.slice(0,3)})
     }, handleError)
   }
@@ -38,15 +38,15 @@ class IndexComponent extends Component {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
       const { tweetcounts: componentConfig } = this.props.config;
-      let params = getQs(this.props.location.search);
-      getTweetStats(params, (stats) => {
+      let params = getQueryString(this.props.location.search);
+      getTweetStats(params.ctag, (stats) => {
         this.setState({stats: stats})
       }, handleError)
-      getTopTweets(params, (tweets) => {
+      getTopTweets(params.ctag, (tweets) => {
         let topTweets = tweets || []
         this.setState({tweets: topTweets.slice(0,3)})
       }, handleError)
-      getTopHashtags(params, componentConfig.filterHashtags, (hashtags = []) => {
+      getTopHashtags(params.ctag, componentConfig.filterHashtags, (hashtags = []) => {
         this.setState({hashtags: hashtags.slice(0,3)})
       }, handleError)
     }

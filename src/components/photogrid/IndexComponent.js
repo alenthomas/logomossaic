@@ -1,6 +1,6 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
-import { handleError, getQs } from '../../Helper';
+import { handleError, getQueryString } from '../../Helper';
 
 import PhotoGrid from "./PhotoGrid.js";
 import RegularLayout from "./../layout/Regular.js";
@@ -20,15 +20,15 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    let params = getQs(this.props.location.search);
-    watchPhotos(params, this.loadData, handleError);
+    let params = getQueryString(this.props.location.search);
+    watchPhotos(params.ctag, params.filter, this.loadData, handleError);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      let params = getQs(this.props.location.search);
-      watchPhotos(params, this.loadData, handleError);
+      let params = getQueryString(this.props.location.search);
+      watchPhotos(params.ctag, params.filter, this.loadData, handleError);
     }
   }
 
