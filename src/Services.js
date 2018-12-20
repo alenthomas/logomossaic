@@ -49,11 +49,11 @@ export const watchLeaderboardInfo = (ctag, filter, success, failure) => {
 
 // Depricated: Use pollPhotos instead
 export const watchPhotos = (ctag, filter, success, failure) => {
-  let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
+  let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   let massage = (payload) => {
     let photos = lodash(payload)
-      .filter("content.sections[0].embed.media")
+      .filter("media")
       .map((datum) => new Photo(datum).transform())
       .filter("photoSize")
       .value();
@@ -64,7 +64,7 @@ export const watchPhotos = (ctag, filter, success, failure) => {
 
 let photosFeed = new Feed();
 export const pollPhotos = (ctag, filter, success, failure) => {
-  let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
+  let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   poll(url, (data) => {
     removeBrokenMedia(data, (cleansedData) => {
@@ -77,7 +77,7 @@ export const pollPhotos = (ctag, filter, success, failure) => {
 }
 
 export const getPhotos = (ctag, filter, success, failure) => {
-  let photoParams = qs.stringify({ctag, filter, contentType: 'photo'})
+  let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   get(url, (data) => {
     removeBrokenMedia(data, (cleansedData) => {
@@ -104,14 +104,14 @@ export const getLatestPhotos = (ctag, filter, topicId, success, failure) => {
 
 // Depricated: Use pollFeatured instead
 export const watchFeatured = (ctag, filter, success, failure) => {
-  let urlParams = qs.stringify({ctag, filter});
+  let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`
   poll(url, success, failure);
 }
 
 let featuredFeed = new Feed();
 export const pollFeatured = (ctag, filter, success, failure) => {
-  let urlParams = qs.stringify({ctag, filter});
+  let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
     removeBrokenMedia(data, (cleansedData) => {
@@ -129,18 +129,17 @@ export const watchVolume = (ctag, filter, success, failure) => {
 }
 
 export const watchSocial = (ctag, filter, success, failure) => {
-  let urlParams = qs.stringify({ctag, filter});
+  let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   poll(`${PHOTO_URL}social?${urlParams}`, success, failure, REFRESH_RATE*5);
 }
 
 let TextTweetsFeed = new Feed();
 export const pollTextTweets = (ctag, filter, success, failure) => {
-  let urlParams = qs.stringify({ctag, filter});
+  let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
-    let textTweets = lodash.filter(data, d => {
-      let embed = lodash.get(d, 'content.sections[0].embed');
-      return embed && embed.type !== 'media';
+    let textTweets = lodash.filter(data, embed => {
+      return embed && embed.type === 'text';
     });
     TextTweetsFeed.load(textTweets);
     success(TextTweetsFeed);
@@ -164,7 +163,7 @@ export const getTweetStats = (ctag, success, failure) => {
 }
 
 export const getTopTweets = (ctag, success, failure) => {
-  let urlParams = qs.stringify({ctag, filter: 'top'}),
+  let urlParams = qs.stringify({ctag, filter: 'top', format: 'flat'}),
       url = `${PHOTO_URL}social?${urlParams}`;
   get(url, success, failure);
 }

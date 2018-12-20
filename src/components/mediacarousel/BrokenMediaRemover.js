@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import lodash from 'lodash';
 
 function isNonMediaData(datum) {
-  return datum.content.sections[0].embed.type !== 'media';
+  return datum.type === 'text';
 }
 
 function createInvestigations(data) {
@@ -104,7 +104,7 @@ export default class BrokenMediaRemover extends Component {
   investigate() {
     if(!lodash.every(this.state.investigations, 'completed')) {
       this.nonInvestigatedData().forEach((d) => {
-        let src = d.content.sections[0].embed.media[0].url;
+        let src = d.media[0].url;
 
         fetch(src, { method: 'HEAD' })
           .then(() => this.markBrokeness(d.id, false))

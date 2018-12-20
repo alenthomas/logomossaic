@@ -23,7 +23,7 @@ class IndexComponent extends Component {
   }
 
   loadData = (data) => {
-    let filtered = data.filter((d) => d.source.type === 'twitter' || d.source.type === 'instagram');
+    let filtered = data.filter((d) => d.source.name === 'Twitter' || d.source.name === 'Instagram');
     lodash.remove(data, hasVideoMedia);
     this.setState({data: filtered});
   }

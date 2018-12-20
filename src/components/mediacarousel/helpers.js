@@ -5,8 +5,7 @@ import Photo from '../../models/Photo.js';
 const urlRegexp = /(?:https?|ftp):\/\/[\n\S]+/g;
 
 export function findCardType(data) {
-  let embed = lodash.get(data, 'content.sections[0].embed');
-  if(embed && embed.type !== 'media') {
+  if(data && data.type === 'text') {
     return 'text';
   }
 
@@ -15,12 +14,12 @@ export function findCardType(data) {
 };
 
 export function hasVideoMedia(data) {
-  return lodash.get(data, 'content.sections[0].embed.playable', false);
+  return data.type === "video";
 }
 
 
 export function getMediaUrl(embed) {
-  if(embed.type === "media") {
+  if(embed.type !== "text") {
     return embed.media[0].url;
   }
 
@@ -38,7 +37,7 @@ export function getThumbNailUrl(embed) {
 }
 
 export function getCreatedAt(data) {
-  return new Date(Date.parse(lodash.get(data, 'content.sections[0].embed.createdAt')));
+  return new Date(Date.parse(lodash.get(data, 'createdAt')));
 }
 
 //https://stackoverflow.com/questions/17633462/format-a-javascript-number-with-a-metric-prefix-like-1-5k-1m-1g-etc

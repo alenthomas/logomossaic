@@ -15,13 +15,13 @@ export const ALL_SIZES = [POTRAIT_SIZE, LANDSCAPE_SIZE];
 class Photo {
   constructor(datum) {
     this.raw = datum;
-    this.embed = datum.content.sections[0].embed;
-    this.sizes = this.embed.media[0].sizes;
+    this.data = datum;
+    this.sizes = this.data.media[0].sizes;
     this.fullSize = this.sizes.full;
   }
 
   getId() {
-    return this.embed.id;
+    return this.data.id;
   }
 
   getFullSize() {
@@ -35,11 +35,11 @@ class Photo {
   }
 
   getPhotoUrl() {
-    return this.embed.media[0].url;
+    return this.data.media[0].url;
   }
 
   getThumbnailUrl() {
-    return this.embed.media[0].thumbUrl;
+    return this.data.media[0].thumbUrl;
   }
 
   getPhotoSize() {
@@ -61,23 +61,23 @@ class Photo {
   }
 
   getCreatedAt() {
-    return this.embed.createdAt;
+    return this.data.createdAt;
   }
 
   getText() {
-    return removeLinks(this.embed.text);
+    return removeLinks(this.data.text);
   }
 
   getAuthorName() {
-    return this.embed.author.name || "";
+    return this.data.author.name || "";
   }
 
   getAuthorHandle() {
-    return `@${this.embed.author.alias}` || "";
+    return `@${this.data.author.alias}` || "";
   }
 
   getAuthorPhoto() {
-    return this.embed.author.photo;
+    return this.data.author.photo;
   }
 
   transform() {

@@ -40,6 +40,10 @@ class RioLayout extends Component {
     }
   }
 
+  isReady() {
+    return this.state.isReady && this.props.isReady;
+  }
+
   render() {
     const { loadingMedia } = this.state;
     const { config } = this.props;
@@ -50,7 +54,8 @@ class RioLayout extends Component {
            style={{background: config.background}}
            id={this.props.id}>
 
-        <LoaderCard isReady={this.state.isReady && this.props.isReady} loadingMedia={loadingMedia} onLoadingVidEnded={this.onLoadingVidEnded} />;
+
+        {!this.isReady() && <LoaderCard isReady={this.isReady()} loadingMedia={loadingMedia} onLoadingVidEnded={this.onLoadingVidEnded} />};
 
         {this.header()}
 

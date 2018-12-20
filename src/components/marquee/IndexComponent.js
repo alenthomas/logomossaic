@@ -18,7 +18,7 @@ class IndexComponent extends Component {
   }
 
   loadData = (data) => {
-    let filtered = data.filter((d) => d.source.type === 'twitter');
+    let filtered = data.filter((d) => d.source.name === 'Twitter');
     this.setState({data: filtered});
   }
 
