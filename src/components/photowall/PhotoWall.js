@@ -30,11 +30,12 @@ class PhotoWall extends Component {
 
   zoomIn() {
     let maxTiles = this.props.photosGrid.length;
+    let cardDisplayTime = this.props.componentConfig.cardDisplayTime;
     this.setState({
       zoomedInTile: getRandomInt(0, maxTiles-1),
       showBackgroundCaption: true
     })
-    setTimeout(this.zoomOut.bind(this), 8000)
+    setTimeout(this.zoomOut.bind(this), cardDisplayTime || 8000)
   }
 
   zoomOut() {

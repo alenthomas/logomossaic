@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import Carousel, {CARD_SWAP_OFFSET} from '../Carousel.js';
 import Feed from '../../../dataservices/Feed.js';
 import {buildDatum} from '../../../TestHelpers.js';
+import { default as devCtags } from '../../../config/DevCtags.js';
 
 test('should remove tile marked for delete from the tiles list', () => {
   let feed = new Feed();
@@ -12,10 +13,12 @@ test('should remove tile marked for delete from the tiles list', () => {
       tweet3 = buildDatum(),
       tweetToBeDeleted = buildDatum();
   let data = [tweet1, tweetToBeDeleted, tweet2, tweet3];
+  const { mediacarousel: componentConfig } = devCtags.default;
+
   feed.load(data);
 
   const rndr = renderer.create(
-    <Carousel feed={feed}/>
+    <Carousel feed={feed} componentConfig={componentConfig}/>
   )
   const carousel = rndr.getInstance();
   expect(carousel.state.currentCards.length).toBe(4);

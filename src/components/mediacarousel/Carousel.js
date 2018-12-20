@@ -40,7 +40,8 @@ export default class Carousel extends Component {
   }
 
   componentDidMount() {
-    this.rotateTimer = setInterval(this.rotate.bind(this), ROTATE_INTERVAL);
+    let componentConfig = this.props.componentConfig;
+    this.rotateTimer = setInterval(this.rotate.bind(this), componentConfig.cardDisplayTime || ROTATE_INTERVAL);
     window.rotate = this.rotate.bind(this); // To debug, enable this line and control rotation manually
   }
 
@@ -49,8 +50,9 @@ export default class Carousel extends Component {
   }
 
   calculateSides() {
+    let componentConfig = this.props.componentConfig;
     let allData = this.props.feed.getAll();
-    return (this.props.type === "cube") ?  Math.min(allData.length, 4) : Math.min(allData.length, 16);
+    return (this.props.type === "cube") ?  Math.min(allData.length, componentConfig.sides || 4) : Math.min(allData.length, componentConfig.sides || 16);
   }
 
   computeTransformations(sides) {

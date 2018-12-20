@@ -54,7 +54,7 @@ class IndexComponent extends Component {
         hideBgWave={componentConfig.hideBgWave}>
 
         <div className="dashboard-content">
-          <Carousel key={this.state.feed.getAll().count} feed={this.state.feed} type={type}/>
+          <Carousel key={this.state.feed.getAll().count} feed={this.state.feed} type={type} componentConfig={componentConfig}/>
         </div>
 
       </RegularLayout>
