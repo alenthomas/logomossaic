@@ -138,8 +138,7 @@ export const pollTextTweets = (ctag, filter, success, failure) => {
   let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
-    let textTweets = lodash.filter(data, d => {
-      let embed = d;
+    let textTweets = lodash.filter(data, embed => {
       return embed && embed.type === 'text';
     });
     TextTweetsFeed.load(textTweets);

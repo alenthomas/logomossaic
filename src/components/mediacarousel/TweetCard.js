@@ -19,16 +19,15 @@ class TweetCard extends Component {
 
   render() {
     const { data, className } = this.props;
-    let embed = data
     let cardType = findCardType(data);
 
     return <div className={classNames("tweet-card", className)}
                 style={this.props.style || {}}>
-      <TweetCardTopSection embed={embed} />
-      <TweetCardMiddleSection embed={embed}
+      <TweetCardTopSection embed={data} />
+      <TweetCardMiddleSection embed={data}
         dataId={data.id}
         className={cardType} />
-      <TweetCardBottomSection embed={embed} source={data.source} />
+      <TweetCardBottomSection embed={data} source={data.source} />
     </div>;
   }
 }

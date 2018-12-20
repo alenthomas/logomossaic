@@ -15,7 +15,6 @@ export default class Tweet extends Component {
 
   render() {
     const { tweet, scroll } = this.props;
-    const embed = tweet;
     let width = this.getWidth();
     let style = {
       left: scroll ? `-${width}px` : "100%",
@@ -24,10 +23,10 @@ export default class Tweet extends Component {
 
     return <div ref='tweet' className='tweet' style={style}>
       <div className='tweet-content'>
-        <TwitterAvatar image={embed.author.photo} />
-        <div className='handle'>@{embed.author.alias}</div>
-        <ParsedText className='text' data={embed.text} />
-        <div className='timeago'>{twitterTimeAgo(new Date(Date.parse(embed.createdAt)))} ago</div>
+        <TwitterAvatar image={tweet.author.photo} />
+        <div className='handle'>@{tweet.author.alias}</div>
+        <ParsedText className='text' data={tweet.text} />
+        <div className='timeago'>{twitterTimeAgo(new Date(Date.parse(tweet.createdAt)))} ago</div>
         <img className="twitter-bird" src="/assets/logo/twitter.svg" alt="Twitter bird"/>
       </div>
     </div>
