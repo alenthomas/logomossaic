@@ -361,10 +361,8 @@ export default {
 
   "xfl.com:context=socialwall": {
     "marquee": {
-      "count": 5,
     },
     "marqueeblue": {
-      "count": 10
     }
   },
 

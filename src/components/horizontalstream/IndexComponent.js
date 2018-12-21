@@ -30,14 +30,14 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     let params = getQueryString(this.props.location.search);
-    watchSocial(params.ctag, params.filter, null, this.loadData, handleError);
+    watchSocial(this.loadData, handleError, params.ctag, params.filter);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
       let params = getQueryString(this.props.location.search);
-      watchSocial(params.ctag, params.filter, null, this.loadData, handleError);
+      watchSocial(this.loadData, handleError, params.ctag, params.filter);
     }
   }
 

@@ -26,7 +26,7 @@ class IndexComponent extends Component {
   componentWillMount() {
     let { marqueeblue } = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchSocial(params.ctag, params.filter, marqueeblue.count || null, this.loadData, handleError);
+    watchSocial(this.loadData, handleError, params.ctag, params.filter, marqueeblue.count);
   }
 
   componentDidUpdate(prevProps) {
@@ -34,7 +34,7 @@ class IndexComponent extends Component {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
       let params = getQueryString(this.props.location.search);
-      watchSocial(params.ctag, params.filter, marqueeblue.count || null, this.loadData, handleError);
+      watchSocial(this.loadData, handleError, params.ctag, params.filter, marqueeblue.count);
     }
   }
 

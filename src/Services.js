@@ -128,7 +128,7 @@ export const watchVolume = (ctag, filter, success, failure) => {
   poll(url, success, failure, REFRESH_RATE*3)
 }
 
-export const watchSocial = (ctag, filter, limit, success, failure) => {
+export const watchSocial = (success, failure, ctag, filter, limit = null) => {
   let urlParams = qs.stringify({ctag, filter, limit, format: 'flat'}, {skipNulls: true});
   poll(`${PHOTO_URL}social?${urlParams}`, success, failure, REFRESH_RATE*5);
 }
