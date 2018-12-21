@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { watchSocial } from '../../Services.js'
 
@@ -23,15 +24,17 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let { marqueeblue } = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchSocial(params.ctag, params.filter, this.loadData, handleError);
+    watchSocial(params.ctag, params.filter, marqueeblue.count || null, this.loadData, handleError);
   }
 
   componentDidUpdate(prevProps) {
+    let { marqueeblue } = this.props.config;
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
       let params = getQueryString(this.props.location.search);
-      watchSocial(params.ctag, params.filter, this.loadData, handleError);
+      watchSocial(params.ctag, params.filter, marqueeblue.count || null, this.loadData, handleError);
     }
   }
 
@@ -49,5 +52,14 @@ class IndexComponent extends Component {
     return <MarqueeBlue data={data} />
   }
 }
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired,
+  }).isRequired,
+  config: PropTypes.shape({
+    marquee: PropTypes.object.isRequired,
+  }).isRequired
+};
 
 export default IndexComponent;
