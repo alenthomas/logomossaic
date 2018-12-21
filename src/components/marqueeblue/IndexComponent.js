@@ -58,7 +58,7 @@ IndexComponent.propTypes = {
     search: PropTypes.string.isRequired,
   }).isRequired,
   config: PropTypes.shape({
-    marquee: PropTypes.object.isRequired,
+    marqueeblue: PropTypes.object.isRequired,
   }).isRequired
 };
 
