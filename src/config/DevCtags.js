@@ -67,6 +67,12 @@ export default {
       "tileBgText": "#CiscoLiveLA",
       "hideBgWave": true,
       "cardDisplayTime": 10
+    },
+    "marquee": {
+      "count": 2,
+    },
+    "marqueeblue": {
+      "count": 2,
     }
   },
 
@@ -352,6 +358,19 @@ export default {
     "tweetcounts": {
       "title": "#CiscoStore Social Stats",
       "hideBgWave": true
+    },
+    "marquee": {
+      "count": 5,
+    },
+    "marqueeblue": {
+      "count": 10,
+    }
+  },
+
+  "xfl.com:context=socialwall": {
+    "marquee": {
+    },
+    "marqueeblue": {
     }
   },
 
