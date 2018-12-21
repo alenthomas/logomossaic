@@ -42,7 +42,7 @@ export default {
     "mediacarousel": {
       "title": "Featured Content",
       "sides": 14,
-      "cardDisplayTime": 2000
+      "cardDisplayTime": 2
     },
     "photogrid": {
       "title": "Photo Grid"
@@ -66,7 +66,7 @@ export default {
       "title": "#CiscoLiveLA",
       "tileBgText": "#CiscoLiveLA",
       "hideBgWave": true,
-      "cardDisplayTime": 10000
+      "cardDisplayTime": 10
     }
   },
 

@@ -41,7 +41,8 @@ export default class Carousel extends Component {
 
   componentDidMount() {
     let componentConfig = this.props.componentConfig;
-    this.rotateTimer = setInterval(this.rotate.bind(this), componentConfig.cardDisplayTime || ROTATE_INTERVAL);
+    let displayTime = componentConfig.cardDisplayTime ? componentConfig.cardDisplayTime * 1000 : null
+    this.rotateTimer = setInterval(this.rotate.bind(this), displayTime || ROTATE_INTERVAL);
     window.rotate = this.rotate.bind(this); // To debug, enable this line and control rotation manually
   }
 
