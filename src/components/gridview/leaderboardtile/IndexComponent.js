@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import lodash from 'lodash';
 import {watchLeaderboardInfo} from './../../../Services.js';
 
@@ -18,16 +19,18 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let {leaderboardtile: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchLeaderboardInfo(params.ctag, params.filter, this.loadData, handleError)
+    watchLeaderboardInfo(this.loadData, handleError, params.ctag, params.filter, refreshrate)
     this.props.markReady({'LeaderboardTile': false});
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let {leaderboardtile: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchLeaderboardInfo(params.ctag, params.filter, this.loadData, handleError);
+      watchLeaderboardInfo(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     }
   }
 
@@ -54,6 +57,18 @@ class IndexComponent extends Component {
       </TileComponent>
     )
   }
+}
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    leaderboardtile: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired,
+  markReady: PropTypes.func.isRequired,
 }
 
 export default IndexComponent;

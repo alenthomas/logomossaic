@@ -41,9 +41,9 @@ let poll = (url, success, failure, refreshRate = REFRESH_RATE) => {
   get(url, successHandler, failureHandler);
 }
 
-export const watchLeaderboardInfo = (ctag, filter, success, failure) => {
+export const watchLeaderboardInfo = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter});
-  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure);
+  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
 
@@ -103,10 +103,10 @@ export const getLatestPhotos = (ctag, filter, topicId, success, failure) => {
 }
 
 // Depricated: Use pollFeatured instead
-export const watchFeatured = (ctag, filter, success, failure) => {
+export const watchFeatured = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`
-  poll(url, success, failure);
+  poll(url, success, failure, refreshRate * 1000);
 }
 
 let featuredFeed = new Feed();

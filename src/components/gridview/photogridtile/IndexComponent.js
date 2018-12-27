@@ -92,6 +92,7 @@ IndexComponent.propTypes = {
     photogridtile: PropTypes.shape({
       refreshrate: PropTypes.number.isRequired
     }).isRequired
-  }).isRequired
+  }).isRequired,
+  markReady: PropTypes.func.isRequired,
 }
 export default IndexComponent;

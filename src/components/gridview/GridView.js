@@ -50,6 +50,8 @@ class GridView extends Component {
 GridView.propTypes = {
   config: PropTypes.shape({
     photogridtile: PropTypes.object.isRequired,
+    mediacarouseltile: PropTypes.object.isRequired,
+    leaderboardtile: PropTypes.object.isRequired,
   }).isRequired
 }
 

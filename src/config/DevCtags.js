@@ -58,9 +58,14 @@ export default {
       "refreshrate": 10,
     },
     "leaderboardtile": {
-      "title": ""
+      "title": "",
+      "refreshrate": 10,
     },
     "photogridtile": {
+      "title": "",
+      "refreshrate": 10,
+    },
+    "mediacarouseltile": {
       "title": "",
       "refreshrate": 10,
     },
