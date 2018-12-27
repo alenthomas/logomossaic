@@ -24,17 +24,17 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    let { marquee } = this.props.config;
+    let { marquee: {count, refreshrate} } = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchSocial(this.loadData, handleError, params.ctag, params.filter, marquee.count);
+    watchSocial(this.loadData, handleError, params.ctag, params.filter, count, refreshrate);
   }
 
   componentDidUpdate(prevProps) {
-    let { marquee } = this.props.config;
+    let { marquee: {count, refreshrate} } = this.props.config;
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
       let params = getQueryString(this.props.location.search);
-      watchSocial(this.loadData, handleError, params.ctag, params.filter, marquee.count);
+      watchSocial(this.loadData, handleError, params.ctag, params.filter, count, refreshrate);
     }
   }
 
@@ -58,7 +58,10 @@ IndexComponent.propTypes = {
     search: PropTypes.string.isRequired,
   }).isRequired,
   config: PropTypes.shape({
-    marquee: PropTypes.object.isRequired,
+    marquee: PropTypes.shape({
+      count: PropTypes.number.isRequired,
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
   }).isRequired
 };
 
