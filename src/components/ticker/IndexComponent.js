@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { pollTextTweets } from '../../Services.js';
 import Ticker from './Ticker.js';
@@ -17,15 +18,17 @@ export default class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let {ticker: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    pollTextTweets(params.ctag, params.filter, this.loadData, handleError);
+    pollTextTweets(this.loadData, handleError, params.ctag, params.filter, refreshrate);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let {ticker: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      pollTextTweets(params.ctag, params.filter, this.loadData, handleError);
+      pollTextTweets(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     }
   }
 
@@ -46,4 +49,15 @@ export default class IndexComponent extends Component {
       <Ticker feed={this.state.feed}/>
     )
   }
+}
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    ticker: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired,
 }

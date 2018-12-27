@@ -89,6 +89,9 @@ export default {
     "marqueeblue": {
       "count": 2,
       "refreshrate": 10,
+    },
+    "ticker": {
+      "refreshrate": 10,
     }
   },
 

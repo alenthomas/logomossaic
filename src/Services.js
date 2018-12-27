@@ -134,7 +134,7 @@ export const watchSocial = (success, failure, ctag, filter, limit = null, refres
 }
 
 let TextTweetsFeed = new Feed();
-export const pollTextTweets = (ctag, filter, success, failure) => {
+export const pollTextTweets = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
@@ -143,7 +143,7 @@ export const pollTextTweets = (ctag, filter, success, failure) => {
     });
     TextTweetsFeed.load(textTweets);
     success(TextTweetsFeed);
-  }, failure)
+  }, failure, refreshRate * 1000);
 }
 
 export const watchLeaderboard = (success, failure, ctag, filter, refreshRate = 5) => {
