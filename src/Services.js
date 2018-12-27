@@ -146,9 +146,9 @@ export const pollTextTweets = (ctag, filter, success, failure) => {
   }, failure)
 }
 
-export const watchLeaderboard = (ctag, filter, success, failure) => {
+export const watchLeaderboard = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter});
-  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, REFRESH_RATE*2);
+  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
 export const watchWordcloud = (ctag, filter, success, failure) => {

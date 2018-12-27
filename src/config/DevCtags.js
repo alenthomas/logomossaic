@@ -35,7 +35,7 @@ export default {
     },
     "leaderboard": {
       "title": "#CiscoLiveLA",
-      "refreshrate": 5
+      "refreshrate": 10,
     },
     "masonarystream": {
       "title": "#CiscoLiveLA"
