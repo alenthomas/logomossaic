@@ -122,10 +122,10 @@ export const pollFeatured = (success, failure, ctag, filter, refreshRate = 5) =>
   }, failure, refreshRate * 1000);
 }
 
-export const watchVolume = (ctag, filter, success, failure) => {
+export const watchVolume = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, groupBy: getGroupBy()})
   let url = `${BASE_URL}volume?${urlParams}`
-  poll(url, success, failure, REFRESH_RATE*3)
+  poll(url, success, failure, refreshRate * 1000);
 }
 
 export const watchSocial = (success, failure, ctag, filter, limit = null) => {

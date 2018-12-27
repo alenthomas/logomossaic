@@ -28,7 +28,8 @@ export default {
       }
     },
     "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" },
+      "refreshrate": 10,
     },
     "horizontalstream": {
       "title": "#CiscoLiveLA"
