@@ -51,7 +51,8 @@ export default {
       "title": "Photo Grid"
     },
     "trendingdiscussion": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "leaderboardtile": {
       "title": ""
