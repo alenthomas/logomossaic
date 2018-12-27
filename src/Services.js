@@ -128,9 +128,9 @@ export const watchVolume = (success, failure, ctag, filter, refreshRate = 5) => 
   poll(url, success, failure, refreshRate * 1000);
 }
 
-export const watchSocial = (success, failure, ctag, filter, limit = null) => {
+export const watchSocial = (success, failure, ctag, filter, limit = null, refreshRate = 25) => {
   let urlParams = qs.stringify({ctag, filter, limit, format: 'flat'}, {skipNulls: true});
-  poll(`${PHOTO_URL}social?${urlParams}`, success, failure, REFRESH_RATE*5);
+  poll(`${PHOTO_URL}social?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
 let TextTweetsFeed = new Feed();

@@ -32,7 +32,8 @@ export default {
       "refreshrate": 10,
     },
     "horizontalstream": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "leaderboard": {
       "title": "#CiscoLiveLA",
