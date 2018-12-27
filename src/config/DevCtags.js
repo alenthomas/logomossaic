@@ -48,7 +48,8 @@ export default {
       "refreshrate": 10,
     },
     "photogrid": {
-      "title": "Photo Grid"
+      "title": "Photo Grid",
+      "refreshrate": 10,
     },
     "trendingdiscussion": {
       "title": "#CiscoLiveLA",
@@ -58,7 +59,8 @@ export default {
       "title": ""
     },
     "photogridtile": {
-      "title": ""
+      "title": "",
+      "refreshrate": 10,
     },
     "trendingcharttile": {
       "title": ""

@@ -1,5 +1,6 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { handleError, getQueryString } from '../../Helper';
 
 import PhotoGrid from "./PhotoGrid.js";
@@ -20,15 +21,17 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let {photogrid: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchPhotos(params.ctag, params.filter, this.loadData, handleError);
+    watchPhotos(this.loadData, handleError, params.ctag, params.filter, refreshrate);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let {photogrid: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchPhotos(params.ctag, params.filter, this.loadData, handleError);
+      watchPhotos(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     }
   }
 
@@ -60,6 +63,18 @@ class IndexComponent extends Component {
       </RegularLayout>
     )
   }
+}
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    photogrid: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired,
+  objectFit: PropTypes.string,
 }
 
 export default IndexComponent;

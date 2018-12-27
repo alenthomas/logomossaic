@@ -48,7 +48,7 @@ export const watchLeaderboardInfo = (ctag, filter, success, failure) => {
 
 
 // Depricated: Use pollPhotos instead
-export const watchPhotos = (ctag, filter, success, failure) => {
+export const watchPhotos = (success, failure, ctag, filter, refreshRate = 5) => {
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   let massage = (payload) => {
@@ -59,7 +59,7 @@ export const watchPhotos = (ctag, filter, success, failure) => {
       .value();
     success(photos);
   }
-  poll(url, massage, failure, REFRESH_RATE*2);
+  poll(url, massage, failure, refreshRate * 1000);
 }
 
 let photosFeed = new Feed();
