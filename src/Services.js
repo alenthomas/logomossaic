@@ -110,7 +110,7 @@ export const watchFeatured = (ctag, filter, success, failure) => {
 }
 
 let featuredFeed = new Feed();
-export const pollFeatured = (ctag, filter, success, failure) => {
+export const pollFeatured = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
@@ -119,7 +119,7 @@ export const pollFeatured = (ctag, filter, success, failure) => {
       featuredFeed.load(cleansedData);
       success(featuredFeed);
     })
-  }, failure)
+  }, failure, refreshRate * 1000);
 }
 
 export const watchVolume = (ctag, filter, success, failure) => {

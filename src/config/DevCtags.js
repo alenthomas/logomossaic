@@ -34,7 +34,8 @@ export default {
       "title": "#CiscoLiveLA"
     },
     "leaderboard": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 5
     },
     "masonarystream": {
       "title": "#CiscoLiveLA"
@@ -42,7 +43,8 @@ export default {
     "mediacarousel": {
       "title": "Featured Content",
       "sides": 14,
-      "cardDisplayTime": 2
+      "cardDisplayTime": 2,
+      "refreshrate": 10,
     },
     "photogrid": {
       "title": "Photo Grid"
@@ -66,13 +68,16 @@ export default {
       "title": "#CiscoLiveLA",
       "tileBgText": "#CiscoLiveLA",
       "hideBgWave": true,
-      "cardDisplayTime": 10
+      "cardDisplayTime": 10,
+      "refreshrate": 10
     },
     "marquee": {
       "count": 2,
+      "refreshrate": 10,
     },
     "marqueeblue": {
       "count": 2,
+      "refreshrate": 10,
     }
   },
 
@@ -342,7 +347,8 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#CiscoStore Highlights"
+      "title": "#CiscoStore Highlights",
+      "refreshrate": 5
     },
     "photogrid": {
       "title": "#CiscoStore Visuals"
@@ -353,7 +359,8 @@ export default {
     "photowall": {
       "title": "#CiscoStore Social Pulse",
       "tileBgText": "#CiscoStore",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 5,
     },
     "tweetcounts": {
       "title": "#CiscoStore Social Stats",
@@ -361,9 +368,11 @@ export default {
     },
     "marquee": {
       "count": 5,
+      "refreshrate": 5,
     },
     "marqueeblue": {
       "count": 10,
+      "refreshrate": 5,
     }
   },
 

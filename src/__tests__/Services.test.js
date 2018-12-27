@@ -5,14 +5,15 @@ import { handleError } from '../Helper.js';
 test('pollFeatured | should cleanse data and return a feed object', (done) => {
   let data = [buildDatum(), buildDatum(), buildDatum()];
   let params = {ctag: 'cisco', filter: 'featured'}
+  let REFRESH_RATE = 5;
   fetch.mockResponses([JSON.stringify(data)]);
 
-  pollFeatured(params.ctag, params.filter, (feed) => {
+  pollFeatured((feed) => {
     expect(feed.getAll()).toEqual(data)
     expect(feed.getAdded()).toEqual(data)
     expect(feed.getRemoved()).toEqual([])
     done()
-  }, handleError)
+  }, handleError, params.ctag, params.filter, REFRESH_RATE * 1000);
 })
 
 

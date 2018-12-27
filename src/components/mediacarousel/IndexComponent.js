@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Carousel from './Carousel.js';
 import RegularLayout from "./../layout/Regular.js";
 import { pollFeatured } from '../../Services.js';
@@ -18,15 +19,17 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let { mediacarousel: {refreshrate} } = this.props.config;
     let params = getQueryString(this.props.location.search);
-    pollFeatured(params.ctag, params.filter, this.loadData, handleError);
+    pollFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let { mediacarousel: {refreshrate} } = this.props.config;
       let params = getQueryString(this.props.location.search);
-      pollFeatured(params.ctag, params.filter, this.loadData, handleError);
+      pollFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     }
   }
 
@@ -60,6 +63,17 @@ class IndexComponent extends Component {
       </RegularLayout>
     )
   }
+}
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    mediacarousel: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired
 }
 
 export default IndexComponent;
