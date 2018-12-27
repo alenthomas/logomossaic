@@ -40,7 +40,8 @@ export default {
       "refreshrate": 10,
     },
     "masonarystream": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "mediacarousel": {
       "title": "Featured Content",
