@@ -53,7 +53,7 @@ export default class Carousel extends Component {
   calculateSides() {
     let componentConfig = this.props.componentConfig;
     let allData = this.props.feed.getAll();
-    return (this.props.type === "cube") ?  Math.min(allData.length, componentConfig.sides || 4) : Math.min(allData.length, componentConfig.sides || 16);
+    return (this.props.type === "cube") ?  Math.min(allData.length, 4) : Math.min(allData.length, componentConfig.sides || 16);
   }
 
   computeTransformations(sides) {
