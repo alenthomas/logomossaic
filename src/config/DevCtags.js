@@ -28,33 +28,46 @@ export default {
       }
     },
     "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" },
+      "refreshrate": 10,
     },
     "horizontalstream": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "leaderboard": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "masonarystream": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "mediacarousel": {
       "title": "Featured Content",
       "sides": 14,
-      "cardDisplayTime": 2
+      "cardDisplayTime": 2,
+      "refreshrate": 10,
     },
     "photogrid": {
-      "title": "Photo Grid"
+      "title": "Photo Grid",
+      "refreshrate": 10,
     },
     "trendingdiscussion": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "leaderboardtile": {
-      "title": ""
+      "title": "",
+      "refreshrate": 10,
     },
     "photogridtile": {
-      "title": ""
+      "title": "",
+      "refreshrate": 10,
+    },
+    "mediacarouseltile": {
+      "title": "",
+      "refreshrate": 10,
     },
     "trendingcharttile": {
       "title": ""
@@ -66,13 +79,19 @@ export default {
       "title": "#CiscoLiveLA",
       "tileBgText": "#CiscoLiveLA",
       "hideBgWave": true,
-      "cardDisplayTime": 10
+      "cardDisplayTime": 10,
+      "refreshrate": 10
     },
     "marquee": {
       "count": 2,
+      "refreshrate": 10,
     },
     "marqueeblue": {
       "count": 2,
+      "refreshrate": 10,
+    },
+    "ticker": {
+      "refreshrate": 10,
     }
   },
 
@@ -342,7 +361,8 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#CiscoStore Highlights"
+      "title": "#CiscoStore Highlights",
+      "refreshrate": 5
     },
     "photogrid": {
       "title": "#CiscoStore Visuals"
@@ -353,7 +373,8 @@ export default {
     "photowall": {
       "title": "#CiscoStore Social Pulse",
       "tileBgText": "#CiscoStore",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 5,
     },
     "tweetcounts": {
       "title": "#CiscoStore Social Stats",
@@ -361,9 +382,11 @@ export default {
     },
     "marquee": {
       "count": 5,
+      "refreshrate": 5,
     },
     "marqueeblue": {
       "count": 10,
+      "refreshrate": 5,
     }
   },
 

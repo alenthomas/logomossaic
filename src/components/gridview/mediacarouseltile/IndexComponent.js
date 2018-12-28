@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import lodash from 'lodash';
 
 import {watchFeatured} from './../../../Services.js';
@@ -22,8 +23,9 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let {mediacarouseltile: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchFeatured(params.ctag, params.filter, this.loadData, handleError)
+    watchFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     this.props.markReady({'MediaCarouselTile': false});
   }
 
@@ -35,8 +37,9 @@ class IndexComponent extends Component {
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let {mediacarouseltile: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchFeatured(params.ctag, params.filter, this.loadData, handleError);
+      watchFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     }
   }
 
@@ -105,6 +108,18 @@ class IndexComponent extends Component {
       </div>
     )
   }
+}
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    mediacarouseltile: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired,
+  markReady: PropTypes.func.isRequired,
 }
 
 export default IndexComponent;

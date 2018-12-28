@@ -1,5 +1,6 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { watchSocial } from "../../Services.js";
 import { hasVideoMedia } from './../mediacarousel/helpers';
@@ -29,15 +30,17 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let {horizontalstream: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchSocial(this.loadData, handleError, params.ctag, params.filter);
+    watchSocial(this.loadData, handleError, params.ctag, params.filter, null, refreshrate); // null is for api limit default
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let {horizontalstream: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchSocial(this.loadData, handleError, params.ctag, params.filter);
+      watchSocial(this.loadData, handleError, params.ctag, params.filter, null, refreshrate); // null is for api limit default
     }
   }
 
@@ -63,6 +66,17 @@ class IndexComponent extends Component {
       </RegularLayout>
     )
   }
+}
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    horizontalstream: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired,
 }
 
 export default IndexComponent;

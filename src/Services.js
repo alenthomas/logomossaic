@@ -41,14 +41,14 @@ let poll = (url, success, failure, refreshRate = REFRESH_RATE) => {
   get(url, successHandler, failureHandler);
 }
 
-export const watchLeaderboardInfo = (ctag, filter, success, failure) => {
+export const watchLeaderboardInfo = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter});
-  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure);
+  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
 
 // Depricated: Use pollPhotos instead
-export const watchPhotos = (ctag, filter, success, failure) => {
+export const watchPhotos = (success, failure, ctag, filter, refreshRate = 5) => {
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   let massage = (payload) => {
@@ -59,7 +59,7 @@ export const watchPhotos = (ctag, filter, success, failure) => {
       .value();
     success(photos);
   }
-  poll(url, massage, failure, REFRESH_RATE*2);
+  poll(url, massage, failure, refreshRate * 1000);
 }
 
 let photosFeed = new Feed();
@@ -103,14 +103,14 @@ export const getLatestPhotos = (ctag, filter, topicId, success, failure) => {
 }
 
 // Depricated: Use pollFeatured instead
-export const watchFeatured = (ctag, filter, success, failure) => {
+export const watchFeatured = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`
-  poll(url, success, failure);
+  poll(url, success, failure, refreshRate * 1000);
 }
 
 let featuredFeed = new Feed();
-export const pollFeatured = (ctag, filter, success, failure) => {
+export const pollFeatured = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
@@ -119,22 +119,22 @@ export const pollFeatured = (ctag, filter, success, failure) => {
       featuredFeed.load(cleansedData);
       success(featuredFeed);
     })
-  }, failure)
+  }, failure, refreshRate * 1000);
 }
 
-export const watchVolume = (ctag, filter, success, failure) => {
+export const watchVolume = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, groupBy: getGroupBy()})
   let url = `${BASE_URL}volume?${urlParams}`
-  poll(url, success, failure, REFRESH_RATE*3)
+  poll(url, success, failure, refreshRate * 1000);
 }
 
-export const watchSocial = (success, failure, ctag, filter, limit = null) => {
+export const watchSocial = (success, failure, ctag, filter, limit = null, refreshRate = 25) => {
   let urlParams = qs.stringify({ctag, filter, limit, format: 'flat'}, {skipNulls: true});
-  poll(`${PHOTO_URL}social?${urlParams}`, success, failure, REFRESH_RATE*5);
+  poll(`${PHOTO_URL}social?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
 let TextTweetsFeed = new Feed();
-export const pollTextTweets = (ctag, filter, success, failure) => {
+export const pollTextTweets = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter, format: 'flat'});
   let url = `${PHOTO_URL}social?${urlParams}`;
   poll(url, (data) => {
@@ -143,17 +143,17 @@ export const pollTextTweets = (ctag, filter, success, failure) => {
     });
     TextTweetsFeed.load(textTweets);
     success(TextTweetsFeed);
-  }, failure)
+  }, failure, refreshRate * 1000);
 }
 
-export const watchLeaderboard = (ctag, filter, success, failure) => {
+export const watchLeaderboard = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter});
-  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, REFRESH_RATE*2);
+  poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
-export const watchWordcloud = (ctag, filter, success, failure) => {
+export const watchWordcloud = (success, failure, ctag, filter, refreshRate = 5) => {
   let urlParams = qs.stringify({ctag, filter});
-  poll(`${BASE_URL}wordcloud?${urlParams}`, success, failure, REFRESH_RATE*5);
+  poll(`${BASE_URL}wordcloud?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
 export const getTweetStats = (ctag, success, failure) => {

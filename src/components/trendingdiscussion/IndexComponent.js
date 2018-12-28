@@ -1,6 +1,7 @@
 import lodash from 'lodash';
 import randomColor from 'randomcolor';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import WordCloud from 'react-d3-cloud';
 
 import { watchWordcloud } from '../../Services.js'
@@ -28,15 +29,17 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let {trendingdiscussion: { refreshrate }} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchWordcloud(params.ctag, params.filter, this.loadData, handleError);
+    watchWordcloud(this.loadData, handleError, params.ctag, params.filter, refreshrate);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let {trendingdiscussion: { refreshrate }} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchWordcloud(params.ctag, params.filter, this.loadData, handleError);
+      watchWordcloud(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     }
   }
 
@@ -94,6 +97,17 @@ class IndexComponent extends Component {
       </RegularLayout>
     )
   }
+}
+
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    trendingdiscussion: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired
 }
 
 export default IndexComponent;

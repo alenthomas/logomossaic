@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import lodash from 'lodash';
 
 import ThreeColumnLayout from '../../components/layout/ThreeColumn.js';
@@ -44,6 +45,14 @@ class GridView extends Component {
        </ThreeColumnLayout>
     );
   }
+}
+
+GridView.propTypes = {
+  config: PropTypes.shape({
+    photogridtile: PropTypes.object.isRequired,
+    mediacarouseltile: PropTypes.object.isRequired,
+    leaderboardtile: PropTypes.object.isRequired,
+  }).isRequired
 }
 
 export default GridView;

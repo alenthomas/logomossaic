@@ -30,6 +30,7 @@
     "node-gyp": "^3.6.1",
     "node-sass": "^4.9.2",
     "npm-run-all": "^4.0.2",
+    "prop-types": "^15.6.2",
     "react-scripts": "0.9.5",
     "react-test-renderer": "15.6.1"
   },

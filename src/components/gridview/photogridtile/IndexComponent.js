@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import lodash from 'lodash';
 
 import {watchPhotos} from './../../../Services.js';
@@ -19,16 +20,18 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
+    let {photogridtile: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchPhotos(params.ctag, params.filter, this.loadData, handleError)
+    watchPhotos(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     this.props.markReady({'PhotoGridTile': false});
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
+      let {photogridtile: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchPhotos(params.ctag, params.filter, this.loadData, handleError);
+      watchPhotos(this.loadData, handleError, params.ctag, params.filter, refreshrate);
     }
   }
 
@@ -81,4 +84,15 @@ class IndexComponent extends Component {
   }
 }
 
+IndexComponent.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired
+  }).isRequired,
+  config: PropTypes.shape({
+    photogridtile: PropTypes.shape({
+      refreshrate: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired,
+  markReady: PropTypes.func.isRequired,
+}
 export default IndexComponent;
