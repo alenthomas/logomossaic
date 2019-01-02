@@ -96,7 +96,9 @@ export default {
   },
 
   "CiscoSprinklr": {
-    "sprinklrApi": true,
+    "sprinklrApi": {
+      "topics": ["5bdc66f3e4b08e15d20d596c", "5bd7328de4b0f425bbf8a05d"]
+    },
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
@@ -116,7 +118,7 @@ export default {
       }
     },
     "photowall": {
-      "title": "#CiscoStore Social Pulse",
+      "title": "Cisco",
       "tileBgText": "#CiscoStore",
       "hideBgWave": true
     }

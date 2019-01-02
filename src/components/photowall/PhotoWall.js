@@ -12,52 +12,65 @@ class PhotoWall extends Component {
     this.state = {
       show: false,
       caption: props.componentConfig.tileBgText,
-      showBackgroundCaption: false // When tiles are zoomed, the caption will not have empty spaces
+      showBackgroundCaption: false, // When tiles are zoomed, the caption will not have empty spaces
+      lastEvent: -1
     }
     this.showTiles()
 
-    //Start zooming in the tiles after a delay
-    setTimeout(() => {
-      this.zoomIn()
-    }, 10000);
+    //Start watcher for every second
+    setInterval(() => {
+      this.watcher()
+    }, 1000);
+  }
+
+  now() {
+    return new Date().getTime() / 1000;
+  }
+
+  watcher() {
+    let timeSinceLastEvent = this.now() - this.state.lastEvent
+    if(timeSinceLastEvent > 5 && this.state.zoomedInTile === -1) {
+      this.zoomIn();
+    } else if(timeSinceLastEvent > 10 && this.state.zoomedInTile !== -1) {
+      this.zoomOutCurrentTile();
+    }
   }
 
   showTiles() {
     setTimeout(() => {
-      this.setState({show: true})
+      this.setState({
+        show: true,
+        lastEvent: this.now()
+      })
     }, 1000);
   }
 
-  zoomIn() {
+  zoomOutCurrentTile() {
+    if(this.state.zoomedInTile !== -1) {
+      this.setState({
+        zoomedOutTile: this.state.zoomedInTile,
+        zoomedInTile: -1,
+        lastEvent: this.now()
+      })
+    }
+  }
+
+  zoomIn(tileNum) {
+    this.zoomOutCurrentTile();
     let maxTiles = this.props.photosGrid.length;
-    let cardDisplayTime = this.props.componentConfig.cardDisplayTime ?
-        this.props.componentConfig.cardDisplayTime * 1000 : null;
-    this.setState({
-      zoomedInTile: getRandomInt(0, maxTiles-1),
-      showBackgroundCaption: true
-    })
-    setTimeout(this.zoomOut.bind(this), cardDisplayTime || 8000)
-  }
-
-  zoomOut() {
+    tileNum = tileNum || getRandomInt(0, maxTiles-1);
     this.setState({
       zoomedOutTile: this.state.zoomedInTile,
-      zoomedInTile: -1
-    })
-    setTimeout(this.zoomIn.bind(this), 4000)
-  }
-
-  zoomTile(i) {
-    this.setState({
-      zoomedOutTile: this.state.zoomedInTile,
-      zoomedInTile: i
+      zoomedInTile: tileNum,
+      lastEvent: this.now(),
+      showBackgroundCaption: true,
     })
   }
 
   layTiles() {
     return lodash.map(this.props.photosGrid, (photoGrid, i) => {
       return (
-        <div onClick={this.zoomTile.bind(this,i)} key={i}>
+        <div onClick={this.zoomIn.bind(this,i)} key={i}>
           <Tile photoGrid={photoGrid} caption={this.state.caption}
             show={this.state.show} zoomIn={this.state.zoomedInTile === i} zoomOut={this.state.zoomedOutTile === i}>
           </Tile>

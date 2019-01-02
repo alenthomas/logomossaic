@@ -19,6 +19,7 @@
     display: block;
     height: 80px;
     background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
 
     div {
       display: inline-block;
