@@ -280,6 +280,58 @@ export default {
     }
   },
 
+  "bethebridge": {
+    "containerCssClassname": "clus2018",
+    "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus2018.png',
+          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#CLUS Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "mediacarousel": {
+      "title": "#BeTheBridge Highlights"
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "#BeTheBridge Social Pulse",
+      "tileBgText": "#BeTheBridge",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
   "cisco.com:event=clus-ciscostore": {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
@@ -1519,6 +1571,118 @@ export default {
     "photowall": {
       "title": "VMware Social Pulse",
       "tileBgText": "#VMware",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#VMware Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
+  "amatsocialwall": {
+    "containerCssClassname": "amat",
+    "background": 'url("/assets/amat/bg.jpg") no-repeat',
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/amat/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/amat/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "NBA All Star"
+    },
+    "leaderboard": {
+      "title": "NBA All Star"
+    },
+    "masonarystream": {
+      "title": "NBA All Star"
+    },
+    "mediacarousel": {
+      "title": "#AppliedMaterials Highlights"
+    },
+    "photogrid": {
+      "title": "SFL In Photos"
+    },
+    "trendingdiscussion": {
+      "title": "NBA All Star"
+    },
+    "leaderboardtile": {
+      "title": ""
+    },
+    "photogridtile": {
+      "title": ""
+    },
+    "photowall": {
+      "title": "Applied Materials Social Pulse",
+      "tileBgText": "#AppliedMaterials",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#VMware Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
+  "tmobilelovewall": {
+    "containerCssClassname": "tmobile",
+    "background": 'url("/assets/tmobile/bg.jpg") no-repeat',
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/tmobile/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/tmobile/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "NBA All Star"
+    },
+    "leaderboard": {
+      "title": "NBA All Star"
+    },
+    "masonarystream": {
+      "title": "NBA All Star"
+    },
+    "mediacarousel": {
+      "title": "#tmobile Highlights"
+    },
+    "photogrid": {
+      "title": "SFL In Photos"
+    },
+    "trendingdiscussion": {
+      "title": "NBA All Star"
+    },
+    "leaderboardtile": {
+      "title": ""
+    },
+    "photogridtile": {
+      "title": ""
+    },
+    "photowall": {
+      "title": "Applied Materials Social Pulse",
+      "tileBgText": "#tmobile",
       "hideBgWave": true
     },
     "tweetcounts": {
