@@ -218,7 +218,6 @@ export default {
       "filterHashtags": ["#clus"]
     }
   },
-
   
   "bethebridge": {
     "containerCssClassname": "clus2018",
@@ -229,7 +228,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/logo/cisco-vision.png',
+          "leftLogoUrl": '',
           "rightLogoUrl": '/assets/logo/cisco.png'
         },
         "footer": {
@@ -252,7 +251,8 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#BeTheBridge Highlights"
+      "title": "#BeTheBridge Highlights",
+      "hideBgWave": true
     },
     "photogrid": {
       "title": "#CLUS Visuals"

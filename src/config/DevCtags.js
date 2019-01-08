@@ -312,7 +312,8 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#BeTheBridge Highlights"
+      "title": "#BeTheBridge Highlights",
+      "hideBgWave": true
     },
     "photogrid": {
       "title": "#CLUS Visuals"
