@@ -46,7 +46,7 @@ export default {
     "mediacarousel": {
       "title": "Featured Content",
       "sides": 14,
-      "cardDisplayTime": 2,
+      "cardDisplayTime": 7,
       "refreshrate": 10,
     },
     "photogrid": {
@@ -289,7 +289,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/logo/cisco-vision.png',
+          "leftLogoUrl": '',
           "rightLogoUrl": '/assets/logo/cisco.png'
         },
         "footer": {

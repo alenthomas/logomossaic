@@ -2,13 +2,13 @@
   &.clus2018 {
     .dashboard-header {
       background: rgba(0,0,0,0.2);
-      height: 80px;
+      height: 100px;
 
       .logo.left-icon {
         top: 4px;
         img {
           max-width: 160px;
-          max-height: none;
+          max-height: max-content;
         }
       }
       .dashboard-title {
@@ -18,7 +18,7 @@
       .logo.right-icon {
         img {
           max-width: 160px;
-          max-height: none;
+          max-height: max-content;
         }
       }
     }
