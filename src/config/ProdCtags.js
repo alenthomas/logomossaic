@@ -229,8 +229,8 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus2018.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
+          "leftLogoUrl": '/assets/logo/cisco-vision.png',
+          "rightLogoUrl": '/assets/logo/cisco.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
