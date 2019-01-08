@@ -1627,7 +1627,7 @@ export default {
     },
     "photowall": {
       "title": "Applied Materials Social Pulse",
-      "tileBgText": "#AppliedMaterials",
+      "tileBgText": "#appliedmaterials",
       "hideBgWave": true
     },
     "tweetcounts": {
