@@ -219,6 +219,59 @@ export default {
     }
   },
 
+  
+  "bethebridge": {
+    "containerCssClassname": "clus2018",
+    "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus2018.png',
+          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#CLUS Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "mediacarousel": {
+      "title": "#BeTheBridge Highlights"
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "#BeTheBridge Social Pulse",
+      "tileBgText": "#BeTheBridge",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
   "cisco.com:event=clus-ciscostore": {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
