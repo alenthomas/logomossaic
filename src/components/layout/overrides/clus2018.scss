@@ -2,7 +2,7 @@
   &.clus2018 {
     .dashboard-header {
       background: rgba(0,0,0,0.2);
-      height: 100px;
+      height: 110px;
 
       .logo.left-icon {
         top: 4px;
@@ -62,6 +62,19 @@
           }
           .likes, .shares {
             color: #FFF;
+          }
+        }
+      }
+    }
+
+    &.photo-wall-container {
+      .photo-wall {
+        .caption {
+          font-size: 13vw;
+          color: #00A7E1;
+        }
+        .phototile {
+          &.zoomIn {
           }
         }
       }
