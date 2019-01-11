@@ -28,39 +28,73 @@ export default {
       }
     },
     "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" },
+      "refreshrate": 10,
     },
     "horizontalstream": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "leaderboard": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "masonarystream": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "mediacarousel": {
-      "title": "Featured Content"
+      "title": "Featured Content",
+      "sides": 14,
+      "cardDisplayTime": 10,
+      "refreshrate": 10,
     },
     "photogrid": {
-      "title": "Photo Grid"
+      "title": "Photo Grid",
+      "refreshrate": 10,
     },
     "trendingdiscussion": {
-      "title": "#CiscoLiveLA"
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
     },
     "leaderboardtile": {
-      "title": ""
+      "title": "",
+      "refreshrate": 10,
     },
     "photogridtile": {
-      "title": ""
+      "title": "",
+      "refreshrate": 10,
+    },
+    "mediacarouseltile": {
+      "title": "",
+      "refreshrate": 10,
     },
     "trendingcharttile": {
       "title": ""
     },
     "wordclouldtile": {
       "title": ""
+    },
+    "photowall": {
+      "title": "#CiscoLiveLA",
+      "tileBgText": "#CiscoLiveLA",
+      "hideBgWave": true,
+      "cardDisplayTime": 10,
+      "refreshrate": 10
+    },
+    "marquee": {
+      "count": 2,
+      "refreshrate": 10,
+    },
+    "marqueeblue": {
+      "count": 2,
+      "refreshrate": 10,
+    },
+    "ticker": {
+      "refreshrate": 10,
     }
   },
+  
 
   "basketball.na.usa:team=bos": {
     "containerCssClassname": "boston-celtics",

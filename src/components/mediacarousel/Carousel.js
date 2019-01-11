@@ -6,7 +6,6 @@ import {getCreatedAt} from './helpers.js';
 // Please refer the below link for more details on Carousel implementation.
 // https://desandro.github.io/3dtransforms/docs/carousel.html
 
-const ROTATE_INTERVAL = 8000;
 export const CARD_SWAP_OFFSET = 3; // Start swapping cards only after the first three cards to avoid it seen on the screen
 
 export default class Carousel extends Component {
@@ -41,8 +40,8 @@ export default class Carousel extends Component {
 
   componentDidMount() {
     let componentConfig = this.props.componentConfig;
-    let displayTime = componentConfig.cardDisplayTime ? componentConfig.cardDisplayTime * 1000 : null
-    this.rotateTimer = setInterval(this.rotate.bind(this), displayTime || ROTATE_INTERVAL);
+    let displayTime = componentConfig.cardDisplayTime * 1000;
+    this.rotateTimer = setInterval(this.rotate.bind(this), displayTime);
     window.rotate = this.rotate.bind(this); // To debug, enable this line and control rotation manually
   }
 

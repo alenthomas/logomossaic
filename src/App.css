@@ -6,66 +6,82 @@
   height: 100%;
   width: 100%;
   flex-direction: column; }
-  .dashboard .dashboard-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    display: block;
-    height: 80px;
-    background: rgba(0, 0, 0, 0.1);
-    pointer-events: none; }
-    .dashboard .dashboard-header div {
-      display: inline-block; }
-    .dashboard .dashboard-header .dashboard-title, .dashboard .dashboard-header .dashboard-short-title {
-      width: 100%;
-      font-size: 4rem;
-      font-weight: 100;
-      letter-spacing: 2.5px;
-      text-align: center;
-      color: #FFF; }
-    .dashboard .dashboard-header .dashboard-title {
-      display: none; }
-    .dashboard .dashboard-header .left-icon {
-      position: absolute;
-      top: 20px;
-      left: 20px; }
-      .dashboard .dashboard-header .left-icon img {
-        max-width: 45px;
-        max-height: 40px; }
-    .dashboard .dashboard-header .right-icon {
-      position: absolute;
-      top: 15px;
-      right: 15px; }
-      .dashboard .dashboard-header .right-icon img {
-        max-width: 65px;
-        max-height: 40px; }
-  .dashboard .background-wave {
-    position: fixed;
-    left: 50%;
-    bottom: 0px;
-    transform: translate(-50%, 0%);
-    opacity: 0.99; }
-  .dashboard .dashboard-footer {
-    z-index: 100; }
-    .dashboard .dashboard-footer .logo {
-      position: fixed;
-      bottom: 0;
-      line-height: 0; }
-      .dashboard .dashboard-footer .logo img {
-        max-width: 220px;
-        max-height: 108px; }
-      .dashboard .dashboard-footer .logo.left {
-        bottom: 20px;
-        left: 20px; }
-        .dashboard .dashboard-footer .logo.left img {
-          max-width: 125px;
-          max-height: 33px; }
-      .dashboard .dashboard-footer .logo.right {
-        right: 0; }
-  .dashboard .display-none {
-    display: none; }
+
+.dashboard .dashboard-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: block;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none; }
+
+.dashboard .dashboard-header div {
+  display: inline-block; }
+
+.dashboard .dashboard-header .dashboard-title, .dashboard .dashboard-header .dashboard-short-title {
+  width: 100%;
+  font-size: 4rem;
+  font-weight: 100;
+  letter-spacing: 2.5px;
+  text-align: center;
+  color: #FFF; }
+
+.dashboard .dashboard-header .dashboard-title {
+  display: none; }
+
+.dashboard .dashboard-header .left-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px; }
+
+.dashboard .dashboard-header .left-icon img {
+  max-width: 45px;
+  max-height: 40px; }
+
+.dashboard .dashboard-header .right-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px; }
+
+.dashboard .dashboard-header .right-icon img {
+  max-width: 65px;
+  max-height: 40px; }
+
+.dashboard .background-wave {
+  position: fixed;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, 0%);
+  opacity: 0.99; }
+
+.dashboard .dashboard-footer {
+  z-index: 100; }
+
+.dashboard .dashboard-footer .logo {
+  position: fixed;
+  bottom: 0;
+  line-height: 0; }
+
+.dashboard .dashboard-footer .logo img {
+  max-width: 220px;
+  max-height: 108px; }
+
+.dashboard .dashboard-footer .logo.left {
+  bottom: 20px;
+  left: 20px; }
+
+.dashboard .dashboard-footer .logo.left img {
+  max-width: 125px;
+  max-height: 33px; }
+
+.dashboard .dashboard-footer .logo.right {
+  right: 0; }
+
+.dashboard .display-none {
+  display: none; }
 
 html {
   font-size: 8px; }
@@ -84,20 +100,20 @@ html {
     transform: translate(-50%, -50%); }
   .dashboard .dashboard-header {
     height: 125px; }
-    .dashboard .dashboard-header .dashboard-title {
-      padding-top: 20px;
-      display: block; }
-    .dashboard .dashboard-header .dashboard-short-title {
-      display: none; }
-    .dashboard .dashboard-header .left-icon img {
-      max-width: 90px;
-      max-height: 80px; }
-    .dashboard .dashboard-header .right-icon {
-      top: 20px;
-      right: 20px; }
-      .dashboard .dashboard-header .right-icon img {
-        max-width: 130px;
-        max-height: 80px; }
+  .dashboard .dashboard-header .dashboard-title {
+    padding-top: 20px;
+    display: block; }
+  .dashboard .dashboard-header .dashboard-short-title {
+    display: none; }
+  .dashboard .dashboard-header .left-icon img {
+    max-width: 90px;
+    max-height: 80px; }
+  .dashboard .dashboard-header .right-icon {
+    top: 20px;
+    right: 20px; }
+  .dashboard .dashboard-header .right-icon img {
+    max-width: 130px;
+    max-height: 80px; }
   .dashboard .dashboard-footer .logo img {
     max-width: 440px;
     max-height: 215px; }

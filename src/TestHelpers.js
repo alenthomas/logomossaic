@@ -1,12 +1,15 @@
 export const buildDatum = (url = 'http://twitter.com/awer2344', type = 'image') => {
   let datum = {
     id: Math.random(),
-    author: {},
+    author: {
+      name: 'tester'
+    },
     source: {
       name: 'Twitter'
     },
     type: type,
     createdAt: new Date().toString(),
+    text: 'sample',
     media: [
       {
         url: url,
