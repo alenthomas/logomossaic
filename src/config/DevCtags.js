@@ -97,7 +97,10 @@ export default {
 
   "CiscoSprinklr": {
     "sprinklrApi": {
-      "topics": ["5bdc66f3e4b08e15d20d596c", "5bd7328de4b0f425bbf8a05d"]
+      "topics": {
+        "The Bridge": "5bdc66f3e4b08e15d20d596c", 
+        "Social" : "5bd7328de4b0f425bbf8a05d"
+      }
     },
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
