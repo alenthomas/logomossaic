@@ -16,11 +16,17 @@ class PhotoWall extends Component {
       lastEvent: -1
     }
     this.showTiles()
+  }
 
+  componentWillMount() {
     //Start watcher for every second
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.watcher()
     }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   now() {
