@@ -209,7 +209,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus2018.png',
+          "leftLogoUrl": '/assets/clus2018/cleur2019.png',
           "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
         },
         "footer": {
@@ -243,7 +243,7 @@ export default {
     },
     "photowall": {
       "title": "#CLUS Social Pulse",
-      "tileBgText": "#CLUS",
+      "tileBgText": "#CLEUR",
       "hideBgWave": true
     },
     "tweetcounts": {
