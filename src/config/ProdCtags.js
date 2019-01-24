@@ -242,7 +242,7 @@ export default {
       "title": "#CLUS Trending Topics"
     },
     "photowall": {
-      "title": "#CLUS Social Pulse",
+      "title": "#CLEUR Social Pulse",
       "tileBgText": "#CLEUR",
       "hideBgWave": true
     },
