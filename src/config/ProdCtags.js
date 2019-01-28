@@ -83,11 +83,11 @@ export default {
       "refreshrate": 10
     },
     "marquee": {
-      "count": 2,
+      "count": 20,
       "refreshrate": 10,
     },
     "marqueeblue": {
-      "count": 2,
+      "count": 20,
       "refreshrate": 10,
     },
     "ticker": {
