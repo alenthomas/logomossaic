@@ -209,7 +209,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/clus2018/cleur2019.png',
+          "leftLogoUrl": '/assets/clus2018/cancun.png',
           "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
         },
         "footer": {
@@ -232,7 +232,7 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#CLUS Highlights",
+      "title": "#CiscoLiveLA Highlights",
       "hideBgWave": true
     },
     "photogrid": {
