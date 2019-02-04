@@ -39,7 +39,7 @@ export default class TweetCardBottomSection extends Component {
         {this.renderLikes(shares)}
         </div>
         <div className="twitter-logo">
-          {this.renderLogo('/asset/logo/instagram.svg', 'instagram')}
+          {this.renderLogo('/assets/logo/instagram.svg', 'instagram')}
         </div>
       </div>
       )
@@ -53,7 +53,7 @@ export default class TweetCardBottomSection extends Component {
           {this.renderShares(shares)}
           </div>
           <div className="twitter-logo">
-            {this.renderLogo('/asset/logo/twitter.svg', 'twitter')}
+            {this.renderLogo('/assets/logo/twitter.svg', 'twitter')}
           </div>
         </div>
       )
