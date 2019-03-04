@@ -1386,7 +1386,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/purestorage/leftLogo1.png',
+          "leftLogoUrl": '/assets/purestorage/leftLogo2.png',
           "rightLogoUrl": ''
         },
         "footer": {
@@ -1442,7 +1442,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/purestorage/leftLogo1.png',
+          "leftLogoUrl": '/assets/purestorage/leftLogo2.png',
           "rightLogoUrl": ''
         },
         "footer": {
