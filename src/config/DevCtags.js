@@ -1345,7 +1345,7 @@ export default {
       "title": "NBA All Star"
     },
     "leaderboard": {
-      "title": "NBA All Star"
+      "title": "Social Leaderboard"
     },
     "masonarystream": {
       "title": "NBA All Star"
