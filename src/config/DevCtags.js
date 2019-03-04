@@ -1434,8 +1434,8 @@ export default {
   },
 
   "purestorage": {
-    "containerCssClassname": "pure1",
-    "background": 'url("/assets/purestorage/bg1.jpg") no-repeat',
+    "containerCssClassname": "pure2",
+    "background": 'url("/assets/purestorage/bg2.jpg") no-repeat',
     "loadingMedia": {
       "url": () => `https://storage.googleapis.com/animable/purestorage/loading.mp4`
     },
