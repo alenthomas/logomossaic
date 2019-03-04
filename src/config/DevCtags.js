@@ -455,48 +455,6 @@ export default {
     }
   },
 
-  "avaya.com:context=socialwall": {
-    "containerCssClassname": "avaya",
-    "background": 'url("/assets/avaya/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/avaya/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/avaya/leftLogo.jpg',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "Social Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "mediacarousel": {
-      "title": "Avaya Highlights"
-    },
-    "photogrid": {
-      "title": "Avaya Moments"
-    },
-    "trendingdiscussion": {
-      "title": "Trending Topics"
-    }
-  },
-
   "keralatourism.org:context=dooh": {
     "containerCssClassname": "vyoma-demo",
     "background": 'url("/assets/vyoma-demo/bg.jpg") no-repeat',
@@ -533,132 +491,6 @@ export default {
     },
     "photogrid": {
       "title": "Kerala In Pictures"
-    },
-    "trendingdiscussion": {
-      "title": "Trending Topics"
-    }
-  },
-
-  "indiatoday.com:context=socialwall": {
-    "containerCssClassname": "indiatoday",
-    "background": 'url("/assets/indiatoday/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/vyoma-demo/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/indiatoday/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/vyoma-demo/leftLogo.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "Social Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "mediacarousel": {
-      "title": "India Today Highlights"
-    },
-    "photogrid": {
-      "title": "India Today Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "Trending Topics"
-    }
-  },
-
-  "statefarm.com:context=socialwall": {
-    "containerCssClassname": "statefarm",
-    "background": 'url("/assets/statefarm/bg.png") no-repeat',
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/statefarm/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/statefarm/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/hearsaysystems.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "Social Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "mediacarousel": {
-      "title": "Trending On Social Media"
-    },
-    "photogrid": {
-      "title": "State Farm Moments"
-    },
-    "trendingdiscussion": {
-      "title": "Trending Topics"
-    }
-  },
-
-  "morganstanley.com:context=socialwall": {
-    "containerCssClassname": "morganstanley",
-    "background": 'url("/assets/morganstanley/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/morganstanley/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/morganstanley/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/hearsaysystems.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "Social Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "mediacarousel": {
-      "title": "Trending On Social Media"
-    },
-    "photogrid": {
-      "title": "Morgan Stanley Moments"
     },
     "trendingdiscussion": {
       "title": "Trending Topics"
@@ -717,58 +549,6 @@ export default {
     }
   },
 
-  "servicenow.com:context=ebc": {
-    "containerCssClassname": "servicenow",
-    "background": 'url("/assets/servicenow/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => 'https://storage.googleapis.com/animable/servicenow/loading.mp4'
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/servicenow/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/fankave-full-red.png'
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "#CiscoPS17"
-    },
-    "leaderboard": {
-      "title": "Knowledge18 Leaderboard"
-    },
-    "masonarystream": {
-      "title": "#CiscoPS17"
-    },
-    "mediacarousel": {
-      "title": "ServiceNow Social Wall"
-    },
-    "photogrid": {
-      "title": "Knowledge18 PhotoGrid"
-    },
-    "trendingdiscussion": {
-      "title": "Knowledge18 Trends"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "trendingcharttile": {
-      "title": ""
-    },
-    "wordclouldtile": {
-      "title": ""
-    }
-  },
-
   "dell.com:context=ebc-sv": {
     "containerCssClassname": "dellebc-sv",
     "background": 'url("/assets/dell/bg.jpg") no-repeat',
@@ -806,58 +586,6 @@ export default {
     },
     "trendingdiscussion": {
       "title": ""
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "trendingcharttile": {
-      "title": ""
-    },
-    "wordclouldtile": {
-      "title": ""
-    }
-  },
-
-  "paloaltonetworks.com:context=ebc": {
-    "containerCssClassname": "paloalto",
-    "background": 'url("/assets/paloalto/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/paloalto/loading${lodash.random(1, 2)}.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/paloalto/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/fankave-full-blue.png'
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "#CiscoPS17"
-    },
-    "leaderboard": {
-      "title": "#CiscoPS17"
-    },
-    "masonarystream": {
-      "title": "#CiscoPS17"
-    },
-    "mediacarousel": {
-      "title": "Palo Alto Networks Social Wall"
-    },
-    "photogrid": {
-      "title": "#CiscoPS17"
-    },
-    "trendingdiscussion": {
-      "title": "#CiscoPS17"
     },
     "leaderboardtile": {
       "title": ""
@@ -1142,109 +870,6 @@ export default {
     },
     "trendingdiscussion": {
       "title": "Trending Topics"
-    }
-  },
-
-  "mma.ind:league=sfl": {
-    "containerCssClassname": "sfl",
-    "background": 'url("/assets/sfl/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/sfl/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/sfl/leftLogo.png',
-          "rightLogoUrl": '/assets/logo/vyoma.png'
-        },
-        "footer": {
-          "logoUrl": ''
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
-    "mediacarousel": {
-      "title": "SFL Trending Now"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "NBA All Star"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "trendingcharttile": {
-      "title": ""
-    },
-    "wordclouldtile": {
-      "title": ""
-    }
-  },
-
-  "nba.com:event=nba-allstar-all": {
-    "containerCssClassname": "nba-allstar",
-    "background": 'url("/assets/nba-allstar/bg.png") no-repeat',
-    "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/NBA/allstar1.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "rightLogoUrl": '/assets/nba-allstar/rightLogo.png'
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
-    "mediacarousel": {
-      "title": "SFL Trending Now"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "NBA All Star"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "trendingcharttile": {
-      "title": ""
-    },
-    "wordclouldtile": {
-      "title": ""
     }
   },
 
@@ -1695,4 +1320,173 @@ export default {
       "filterHashtags": ["#clus"]
     }
   },
+
+  "pureaccel": {
+    "containerCssClassname": "pure2",
+    "background": 'url("/assets/purestorage/bg2.jpg") no-repeat',
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/purestorage/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/purestorage/leftLogo2.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "NBA All Star"
+    },
+    "leaderboard": {
+      "title": "NBA All Star"
+    },
+    "masonarystream": {
+      "title": "NBA All Star"
+    },
+    "mediacarousel": {
+      "title": "#PureAccelerate Highlights"
+    },
+    "photogrid": {
+      "title": "SFL In Photos"
+    },
+    "trendingdiscussion": {
+      "title": "Trending Topics"
+    },
+    "leaderboardtile": {
+      "title": "#PureAccelerate Leaderboard"
+    },
+    "photogridtile": {
+      "title": ""
+    },
+    "photowall": {
+      "title": "Pure Accelerate Social Pulse",
+      "tileBgText": "#PureAccelerate",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#VMware Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
+  "pureobject": {
+    "containerCssClassname": "pure1",
+    "background": 'url("/assets/purestorage/bg1.jpg") no-repeat',
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/purestorage/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/purestorage/leftLogo1.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "NBA All Star"
+    },
+    "leaderboard": {
+      "title": "NBA All Star"
+    },
+    "masonarystream": {
+      "title": "NBA All Star"
+    },
+    "mediacarousel": {
+      "title": "#ObjectEngine Highlights"
+    },
+    "photogrid": {
+      "title": "SFL In Photos"
+    },
+    "trendingdiscussion": {
+      "title": "#ObjectEngine Trending Topics"
+    },
+    "leaderboardtile": {
+      "title": ""
+    },
+    "photogridtile": {
+      "title": ""
+    },
+    "photowall": {
+      "title": "#ObjectEngine Social Pulse",
+      "tileBgText": "#ObjectEngine",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#VMware Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
+  "purestorage": {
+    "containerCssClassname": "pure1",
+    "background": 'url("/assets/purestorage/bg1.jpg") no-repeat',
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/purestorage/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/purestorage/leftLogo1.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "NBA All Star"
+    },
+    "leaderboard": {
+      "title": "NBA All Star"
+    },
+    "masonarystream": {
+      "title": "NBA All Star"
+    },
+    "mediacarousel": {
+      "title": "#PureStorage Highlights"
+    },
+    "photogrid": {
+      "title": "SFL In Photos"
+    },
+    "trendingdiscussion": {
+      "title": "Trending Topics"
+    },
+    "leaderboardtile": {
+      "title": ""
+    },
+    "photogridtile": {
+      "title": ""
+    },
+    "photowall": {
+      "title": "Pure Storage Social Pulse",
+      "tileBgText": "#PureStorage",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#VMware Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
 }

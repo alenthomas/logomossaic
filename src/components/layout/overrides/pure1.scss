@@ -1,0 +1,101 @@
+.regularlayout {
+  &.pure1 {
+    .dashboard-header {
+      background: rgba(0,0,0,0.2);
+      height: 95px;
+
+      .logo.left-icon {
+        img {
+          max-width: 160px;
+          max-height: none;
+        }
+      }
+      .dashboard-title {
+        font-size: 52px;
+        padding-top: 15px;
+      }
+      .logo.right-icon {
+        img {
+          max-width: 160px;
+          max-height: none;
+        }
+      }
+    }
+    .dashboard-footer {
+      .logo.right {
+        img {
+          width: 150px;
+          padding: 20px;
+        }
+      }
+    }
+
+    &.stats {
+      background-image: url(/assets/clus2018/blue-bubbles-bg.png) !important;
+    }
+
+    &.carousel-container, &.stats {
+      .tweet-card {
+        background: url(/assets/purestorage/tweetCardBg1.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #FFF;
+            }
+          }
+          .timestamp {
+            color: #FFF;
+          }
+        }
+        .tweet-card-middle {
+          color: #FFF;
+        }
+        .tweet-card-bottom {
+          .icon {
+            &.like {
+              background-image: url(/assets/clus2018/like.png);
+            }
+            &.retweet {
+              background-image: url(/assets/clus2018/retweet.png);
+            }                  
+          }
+          .likes, .shares {
+            color: #FFF;
+          }
+        }
+      }
+    }
+
+    &.leaderboard {
+      .leaderboard-cards {
+        margin-top: 40px;
+        .ranked-tweeter-card {
+          .tweeter-details {
+            background: url(/assets/clus2018/tweetCardBgBlackCube.png);
+            .name, .twitter-handle {
+              color: white;
+            }
+            .tweets {
+              .count {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.photo-wall-container {
+      .photo-wall {
+        .caption {
+          font-size: 15vw;
+          color: #00A7E1;
+        }
+        .phototile {
+          &.zoomIn {
+          }
+        }
+      }
+    }
+  }
+}
