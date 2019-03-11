@@ -11,7 +11,7 @@ const TILE_SIZE = {
   }
 }
 
-class Tile extends Component {
+class  Tile extends Component {
 
   constructor(props) {
     super(props);
@@ -70,7 +70,7 @@ class Tile extends Component {
   }
 
   getTruncatedText() {
-    let textLength = 250,
+    let textLength = 350,
         {photoGrid} = this.props,
         text = photoGrid.photo.getText();
     return text.length <= textLength ? text : (text.substr(0, textLength) + "...")
