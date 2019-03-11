@@ -715,7 +715,7 @@ export default {
 
   "bayclub.com:context=socialwall": {
     "containerCssClassname": "bayclub",
-    "background": "url(/assets/bayclub/bg.png)",
+    "background": "url(/assets/bayclub/bg.jpg)",
     "loadingMedia": {
       "url": () => `https://storage.googleapis.com/animable/bayclub/loading.mp4`
     },
