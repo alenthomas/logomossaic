@@ -1301,7 +1301,7 @@ export default {
       "title": "SFL In Photos"
     },
     "trendingdiscussion": {
-      "title": "NBA All Star"
+      "title": "#tmobile Trending Topics"
     },
     "leaderboardtile": {
       "title": ""
@@ -1310,7 +1310,7 @@ export default {
       "title": ""
     },
     "photowall": {
-      "title": "Applied Materials Social Pulse",
+      "title": "#tmobile Social Pulse",
       "tileBgText": "#tmobile",
       "hideBgWave": true
     },

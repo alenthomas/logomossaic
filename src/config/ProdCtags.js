@@ -714,15 +714,15 @@ export default {
   },
 
   "bayclub.com:context=socialwall": {
-    "containerCssClassname": "clus2018",
-    "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
+    "containerCssClassname": "bayclub",
+    "background": "url(/assets/bayclub/bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `https://storage.googleapis.com/animable/bayclub/loading.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '',
+          "leftLogoUrl": '/assets/bayclub/leftLogo.jpg',
           "rightLogoUrl": ''
         },
         "footer": {
