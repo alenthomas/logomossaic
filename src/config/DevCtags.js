@@ -1269,7 +1269,7 @@ export default {
     "containerCssClassname": "tmobile",
     "background": 'url("/assets/tmobile/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/tmobile/loading.mp4`
+      "url": () => `https://storage.googleapis.com/animable/tmobile/${lodash.random(1, 2)}.mp4`
     },
     "layout": {
       "regular": {
