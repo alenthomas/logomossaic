@@ -98,7 +98,7 @@ export default {
   "CiscoSprinklr": {
     "sprinklrApi": {
       "topics": {
-        "The Bridge": "5bdc66f3e4b08e15d20d596c", 
+        "The Bridge": "5bdc66f3e4b08e15d20d596c",
         "Social" : "5bd7328de4b0f425bbf8a05d"
       }
     },
@@ -421,7 +421,7 @@ export default {
     "mediacarousel": {
       "title": "#CiscoStore Highlights",
       "refreshrate": 10,
-      "cardDisplayTime": 20,
+      "cardDisplayTime": 7,
     },
     "photogrid": {
       "title": "#CiscoStore Visuals"
