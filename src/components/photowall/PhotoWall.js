@@ -37,7 +37,7 @@ class PhotoWall extends Component {
     let timeSinceLastEvent = this.now() - this.state.lastEvent
     if(timeSinceLastEvent > 5 && this.state.zoomedInTile === -1) {
       this.zoomIn();
-    } else if(timeSinceLastEvent > 10 && this.state.zoomedInTile !== -1) {
+    } else if(timeSinceLastEvent > 5 && this.state.zoomedInTile !== -1) {
       this.zoomOutCurrentTile();
     }
   }

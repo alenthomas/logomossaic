@@ -420,7 +420,8 @@ export default {
     },
     "mediacarousel": {
       "title": "#CiscoStore Highlights",
-      "refreshrate": 5
+      "refreshrate": 10,
+      "cardDisplayTime": 20,
     },
     "photogrid": {
       "title": "#CiscoStore Visuals"

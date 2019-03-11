@@ -70,7 +70,7 @@ class Tile extends Component {
   }
 
   getTruncatedText() {
-    let textLength = 150,
+    let textLength = 250,
         {photoGrid} = this.props,
         text = photoGrid.photo.getText();
     return text.length <= textLength ? text : (text.substr(0, textLength) + "...")
