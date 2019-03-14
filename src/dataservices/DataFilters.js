@@ -29,6 +29,10 @@ export const removeBrokenMedia = (data, done) => {
     valid = lodash.orderBy(valid, 'createdAt', 'desc');
     done(valid)
   })
+  .catch(err => {
+    console.error(`Error: ${err}`);
+    done(valid);
+  });
 }
 
 export const removeVideoMedia = (data) => {

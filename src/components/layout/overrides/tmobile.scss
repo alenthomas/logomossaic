@@ -14,6 +14,7 @@
         color: #fd1970;
         font-size: 52px;
         padding-top: 15px;
+        color: #fd1970;
       }
       .logo.right-icon {
         img {
@@ -58,7 +59,7 @@
             }
             &.retweet {
               background-image: url(/assets/clus2018/retweet.png);
-            }                  
+            }
           }
           .likes, .shares {
             color: #ffffff;
@@ -94,6 +95,15 @@
         }
         .phototile {
           &.zoomIn {
+            background-image: url(/assets/tmobile/tweetCardBg.png);
+          }
+          .info {
+            &.visible {
+              .head {
+                color: #fd1970;
+              }
+              color: #fd1970;
+            }
           }
         }
       }
