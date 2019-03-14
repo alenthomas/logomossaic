@@ -1295,7 +1295,7 @@ export default {
       "title": "NBA All Star"
     },
     "mediacarousel": {
-      "title": "#tmobile Highlights"
+      "title": "#tmobile Love Wall"
     },
     "photogrid": {
       "title": "SFL In Photos"

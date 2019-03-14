@@ -1,7 +1,7 @@
 .regularlayout {
   &.tmobile {
     .dashboard-header {
-      background: rgba(0,0,0,0.2);
+      background: rgba(0,0,0,0.6);
       height: 95px;
 
       .logo.left-icon {
@@ -11,6 +11,7 @@
         }
       }
       .dashboard-title {
+        color: #fd1970;
         font-size: 52px;
         padding-top: 15px;
       }
@@ -40,15 +41,15 @@
         .tweet-card-top {
           .profile {
             .name, .handle {
-              color: #fd1970;
+              color: #565656;
             }
           }
           .timestamp {
-            color: #fd1970;
+            color: #565656;
           }
         }
         .tweet-card-middle {
-          color: #fd1970;
+          color: #565656;
         }
         .tweet-card-bottom {
           .icon {
@@ -60,7 +61,7 @@
             }                  
           }
           .likes, .shares {
-            color: #fd1970;
+            color: #ffffff;
           }
         }
       }
