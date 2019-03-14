@@ -93,6 +93,15 @@
         }
         .phototile {
           &.zoomIn {
+            background-image: url(/assets/tmobile/tweetCardBg.png);
+          }
+          .info {
+            &.visible {
+              .head {
+                color: #383838;
+              }
+              color: #383838;
+            }
           }
         }
       }

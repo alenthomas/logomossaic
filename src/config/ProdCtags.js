@@ -745,7 +745,7 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#BayClubHappy Highlights"
+      "title": "#BayClubHappy Love Wall"
     },
     "photogrid": {
       "title": "#CLUS Visuals"
