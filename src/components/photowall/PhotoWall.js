@@ -5,6 +5,7 @@ import {Tile} from './Tile.js';
 
 import './photo-wall.css';
 
+const AVERAGE_TILES_DISPLAY_TIME = 7000; // Time taken for the tiles to align after animation
 class PhotoWall extends Component {
 
   constructor(props) {
@@ -23,10 +24,17 @@ class PhotoWall extends Component {
     this.interval = setInterval(() => {
       this.watcher()
     }, 1000);
+
+    // one time function to customize the load time of first tile zoomIn
+    const { initialLoadTime } = this.props.componentConfig;
+    this.initialload = setTimeout(() => {
+      this.zoomIn();
+    }, initialLoadTime*1000 + AVERAGE_TILES_DISPLAY_TIME);
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
+    clearTimeout(this.initialload);
   }
 
   now() {
@@ -34,10 +42,11 @@ class PhotoWall extends Component {
   }
 
   watcher() {
+    const { cardDisplayTime, interval } = this.props.componentConfig;
     let timeSinceLastEvent = this.now() - this.state.lastEvent
-    if(timeSinceLastEvent > 5 && this.state.zoomedInTile === -1) {
+    if(timeSinceLastEvent > interval && this.state.zoomedInTile === -1) {
       this.zoomIn();
-    } else if(timeSinceLastEvent > 5 && this.state.zoomedInTile !== -1) {
+    } else if(timeSinceLastEvent > cardDisplayTime && this.state.zoomedInTile !== -1) {
       this.zoomOutCurrentTile();
     }
   }

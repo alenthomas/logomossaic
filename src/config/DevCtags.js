@@ -79,7 +79,9 @@ export default {
       "title": "#CiscoLiveLA",
       "tileBgText": "#CiscoLiveLA",
       "hideBgWave": true,
-      "cardDisplayTime": 10,
+      "cardDisplayTime": 7,
+      "initialLoadTime": 3,
+      "interval": 3,
       "refreshrate": 10
     },
     "marquee": {
@@ -1313,7 +1315,10 @@ export default {
     "photowall": {
       "title": "#tmobile Social Pulse",
       "tileBgText": "#tmobile",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "cardDisplayTime": 7,
+      "initialLoadTime": 3,
+      "interval": 3
     },
     "tweetcounts": {
       "title": "#VMware Social Stats",
