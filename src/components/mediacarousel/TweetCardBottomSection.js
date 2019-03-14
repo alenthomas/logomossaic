@@ -36,7 +36,7 @@ export default class TweetCardBottomSection extends Component {
       return (
       <div className='tweet-card-bottom'>
         <div className="metrics">
-        {this.renderLikes(shares)}
+        {this.renderLikes(likes)}
         </div>
         <div className="twitter-logo">
           {this.renderLogo('/assets/logo/instagram.svg', 'instagram')}
