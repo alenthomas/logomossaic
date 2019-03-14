@@ -93,14 +93,19 @@
           color: #fd1970;
         }
         .phototile {
-          &.zoomIn {
-            img {
-              display: block;
-              margin-left: calc(5%);
+          &.portrait {
+            &.zoomIn {
+              img {
+                display: block;
+                margin-left: calc(5%);
+              }
             }
           }
           &.zoomIn {
             background-image: url(/assets/tmobile/tweetCardBg.png);
+            img {
+              margin-left: none;
+            }
           }
           .info {
             &.visible {
