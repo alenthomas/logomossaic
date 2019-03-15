@@ -79,7 +79,9 @@ export default {
       "title": "#CiscoLiveLA",
       "tileBgText": "#CiscoLiveLA",
       "hideBgWave": true,
-      "cardDisplayTime": 10,
+      "cardDisplayTime": 7,
+      "initialLoadTime": 3,
+      "interval": 3,
       "refreshrate": 10
     },
     "marquee": {
