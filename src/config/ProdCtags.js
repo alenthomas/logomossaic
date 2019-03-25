@@ -776,7 +776,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/linkedin/leftLogo.jpg',
+          "leftLogoUrl": '/assets/linkedin/leftLogo.png',
           "rightLogoUrl": ''
         },
         "footer": {
@@ -799,7 +799,7 @@ export default {
       "title": "Social Feed"
     },
     "mediacarousel": {
-      "title": "#superchargedOLAP Wall"
+      "title": "#superchargedOLAP Highlights"
     },
     "photogrid": {
       "title": "#CLUS Visuals"
