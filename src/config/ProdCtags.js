@@ -767,5 +767,57 @@ export default {
     }
   },
 
+  "linkedinpinot": {
+    "containerCssClassname": "linkedin",
+    "background": "url(/assets/linkedin/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/linkedin/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/linkedin/leftLogo.jpg',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#CLUS Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "mediacarousel": {
+      "title": "#superchargedOLAP Wall"
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#superchargedOLAP Trending Topics"
+    },
+    "photowall": {
+      "title": "#superchargedOLAP Social Pulse",
+      "tileBgText": "#superchargedOLAP",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
  
 }
