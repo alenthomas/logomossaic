@@ -82,6 +82,8 @@ export default {
       "cardDisplayTime": 7,
       "initialLoadTime": 3,
       "interval": 3,
+      "loadSequentially": false,
+      "showFirst": 10,
       "refreshrate": 10
     },
     "marquee": {
@@ -96,7 +98,7 @@ export default {
       "refreshrate": 10,
     }
   },
-  
+
 
   "basketball.na.usa:team=bos": {
     "containerCssClassname": "boston-celtics",
@@ -254,7 +256,7 @@ export default {
       "filterHashtags": ["#clus"]
     }
   },
-  
+
   "bethebridge": {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
@@ -410,8 +412,8 @@ export default {
     }
   },
 
-  
- 
+
+
   "cisco.com:context=cxc": {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
@@ -662,7 +664,7 @@ export default {
     }
   },
 
-  
+
 
   "nba.com:event=nba-allstar-all": {
     "containerCssClassname": "nba-allstar",
@@ -819,5 +821,5 @@ export default {
     }
   },
 
- 
+
 }

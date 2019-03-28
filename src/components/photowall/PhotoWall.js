@@ -14,7 +14,8 @@ class PhotoWall extends Component {
       show: false,
       caption: props.componentConfig.tileBgText,
       showBackgroundCaption: false, // When tiles are zoomed, the caption will not have empty spaces
-      lastEvent: -1
+      lastEvent: -1,
+      tileNum: -1,
     }
     this.showTiles()
   }
@@ -72,7 +73,20 @@ class PhotoWall extends Component {
 
   zoomIn(tileNum) {
     this.zoomOutCurrentTile();
+    let {showFirst, loadSequentially} = this.props.componentConfig;
     let maxTiles = this.props.photosGrid.length;
+    // sequentially zoomIn first N photos
+    if(loadSequentially && showFirst < maxTiles && this.state.tileNum < showFirst) {
+      let newTileNum = this.state.tileNum + 1;
+      this.setState({
+        zoomedOutTile: this.state.zoomedInTile,
+        zoomedInTile: newTileNum,
+        lastEvent: this.now(),
+        showBackgroundCaption: true,
+        tileNum: newTileNum,
+      })
+      return;
+    }
     tileNum = tileNum || getRandomInt(0, maxTiles-1);
     this.setState({
       zoomedOutTile: this.state.zoomedInTile,

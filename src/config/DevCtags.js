@@ -82,7 +82,9 @@ export default {
       "cardDisplayTime": 7,
       "initialLoadTime": 3,
       "interval": 3,
-      "refreshrate": 10
+      "refreshrate": 10,
+      "loadSequentially": false,
+      "showFirst": 10,
     },
     "marquee": {
       "count": 2,
@@ -1318,7 +1320,9 @@ export default {
       "hideBgWave": true,
       "cardDisplayTime": 7,
       "initialLoadTime": 3,
-      "interval": 3
+      "interval": 3,
+      "loadSequentially": true,
+      "showFirst": 4
     },
     "tweetcounts": {
       "title": "#VMware Social Stats",

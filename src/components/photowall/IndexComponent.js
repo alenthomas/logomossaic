@@ -56,7 +56,7 @@ class IndexComponent extends Component {
     });
     this.loadPhotos(topicId);
     setTimeout(() => {
-      this.setState({photosGrid: []});  
+      this.setState({photosGrid: []});
     }, 1000);
   }
 
