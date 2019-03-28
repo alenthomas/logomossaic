@@ -43,7 +43,11 @@ React app built to run in wall displays to show the content for different experi
 * Photowall
   * http://dev.fankave.com/dsd/#/photowall?ctag=CiscoStore&filter=approved
       - PhotoWall takes one value from config
-      - `cardDisplayTime`: is the number of seconds a photo is featured/highlighed before moving on to the next
+      - `cardDisplayTime`: is the number of seconds a photo is featured/highlighed/zoomedIn before moving on to the next
+      - `initialLoadTime`: is the number of seconds it takes to zoomIn the first photo
+      - `interval`: is the number of seconds it takes for a new photo to zoomIn
+      - `loadSequentially`: is the flag used to display the photos in chronological order
+      - `showFirst`: is the number of photos to show chronologically before moving to random mode
 * Twitter Stats View
   * http://dev.fankave.com/dsd/#/counter?ctag=CiscoStore&filter=approved
 * Ticker View
