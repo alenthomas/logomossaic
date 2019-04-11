@@ -7,7 +7,7 @@ class LoaderCard extends Component {
   content() {
     const { loadingMedia: { url }, onLoadingVidEnded } = this.props;
 
-    return <video autoPlay muted className="loader-card" onEnded={onLoadingVidEnded}>
+    return <video autoPlay muted="true" className="loader-card" onEnded={onLoadingVidEnded}>
       <source src={url} type="video/mp4" />
     </video>
   }
