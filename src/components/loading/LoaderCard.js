@@ -1,15 +1,15 @@
 import classNames from 'classnames';
 import React, {Component} from 'react';
+import {VideoComponent} from '../layout/blocks/VideoComponent';
 
 import './Loading.css';
 
 class LoaderCard extends Component {
   content() {
     const { loadingMedia: { url }, onLoadingVidEnded } = this.props;
-
-    return <video autoPlay muted="true" className="loader-card" onEnded={onLoadingVidEnded}>
-      <source src={url} type="video/mp4" />
-    </video>
+    return (
+      <VideoComponent onEnded={onLoadingVidEnded} src={url} type='video/mp4' />
+    )
   }
 
   render() {
