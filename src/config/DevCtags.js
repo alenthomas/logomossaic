@@ -1274,7 +1274,7 @@ export default {
     "containerCssClassname": "tmobile",
     "background": 'url("/assets/tmobile/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4`
+      "url": () => `https://github.com/alenthomas/alenthomas.github.io/blob/master/image/11.mp4?raw=true`
     },
     "layout": {
       "regular": {
