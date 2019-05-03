@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import TweetCard from './../mediacarousel/TweetCard.js';
 
 const bufferSize = 10;
-const sliderInterval = 8000;
 
 export default class TweetColumn extends Component {
   constructor(props) {
@@ -60,14 +59,6 @@ export default class TweetColumn extends Component {
     state.tweetHeights[id] = height;
 
     this.setState(state);
-  }
-
-  componentWillMount() {
-    // this.interval = setInterval(this.rotateData.bind(this), sliderInterval + Math.random() * 5000);
-  }
-
-  componentWillUnmount() {
-    // clearInterval(this.interval);
   }
 
   componentWillReceiveProps(nextProps) {
