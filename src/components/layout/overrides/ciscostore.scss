@@ -57,7 +57,7 @@
             }
             &.retweet {
               background-image: url(/assets/clus2018/retweet.png);
-            }                  
+            }
           }
           .likes, .shares {
             color: #FFF;
@@ -95,6 +95,17 @@
           &.zoomIn {
             background-image: none;
             background-color: #00A7E1;
+          }
+        }
+      }
+    }
+  }
+  &.masonary-stream-v2 {
+    .dashboard-content-v2 {
+      .tweet-columns-v2 {
+        .tweet-column-wrapper-v2 {
+          .tweet-column-v2 {
+            animation: scroll-left 150s linear infinite;
           }
         }
       }
