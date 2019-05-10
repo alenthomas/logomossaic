@@ -395,7 +395,8 @@ export default {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`
+      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`,
+      "urlVertical": () => `https://cdn-b-east.streamable.com/video/mp4/g8wk3.mp4?token=1iLKxdnrKtj8vV1lTFxCxg&expires=1557495780`
     },
     "layout": {
       "regular": {
