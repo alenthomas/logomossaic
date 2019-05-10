@@ -14,16 +14,26 @@ class Regular extends Component {
     super(props);
 
     const { loadingMedia } = props.config;
-
+    const urlVertical = this.getVerticalMediaUrl(loadingMedia);
     this.state = {
       isReady: false,
       loadingMedia: {
         ...loadingMedia,
-        url: `${loadingMedia.url()}`
+        url: `${loadingMedia.url()}`,
+        urlVertical,
       }
     };
 
     this.onLoadingVidEnded = this.onLoadingVidEnded.bind(this);
+  }
+
+  getVerticalMediaUrl(media) {
+    try {
+      return `${media.urlVertical()}`
+    } catch (err) {
+      console.error('no vertical media url in config');
+      return `${media.url()}`
+    }
   }
 
   onLoadingVidEnded() {

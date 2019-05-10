@@ -825,7 +825,8 @@ export default {
     "containerCssClassname": "tiecon",
     "background": "url(/assets/tiecon/bg.jpg)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/tiecon/loading.mp4`
+      "url": () => `https://storage.googleapis.com/animable/tiecon/loading.mp4`,
+      "urlVertical": () => `https://storage.googleapis.com/animable/tiecon/loading.mp4`
     },
     "layout": {
       "regular": {
