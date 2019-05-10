@@ -859,7 +859,7 @@ export default {
       "title": "#CLUS Visuals"
     },
     "trendingdiscussion": {
-      "title": "#superchargedOLAP Trending Topics"
+      "title": "#TiEcon Trending Topics"
     },
     "photowall": {
       "title": "#TiEcon Social Pulse",
