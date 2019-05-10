@@ -104,14 +104,14 @@ class IndexComponent extends Component {
 
   render() {
     let data = this.state.data;
-    if(!this.state.fullscreen && !this.state.asked) {
-      return (
-        <div className="ask-fullscreen">
-          <button onClick={this.handleToggle}>Toggle Full Screen</button>
-          <button onClick={this.cancel}>No full screen</button>
-        </div>
-      )
-    }
+    // if(!this.state.fullscreen && !this.state.asked) {
+    //   return (
+    //     <div className="ask-fullscreen">
+    //       <button onClick={this.handleToggle}>Toggle Full Screen</button>
+    //       <button onClick={this.cancel}>No full screen</button>
+    //     </div>
+    //   )
+    // }
     return <MarqueeStream data={data} />
   }
 }
