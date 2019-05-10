@@ -821,5 +821,57 @@ export default {
     }
   },
 
+  "tiecon2019": {
+    "containerCssClassname": "tiecon",
+    "background": "url(/assets/tiecon/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/tiecon/loading.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/tiecon/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#TiEcon Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "mediacarousel": {
+      "title": "#TiEcon Highlights"
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#superchargedOLAP Trending Topics"
+    },
+    "photowall": {
+      "title": "#TiEcon Social Pulse",
+      "tileBgText": "#TiEcon",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
 
 }
