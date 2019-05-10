@@ -8,6 +8,23 @@
   100% { transform: translate(-100%, 0); }
 }
 
+.ask-fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    margin-left: 10px;
+    margin-top: 50%;
+    border-radius: 3px;
+    background-color: #1890ff;
+    padding: 7px 20px;
+    color: white;
+    outline: 0;
+    border-style: none;
+
+  }
+}
+
 .marquee-container {
   .left, .right {
     background-image: url(/assets/marquee/Marquee_bg_1.png);
