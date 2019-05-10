@@ -11,7 +11,7 @@ import { timeoutCollection } from 'time-events-manager';
 
 import './TrendingDiscussion.css';
 
-const MAX_WORDS = 120;
+const MAX_WORDS = 105;
 
 class IndexComponent extends Component {
   constructor(props) {
