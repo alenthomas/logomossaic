@@ -826,7 +826,7 @@ export default {
     "background": "url(/assets/tiecon/bg.jpg)",
     "loadingMedia": {
       "url": () => `https://storage.googleapis.com/animable/tiecon/loading.mp4`,
-      "urlVertical": () => `https://storage.googleapis.com/animable/tiecon/loading.mp4`
+      "urlVertical": () => `https://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
     },
     "layout": {
       "regular": {
