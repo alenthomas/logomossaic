@@ -11,7 +11,7 @@ import { timeoutCollection } from 'time-events-manager';
 
 import './TrendingDiscussion.css';
 
-const MAX_WORDS = 150;
+const MAX_WORDS = 120;
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -89,7 +89,7 @@ class IndexComponent extends Component {
             width={this.cloudDimensions.w}
             height={this.cloudDimensions.h}
             font={"CiscoSansThin"}
-            padding={(_, idx) => Math.round(((MAX_WORDS - idx) / MAX_WORDS) * 22) }
+            padding={(_, idx) => Math.round(((MAX_WORDS - idx) / MAX_WORDS) * 12) }
             colors={colors}
             color={lodash(colors).first()}
             minSize={20}/>
