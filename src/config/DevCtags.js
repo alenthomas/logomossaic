@@ -396,6 +396,7 @@ export default {
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
       "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`,
+      "urlVertical": () => `https://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
     },
     "layout": {
       "regular": {

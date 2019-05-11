@@ -10,6 +10,7 @@ export class VideoComponent extends Component {
     this.myVideos = Array.from(this.myRef.getElementsByTagName("video"));
     // getElementsByTagName returns HTMLCollection not an array;
     this.myVideos.map(element => element.addEventListener("ended", this.props.onEnded));
+    setTimeout(this.props.onEnded, 9000);
   }
 
   setRef = (node) => {
