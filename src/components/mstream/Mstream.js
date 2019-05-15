@@ -21,7 +21,7 @@ export default class MasonaryStreamV2 extends Component {
     if(props.data.length > 0) {
       data = props.data;
     }
-    this.state = {width: 0, height: 0, data, count: [20, 20], repeat: 1, data2: [], exp: 0};
+    this.state = {width: 0, height: 0, data, count: [20, 20], repeat: 1, exp: 0};
   }
   componentDidMount() {
     let width = window.screen.width * window.devicePixelRatio;
@@ -33,10 +33,6 @@ export default class MasonaryStreamV2 extends Component {
       exp = 1;
     }
     this.setState({width, height, exp});
-  }
-
-  componentWillReceiveProps(prevProps) {
-    // console.log('\nprevProps', prevProps);
   }
 
   intersected = (e) => {
@@ -54,6 +50,11 @@ export default class MasonaryStreamV2 extends Component {
         count[v] += 10
       return ({count})
     }, () => this.addNewData(v));
+  }
+
+  calcTime = () => {
+    let maxHeight = 1080;
+
   }
 
   addNewData = (v) => {
@@ -100,45 +101,47 @@ export default class MasonaryStreamV2 extends Component {
       triggerOnce: true
     };
     if(exp === 2) {
+      let data1 = this.state.data.filter((e, i) => i%2 === 0).map((e, i) => {
+        let index = Math.round(this.state.data.length/2) - 4;
+        if(i === index) {
+          console.log('>> observer 0: ', i);
+          return (
+            <Observer {...options} key={e.id}>
+              <div data-card-id={0}>
+                <TweetCard data={e} key={e.id} />
+              </div>
+            </Observer>
+          )
+        }
+        return (<TweetCard data={e} key={e.id} />);
+      });
+      let data2 = this.state.data.filter((e, i) => i%2 !== 0).map((e, i) => {
+        let index = Math.round(this.state.data.length/2) - 4;
+        if(i === index) {
+          console.log('>> observer 1: ', i);
+          return (
+            <Observer {...options} key={e.id}>
+              <div data-card-id={1}>
+                <TweetCard data={e} key={e.id} />
+              </div>
+            </Observer>
+          )
+        }
+        return (<TweetCard data={e} key={e.id} />);
+      });
       return (
         <div className='parent'>
-          <Wrapper id={0} cardCount={this.state.count[0]}>
-            {this.state.data.filter((e, i) => i%2 === 0).map((e, i) => {
-              let index = Math.round(this.state.data.length/2) - 4;
-              if(i === index) {
-                console.log(">> observer 0: ", i)
-                return (
-                  <Observer {...options} key={e.id}>
-                    <div data-card-id={0}> {/* TODO remove this wrapper */}
-                      <TweetCard data={e} key={e.id} />
-                    </div>
-                  </Observer>
-                )
-              }
-              return (<TweetCard data={e} key={e.id} />)
-            })}
+          <Wrapper id={0} cardCount={data1.length}>
+            {data1}
           </Wrapper>
-          <Wrapper id={1} cardCount={this.state.count[1]}>
-            {this.state.data.filter((e,i) => i%2 !== 0).map((e, i) => {
-              let index = Math.round(this.state.data.length/2) - 4;
-              if(i === index) {
-                console.log(">> observer 1: ", i)
-                return (
-                  <Observer {...options} key={e.id}>
-                    <div data-card-id={1}> {/* TODO remove this wrapper */}
-                      <TweetCard data={e} key={e.id} />
-                    </div>
-                  </Observer>
-                )
-              }
-              return (<TweetCard data={e} key={e.id} />)
-            })}
+          <Wrapper id={1} cardCount={data2.length}>
+            {data2}
           </Wrapper>
         </div>
       )
     } else if(exp === 1){
       return (
-        <Wrapper cardCount={this.state.count[0]}>
+        <Wrapper cardCount={this.state.data.length}>
           {this.state.data.map((e, i) => {
             let index = Math.round(this.state.data.length) - 4;
             if(i === index) {
@@ -160,6 +163,7 @@ export default class MasonaryStreamV2 extends Component {
 
   render() {
     // console.log(this.props.data, this.state);
+    console.log('>>>>>>>>>>>>>>>>>>', document.getElementById('mstream-wrapper') && document.getElementById('mstream-wrapper').offsetHeight);
     return (
       <div className='mstream'>
         { this.renderWrapper(this.state.exp) }
@@ -173,7 +177,7 @@ class Wrapper extends React.Component {
   render() {
 
     return (
-      <div id={this.props.id} className='mstream-wrapper' style={{animation: `scroll ${this.props.cardCount*3.8 + 5}s linear infinite`}}>
+      <div id={'mstream-wrapper'} className='mstream-wrapper' style={{animation: `scroll ${this.props.cardCount*10}s linear infinite`}}>
         {this.props.children}
       </div>
     )
