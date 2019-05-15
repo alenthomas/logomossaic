@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+
 import TweetCard from './../mediacarousel/TweetCard';
 import Observer from '@researchgate/react-intersection-observer';
 const uuidv1 = require('uuid/v1');
@@ -19,7 +21,7 @@ export default class MasonaryStreamV2 extends Component {
     if(props.data.length > 0) {
       data = props.data;
     }
-    this.state = {width: 0, height: 0, data, count: [20, 20], repeat: 1, data2: [], exp: 1};
+    this.state = {width: 0, height: 0, data, count: [20, 20], repeat: 1, data2: [], exp: 0};
   }
   componentDidMount() {
     let width = window.screen.width * window.devicePixelRatio;
@@ -68,9 +70,13 @@ export default class MasonaryStreamV2 extends Component {
     console.log(this.state.data.length - min <= 20);
     if(this.state.data.length - min <= 20) {
       let data = this.props.data;
-      if(data[data.length-1].id !== this.state.data[this.state.data.length-1].id) {
+      let propDataLength = this.props.data.length;
+      if(data[data.length-1].id !== this.state.data.slice(0, propDataLength)[propDataLength-1].id) {
         console.log('here 1');
-        this.setState((prevState) => ({data: [...prevState.data, ...data]}))
+        this.setState((prevState) => {
+          let newData = _.unionBy([...prevState.data, ...data], 'id');
+          return ({data: newData})
+        })
         return;
       } else {
         this.setState((prevState) => {
@@ -97,9 +103,10 @@ export default class MasonaryStreamV2 extends Component {
       return (
         <div className='parent'>
           <Wrapper id={0} cardCount={this.state.count[0]}>
-            {this.state.data.filter((e, i) => i <=this.state.count[0]-1).filter((e, i) => i%2 === 0).map((e, i) => {
-              if(i === this.state.count[0]-13) {
-                console.log(">> observer 0: ", this.state.count[0]-13)
+            {this.state.data.filter((e, i) => i%2 === 0).map((e, i) => {
+              let index = Math.round(this.state.data.length/2) - 4;
+              if(i === index) {
+                console.log(">> observer 0: ", i)
                 return (
                   <Observer {...options} key={e.id}>
                     <div data-card-id={0}> {/* TODO remove this wrapper */}
@@ -112,9 +119,10 @@ export default class MasonaryStreamV2 extends Component {
             })}
           </Wrapper>
           <Wrapper id={1} cardCount={this.state.count[1]}>
-            {this.state.data.filter((e, i) => i <=this.state.count[1]-1).filter((e,i) => i%2 !== 0).map((e, i) => {
-              if(i === this.state.count[1]-13) {
-                console.log(">> observer 1: ", this.state.count[1]-13)
+            {this.state.data.filter((e,i) => i%2 !== 0).map((e, i) => {
+              let index = Math.round(this.state.data.length/2) - 4;
+              if(i === index) {
+                console.log(">> observer 1: ", i)
                 return (
                   <Observer {...options} key={e.id}>
                     <div data-card-id={1}> {/* TODO remove this wrapper */}
@@ -128,24 +136,26 @@ export default class MasonaryStreamV2 extends Component {
           </Wrapper>
         </div>
       )
+    } else if(exp === 1){
+      return (
+        <Wrapper cardCount={this.state.count[0]}>
+          {this.state.data.map((e, i) => {
+            let index = Math.round(this.state.data.length) - 4;
+            if(i === index) {
+              console.log(">> observer", i);
+              return (
+                <Observer {...options} key={e.id}>
+                  <div data-card-id={0}> {/* TODO remove this wrapper */}
+                    <TweetCard data={e} key={e.id} />
+                  </div>
+                </Observer>
+              )
+            }
+            return (<TweetCard data={e} key={e.id} />)
+          })}
+        </Wrapper>
+      )
     }
-    return (
-      <Wrapper cardCount={this.state.count[0]}>
-        {this.state.data.filter((e, i) => i <=this.state.count[0]-1).map((e, i) => {
-          if(i === this.state.count[0]-3) {
-            // console.log(">> observer", this.state.count-3)
-            return (
-              <Observer {...options} key={e.id}>
-                <div data-card-id={0}> {/* TODO remove this wrapper */}
-                  <TweetCard data={e} key={e.id} />
-                </div>
-              </Observer>
-            )
-          }
-          return (<TweetCard data={e} key={e.id} />)
-        })}
-      </Wrapper>
-    )
   }
 
   render() {
