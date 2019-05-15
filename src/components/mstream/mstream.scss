@@ -1,5 +1,14 @@
 .masonary-stream-v2 {
   overflow-y: hidden;
+  .dashboard-header {
+    display: none;
+  }
+  .dashboard-footer {
+    display: none;
+  }
+  .background-wave {
+    display: none;
+  }
 
   .dashboard-content-v2 {
     z-index: 1;
@@ -7,9 +16,64 @@
     position: static;
     .mstream {
       overflow-y: hidden;
-    }
-    .mstream-wrapper {
-      padding-top: 100px;
+      .mstream-header {
+        &.towards-left {
+          margin-left: 21px;
+          justify-content: flex-start;
+        }
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logo {
+          z-index: 100;
+          width: 116px;
+          height: 63px;
+          background-image: url(/assets/logo/possible-logo.png) !important;
+          background-size: contain;
+          background-repeat:no-repeat;
+        }
+      }
+      .mstream-footer {
+        display: inline;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-image: url(/assets/clus2018/possible-texture.png);
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        margin-top: 13px;
+        .footer-logo-left {
+          float: left;
+          width: 94px;
+          padding-left: 5px;
+          padding-right: 5px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          height: 43px;
+          background-image: url(/assets/logo/cisco-live-ca.png) !important;
+          background-size: contain;
+          background-repeat:no-repeat;
+        }
+        .footer-logo-right {
+          float: right;
+          width: 107px;
+          height: 38px;
+          background-image: url(/assets/logo/pow-by-fankave-white.png) !important;
+          background-size: contain;
+          background-origin: content-box;
+          background-repeat:no-repeat;
+        }
+      }
+      .contain {
+        height: 100%;
+        overflow-y: hidden;
+        .mstream-wrapper {
+
+        }
+      }
     }
     .parent {
       display: flex;

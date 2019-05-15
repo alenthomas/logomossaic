@@ -18,7 +18,7 @@ export default class MasonaryStreamV2 extends Component {
     let width = window.screen.width * window.devicePixelRatio;
     let height = window.screen.height * window.devicePixelRatio;
     let exp;
-    if (width === 640) {
+    if (width >= 640) {
       exp = 2;
     } else {
       exp = 1;
@@ -138,7 +138,9 @@ export default class MasonaryStreamV2 extends Component {
   render() {
     return (
       <div className='mstream'>
+        <div className={`mstream-header ${this.state.exp===2? 'towards-left': ''}`}><div className={`logo`} /></div>
         { this.renderWrapper(this.state.exp) }
+        <div className='mstream-footer'><div className='footer-logo-left' /><div className='footer-logo-right' /></div>
       </div>
     )
   }
@@ -147,10 +149,11 @@ export default class MasonaryStreamV2 extends Component {
 
 class Wrapper extends React.Component {
   render() {
-
     return (
-      <div id={'mstream-wrapper'} className='mstream-wrapper' style={{animation: `scroll ${this.props.cardCount*10}s linear infinite`}}>
+      <div className='contain'>
+        <div className='mstream-wrapper' style={{animation: `scroll ${this.props.cardCount*10}s linear infinite`}}>
         {this.props.children}
+      </div>
       </div>
     )
   }
