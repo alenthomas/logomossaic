@@ -289,7 +289,7 @@ export default {
 
   "bethebridge": {
     "containerCssClassname": "clus2018",
-    "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
+    "background": "url(/assets/clus2018/possible-texture.png)",
     "loadingMedia": {
       "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
     },
@@ -297,7 +297,7 @@ export default {
       "regular": {
         "header": {
           "leftLogoUrl": '',
-          "rightLogoUrl": '/assets/logo/cisco.png'
+          "rightLogoUrl": ''
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'

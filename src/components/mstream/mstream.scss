@@ -5,12 +5,22 @@
     z-index: 1;
     transform: none;
     position: static;
+    .mstream {
+      overflow-y: hidden;
+    }
+    .mstream-wrapper {
+      padding-top: 100px;
+    }
+    .parent {
+      display: flex;
+
+    }
 
     .tweet-card {
-      width: 436px;
+      width: 287px;
       height: auto;
       padding: 17px 15px 0 15px;
-      margin: 0 0 15px 0;
+      margin: none;
       break-inside: avoid;
       transform: rotateY(360deg);
 
@@ -29,10 +39,10 @@
         .profile {
           padding-left: 20px;
           .name {
-            font-size: 23px;
+            font-size: 16px;
           }
           .handle {
-            font-size: 16px;
+            font-size: 12px;
           }
         }
 
@@ -50,14 +60,15 @@
       }
 
       .tweet-card-middle {
-        font-size: 20px;
+        font-size: 13px;
         .image {
           overflow: hidden;
         }
       }
 
       .tweet-card-middle.text {
-        padding: 0 0 20px 0;
+        // padding: 0 0 20px 0;
+        padding-left: 0px;
         min-height: auto;
         height: auto;
 
@@ -67,7 +78,8 @@
       }
 
       .tweet-card-middle.portrait, .tweet-card-middle.landscape {
-        padding: 5px 0 0 0;
+        // padding: 5px 0 0 0;
+        padding-left: 0px;
         flex-direction: column;
         height: auto;
         min-height: auto;
@@ -97,9 +109,13 @@
             width: 27px;
           }
         }
+        .icon {
+          width: 19px;
+          height: 16px;
+        }
 
         .likes, .shares {
-          font-size: 20px;
+          font-size: 14px;
           img {
             height: 16px;
             width: auto;

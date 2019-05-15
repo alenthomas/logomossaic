@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@researchgate/react-intersection-observer": "^1.0.0",
     "CBuffer": "^2.0.0",
     "classnames": "^2.2.5",
     "enzyme": "^3.7.0",
@@ -23,6 +24,7 @@
     "time-events-manager": "^0.1.1",
     "twemoji": "^11.0.1",
     "twitter-timeago": "^1.0.2",
+    "uuid": "^3.3.2",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
