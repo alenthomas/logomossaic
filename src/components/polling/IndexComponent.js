@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import lodash from 'lodash';
 
 import { getPhotos } from '../../Services.js';
 import Polling from './Polling.js';
+import RegularLayout from "./../layout/Regular.js";
 
 import './polling.css';
 import { handleError, getQueryString } from '../../Helper.js';
@@ -42,8 +44,18 @@ class IndexComponent extends Component {
   }
 
   render() {
+     const { masonarystream: componentConfig } = this.props.config;
     return (
-      <Polling feed={this.state.feed}/>
+      <RegularLayout
+        isReady={!lodash.isEmpty(this.state.feed)}
+        config={this.props.config}
+        title={componentConfig.title}
+        hideBgWave={componentConfig.hideBgWave}
+        className="masonary-stream-v2">
+          <div className="dashboard-content-v2">
+              <Polling feed={this.state.feed}/>
+          </div>
+      </RegularLayout>
     )
   }
 }

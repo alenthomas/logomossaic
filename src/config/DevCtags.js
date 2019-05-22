@@ -96,7 +96,11 @@ export default {
     },
     "ticker": {
       "refreshrate": 10,
-    }
+    },
+    "polling": {
+      "title": "#CiscoLiveLA",
+      "refreshrate": 10,
+    },
   },
 
   "CiscoSprinklr": {

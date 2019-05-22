@@ -168,6 +168,8 @@
       border: 10px solid #ffffff;
       &.down {
         &.blink {
+          pointer-events: none;
+          cursor: default;
           img {
             top: 0;
             transform: scaleX(-1) rotate(180deg);
@@ -181,6 +183,8 @@
       }
       &.up {
         &.blink {
+          pointer-events: none;
+          cursor: default;
           img {
             bottom: 0px;
             transform: scaleX(-1) rotate(0deg);
@@ -235,7 +239,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   .col {
-    animation: scroll 120s linear infinite;
+    animation: scroll 200s linear infinite;
+    animation-delay: 7s;
     &.pause {
        animation-play-state: paused;
     }
