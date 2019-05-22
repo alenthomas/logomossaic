@@ -38,6 +38,15 @@ class Photo {
     return this.data.media[0].url;
   }
 
+  getSource() {
+    try {
+      return this.data.source.name.toLowerCase();
+    } catch (err) {
+      console.error('Error getting source', err);
+      return '';
+    }
+  }
+
   getThumbnailUrl() {
     return this.data.media[0].thumbUrl;
   }

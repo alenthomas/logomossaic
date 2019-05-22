@@ -9,15 +9,19 @@ export const protoRelativeUrl = (url) => {
   return location.protocol+url.replace(/^https?:/i, "")
 }
 
-export const removeBrokenMedia = (data, done) => {
+export const removeBrokenMedia = (data, done, safe=true) => {
   let groupedData = lodash.groupBy(data, d => isNonMediaData(d))
   let valid = groupedData.true || []
   let mediaData = groupedData.false || []
 
   let urlPromises = mediaData.map((d) => {
     let mediaUrl = d.media[0].url;
+    if(safe) {
+      return fetch(protoRelativeUrl(mediaUrl), { method: 'HEAD' })
+    } else if(!safe) {
+      return fetch(mediaUrl, { method: 'HEAD' })
+    }
     return fetch(protoRelativeUrl(mediaUrl), { method: 'HEAD' })
-//    return fetch(mediaUrl, { method: 'HEAD' })
   })
 
   Promise.all(urlPromises).then((responses) => {

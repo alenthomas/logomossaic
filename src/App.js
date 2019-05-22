@@ -25,6 +25,7 @@ import GridView from "./components/gridview/GridView.js"; //Not using regular la
 import PhotoWall from './components/photowall/IndexComponent.js';
 import StatsView from './components/stats/IndexComponent.js';
 import Ticker from './components/ticker/IndexComponent.js';
+import Polling from './components/polling/IndexComponent.js';
 
 class App extends Component {
   render() {
@@ -47,6 +48,7 @@ class App extends Component {
           <Route path="/photowall" render={(props) => <PhotoWall config={getCurrentConfig()} {...props} />} />
           <Route path="/counter" render={(props) => <StatsView config={getCurrentConfig()} {...props} />} />
           <Route path="/ticker" render={(props) => <Ticker config={getCurrentConfig()} {...props} />} />
+          <Route path="/polling" render={(props) => <Polling config={getCurrentConfig()} {...props} />} />
         </div>
       </Router>
     );

@@ -1,0 +1,264 @@
+@import "./fontello.css";
+
+@font-face {
+    font-family: CiscoSans;
+    font-weight: bold;
+     src: url('./font/CiscoSansTTBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./font/CiscoSansTTBold.woff') format('woff'), /* Modern Browsers */
+       url('./font/CiscoSansTTBold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: CiscoSansThin;
+    font-weight: bold;
+     src: url('./font/CiscoSansTTRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./font/CiscoSansTTRegular.woff') format('woff'), /* Modern Browsers */
+       url('./font/CiscoSansTTRegular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+
+@keyframes scroll {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+.overlay-parent {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.9);
+  z-index: 5;
+}
+.overlay {
+  // background: linear-gradient(to bottom, rgb(32, 31, 31), rgb(44, 43, 43));
+  // background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  z-index: 10;
+  .heading {
+    color: #ffffff;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 55px;
+    font-family: CiscoSans;
+  }
+  .selected-card{
+    border: solid 10px white;
+    border-radius: 20px;
+    position: relative;
+    .thumbs {
+      img {
+        position: absolute;
+        display: none;
+      }
+      &.up {
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        transform: scale(5);
+        opacity: 0.8;
+
+      }
+      &.down {
+        display: block;
+        position: absolute;
+        top: 20%;
+        left: 40%;
+        transform: scale(5);
+        opacity: 0.8;
+        transform: scale(5) rotate(180deg);
+      }
+    }
+    .selected-card-photo {
+      img {
+        margin-bottom: -5px;
+        width: 850px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+    .selected-card-body {
+      height: 260px;
+      position: relative;
+      background-color: #ffffff;
+      .cisco-logo-bck {
+        position: absolute;
+        top: -62px;
+        left: 10px;
+        height: 42%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NiAzMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5iZ19zb3VyY2VfYmFkZ2VfMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01Ny42NywxMS45NEM1Mi4zNiw2LjcxLDQ4LjQyLDAsMzguMywwSDM3LjdDMjcuNTgsMCwyMy42NCw2LjcxLDE4LjMzLDExLjk0LDE0LjQ3LDE2Ljc2LDYuNjEsMTcuODEsMCwxOFYzMUg3NlYxOEM2OS4zOSwxNy44MSw2MS41MywxNi43Niw1Ny42NywxMS45NFoiLz48L2c+PC9nPjwvc3ZnPg==);
+      }
+      .cisco-logo {
+        position: absolute;
+        top: 10px;
+        left: 66px;
+        width: 125px;
+        height: 125px;
+        border-radius: 100%;
+        background-color: #1dc0ee;
+        border: 5px solid #ffffff;
+        img {
+          position: absolute;
+          top: 30px;
+          left: 10px;
+          width: 100px;
+        }
+      }
+      .cisco-heading {
+        position: absolute;
+        font-family: CiscoSansThin;
+        font-size: 3em;
+        color: #3d3d3d;
+        top: 20px;
+        left: 300px;
+      }
+      .social-logo {
+        position: absolute;
+        top: 55px;
+        right: 55px;
+        font-size: 4em;
+        img {
+          width: 50px;
+          height: 50px;
+        }
+        .icon {
+          // background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+          background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+      }
+      .current {
+        font-family: CiscoSansThin;
+        font-size: 2em;
+        &.down-vote {
+          position: absolute;
+          top: 120px;
+          left: 90px;
+          .icon {
+            color: #777777;
+            font-size: 3em;
+          }
+        }
+        &.up-vote {
+          position: absolute;
+          top: 120px;
+          left: 350px;
+          .icon {
+            color: #feb20d;
+            font-size: 3em;
+          }
+        }
+      }
+    }
+  }
+  .vote {
+    display: flex;
+    justify-content: space-around;
+    .vote-action {
+      margin-top: 60px;
+      position: relative;
+      width: 222px;
+      height: 168px;
+      background: rgb(41, 190, 41);
+      padding: 10px;
+      border-radius: 40%;
+      border: 10px solid #ffffff;
+      &.down {
+        &.blink {
+          img {
+            top: 0;
+            transform: scaleX(-1) rotate(180deg);
+          }
+        }
+        img {
+          position: absolute;
+          top: 45px;
+          left: 40px;
+        }
+      }
+      &.up {
+        &.blink {
+          img {
+            bottom: 0px;
+            transform: scaleX(-1) rotate(0deg);
+          }
+        }
+        img {
+          transform: rotate(180deg);
+          position: absolute;
+          bottom: 45px;
+          left: 40px;
+        }
+      }
+      .icon {
+        position: absolute;
+        font-size: 5em;
+        color: #ffffff;
+        top: 50px;
+        left: 70px;
+      }
+      // img {
+      //   position: absolute;
+      //   top: 30px;
+      //   left: 40px;
+      // }
+    }
+  }
+  .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      font-size: 4em;
+      color: #ffffff;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 130px;
+      height: 130px;
+      border: 5px solid #ffffff;
+      background-color: #3d3d3d;
+      border-radius: 100%;
+    }
+  }
+}
+
+.initial {
+  display: flex;
+  height: 100vh;
+  width: 560px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  .col {
+    animation: scroll 120s linear infinite;
+    &.pause {
+       animation-play-state: paused;
+    }
+    .card {
+      .card-body {
+        border: solid 4px white;
+        .photo {
+          width: 520px;
+          position: relative;
+          .media {
+              width: 520px;
+          }
+          .logo {
+            &.instagram {
+              border-radius: 17px;
+            }
+              width: 50px;
+              position: absolute;
+              bottom: 30px;
+              right: 20px;
+          }
+        }
+      }
+    }
+  }
+}

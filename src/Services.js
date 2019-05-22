@@ -76,7 +76,7 @@ export const pollPhotos = (ctag, filter, success, failure) => {
   }, failure)
 }
 
-export const getPhotos = (ctag, filter, success, failure) => {
+export const getPhotos = (ctag, filter, success, failure, safe=true) => {
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   get(url, (data) => {
@@ -84,7 +84,7 @@ export const getPhotos = (ctag, filter, success, failure) => {
       removeVideoMedia(cleansedData);
       let photoObjects = lodash.map(cleansedData, datum => new Photo(datum));
       success(photoObjects);
-    })
+    }, safe)
   }, failure);
 }
 
