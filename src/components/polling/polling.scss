@@ -72,6 +72,8 @@
       }
     }
     .selected-card-photo {
+      max-height: 900px;
+      overflow: hidden;
       img {
         margin-bottom: -5px;
         width: 850px;
