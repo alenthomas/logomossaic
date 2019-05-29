@@ -105,6 +105,23 @@
       .dashboard-header {
         display: none;
       }
+      .dashboard-footer {
+        .logo {
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            img {
+              display: none;
+            }
+          }
+        }
+      }
       .container {
         background-position: center;
         background-repeat: no-repeat;

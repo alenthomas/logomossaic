@@ -10,6 +10,8 @@ class DashboardFooter extends Component {
         <div className={classNames("logo", this.props.direction)}>
           { url ? <img src={url} alt="Fankave"/> : false }
         </div>
+        <div className={classNames("logo", "left-2")}>
+        </div>
       </div>
     );
   }
