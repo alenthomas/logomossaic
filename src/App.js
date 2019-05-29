@@ -11,6 +11,7 @@ import 'flexboxgrid';
 import { getCurrentConfig } from './config/ConfigLoader.js'
 
 import Leaderboard from "./components/leaderboard/IndexComponent.js";
+import Leaderboardv2 from "./components/leaderboardv2/IndexComponent.js";
 import VolumeOfConversation from "./components/conversationvolume/IndexComponent.js";
 import TrendingDiscussion from "./components/trendingdiscussion/IndexComponent.js";
 import MediaCarousel from "./components/mediacarousel/IndexComponent.js";
@@ -33,6 +34,7 @@ class App extends Component {
       <Router>
         <div className="app-container">
           <Route path="/leaderboard" render={(props) => <Leaderboard config={getCurrentConfig()} {...props} />}/>
+          <Route path="/leaderboardv2" render={(props) => <Leaderboardv2 config={getCurrentConfig()} {...props} />}/>
           <Route path="/volume" render={(props) => <VolumeOfConversation config={getCurrentConfig()} {...props} />}/>
           <Route path="/trending" render={(props) => <TrendingDiscussion config={getCurrentConfig()} {...props} />}/>
           <Route path="/carousel" render={(props) => <MediaCarousel config={getCurrentConfig()} {...props} />}/>

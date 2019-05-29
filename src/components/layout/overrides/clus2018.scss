@@ -58,7 +58,7 @@
             }
             &.retweet {
               background-image: url(/assets/clus2018/retweet.png);
-            }                  
+            }
           }
           .likes, .shares {
             color: #FFF;
@@ -86,16 +86,56 @@
         .ranked-tweeter-card {
           .tweeter-details {
             background: url(/assets/clus2018/tweetCardBgBlackCube.png);
-            .name, .twitter-handle {
-              color: white;
+            .name{
+              color: #050608
+            }
+            .twitter-handle {
+              color: #004e7c;
             }
             .tweets {
               .count {
-                color: white;
+                color: #050608;
               }
             }
           }
         }
+      }
+    }
+    &.leaderboardv2 {
+      .dashboard-header {
+        display: none;
+      }
+      .container {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .header {
+          .header-logo {
+            background: url(/assets/clus2018/logo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          .heading {
+            font-size: 2em;
+          }
+        }
+        .post {
+          .post-body {
+            .post-footer {
+              .post-logo {
+                margin-right: 0;
+                margin-top: 0;
+                img {
+                  width: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+      @media (min-width: 1080px) {
+        font-size: 8px;
       }
     }
   }

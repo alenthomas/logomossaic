@@ -1,0 +1,208 @@
+@keyframes scroll {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #050608;
+  font-family: CiscoSansThin;
+  .header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    z-index: 10;
+    .header-logo {
+      align-self: flex-end;
+      width: 110px;
+      height: 60px;
+      background: url(/assets/clus2018/logo.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .heading {
+      color: #1dbbe9;
+    }
+  }
+  .top {
+    width: 100%;
+    margin-bottom: 65px;
+    margin-right: 12px;
+    .post:nth-child(1) {
+      .post-body {
+        position: relative;
+        .medal {
+          position: absolute;
+          top: 0px;
+          right: 5px;
+          display: block;
+          background: url(/assets/medals/gold.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 30px;
+          height: 40px;
+        }
+      }
+    }
+    .post:nth-child(2) {
+      .post-body {
+        position: relative;
+        .medal {
+          position: absolute;
+          top: 0px;
+          right: 5px;
+          display: block;
+          background: url(/assets/medals/silver.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 30px;
+          height: 40px;
+        }
+      }
+    }
+    .post:nth-child(3) {
+      .post-body {
+        position: relative;
+        .medal {
+          position: absolute;
+          top: 0px;
+          right: 5px;
+          display: block;
+          background: url(/assets/medals/bronze.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 30px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  .rest-parent {
+    overflow: hidden;
+    width: 100%;
+    padding-right: 12px;
+  }
+  .rest {
+    width: 100%;
+    // animation: scroll 120s linear infinite;
+    .post {
+      .post-img {
+        img {
+          margin: 10px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          max-width: 75px;
+          height: 75%;
+          max-height: 75px;
+          border: solid 1px #cecece;
+          background-color: #004e7c;
+        }
+      }
+      .post-body {
+        justify-content: space-evenly;
+        .post-footer {
+          margin-top: -10px;
+        }
+        // .post-content {
+        //   .author-name {
+        //     margin-top: 1px;
+        //   }
+        // }
+      }
+    }
+  }
+  .post {
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 110px;
+    width: 98%;
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    .post-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        max-width: 110px;
+        height: 100%;
+        max-height: 110px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: #f4f4f4;
+      }
+    }
+    .post-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-left: 12px;
+      margin-right: 12px;
+      width: 100%;
+      word-wrap: break-word;
+      .medal {
+        display: none;
+      }
+      .post-content {
+        .author-name {
+          margin-bottom: 6px;
+          font-size: 2em;
+          // font-size: 15.5px;
+          // line-height: 3;
+          letter-spacing: 0.6px;
+
+        }
+        .author-handle {
+          font-size: 1.8em;
+          color: #004e7c;
+          // font-size: 12.5px;
+          // line-height: 3.72;
+          letter-spacing: 0.5px;
+        }
+      }
+      .post-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid #a6a6a6;
+        font-family: Roboto;
+        font-weight: 300;
+        .post-count {
+          font-size: 1.8em;
+          span {
+            font-size: 2em;
+          }
+        }
+        .post-logo {
+          align-self: flex-end;
+          margin-right: 10px;
+          margin-top: 10px;
+          img {
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
