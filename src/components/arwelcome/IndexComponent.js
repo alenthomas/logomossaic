@@ -7,7 +7,7 @@ export default class ArWelcome extends Component {
   }
   componentDidMount() {
     console.log('hjalskjlksajlk')
-    fetch('https://devapi.fankave.com/ids/ar/getName?json=true')
+    fetch('http://devapi.fankave.com/ids/ar/getName?json=true')
     .then(e => e.json())
     .then(e => this.setState({data: e}))
     .catch(e => this.setState({data: {"success":true,"msg":"Name retrieved successfully","data":{"name":"error"}}}))
