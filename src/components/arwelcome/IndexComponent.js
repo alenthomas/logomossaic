@@ -7,7 +7,7 @@ export default class ArWelcome extends Component {
   }
   componentDidMount() {
     console.log('hjalskjlksajlk')
-    fetch('https://devapi.fankave.com/ids/ar/getName?json=true')
+    fetch('http://devapi.fankave.com/ids/ar/getName?json=true')
     .then(e => e.json())
     .then(e => this.setState({data: e}))
     .catch(e => this.setState({data: {"success":true,"msg":"Name retrieved successfully","data":{"name":"error"}}}))
@@ -15,7 +15,7 @@ export default class ArWelcome extends Component {
   render() {
     if(this.state.data) {
       return (
-        <div style={{'font-size': '1.5em', 'margin-left': '10px'}}>Welcome <span style={{'font-size': '2em', 'padding-left': '10px'}}>{this.state.data.data.name}</span></div>
+        <div style={{'color': 'yellow', 'font-size': '1.5em', 'margin-left': '10px'}}>Welcome <span style={{'color': 'yellow', 'font-size': '5em', 'padding-left': '10px'}}>{this.state.data.data.name}</span></div>
       )
     }
     return(
