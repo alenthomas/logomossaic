@@ -209,21 +209,24 @@
 
         .tweet-column-v2 {
           margin-right: 15px;
-          transform:translateY(100%);
-          animation: scroll-left 120s linear infinite;
+          // transform:translateY(100%);
+          // animation: scroll 120s linear infinite;
         }
 
         .tweet-column.slide {
-          transform: translateY(0);
-          transition: transform 1s linear;
+          // transform: translateY(0);
+          // transition: transform 1s linear;
         }
       }
     }
   }
 }
-@keyframes scroll-left {
+.empty {
+  display: none;
+}
+@keyframes scroll {
   0% {
-    transform: translateY(10%);
+    transform: translateY(0%);
   }
   100% {
     transform: translateY(-100%);
