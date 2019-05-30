@@ -1,0 +1,23 @@
+@keyframes scroll {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+.animation-parent {
+  height: 80vh;
+  position: relative;
+  .one {
+    position: absolute;
+    top: 100%;
+    &.hide {
+      display: none;
+    }
+  }
+  .two {
+    position: absolute;
+    top: 100%;
+    &.hide {
+      display: none;
+    }
+  }
+}

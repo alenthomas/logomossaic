@@ -77,6 +77,10 @@
     }
     .parent {
       display: flex;
+      overflow: hidden;
+      .animation-parent:nth-child(2) {
+        left: 300px;
+      }
 
     }
 
