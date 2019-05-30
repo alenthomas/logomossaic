@@ -15,7 +15,7 @@ export default class ArWelcome extends Component {
   render() {
     if(this.state.data) {
       return (
-        <div style={{'color': 'red', 'font-size': '1.5em', 'margin-left': '10px'}}>Welcome <span style={{'color': 'red', 'font-size': '2em', 'padding-left': '10px'}}>{this.state.data.data.name}</span></div>
+        <div style={{'color': 'yellow', 'font-size': '1.5em', 'margin-left': '10px'}}>Welcome <span style={{'color': 'yellow', 'font-size': '5em', 'padding-left': '10px'}}>{this.state.data.data.name}</span></div>
       )
     }
     return(
