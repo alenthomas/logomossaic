@@ -6,7 +6,7 @@ import './animationscroll.css';
 import _ from 'lodash';
 IntersectionObserver.prototype.POLL_INTERVAL = 500; // Time in milliseconds.
 
-const SPEED = 100.91;
+const SPEED = 15;
 
 export class AnimateScroll extends Component {
   constructor(props) {
