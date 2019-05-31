@@ -5,7 +5,7 @@ export default {
     "containerCssClassname": "default",
     "background": "linear-gradient(20deg, #364D9D, #308CC3)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco/${lodash.random(1, 4)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco/${lodash.random(1, 4)}.mp4`
     },
     "layout": {
       "regular": {
@@ -113,7 +113,7 @@ export default {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -243,13 +243,13 @@ export default {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus2018.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
+          "leftLogoUrl": 'http://storage.googleapis.com/animable/cisco-live/clus2018.png',
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -295,7 +295,7 @@ export default {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/possible-texture.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
@@ -348,7 +348,7 @@ export default {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -399,8 +399,8 @@ export default {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`,
-      "urlVertical": () => `https://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
+      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
     },
     "layout": {
       "regular": {
@@ -469,7 +469,7 @@ export default {
     "containerCssClassname": "vyoma-demo",
     "background": 'url("/assets/vyoma-demo/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/vyoma-demo/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/vyoma-demo/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -615,7 +615,7 @@ export default {
     "containerCssClassname": "westernunion",
     "background": 'url("/assets/westernunion/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => 'https://storage.googleapis.com/animable/westernunion/loading.mp4'
+      "url": () => 'http://storage.googleapis.com/animable/westernunion/loading.mp4'
     },
     "layout": {
       "regular": {
@@ -637,13 +637,13 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -689,13 +689,13 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -741,13 +741,13 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -793,7 +793,7 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
@@ -887,7 +887,7 @@ export default {
     "containerCssClassname": "vmware",
     "background": 'url("/assets/vmware/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/vmware/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/vmware/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -943,7 +943,7 @@ export default {
     "containerCssClassname": "vmware",
     "background": 'url("/assets/vmware/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/vmware/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/vmware/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -999,7 +999,7 @@ export default {
     "containerCssClassname": "harker",
     "background": 'url("/assets/harker/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/harker/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/harker/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -1055,7 +1055,7 @@ export default {
     "containerCssClassname": "harker",
     "background": 'url("/assets/harker/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/harker/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/harker/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -1111,7 +1111,7 @@ export default {
     "containerCssClassname": "cloudflare",
     "background": 'url("/assets/cloudflare/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cloudflare/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cloudflare/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -1167,7 +1167,7 @@ export default {
     "containerCssClassname": "cloudflare",
     "background": 'url("/assets/cloudflare/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cloudflare/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cloudflare/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -1223,7 +1223,7 @@ export default {
     "containerCssClassname": "amat",
     "background": 'url("/assets/amat/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/amat/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/amat/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -1279,7 +1279,7 @@ export default {
     "containerCssClassname": "tmobile",
     "background": 'url("/assets/tmobile/bg.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://github.com/alenthomas/alenthomas.github.io/blob/master/image/11.mp4?raw=true`
+      "url": () => `http://github.com/alenthomas/alenthomas.github.io/blob/master/image/11.mp4?raw=true`
     },
     "layout": {
       "regular": {
@@ -1340,7 +1340,7 @@ export default {
     "containerCssClassname": "pure2",
     "background": 'url("/assets/purestorage/bg2.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/purestorage/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/purestorage/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -1396,7 +1396,7 @@ export default {
     "containerCssClassname": "pure1",
     "background": 'url("/assets/purestorage/bg1.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/purestorage/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/purestorage/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -1452,7 +1452,7 @@ export default {
     "containerCssClassname": "pure2",
     "background": 'url("/assets/purestorage/bg2.jpg") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/purestorage/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/purestorage/loading.mp4`
     },
     "layout": {
       "regular": {
