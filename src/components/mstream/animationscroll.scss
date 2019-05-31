@@ -1,9 +1,18 @@
-@keyframes scroll {
+@keyframes scroll-top {
   0% { transform: translateY(0%); }
-  100% { transform: translateY(-100%); }
+  100% { transform: translateY(-200%); }
 }
 
 .animation-parent {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  perspective: 1000;
+  -webkit-perspective: 1000;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
   height: 80vh;
   position: relative;
   .one {
@@ -12,12 +21,22 @@
     &.hide {
       display: none;
     }
+    .end {
+      &.hide {
+        display: none;
+      }
+    }
   }
   .two {
     position: absolute;
     top: 100%;
     &.hide {
       display: none;
+    }
+    .end {
+      &.hide {
+        display: none;
+      }
     }
   }
 }

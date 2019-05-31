@@ -1,5 +1,10 @@
 .masonary-stream-v2 {
   overflow-y: hidden;
+  .content-transition-appear {
+    &.content-transition-appear-active {
+      transition: none;
+    }
+  }
   .dashboard-header {
     display: none;
   }
@@ -227,12 +232,4 @@
 }
 .empty {
   display: none;
-}
-@keyframes scroll {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
 }
