@@ -72,10 +72,10 @@ export default class MasonaryStreamV2 extends Component {
 
   renderWrapper = (exp) => {
     if(exp === 2) {
-      let data1 = this.state.data.slice(0, 6).filter((e, i) => i%2 === 0).map((e) => {
+      let data1 = this.state.data.filter((e, i) => i%2 === 0).map((e) => {
         return (<TweetCard data={e} key={e.id} />);
       });
-      let data2 = this.state.data.slice(0, 6).filter((e, i) => i%2 !== 0).map((e) => {
+      let data2 = this.state.data.filter((e, i) => i%2 !== 0).map((e) => {
         return (<TweetCard data={e} key={e.id} />);
       });
       return (
@@ -92,7 +92,7 @@ export default class MasonaryStreamV2 extends Component {
       return (
         <div className='parent'>
           <AnimateScroll endData={this.endCard()}>
-            {this.state.data.slice(0, 6).map(e => <TweetCard data={e} key={e.id} />)}
+            {this.state.data.map(e => <TweetCard data={e} key={e.id} />)}
           </AnimateScroll>
         </div>
       )
