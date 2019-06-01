@@ -47,6 +47,7 @@ export default class MasonaryStreamV2 extends Component {
     this.state = {width: 0, height: 0, data, count: [20, 20], repeat: 1, exp: 0, heightOne: 0, heightTwo: 0, heightSingle: 0};
   }
   componentDidMount() {
+    console.log('MSTREAM: Comonent Mounted');
     let width = window.screen.width;
     let height = window.screen.height;
     let exp;
@@ -55,27 +56,37 @@ export default class MasonaryStreamV2 extends Component {
     } else {
       exp = 1;
     }
+    console.log('MSTREAM: Screen Width calculated');
+    console.log('MSTREAM: Screen width', exp);
     this.setState({width, height, exp});
   }
 
   onResizeOne = (w, h) => {
+    console.log('MSTREAM: On resize for div one event listener triggered');
+    console.log('MSTREAM: width: ', w, 'height: ', h);
     this.setState({heightOne: h});
   }
 
   onResizeTwo = (w, h) => {
+    console.log('MSTREAM: On resize for div two event listener triggered');
+    console.log('MSTREAM: width: ', w, 'height: ', h);
     this.setState({heightTwo: h});
   }
 
   onResize = (w, h) => {
+    console.log('MSTREAM: On resize for single div event listener triggered');
+    console.log('MSTREAM: width: ', w, 'height: ', h);
     this.setState({heightSingle: h});
   }
 
   renderWrapper = (exp) => {
+    console.log('MSTREAM: Render wrapper called');
     if(exp === 2) {
-      let data1 = this.state.data.filter((e, i) => i%2 === 0).map((e) => {
+      console.log('exp: ', 2);
+      let data1 = this.state.data.slice(0, 10).filter((e, i) => i%2 === 0).map((e) => {
         return (<TweetCard data={e} key={e.id} />);
       });
-      let data2 = this.state.data.filter((e, i) => i%2 !== 0).map((e) => {
+      let data2 = this.state.data.slice(0, 10).filter((e, i) => i%2 !== 0).map((e) => {
         return (<TweetCard data={e} key={e.id} />);
       });
       return (
@@ -89,10 +100,11 @@ export default class MasonaryStreamV2 extends Component {
         </div>
       )
     } else if(exp === 1){
+      console.log('MSTREAM: exp: ', 1);
       return (
         <div className='parent'>
           <AnimateScroll endData={this.endCard()}>
-            {this.state.data.map(e => <TweetCard data={e} key={e.id} />)}
+            {this.state.data.slice(0, 10).map(e => <TweetCard data={e} key={e.id} />)}
           </AnimateScroll>
         </div>
       )
@@ -102,6 +114,7 @@ export default class MasonaryStreamV2 extends Component {
   endCard = () => (<TweetCard data={actionCard} />);
 
   render() {
+    console.log('MSTREAM: render called');
     return (
       <div className='mstream'>
         <div className={`mstream-header ${this.state.exp===2? 'towards-left': ''}`}><div className={`logo`} /></div>

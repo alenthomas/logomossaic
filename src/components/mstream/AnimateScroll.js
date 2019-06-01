@@ -15,6 +15,7 @@ export class AnimateScroll extends Component {
   }
 
   onResize = (w, h, refId) => {
+    console.log('ANIMATION SCROLL: resize called');
     if(refId === 'one') {
       this.setState({heightOne: h});
       return;
@@ -27,6 +28,7 @@ export class AnimateScroll extends Component {
   }
 
   animation = (refId) => {
+    console.log('ANIMATION SCROLL: animation set');
     // return {};
     if(refId === 'one') {
       let time = this.state.heightOne/SPEED;
@@ -39,12 +41,14 @@ export class AnimateScroll extends Component {
   }
 
   manageReff = (refId, ratio, e) => {
+    console.log('ANIMATION SCROLL: event listner called');
     if(refId === 'one') {
       // if(this.state.showOne && ratio > 0.2 && ratio < 0.8) {
         // this.setState({showOne: true, showTwo: true, oneInView: true});
         // return;
       // }
       if(this.state.showOne && ratio > 0.99) {
+        console.log('setstate called for one');
         this.setState({showOne: false, showTwo: true, oneInView: false, twoInView: true});
         return;
       }
@@ -55,6 +59,7 @@ export class AnimateScroll extends Component {
         // return;
       // }
       if(this.state.showTwo && ratio > 0.99) {
+        console.log('set state called for two');
         this.setState({showOne: true, showTwo: false});
       }
     }
@@ -62,10 +67,12 @@ export class AnimateScroll extends Component {
 
 
   handleChange = (e, intersectionObj, refId) => {
+    console.log('ANIMATION SCROLL: intersection observer called');
     this.props.children && this.manageReff(refId, e.intersectionRatio, e);
   }
 
   render() {
+    console.log('ANIMATION SCROLL: render called');
     let styleOne = this.animation('one');
     let styleTwo = this.animation('two');
     return (
@@ -94,7 +101,6 @@ export class AnimateScroll extends Component {
             <div className={`end ${this.props.children.length > 0 ? '': 'hide'}`}>{this.props.endData}</div>
           </Observer>
         </div>
-
       </div>
     )
   }

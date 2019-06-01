@@ -24,9 +24,17 @@ class IndexComponent extends Component {
   }
 
   loadData = (data) => {
+    console.log('MSTREAM INDEX api call successful');
     let filtered = data.filter((d) => d.source.name === 'Twitter' || d.source.name === 'Instagram');
     lodash.remove(data, hasVideoMedia);
-    this.setState({data: filtered});
+    let dataEqual = lodash.isEqual(lodash.sortBy(filtered), lodash.sortBy(this.state.data));
+    if(!dataEqual) {
+      console.log('MSTREAM INDEX api new data');
+      this.setState({data: filtered});
+      return;
+    }
+    console.log('MSTREAM INDEX api no new data');
+    return;
   }
 
   componentWillMount() {
