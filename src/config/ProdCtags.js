@@ -5,7 +5,7 @@ export default {
     "containerCssClassname": "default",
     "background": "linear-gradient(20deg, #364D9D, #308CC3)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco/${lodash.random(1, 4)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco/${lodash.random(1, 4)}.mp4`
     },
     "layout": {
       "regular": {
@@ -208,13 +208,13 @@ export default {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/clus2018/cancun.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -261,7 +261,7 @@ export default {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
@@ -314,7 +314,7 @@ export default {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -365,7 +365,7 @@ export default {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/ciscostore/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -418,13 +418,13 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -470,13 +470,13 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -522,13 +522,13 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -574,13 +574,13 @@ export default {
     "containerCssClassname": "cisco-cxc",
     "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'https://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -670,7 +670,7 @@ export default {
     "containerCssClassname": "nba-allstar",
     "background": 'url("/assets/nba-allstar/bg.png") no-repeat',
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/NBA/allstar1.mp4`
+      "url": () => `http://storage.googleapis.com/animable/NBA/allstar1.mp4`
     },
     "layout": {
       "regular": {
@@ -721,7 +721,7 @@ export default {
     "containerCssClassname": "bayclub",
     "background": "url(/assets/bayclub/bg.jpg)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/bayclub/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/bayclub/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -773,7 +773,7 @@ export default {
     "containerCssClassname": "linkedin",
     "background": "url(/assets/linkedin/bg.jpg)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/linkedin/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/linkedin/loading.mp4`
     },
     "layout": {
       "regular": {
@@ -825,8 +825,8 @@ export default {
     "containerCssClassname": "tiecon",
     "background": "url(/assets/tiecon/bg.jpg)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/tiecon/loading.mp4`,
-      "urlVertical": () => `https://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
+      "url": () => `http://storage.googleapis.com/animable/tiecon/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
     },
     "layout": {
       "regular": {
