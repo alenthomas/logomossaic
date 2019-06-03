@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import 'intersection-observer';
-// import ReactResizeDetector from 'react-resize-detector';
 import './animationscroll.css';
 import _ from 'lodash';
 
