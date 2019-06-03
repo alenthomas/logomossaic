@@ -1,0 +1,44 @@
+@keyframes scroll-top {
+  0% {
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+.animation-parent {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  height: 80vh;
+  position: relative;
+  .one {
+    position: absolute;
+    top: 100%;
+    &.hide {
+      display: none;
+    }
+    .end {
+      &.hide {
+        display: none;
+      }
+    }
+  }
+  .two {
+    position: absolute;
+    top: 100%;
+    &.hide {
+      display: none;
+    }
+    .end {
+      &.hide {
+        display: none;
+      }
+    }
+  }
+}

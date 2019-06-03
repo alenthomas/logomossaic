@@ -1,0 +1,235 @@
+.masonary-stream-v2 {
+  overflow-y: hidden;
+  .content-transition-appear {
+    &.content-transition-appear-active {
+      transition: none;
+    }
+  }
+  .dashboard-header {
+    display: none;
+  }
+  .dashboard-footer {
+    display: none;
+  }
+  .background-wave {
+    display: none;
+  }
+
+  .dashboard-content-v2 {
+    z-index: 1;
+    transform: none;
+    position: static;
+    .mstream {
+      overflow-y: hidden;
+      .mstream-header {
+        &.towards-left {
+          margin-left: 21px;
+          justify-content: flex-start;
+        }
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logo {
+          z-index: 100;
+          width: 116px;
+          height: 63px;
+          background-image: url(/assets/logo/possible-logo.png) !important;
+          background-size: contain;
+          background-repeat:no-repeat;
+        }
+      }
+      .mstream-footer {
+        display: inline;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-image: url(/assets/clus2018/possible-texture.png);
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        margin-top: 13px;
+        .footer-logo-left {
+          float: left;
+          width: 94px;
+          padding-left: 5px;
+          padding-right: 5px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          height: 43px;
+          background-image: url(/assets/logo/cisco-live-ca.png) !important;
+          background-size: contain;
+          background-repeat:no-repeat;
+        }
+        .footer-logo-right {
+          float: right;
+          width: 107px;
+          height: 38px;
+          background-image: url(/assets/logo/pow-by-fankave-white.png) !important;
+          background-size: contain;
+          background-origin: content-box;
+          background-repeat:no-repeat;
+        }
+      }
+      .contain {
+        height: 100%;
+        overflow-y: hidden;
+        .mstream-wrapper {
+
+        }
+      }
+    }
+    .parent {
+      display: flex;
+      overflow: hidden;
+      .animation-parent:nth-child(2) {
+        left: 300px;
+      }
+
+    }
+
+    .tweet-card {
+      width: 287px;
+      height: auto;
+      padding: 17px 15px 0 15px;
+      margin: none;
+      break-inside: avoid;
+      transform: rotateY(360deg);
+
+      .tweet-card-top {
+        .avatar {
+          .image-obj {
+            width: 60px;
+            height: 60px;
+            img {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+
+        .profile {
+          padding-left: 20px;
+          .name {
+            font-size: 16px;
+          }
+          .handle {
+            font-size: 12px;
+          }
+        }
+
+        .timestamp {
+          padding-top: 35px;
+          font-size: 12px;
+
+          img.clock {
+            width: 13px;
+            position: relative;
+            top: 2px;
+            padding: 0 5px;
+          }
+        }
+      }
+
+      .tweet-card-middle {
+        font-size: 13px;
+        .image {
+          overflow: hidden;
+        }
+      }
+
+      .tweet-card-middle.text {
+        // padding: 0 0 20px 0;
+        padding-left: 0px;
+        min-height: auto;
+        height: auto;
+
+        .text-content {
+          padding-top: 20px;
+        }
+      }
+
+      .tweet-card-middle.portrait, .tweet-card-middle.landscape {
+        // padding: 5px 0 0 0;
+        padding-left: 0px;
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        .emoji {
+          width: 25px;
+          height: 25px;
+          padding: 0;
+        }
+
+        .image {
+          img {
+            width: 402px;
+            height: auto;
+            object-fit: initial;
+          }
+        }
+
+        .text-content {
+          padding-bottom: 10px;
+        }
+      }
+
+      .tweet-card-bottom {
+        padding: 5px;
+        .twitter-logo {
+          img.twitter-bird {
+            width: 27px;
+          }
+        }
+        .icon {
+          width: 19px;
+          height: 16px;
+        }
+
+        .likes, .shares {
+          font-size: 14px;
+          img {
+            height: 16px;
+            width: auto;
+            top: 2px;
+          }
+
+          span {
+            padding: 8px;
+          }
+        }
+
+        .likes {
+          padding-right: 15px;
+        }
+      }
+    }
+
+    .tweet-columns-v2 {
+      display: block;
+      text-align: center;
+      padding-top: 30px;
+
+      .tweet-column-wrapper-v2 {
+        overflow-y: hidden;
+        display: inline-block;
+        vertical-align: top;
+
+        .tweet-column-v2 {
+          margin-right: 15px;
+          // transform:translateY(100%);
+          // animation: scroll 120s linear infinite;
+        }
+
+        .tweet-column.slide {
+          // transform: translateY(0);
+          // transition: transform 1s linear;
+        }
+      }
+    }
+  }
+}
+.empty {
+  display: none;
+}

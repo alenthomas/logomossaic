@@ -19,6 +19,7 @@ import PhotoGrid from "./components/photogrid/IndexComponent.js";
 import HorizontalStream from "./components/horizontalstream/IndexComponent.js";
 import MasonaryStream from "./components/masonarystream/IndexComponent.js";
 import MasonaryStreamV2 from "./components/mstream/IndexComponent.js";
+import MasonaryStreamV3 from "./components/mstreamtwo/IndexComponent.js";
 import Marquee from "./components/marquee/IndexComponent.js"; //Not using regular layout
 import MarqueeBlue from "./components/marqueeblue/IndexComponent.js"; //Not using regular layout
 import Capsule from "./components/capsule/IndexComponent.js"; //Not using regular layout
@@ -44,6 +45,7 @@ class App extends Component {
           <Route path="/hstream" render={(props) => <HorizontalStream config={getCurrentConfig()} {...props} />}/>
           <Route path="/mstream" render={(props) => <MasonaryStream config={getCurrentConfig()} {...props} />}/>
           <Route path="/mstreamv2" render={(props) => <MasonaryStreamV2 config={getCurrentConfig()} {...props} />}/>
+          <Route path="/mstreamv3" render={(props) => <MasonaryStreamV3 config={getCurrentConfig()} {...props} />}/>
           <Route path="/marquee" render={(props) => <Marquee config={getCurrentConfig()} {...props} />}/>
           <Route path="/marqueeBlue" render={(props) => <MarqueeBlue config={getCurrentConfig()} {...props} />}/>
           <Route path="/capsule" render={(props) => <Capsule config={getCurrentConfig()} {...props} />}/>
