@@ -42,7 +42,7 @@ export default class MasonaryStreamV3 extends Component {
     super(props);
     let data = [];
     if(props.data.length > 0) {
-      data = props.data.filter(e => e.media && e.media[0].mediaType === 'image/jpeg');
+      data = props.data;
     }
     this.state = {width: 0, height: 0, data, count: [20, 20], repeat: 1, exp: 0, heightOne: 0, heightTwo: 0, heightSingle: 0};
   }
@@ -118,7 +118,7 @@ export default class MasonaryStreamV3 extends Component {
   }
 
   render() {
-    console.log('MSTREAM: render called', this.state.data.length);
+    // console.log('MSTREAM: render called');
     return (
       <div className='mstream'>
         <div className={`mstream-header ${this.state.exp===2? 'towards-left': ''}`}><div className={`logo`} /></div>
