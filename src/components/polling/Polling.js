@@ -56,7 +56,7 @@ class Polling extends Component {
     this.setState({selected: e, votes: {up: 0}});
     this.getVotes(e.getId());
     clearTimeout(this.timeoutId);
-    // this.reset();
+    this.reset();
   }
 
   close = () => {
