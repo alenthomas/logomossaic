@@ -5,8 +5,6 @@ import twittersvg from './twitter.svg';
 import instagram from './instagram.svg';
 import instagrampng from './instagram.png';
 import ciscolive from './ciscolive.png';
-import thumbsblink from './thumbsblink.svg'
-import thumbs from './thumbs.svg'
 
 export const Card = ({info, selected}) => {
   const source = info.getSource();

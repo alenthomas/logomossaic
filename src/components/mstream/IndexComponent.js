@@ -66,7 +66,7 @@ class IndexComponent extends Component {
         isReady={!lodash.isEmpty(data)}
         config={this.props.config}
         title={componentConfig.title}
-        hideBgWave={componentConfig.hideBgWave}
+        hideBgWave={true}
         className="masonary-stream-v2">
           <div className="dashboard-content-v2">
             <BrokenMediaRemover data={data}>
