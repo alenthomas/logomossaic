@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import './arwelcome.css';
 
+let URL = 'http://devapi.fankave.com/ids'
+
 export default class ArWelcome extends Component {
   constructor(props) {
     super(props);
     this.state = {name: ''};
   }
   componentDidMount() {
-    fetch('http://devapi.fankave.com/ids/ar/getName?json=true')
+    fetch(`${URL}/ar/getName?json=true`)
     .then(e => e.json())
     .then(({data}) => this.setState({name: data.name}))
     .catch(e => {
