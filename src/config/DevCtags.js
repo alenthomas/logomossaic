@@ -293,7 +293,7 @@ export default {
 
   "bethebridge": {
     "containerCssClassname": "clus2018",
-    "background": "url(/assets/clus2018/possible-texture.png)",
+    "background": "url(/assets/clus2019/blue-bg-1080.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
     },
@@ -321,6 +321,9 @@ export default {
     },
     "masonarystream": {
       "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
     },
     "mediacarousel": {
       "title": "#BeTheBridge Highlights",
