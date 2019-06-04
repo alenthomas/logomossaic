@@ -204,7 +204,8 @@ export default {
     }
   },
 
-  "cisco.com:event=clus": "containerCssClassname": "clus2019",
+  "cisco.com:event=clus": {
+    "containerCssClassname": "clus2019",
     "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
@@ -261,6 +262,66 @@ export default {
       "filterHashtags": ["#clus"]
     }
   },
+
+  "ciscoiotclus": {
+    "containerCssClassname": "ciscoiotclus",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/ciscoiotclus/1.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/clus2019/leftLogo.png',
+          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#CLUS Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#CiscoIoT Highlights",
+      "hideBgWave": true
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "#CicosIoT Social Pulse",
+      "tileBgText": "#CiscoIoT",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    }
+  },
+
 
   "bethebridge": {
     "containerCssClassname": "clus2018",
