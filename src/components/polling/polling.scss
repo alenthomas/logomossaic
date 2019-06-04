@@ -47,28 +47,19 @@
     border: solid 10px white;
     border-radius: 20px;
     position: relative;
-    .thumbs {
-      img {
+    .likes {
+      .icon {
         position: absolute;
         display: none;
-      }
-      &.up {
-        display: block;
-        position: absolute;
-        top: 40%;
-        left: 40%;
-        transform: scale(5);
-        opacity: 0.8;
-
-      }
-      &.down {
-        display: block;
-        position: absolute;
-        top: 20%;
-        left: 40%;
-        transform: scale(5);
-        opacity: 0.8;
-        transform: scale(5) rotate(180deg);
+        &.up {
+          display: block;
+          position: absolute;
+          top: 25%;
+          left: 40%;
+          opacity: 0.8;
+          font-size: 10em;
+          color: #d52525;
+        }
       }
     }
     .selected-card-photo {
@@ -82,14 +73,14 @@
       }
     }
     .selected-card-body {
-      height: 260px;
+      height: 200px;
       position: relative;
       background-color: #ffffff;
       .cisco-logo-bck {
         position: absolute;
         top: -62px;
         left: 10px;
-        height: 42%;
+        height: 56%;
         width: 100%;
         background-repeat: no-repeat;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NiAzMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5iZ19zb3VyY2VfYmFkZ2VfMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01Ny42NywxMS45NEM1Mi4zNiw2LjcxLDQ4LjQyLDAsMzguMywwSDM3LjdDMjcuNTgsMCwyMy42NCw2LjcxLDE4LjMzLDExLjk0LDE0LjQ3LDE2Ljc2LDYuNjEsMTcuODEsMCwxOFYzMUg3NlYxOEM2OS4zOSwxNy44MSw2MS41MywxNi43Niw1Ny42NywxMS45NFoiLz48L2c+PC9nPjwvc3ZnPg==);
@@ -97,7 +88,7 @@
       .cisco-logo {
         position: absolute;
         top: 10px;
-        left: 66px;
+        left: 72px;
         width: 125px;
         height: 125px;
         border-radius: 100%;
@@ -146,11 +137,11 @@
         }
         &.up-vote {
           position: absolute;
-          top: 120px;
-          left: 350px;
+          top: 105px;
+          left: 50px;
           .icon {
-            color: #feb20d;
-            font-size: 3em;
+            color: #d52525;
+            font-size: 2.5em;
           }
         }
       }
@@ -164,10 +155,10 @@
       position: relative;
       width: 222px;
       height: 168px;
-      background: rgb(41, 190, 41);
+      background: #ffffff;
       padding: 10px;
       border-radius: 40%;
-      border: 10px solid #ffffff;
+      border: 10px solid #d5d5d5;
       &.down {
         &.blink {
           pointer-events: none;
@@ -191,6 +182,13 @@
             bottom: 0px;
             transform: scaleX(-1) rotate(0deg);
           }
+          .icon {
+            color: #d52525;
+          }
+        }
+        .icon {
+          // border: 1px solid grey;
+          text-shadow: 0 0 10px grey;
         }
         img {
           transform: rotate(180deg);
@@ -217,6 +215,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
     .icon {
       font-size: 4em;
       color: #ffffff;
@@ -241,7 +240,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   .col {
-    animation: scroll 200s linear infinite;
+    // animation: scroll 200s linear infinite;
     animation-delay: 7s;
     &.pause {
        animation-play-state: paused;

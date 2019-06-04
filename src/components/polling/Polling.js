@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {Overlay, Card} from './Overlay';
+import {queryString} from '../../Helper.js';
+
+let URL = 'http://devapi.fankave.com/ids'
 
 class Polling extends Component {
   constructor(props) {
@@ -9,42 +12,63 @@ class Polling extends Component {
     // 1: liked,
     // 2: unlike
     this.timeoutId = null;
-    this.state = {selected: null, like: 0, votes: {up: 359, down: 59}};
+    this.state = {selected: null, like: 0, votes: {up: 0}};
   }
 
-  // componentDidMount() {
-  //   fetch('https://devapi.fankave.com/v1.0/cms/content/social?ctag=bethebridge&filter=&contentType=photo')
-  //   .then(e => e.json())
-  //   .then(e => this.setState({data: e}))
-  //   .catch(err => console.error('Err: ', err));
-  // }
+  getVotes = (_id) => {
+    fetch(`${URL}/polling/getPoll?id=${_id}`)
+    .then(res => res.json())
+    .then(result => {
+      if(result.data) {
+        let {ctag} = queryString();
+        let votes = result.data.polls.filter(e => e.name === ctag)
+        if(votes.length > 0) {
+          this.setState({votes: {up: votes[0]['votes']}});
+        }
+      }
+      console.log('api data', result.data);
+    })
+  }
 
-  // intersected = (e) => {
-
-  // }
+  postVotes = (_id) => {
+    let {ctag} = queryString();
+    fetch(`${URL}/polling/addPoll`, {
+      method: 'POST',
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({"id": _id, "contest": ctag})
+    })
+    .then(res => res.json())
+    .then(result => {
+      if(result.success) {
+        this.setState({like: 1, votes: {up: result.data.votes}});
+      }
+    })
+  }
 
   reset = (timeout=5000) => {
-    this.timeoutId = setTimeout(() => this.setState({selected: null, like: 0}), timeout);
+    this.timeoutId = setTimeout(() => this.setState({selected: null, like: 0, votes: {up: 0}}), timeout);
   }
 
   selected = (e) => {
-    this.setState({selected: e});
+    this.setState({selected: e, votes: {up: 0}});
+    this.getVotes(e.getId());
     clearTimeout(this.timeoutId);
-    this.reset();
+    // this.reset();
   }
 
   close = () => {
-    this.setState({selected: null, like: 0});
+    this.setState({selected: null, like: 0, votes: {up: 0}});
   }
 
   vote = (val) => {
     if(val === 1) {
-      this.setState(prevState => ({like: val, votes: {up: prevState.votes.up+1, down: prevState.votes.down}}));
-    } else if(val === 2) {
-      this.setState(prevState => ({like: val, votes: {up: prevState.votes.up, down: prevState.votes.down+1}}))
+      this.postVotes(this.state.selected.getId());
     }
     clearTimeout(this.timeoutId);
-    this.reset(2000);
+    this.reset(5000);
   }
 
   render() {

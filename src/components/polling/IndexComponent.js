@@ -10,6 +10,7 @@ import './polling.css';
 import { handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
+
 class IndexComponent extends Component {
   constructor(props) {
     super(props);

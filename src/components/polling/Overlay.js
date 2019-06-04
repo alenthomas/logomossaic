@@ -54,9 +54,9 @@ export const Overlay = ({info, closeAction, like, votedAction, votes}) => {
   }
   return (
     <div className='overlay'>
-      <div className='heading'>Give your Vote Here !</div>
+      <div className='heading'>Vote Here !</div>
       <div className='selected-card'>
-        <div className='thumbs'><img className={`thumbs ${likeValue}`} src={thumbsblink} alt='like' /></div>
+        <div className='likes'><i className={`icon icon-heart-filled ${likeValue}`}/></div>
         <div className='selected-card-photo'>
           <img src={info.getPhotoUrl()} alt='api content' />
         </div>
@@ -67,13 +67,11 @@ export const Overlay = ({info, closeAction, like, votedAction, votes}) => {
           <div className='social-logo'>
             <Logo info={info} />
           </div>
-          <div className='current down-vote'><i className='icon icon-thumbs-down'/>{votes.down}</div>
-          <div className='current up-vote'><i className='icon icon-thumbs-up'/>{votes.up}</div>
+          <div className='current up-vote'><i className='icon icon-heart-filled'/>{votes.up}</div>
         </div>
       </div>
       <div className='vote'>
-        <div className={`vote-action down ${like===2? 'blink': ''}`} onClick={() => votedAction(2)}><img src={like === 2 ? thumbsblink: thumbs} alt='thumbs-down' /></div>
-        <div className={`vote-action up ${like===1? 'blink': ''}`} onClick={() => votedAction(1)}><img src={like === 1 ? thumbsblink : thumbs} alt='thumbs-up' /></div>
+        <div className={`vote-action up ${like===1? 'blink': ''}`} onClick={() => votedAction(1)}><i className='icon icon-heart-filled'/></div>
       </div>
 
       <div className='close'><div onClick={closeAction}><i className='icon icon-cancel'/></div></div>
