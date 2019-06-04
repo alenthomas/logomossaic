@@ -23,7 +23,7 @@ export class VideoComponent extends Component {
 
   render() {
     return (
-      <div ref={this.setRef} onEnded={this.props.onEnded} dangerouslySetInnerHTML={{ __html:`
+      <div ref={this.setRef} dangerouslySetInnerHTML={{ __html:`
         <video
          muted
          autoplay

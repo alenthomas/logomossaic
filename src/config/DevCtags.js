@@ -295,7 +295,10 @@ export default {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2019/blue-bg-1080.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`,
+      "urlVertical": () => `https://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `https://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `https://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {

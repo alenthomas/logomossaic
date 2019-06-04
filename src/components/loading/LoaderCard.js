@@ -10,10 +10,16 @@ class LoaderCard extends Component {
     this.state = {width: 0, height: 0};
   }
   componentDidMount() {
-    this.setState({width: window.screen.width * window.devicePixelRatio, height: window.screen.height * window.devicePixelRatio})
+    this.setState({width: window.screen.width, height: window.screen.height})
   }
   content() {
-    const { loadingMedia: { url, urlVertical }, onLoadingVidEnded } = this.props;
+    const { loadingMedia: { url, urlVertical, urlVertical320, urlVertical640 }, onLoadingVidEnded } = this.props;
+    if(this.state.width === 320 && urlVertical320) {
+      return (<VideoComponent onEnded={onLoadingVidEnded} src={urlVertical320} type='video/mp4' />)
+    }
+    if(this.state.width === 640 && urlVertical640) {
+      return (<VideoComponent onEnded={onLoadingVidEnded} src={urlVertical640} type='video/mp4' />)
+    }
     if(this.state.height > this.state.width) {
       return (
         <VideoComponent onEnded={onLoadingVidEnded} src={urlVertical} type='video/mp4' />

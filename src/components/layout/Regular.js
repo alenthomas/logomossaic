@@ -15,20 +15,30 @@ class Regular extends Component {
 
     const { loadingMedia } = props.config;
     const urlVertical = this.getVerticalMediaUrl(loadingMedia);
+    const urlVertical320 = this.getVerticalMediaUrl(loadingMedia, 320);
+    const urlVertical640 = this.getVerticalMediaUrl(loadingMedia, 640);
     this.state = {
       isReady: false,
       loadingMedia: {
         ...loadingMedia,
         url: `${loadingMedia.url()}`,
         urlVertical,
+        urlVertical320,
+        urlVertical640,
       }
     };
 
     this.onLoadingVidEnded = this.onLoadingVidEnded.bind(this);
   }
 
-  getVerticalMediaUrl(media) {
+  getVerticalMediaUrl(media, resolution=null) {
     try {
+      if(resolution === 320) {
+        return `${media.urlVertical320()}`
+      }
+      if(resolution === 640) {
+        return `${media.urlVertical640()}`
+      }
       return `${media.urlVertical()}`
     } catch (err) {
       console.error('no vertical media url in config');
