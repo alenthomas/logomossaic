@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400&display=swap');
 
 .ar-welcome {
-  background: url('./../../../public/assets/clus2019/blue-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
+  background: url(/assets/clus2019/blue-bg-1080.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1080px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  // flex-wrap: wrap;
   font-family: Roboto;
   .logo {
     margin-top: 130px;
     width: 354px;
     height: 200px;
-    background: url('./../../../public/assets/clus2019/store-bg.png');
+    background: url(/assets/clus2019/store-bg.png);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 2;

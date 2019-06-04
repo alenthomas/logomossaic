@@ -26,7 +26,6 @@ class Polling extends Component {
           this.setState({votes: {up: votes[0]['votes']}});
         }
       }
-      console.log('api data', result.data);
     })
   }
 

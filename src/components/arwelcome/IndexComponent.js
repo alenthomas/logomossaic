@@ -18,7 +18,6 @@ export default class ArWelcome extends Component {
     })
   }
   render() {
-    console.log(this.state);
     return(
       <div className='ar-welcome'>
         <div className='logo'></div>
