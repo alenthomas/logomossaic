@@ -1,8 +1,8 @@
 .regularlayout {
-  &.tmobile {
+  &.ciscoiotclus {
     .dashboard-header {
       background: rgba(0,0,0,0.6);
-      height: 95px;
+      height: 105px;
 
       .logo.left-icon {
         img {
@@ -11,7 +11,6 @@
         }
       }
       .dashboard-title {
-        color: #fd1970;
         font-size: 52px;
         padding-top: 15px;
       }
@@ -32,24 +31,24 @@
     }
 
     &.stats {
-      background-image: url(/assets/clus2018/blue-bubbles-bg.png) !important;
+      background-image: url(/assets/clus2019/darkblue_bg1920.jpg) !important;
     }
 
     &.carousel-container, &.stats {
       .tweet-card {
-        background: url(/assets/tmobile/tweetCardBg.png);
+        background: url(/assets/clus2019/white_tweetCardBg.png);
         .tweet-card-top {
           .profile {
             .name, .handle {
-              color: #ffffff;
+              color: #000000;
             }
           }
           .timestamp {
-            color: #ffffff;
+            color: #000000;
           }
         }
         .tweet-card-middle {
-          color: #ffffff;
+          color: #000000;
         }
         .tweet-card-bottom {
           .icon {
@@ -61,7 +60,7 @@
             }
           }
           .likes, .shares {
-            color: #ffffff;
+            color: #000000;
           }
         }
       }
@@ -89,8 +88,7 @@
     &.photo-wall-container {
       .photo-wall {
         .caption {
-          font-size: 15vw;
-          color: #fd1970;
+          font-size: 16vw;
         }
         .phototile {
           &.portrait {
@@ -102,7 +100,7 @@
             }
           }
           &.zoomIn {
-            background-image: url(/assets/tmobile/tweetCardBg.png);
+            background-image: url(/assets/clus2019/white_tweetCardBg.png);
             img {
               margin-left: none;
             }
@@ -110,9 +108,9 @@
           .info {
             &.visible {
               .head {
-                color: #ffffff;
+                color: #000000;
               }
-              color: #ffffff;
+              color: #000000;
             }
           }
         }

@@ -204,17 +204,19 @@ export default {
     }
   },
 
-  "cisco.com:event=clus": {
-    "containerCssClassname": "clus2018",
-    "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
+  "cisco.com:event=clus": "containerCssClassname": "clus2019",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/clus2018/cancun.png',
-          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-live/clus-imagine.gif'
+          "leftLogoUrl": '/assets/clus2019/leftLogo.png',
+          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -235,8 +237,11 @@ export default {
     "masonarystream": {
       "title": "Social Feed"
     },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
     "mediacarousel": {
-      "title": "#CiscoLiveLA Highlights",
+      "title": "#CLUS Highlights",
       "hideBgWave": true
     },
     "photogrid": {
@@ -246,8 +251,8 @@ export default {
       "title": "#CLUS Trending Topics"
     },
     "photowall": {
-      "title": "#CLEUR Social Pulse",
-      "tileBgText": "#CLEUR",
+      "title": "#CLUS Social Pulse",
+      "tileBgText": "#CLUS",
       "hideBgWave": true
     },
     "tweetcounts": {
