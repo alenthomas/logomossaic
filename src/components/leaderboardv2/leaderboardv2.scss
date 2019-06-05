@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+  margin-top: 100px;
   height: 100vh;
   padding-left: 12px;
   padding-right: 12px;
@@ -39,7 +40,7 @@ body {
   }
   .top {
     width: 100%;
-    margin-bottom: 65px;
+    margin-bottom: 30px;
     margin-right: 12px;
     .post:nth-child(1) {
       .post-body {
@@ -97,14 +98,15 @@ body {
     overflow: hidden;
     width: 100%;
     padding-right: 12px;
-    height: 420px;
+    height: 500px;
   }
   .rest {
     width: 100%;
-    // animation: scroll 120s linear infinite;
+    animation: scroll 120s linear infinite;
     .post {
       .post-img {
         img {
+          min-width: 77px;
           margin: 10px;
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
@@ -117,14 +119,30 @@ body {
       }
       .post-body {
         justify-content: space-evenly;
-        .post-footer {
-          margin-top: -10px;
+        position: relative;
+        .post-content {
+          .rank {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            color: white;
+            background-color: #00bceb;
+            width: 30px;
+            height: 15px;
+            border-radius: 7.5px;
+            text-align: center;
+            font-size: 1.5em;
+          }
         }
-        // .post-content {
-        //   .author-name {
-        //     margin-top: 1px;
-        //   }
-        // }
+        .post-footer {
+          margin-top: 20px;
+        }
+        .post-content {
+          .author-name {
+            margin-top: 1px;
+          }
+        }
       }
     }
   }
@@ -157,11 +175,18 @@ body {
       margin-right: 12px;
       width: 100%;
       word-wrap: break-word;
+      .rank {
+        display: none;
+      }
       .medal {
         display: none;
       }
       .post-content {
         .author-name {
+          white-space: nowrap;
+          width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
           margin-bottom: 6px;
           font-size: 2em;
           // font-size: 15.5px;

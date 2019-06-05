@@ -76,12 +76,13 @@ class IndexComponent extends Component {
   }
 
   render() {
-    const { leaderboard: componentConfig } = this.props.config;
+    console.log(this.props.config.leaderboardv2);
+    const { leaderboardv2: componentConfig } = this.props.config;
     var allTweeters = this.getAllTweeters();
 
     var topThreeTweeters = this.getTopThreeTweeters();
     var remainingTweeters = this.getRemainingTweeters();
-    let animation = this.animation();
+    let animation = {}// this.animation();
 
     return (
       <RegularLayout
@@ -89,20 +90,16 @@ class IndexComponent extends Component {
         config={this.props.config}
         className="leaderboardv2"
         title={componentConfig.title}
-        shortTitle={"Leaderboard"}
+        shortTitle=''
         hideBgWave={componentConfig.hideBgWave}>
           <div className='container'>
-            <div className='header'>
-              <div className='header-logo'></div>
-              <div className='heading'>Leaderboard</div>
-            </div>
             <div className='top'>
               {topThreeTweeters.map(e => <Post key={e.handle} data={e} />)}
             </div>
             <div className='rest-parent' id='rest-parent'>
               <div id='rest' className='rest' style={animation}>
                 <ReactResizeDetector handleWidth={false} handleHeight={true} onResize={this.onResize} />
-                {remainingTweeters.map(e => <Post key={e.handle} data={e} />)}
+                {remainingTweeters.map((e, i) => <Post key={e.handle} data={e} rank={i} />)}
               </div>
             </div>
           </div>
@@ -111,7 +108,7 @@ class IndexComponent extends Component {
   }
 }
 
-const Post = ({data}) => {
+const Post = ({data, rank}) => {
   return (
     <div className='post'>
       <div className='post-img'>
@@ -120,6 +117,7 @@ const Post = ({data}) => {
       <div className='post-body'>
         <div className='medal'></div>
         <div className='post-content'>
+          <div className='rank'>#{rank+4}</div>
           <div className='author-name'>{data.name}</div>
           <div className='author-handle'>@{data.handle}</div>
         </div>

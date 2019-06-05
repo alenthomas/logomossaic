@@ -39,8 +39,19 @@ export default {
       "title": "#CiscoLiveLA",
       "refreshrate": 10,
     },
+    "leaderboardv2": {
+      "hideBgWave": true,
+    },
     "masonarystream": {
       "title": "#CiscoLiveLA",
+      "refreshrate": 10,
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+      "refreshrate": 10,
+    },
+    "masonarystreamv3": {
+      "hideBgWave": true,
       "refreshrate": 10,
     },
     "mediacarousel": {
@@ -235,11 +246,19 @@ export default {
     "leaderboard": {
       "title": "#CLUS Leaderboard"
     },
+    "leaderboardv2": {
+      "hideBgWave": true,
+    },
     "masonarystream": {
       "title": "Social Feed"
     },
     "masonarystreamv2": {
       "hideBgWave": true,
+      "refreshrate": 150,
+    },
+    "masonarystreamv3": {
+      "hideBgWave": true,
+      "refreshrate": 100,
     },
     "mediacarousel": {
       "title": "#CLUS Highlights",

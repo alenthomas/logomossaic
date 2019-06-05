@@ -103,10 +103,43 @@
     }
     &.leaderboardv2 {
       .dashboard-header {
-        display: none;
+        background-color: #004e7c;
+        height: 88px;
+        .dashboard-title {
+          display: block;
+          position: absolute;
+          text-align: right;
+          padding-right: 10px;
+          top: 30px;
+          right: 0px;
+          font-size: 2.5em;
+          font-family: CiscoSans;
+          color: #1dbbe9;
+        }
+        .dashboard-short-title {
+          display: none;
+        }
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
       }
       .dashboard-footer {
         .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
           &.left-2 {
             background: url(/assets/logo/cisco-live-ca.png);
             bottom: 0;
@@ -116,9 +149,6 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
-            img {
-              display: none;
-            }
           }
         }
       }
@@ -126,17 +156,6 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        .header {
-          .header-logo {
-            background: url(/assets/clus2018/logo.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-          }
-          .heading {
-            font-size: 2em;
-          }
-        }
         .post {
           .post-body {
             .post-footer {

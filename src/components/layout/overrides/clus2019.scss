@@ -84,7 +84,94 @@
         }
       }
     }
-
+    &.leaderboardv2 {
+      .dashboard-header {
+        background-color: #004e7c;
+        height: 88px;
+        .dashboard-title {
+          display: block;
+          position: absolute;
+          text-align: right;
+          padding-right: 10px;
+          top: 30px;
+          right: 0px;
+          font-size: 2.5em;
+          font-family: CiscoSans;
+          color: #1dbbe9;
+        }
+        .dashboard-short-title {
+          display: none;
+        }
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .container {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .header {
+          .header-logo {
+            background: url(/assets/clus2019/logo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          .heading {
+            font-size: 2em;
+          }
+        }
+        .post {
+          .post-body {
+            background: url(/assets/clus2019/white-bg.png);
+            background-size: contain;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            .post-footer {
+              .post-logo {
+                margin-right: 0;
+                margin-top: 0;
+                img {
+                  width: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+      @media (min-width: 1080px) {
+        font-size: 8px;
+      }
+    }
     &.photo-wall-container {
       .photo-wall {
         .caption {
@@ -122,7 +209,15 @@
         height: 88px;
         .logo {
           &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
             top: 15px
+          }
+          &.right-icon {
+            display: none;
           }
         }
       }
@@ -155,14 +250,22 @@
         }
       }
     }
-    &.masonary-stream-v2 {
+    &.masonary-stream-v3 {
       .dashboard-header {
         // display: none;
         background-color: #004e7c;
         height: 88px;
         .logo {
           &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
             top: 15px
+          }
+          &.right-icon {
+            display: none;
           }
         }
       }
@@ -185,7 +288,7 @@
           }
         }
       }
-      .dashboard-content-v2 {
+      .dashboard-content-v3 {
         .call-to-action-card {
           width: 287px;
           height: 237px;
