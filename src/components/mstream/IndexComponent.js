@@ -24,31 +24,30 @@ class IndexComponent extends Component {
   }
 
   loadData = (data) => {
-    console.log('MSTREAM INDEX api call successful');
+    // console.log('MSTREAM INDEX api call successful');
     let filtered = data.filter((d) => d.source.name === 'Twitter' || d.source.name === 'Instagram');
     lodash.remove(data, hasVideoMedia);
     let dataEqual = lodash.isEqual(lodash.sortBy(filtered), lodash.sortBy(this.state.data));
     if(!dataEqual) {
-      console.log('MSTREAM INDEX api new data');
       this.setState({data: filtered});
       return;
     }
-    console.log('MSTREAM INDEX api no new data');
     return;
   }
 
   componentWillMount() {
-    let {masonarystream: {refreshrate}} = this.props.config;
+    let {masonarystreamv2: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchSocial(this.loadData, handleError, params.ctag, params.filter, null, refreshrate);
+
+    watchSocial(this.loadData, handleError, params.ctag, params.filter, 20, refreshrate);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      let {masonarystream: {refreshrate}} = this.props.config;
+      let {masonarystreamv2: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchSocial(this.loadData, handleError, params.ctag, params.filter, null, refreshrate);
+      watchSocial(this.loadData, handleError, params.ctag, params.filter, 20, refreshrate);
     }
   }
 
@@ -59,14 +58,13 @@ class IndexComponent extends Component {
 
   render() {
     const data = this.state.data;
-    const { masonarystream: componentConfig } = this.props.config;
-
+    const { masonarystreamv2: componentConfig } = this.props.config;
     return (
       <RegularLayout
         isReady={!lodash.isEmpty(data)}
         config={this.props.config}
         title={componentConfig.title}
-        hideBgWave={true}
+        hideBgWave={componentConfig.hideBgWave}
         className="masonary-stream-v2">
           <div className="dashboard-content-v2">
             <BrokenMediaRemover data={data}>
