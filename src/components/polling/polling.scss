@@ -1,22 +1,5 @@
 @import "./fontello.css";
 
-@font-face {
-    font-family: CiscoSans;
-    font-weight: bold;
-     src: url('./font/CiscoSansTTBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('./font/CiscoSansTTBold.woff') format('woff'), /* Modern Browsers */
-       url('./font/CiscoSansTTBold.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-    font-family: CiscoSansThin;
-    font-weight: bold;
-     src: url('./font/CiscoSansTTRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('./font/CiscoSansTTRegular.woff') format('woff'), /* Modern Browsers */
-       url('./font/CiscoSansTTRegular.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-
 @keyframes scroll {
   0% { transform: translateY(0%); }
   100% { transform: translateY(-100%); }
