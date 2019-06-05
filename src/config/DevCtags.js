@@ -310,7 +310,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '',
+          "leftLogoUrl": '/assets/clus2019/logo.png',
           "rightLogoUrl": ''
         },
         "footer": {
@@ -334,6 +334,11 @@ export default {
     },
     "masonarystreamv2": {
       "hideBgWave": true,
+      "refreshrate": 150,
+    },
+    "masonarystreamv3": {
+      "hideBgWave": true,
+      "refreshrate": 100,
     },
     "mediacarousel": {
       "title": "#BeTheBridge Highlights",

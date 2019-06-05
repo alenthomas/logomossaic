@@ -38,17 +38,17 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    let {masonarystream: {refreshrate}} = this.props.config;
+    let {masonarystreamv3: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchSocial(this.loadData, handleError, params.ctag, params.filter, null, refreshrate);
+    watchSocial(this.loadData, handleError, params.ctag, params.filter, 150, refreshrate);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      let {masonarystream: {refreshrate}} = this.props.config;
+      let {masonarystreamv3: {refreshrate}} = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchSocial(this.loadData, handleError, params.ctag, params.filter, null, refreshrate);
+      watchSocial(this.loadData, handleError, params.ctag, params.filter, 150, refreshrate);
     }
   }
 
@@ -59,16 +59,15 @@ class IndexComponent extends Component {
 
   render() {
     const data = this.state.data;
-    const { masonarystream: componentConfig } = this.props.config;
-
+    const { masonarystreamv2: componentConfig } = this.props.config;
     return (
       <RegularLayout
         isReady={!lodash.isEmpty(data)}
         config={this.props.config}
         title={componentConfig.title}
-        hideBgWave={true}
-        className="masonary-stream-v2">
-          <div className="dashboard-content-v2">
+        hideBgWave={componentConfig.hideBgWave}
+        className="masonary-stream-v3">
+          <div className="dashboard-content-v3">
             <BrokenMediaRemover data={data}>
               <MasonaryStreamV3 />
             </BrokenMediaRemover>
@@ -83,7 +82,7 @@ IndexComponent.propTypes = {
     search: PropTypes.string.isRequired
   }).isRequired,
   config: PropTypes.shape({
-    masonarystream: PropTypes.shape({
+    masonarystreamv3: PropTypes.shape({
       refreshrate: PropTypes.number.isRequired
     }).isRequired
   }).isRequired,

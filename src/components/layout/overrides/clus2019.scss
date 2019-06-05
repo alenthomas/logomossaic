@@ -155,5 +155,45 @@
         }
       }
     }
+    &.masonary-stream-v2 {
+      .dashboard-header {
+        // display: none;
+        background-color: #004e7c;
+        height: 88px;
+        .logo {
+          &.left-icon {
+            top: 15px
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .dashboard-content-v2 {
+        .call-to-action-card {
+          width: 287px;
+          height: 237px;
+          margin: 15px;
+          background: url(/assets/clus2019/action_card.png);
+          background-size: contain;
+        }
+      }
+    }
   }
 }

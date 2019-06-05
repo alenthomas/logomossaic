@@ -15,11 +15,13 @@
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 
-  height: 80vh;
   position: relative;
   .one {
     position: absolute;
-    top: 100%;
+    top: 10%;
+    &.align-bottom {
+      top: 100%;
+    }
     &.hide {
       display: none;
     }
@@ -31,7 +33,10 @@
   }
   .two {
     position: absolute;
-    top: 100%;
+    top: 10%;
+    &.align-bottom {
+      top: 100%;
+    }
     &.hide {
       display: none;
     }
