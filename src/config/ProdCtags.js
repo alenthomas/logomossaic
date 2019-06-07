@@ -107,7 +107,10 @@ export default {
     },
     "ticker": {
       "refreshrate": 10,
-    }
+    },
+    "pollingresults": {
+      "title": "Winners",
+    },
   },
 
 
@@ -279,7 +282,11 @@ export default {
       "title": "#CLUS Social Stats",
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
-    }
+    },
+    "pollingresults": {
+      "title": "Top Winners",
+      "hideBgWave": true
+    },
   },
 
   "ciscoiotclus": {
@@ -392,7 +399,11 @@ export default {
       "title": "#CLUS Social Stats",
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
-    }
+    },
+    "pollingresults": {
+      "title": "Top Winners",
+      "hideBgWave": true
+    },
   },
 
   "cisco.com:event=clus-ciscostore": {

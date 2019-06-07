@@ -1,0 +1,148 @@
+@import "../polling/fontello.css";
+
+.result-card {
+  max-width: 512px;
+  max-height: 547px;
+  position: relative;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: solid 10px white;
+  .card-photo {
+    width: 511px;
+    height: 285px;
+    max-width: 511px;
+    max-height: 285px;
+    overflow: hidden;
+    img {
+      // width: 100%;
+      // max-width: 500px;
+      // max-height: 400px;
+      // width: 511px;
+      // height: 285px;
+      max-width: 511px;
+      // max-height: 285px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+  .card-body {
+    position: relative;
+    height: 150px;
+    .logo-bck {
+      position: absolute;
+      top: -43px;
+      left: 15px;
+      height: 50%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NiAzMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5iZ19zb3VyY2VfYmFkZ2VfMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01Ny42NywxMS45NEM1Mi4zNiw2LjcxLDQ4LjQyLDAsMzguMywwSDM3LjdDMjcuNTgsMCwyMy42NCw2LjcxLDE4LjMzLDExLjk0LDE0LjQ3LDE2Ljc2LDYuNjEsMTcuODEsMCwxOFYzMUg3NlYxOEM2OS4zOSwxNy44MSw2MS41MywxNi43Niw1Ny42NywxMS45NFoiLz48L2c+PC9nPjwvc3ZnPg==);
+      .logo {
+        position: absolute;
+        left: 45px;
+        top: 8px;
+        width: 95px;
+        height: 95px;
+        border-radius: 100%;
+        background-color: #1dc0ee;
+        // border: 5px solid #ffffff;
+        img {
+          position: absolute;
+          top: 33px;
+          left: 13px;
+          width: 75px;
+        }
+      }
+    }
+    .heading {
+      position: absolute;
+      top: 5px;
+      left: 180px;
+      font-family: CiscoSans;
+      font-size: 2em;
+      color: #3d3d3d;
+    }
+    .like {
+      position: absolute;
+      top: 60px;
+      left: 40px;
+      font-family: CiscoSans;
+      font-size: 2em;
+      .icon {
+        &.icon-heart-filled {
+          color: #d52525;
+          font-size: 2.5em;
+        }
+      }
+    }
+    .rank {
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      color: #ffcf28;
+      font-family: CiscoSans;
+      font-size: 3.5em;
+    }
+  }
+}
+.results {
+  margin-top: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  // height: 1000px;
+  .first {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .second-third {
+    display: flex;
+    justify-content: space-between;
+    .result-card {
+      margin: 7px 7px;
+    }
+  }
+  .rest {
+    display: flex;
+    .result-card {
+      margin: 7px 7px;
+      .card-photo {
+        max-width: 330px;
+        img {
+          max-width: 330px;
+        }
+      }
+      .card-body {
+         height: 120px;
+        .logo-bck {
+          top: -35px;
+          left: 15px;
+          height: 50%;
+          width: 100%;
+          .logo {
+            left: 34px;
+            top: 8px;
+            width: 80px;
+            height: 80px;
+            img {
+              top: 25px;
+              left: 8px;
+              width: 65px;
+            }
+          }
+        }
+        .heading {
+          font-size: 1.2em;
+        }
+        .like {
+          font-size: 1.2em;
+        }
+        .rank {
+          font-size: 2em;
+        }
+      }
+    }
+      // max-width: 1920px;
+  }
+}

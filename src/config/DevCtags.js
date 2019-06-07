@@ -110,6 +110,9 @@ export default {
       "title": "#CiscoLiveLA",
       "refreshrate": 10,
     },
+    "pollingresults": {
+      "title": "Winners",
+    },
   },
 
   "CiscoSprinklr": {
@@ -279,7 +282,6 @@ export default {
     "leaderboard": {
       "title": "#CLUS Leaderboard"
     },
-
     "leaderboardv2": {
       "title": "Leaderboard",
       "hideBgWave": true,
@@ -314,7 +316,11 @@ export default {
       "title": "#CLUS Social Stats",
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
-    }
+    },
+    "pollingresults": {
+      "title": "Top Winners",
+      "hideBgWave": true
+    },
   },
 
   "bethebridge": {
@@ -382,7 +388,11 @@ export default {
       "title": "#CLUS Social Stats",
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
-    }
+    },
+    "pollingresults": {
+      "title": "Top 6 Winners",
+      "hideBgWave": true
+    },
   },
 
   "cisco.com:event=clus-ciscostore": {

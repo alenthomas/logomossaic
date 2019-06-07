@@ -29,6 +29,7 @@ import StatsView from './components/stats/IndexComponent.js';
 import Ticker from './components/ticker/IndexComponent.js';
 import Polling from './components/polling/IndexComponent.js';
 import ArWelcome from './components/arwelcome/IndexComponent.js';
+import PollingResults from './components/pollingresults/IndexComponent.js';
 
 class App extends Component {
   render() {
@@ -53,7 +54,8 @@ class App extends Component {
           <Route path="/photowall" render={(props) => <PhotoWall config={getCurrentConfig()} {...props} />} />
           <Route path="/counter" render={(props) => <StatsView config={getCurrentConfig()} {...props} />} />
           <Route path="/ticker" render={(props) => <Ticker config={getCurrentConfig()} {...props} />} />
-          <Route path="/polling" render={(props) => <Polling config={getCurrentConfig()} {...props} />} />
+          <Route path="/polling" exact={true} render={(props) => <Polling config={getCurrentConfig()} {...props} />} />
+          <Route path="/polling/results" exact={true} render={(props) => <PollingResults config={getCurrentConfig()} {...props} />} />
           <Route path="/ar" component={ArWelcome} />
         </div>
       </Router>
