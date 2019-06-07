@@ -12,6 +12,7 @@ import { timeoutCollection } from 'time-events-manager';
 export const API_CONFIG = getApiConfig();
 const BASE_URL = API_CONFIG.BASE_URL;
 const PHOTO_URL = API_CONFIG.PHOTO_URL;
+const POLL_URL = API_CONFIG.POLL_URL;
 const REFRESH_RATE = 5000;
 const FAILURE_RETRY_RATE = 2000;
 
@@ -175,4 +176,8 @@ export const getTopHashtags = (ctag, filterHashtags = [], success, failure) => {
     let filteredResult = lodash.filter(result, r => filterHashtags.indexOf(r.hashtag) === -1 )
     success(filteredResult)
   }, failure);
+}
+
+export const getResults = (ctag, success, failure, refreshRate=300) => {
+  return poll(`${POLL_URL}/getContest?contest=${ctag}`, success, failure, refreshRate*1000);
 }
