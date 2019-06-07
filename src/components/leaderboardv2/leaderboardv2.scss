@@ -1,4 +1,4 @@
-@keyframes scroll {
+@keyframes scroll-up {
   0% { transform: translateY(0%); }
   100% { transform: translateY(-100%); }
 }
@@ -102,7 +102,7 @@ body {
   }
   .rest {
     width: 100%;
-    animation: scroll 120s linear infinite;
+    animation: scroll-up 20s linear 5s infinite;
     .post {
       .post-img {
         img {
