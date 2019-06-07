@@ -178,6 +178,26 @@ export const getTopHashtags = (ctag, filterHashtags = [], success, failure) => {
   }, failure);
 }
 
-export const getResults = (ctag, success, failure, refreshRate=300) => {
-  return poll(`${POLL_URL}/getContest?contest=${ctag}`, success, failure, refreshRate*1000);
+export const getResults = (ctag, success, failure) => {
+  return get(`${POLL_URL}/getContest?contest=${ctag}`, success, failure);
+}
+
+export const getVotes = (id, success, failure) => {
+  return get(`${POLL_URL}/getPoll?id=${id}`, success, failure);
+}
+
+export const postVotes = (id, ctag, src, success, failure) => {
+  return fetch(`${POLL_URL}/addPoll`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      },
+    body: JSON.stringify({"id": id, "contest": ctag, "src": src})
+  })
+  .then((response) => response.json())
+  .then(
+    payload => success(payload),
+    error => failure(error)
+  )
 }

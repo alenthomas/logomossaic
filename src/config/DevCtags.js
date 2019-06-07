@@ -107,8 +107,8 @@ export default {
       "refreshrate": 10,
     },
     "polling": {
-      "title": "#CiscoLiveLA",
-      "refreshrate": 10,
+      "title": "Vote Fav !",
+      "hideBgWave": true
     },
     "pollingresults": {
       "title": "Winners",
@@ -317,6 +317,10 @@ export default {
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
     },
+    "polling": {
+      "title": "Vote for your favourite post",
+      "hideBgWave": true
+    },
     "pollingresults": {
       "title": "Top Winners",
       "hideBgWave": true
@@ -388,6 +392,10 @@ export default {
       "title": "#CLUS Social Stats",
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
+    },
+    "polling": {
+      "title": "Vote !",
+      "hideBgWave": true
     },
     "pollingresults": {
       "title": "Top 6 Winners",

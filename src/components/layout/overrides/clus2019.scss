@@ -360,5 +360,55 @@
         }
       }
     }
+    &.polling {
+      &.vision-player {
+        background: url(/assets/clus2019/darkblue_bg1080.jpg) !important;
+        background-repeat: repeat-y;
+        background-size: cover !important;
+      }
+      .dashboard-header {
+        background-color: #004e7c;
+        height: 125px;
+        .dashboard-title {
+          font-size: 2.5em;
+          font-family: CiscoSans;
+          color: #1dbbe9;
+          padding-top: 40px;
+          padding-left: 100px;
+        }
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 200px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 240px;
+            }
+          }
+          &.left-2 {
+           background: url(/assets/logo/ciscolive-cancun.png);
+           bottom: 0;
+           left: 15px;
+           width: 266px;
+           height: 144px;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: contain;
+          }
+        }
+      }
+    }
   }
 }

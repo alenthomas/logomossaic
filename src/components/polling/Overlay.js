@@ -1,10 +1,10 @@
 import React from 'react';
 
-import twitter from './twitter.png';
-import twittersvg from './twitter.svg';
-import instagram from './instagram.svg';
-import instagrampng from './instagram.png';
-import ciscolive from './ciscolive.png';
+import twitter from '../../../public/assets/logo/twitter.png';
+import twittersvg from '../../../public/assets/logo/twitter.svg';
+import instagram from '../../../public/assets/logo/instagram.svg';
+import instagrampng from '../../../public/assets/logo/instagram.png';
+import ciscolive from '../../../public/assets/logo/ciscolive-cancun.png';
 
 export const Card = ({info, selected}) => {
   const source = info.getSource();

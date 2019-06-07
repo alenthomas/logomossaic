@@ -108,6 +108,10 @@ export default {
     "ticker": {
       "refreshrate": 10,
     },
+    "polling": {
+      "title": "Vote Fav !",
+      "hideBgWave": true
+    },
     "pollingresults": {
       "title": "Winners",
     },
@@ -283,6 +287,10 @@ export default {
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
     },
+    "polling": {
+      "title": "Vote Here !",
+      "hideBgWave": true
+    },
     "pollingresults": {
       "title": "Top Winners",
       "hideBgWave": true
@@ -399,6 +407,10 @@ export default {
       "title": "#CLUS Social Stats",
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
+    },
+    "polling": {
+      "title": "Vote !!",
+      "hideBgWave": true
     },
     "pollingresults": {
       "title": "Top Winners",

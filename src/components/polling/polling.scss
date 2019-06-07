@@ -1,6 +1,6 @@
 @import "./fontello.css";
 
-@keyframes scroll {
+@keyframes scroll-up {
   0% { transform: translateY(0%); }
   100% { transform: translateY(-100%); }
 }
@@ -15,6 +15,7 @@
 .overlay {
   // background: linear-gradient(to bottom, rgb(32, 31, 31), rgb(44, 43, 43));
   // background-color: rgba(0,0,0,.5);
+  margin-top: 50px;
   position: fixed;
   top: 100px;
   left: 100px;
@@ -98,8 +99,8 @@
         right: 55px;
         font-size: 4em;
         img {
-          width: 50px;
-          height: 50px;
+          width: 80px;
+          height: 80px;
         }
         .icon {
           // background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
@@ -216,6 +217,20 @@
   }
 }
 
+.parent {
+  display: flex;
+  overflow: hidden;
+  height: 85vh;
+  margin-top: 150px;
+  &:hover, &:focus {
+    .initial {
+      .col {
+        animation-play-state: paused !important;
+      }
+    }
+  }
+}
+
 .initial {
   display: flex;
   height: 100vh;
@@ -223,10 +238,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   .col {
-    animation: scroll 200s linear infinite;
+    // animation: scroll 200s linear infinite;
     animation-delay: 7s;
     &.pause {
-       animation-play-state: paused;
+      //  animation-play-state: paused !important ;
     }
     .card {
       .card-body {

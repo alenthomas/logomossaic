@@ -45,17 +45,15 @@ class IndexComponent extends Component {
   }
 
   render() {
-     const { masonarystream: componentConfig } = this.props.config;
+     const { polling: componentConfig } = this.props.config;
     return (
       <RegularLayout
         isReady={!lodash.isEmpty(this.state.feed)}
         config={this.props.config}
         title={componentConfig.title}
         hideBgWave={componentConfig.hideBgWave}
-        className="masonary-stream-v2">
-          <div className="dashboard-content-v2">
-              <Polling feed={this.state.feed}/>
-          </div>
+        className="polling vision-player">
+          <Polling feed={this.state.feed}/>
       </RegularLayout>
     )
   }

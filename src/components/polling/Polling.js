@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Overlay, Card} from './Overlay';
-import {queryString} from '../../Helper.js';
+import {queryString, handleError} from '../../Helper.js';
+import { getVotes, postVotes } from '../../Services.js';
 
-let URL = 'http://devapi.fankave.com/ids'
-
+const SPEED = 5;
 class Polling extends Component {
   constructor(props) {
     super(props);
@@ -12,39 +12,29 @@ class Polling extends Component {
     // 1: liked,
     // 2: unlike
     this.timeoutId = null;
-    this.state = {selected: null, like: 0, votes: {up: 0}};
+    this.state = {selected: null, like: 0, votes: {up: 0}, heightOne: 0, heightTwo: 0, animationOneTime: 0, animationTwoTime: 0};
   }
 
-  getVotes = (_id) => {
-    fetch(`${URL}/polling/getPoll?id=${_id}`)
-    .then(res => res.json())
-    .then(result => {
-      if(result.data) {
-        let {ctag} = queryString();
-        let votes = result.data.polls.filter(e => e.name === ctag)
-        if(votes.length > 0) {
-          this.setState({votes: {up: votes[0]['votes']}});
-        }
-      }
-    })
+  componentDidUpdate() {
+    if(this.state.heightOne === 0 ||  this.state.heightTwo === 0) {
+      this.getHeight();
+    }
   }
 
-  postVotes = (_id) => {
-    let {ctag} = queryString();
-    fetch(`${URL}/polling/addPoll`, {
-      method: 'POST',
-      headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({"id": _id, "contest": ctag})
-    })
-    .then(res => res.json())
-    .then(result => {
-      if(result.success) {
-        this.setState({like: 1, votes: {up: result.data.votes}});
+  setVote = (result) => {
+    if(result.data) {
+      let {ctag} = queryString();
+      let votes = result.data.polls.filter(e => e.name === ctag);
+      if(votes.length > 0) {
+        this.setState({votes: {up: votes[0]['votes']}});
       }
-    })
+    }
+  }
+
+  updateVote = (result) => {
+    if(result.success) {
+      this.setState({like: 1, votes: {up: result.data.votes}});
+    }
   }
 
   reset = (timeout=5000) => {
@@ -53,9 +43,22 @@ class Polling extends Component {
 
   selected = (e) => {
     this.setState({selected: e, votes: {up: 0}});
-    this.getVotes(e.getId());
+    getVotes(e.getId(), this.setVote, handleError);
     clearTimeout(this.timeoutId);
-    this.reset();
+    // this.reset();
+  }
+
+  getHeight = () => {
+    let heightOne = this.refs['one']['offsetHeight'];
+    let heightTwo = this.refs['two']['offsetHeight'];
+    if(heightOne > 0) {
+      let animationOneTime = heightOne/SPEED;
+      this.setState({heightOne, animationOneTime});
+    }
+    if(heightTwo > 0) {
+      let animationTwoTime = heightOne/SPEED;
+      this.setState({heightTwo, animationTwoTime});
+    }
   }
 
   close = () => {
@@ -64,7 +67,8 @@ class Polling extends Component {
 
   vote = (val) => {
     if(val === 1) {
-      this.postVotes(this.state.selected.getId());
+      let {ctag} = queryString();
+      postVotes(this.state.selected.getId(), ctag, this.state.selected.getPhotoUrl(), this.updateVote, handleError);
     }
     clearTimeout(this.timeoutId);
     this.reset(5000);
@@ -72,19 +76,20 @@ class Polling extends Component {
 
   render() {
     return (
-      <div>
-        {!!this.state.selected ? <div className='overlay-parent'></div>: null }
+      <div className='parent'>
         {!!this.state.selected ?
+        <div>
+          <div className='overlay-parent' />
           <Overlay
             info={this.state.selected} closeAction={this.close} like={this.state.like} votedAction={this.vote}
             votes={this.state.votes}
-          /> : null
+          /> </div> : null
         }
         <div className={`initial`}>
-          <div className={`col col-1 ${this.state.selected? 'pause' : ''}`}>
+          <div ref="one" className={`col col-1 ${this.state.selected? 'pause' : ''}`} style={{animation: `scroll-up ${this.state.animationOneTime}s 3s linear infinite`}}>
             { this.props.feed.filter((e, i) => i%2 !== 0).map(e => <Card key={e.getId()} info={e} selected={this.selected} />) }
           </div>
-          <div className={`col col-2 ${this.state.selected? 'pause' : ''}`}>
+          <div ref="two" className={`col col-2 ${this.state.selected? 'pause' : ''}`} style={{animation: `scroll-up ${this.state.animationTwoTime}s 3s linear infinite`}}>
             { this.props.feed.filter((e, i) => i%2 === 0).map(e => <Card key={e.getId()} info={e} selected={this.selected} />) }
           </div>
         </div>
