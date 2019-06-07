@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import ParsedText from '../ParsedText.js';
 
 const TILE_SIZE = {
-  DEFAULT: { WIDTH: 150, HEIGHT: 150},
+  DEFAULT: { WIDTH: 225 , HEIGHT: 225},
   ZOOMED: {
     LANDSCAPE: {WIDTH: 600, HEIGHT: 450},
     PORTRAIT: {WIDTH: 750, HEIGHT: 450}
