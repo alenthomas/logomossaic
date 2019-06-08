@@ -51,7 +51,6 @@ class Regular extends Component {
   }
 
   isReady() {
-    // return true;
     return this.props.isReady && this.state.isReady;
   }
 

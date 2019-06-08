@@ -14,7 +14,7 @@ export default class MasonaryStreamV3 extends Component {
   }
   componentDidMount() {
     // console.log('MSTREAM: Comonent Mounted');
-    let width = window.screen.width * window.devicePixelRatio;
+    let width = window.screen.width;
     let height = window.screen.height;
     let exp=2;
     if (width >= 640) {
@@ -66,6 +66,7 @@ export default class MasonaryStreamV3 extends Component {
   }
 
   render() {
+    // console.log('MSTREAM: render called');
     return (
       <div className='mstream'>
         { this.renderWrapper(this.state.exp) }
