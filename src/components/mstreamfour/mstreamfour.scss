@@ -1,0 +1,136 @@
+.masonary-stream-v4 {
+  .content-transition-appear {
+    &.content-transition-appear-active {
+      transition: none;
+    }
+  }
+  .dashboard-content-v4 {
+    transform: none;
+    .parentt {
+      display: flex;
+      overflow: hidden;
+      height: 93vh;
+    }
+
+    .tweet-card {
+      width: 287px;
+      height: auto;
+      padding: 17px 15px 0 15px;
+      margin: none;
+      break-inside: avoid;
+      transform: rotateY(360deg);
+
+      .tweet-card-top {
+        .avatar {
+          .image-obj {
+            width: 60px;
+            height: 60px;
+            img {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+
+        .profile {
+          padding-left: 20px;
+          .name {
+            font-size: 16px;
+          }
+          .handle {
+            font-size: 12px;
+          }
+        }
+
+        .timestamp {
+          padding-top: 35px;
+          font-size: 12px;
+
+          img.clock {
+            width: 13px;
+            position: relative;
+            top: 2px;
+            padding: 0 5px;
+          }
+        }
+      }
+
+      .tweet-card-middle {
+        font-size: 13px;
+        .image {
+          height: 200px;
+          overflow: hidden;
+        }
+      }
+
+      .tweet-card-middle.text {
+        // padding: 0 0 20px 0;
+        padding-left: 0px;
+        min-height: auto;
+        height: auto;
+
+        .text-content {
+          padding-top: 20px;
+        }
+      }
+
+      .tweet-card-middle.portrait, .tweet-card-middle.landscape {
+        // padding: 5px 0 0 0;
+        padding-left: 0px;
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        .emoji {
+          width: 25px;
+          height: 25px;
+          padding: 0;
+        }
+
+        .image {
+          flex: none;
+          background-size: cover;
+          // width: 402px;
+          img {
+            // width: 402px;
+            height: auto;
+            // object-fit: initial;
+          }
+        }
+
+        .text-content {
+          padding-bottom: 10px;
+        }
+      }
+
+      .tweet-card-bottom {
+        padding: 5px;
+        .twitter-logo {
+          img.twitter-bird {
+            width: 27px;
+          }
+        }
+        .icon {
+          width: 19px;
+          height: 16px;
+        }
+
+        .likes, .shares {
+          font-size: 14px;
+          img {
+            height: 16px;
+            width: auto;
+            top: 2px;
+          }
+
+          span {
+            padding: 8px;
+          }
+        }
+
+        .likes {
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}
