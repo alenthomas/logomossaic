@@ -15,10 +15,10 @@ class Polling extends Component {
     this.state = {selected: null, like: 0, votes: {up: 0}, heightOne: 0, heightTwo: 0, animationOneTime: 0, animationTwoTime: 0};
   }
 
-  componentDidUpdate() {
-    if(this.state.heightOne === 0 ||  this.state.heightTwo === 0) {
+  componentDidMount() {
+    // if(this.state.heightOne === 0 || this.state.heightTwo === 0) {
       this.getHeight();
-    }
+    // }
   }
 
   setVote = (result) => {

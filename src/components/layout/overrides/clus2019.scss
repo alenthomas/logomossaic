@@ -358,6 +358,7 @@
       }
     }
     &.polling {
+      overflow: hidden;
       &.vision-player {
         background: url(/assets/clus2019/darkblue_bg1080.jpg) !important;
         background-repeat: repeat-y;
@@ -388,21 +389,23 @@
         }
       }
       .dashboard-footer {
+        // position: absolute;
         .logo {
           &.right {
+            position: absolute;
             img {
-              width: 240px;
+              width: 241px;
             }
           }
           &.left-2 {
-           background: url(/assets/logo/ciscolive-cancun.png);
-           bottom: 0;
-           left: 15px;
-           width: 266px;
-           height: 144px;
-           background-position: center;
-           background-repeat: no-repeat;
-           background-size: contain;
+            background: url(/assets/logo/ciscolive-cancun.png);
+            bottom: 0;
+            left: 15px;
+            width: 266px;
+            height: 144px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
           }
         }
       }

@@ -221,27 +221,16 @@
   display: flex;
   overflow: hidden;
   height: 85vh;
-  margin-top: 150px;
-  &:hover, &:focus {
-    .initial {
-      .col {
-        animation-play-state: paused !important;
-      }
-    }
-  }
+  margin-top: 125px;
 }
 
 .initial {
   display: flex;
-  height: 100vh;
-  width: 560px;
   flex-direction: column;
   flex-wrap: wrap;
   .col {
-    // animation: scroll 200s linear infinite;
-    animation-delay: 7s;
     &.pause {
-      //  animation-play-state: paused !important ;
+       animation-play-state: paused !important ;
     }
     .card {
       .card-body {
