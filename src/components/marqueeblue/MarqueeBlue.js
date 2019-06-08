@@ -5,7 +5,7 @@ import Tweet from './Tweet.js';
 export default class Marquee extends Component {
   render() {
     const { data } = this.props;
-    const animationDuration = data.length * 20;
+    const animationDuration = data.length * 25;
 
     return <div className="marquee-blue-container">
       <div className="left">
