@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './arwelcome.css';
-
-let URL = 'http://devapi.fankave.com/ids'
+import { getName } from '../../Services';
+import { handleError } from '../../Helper';
 
 export default class ArWelcome extends Component {
   constructor(props) {
@@ -9,14 +9,16 @@ export default class ArWelcome extends Component {
     this.state = {name: ''};
   }
   componentDidMount() {
-    fetch(`${URL}/ar/getName?json=true`)
-    .then(e => e.json())
-    .then(({data}) => this.setState({name: data.name}))
-    .catch(e => {
-      console.error('Error: ', e);
-      this.setState({name: ''})
-    })
+    getName(this.loadData, handleError);
   }
+
+  loadData = ({data}) => {
+    if(data) {
+      this.setState({name: data.name});
+    }
+  }
+
+
   render() {
     return(
       <div className='ar-welcome'>
