@@ -54,6 +54,10 @@ export default {
       "hideBgWave": true,
       "refreshrate": 10,
     },
+    "masonarystreamv4": {
+      "hideBgWave": true,
+      "refreshrate": 10,
+    },
     "mediacarousel": {
       "title": "Featured Content",
       "sides": 14,
@@ -267,6 +271,10 @@ export default {
       "hideBgWave": true,
       "refreshrate": 100,
     },
+    "masonarystreamv4": {
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
     "mediacarousel": {
       "title": "#CLUS Highlights",
       "hideBgWave": true
@@ -280,7 +288,9 @@ export default {
     "photowall": {
       "title": "#CLUS Social Pulse",
       "tileBgText": "#CLUS",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "loadSequentially": true,
+      "showFirst": 100,
     },
     "tweetcounts": {
       "title": "#CLUS Social Stats",
@@ -389,6 +399,10 @@ export default {
       "title": "Social Feed"
     },
     "masonarystreamv3": {
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
+    "masonarystreamv4": {
       "hideBgWave": true,
       "refreshrate": 100,
     },

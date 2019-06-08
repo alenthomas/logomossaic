@@ -76,7 +76,7 @@ class PhotoWall extends Component {
     let {showFirst, loadSequentially} = this.props.componentConfig;
     let maxTiles = this.props.photosGrid.length;
     // sequentially zoomIn first N photos
-    if(loadSequentially && showFirst < maxTiles && this.state.tileNum < showFirst) {
+    if(loadSequentially && this.state.tileNum < showFirst) {
       let newTileNum = this.state.tileNum + 1;
       this.setState({
         zoomedOutTile: this.state.zoomedInTile,

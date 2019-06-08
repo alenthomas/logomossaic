@@ -295,7 +295,56 @@
         }
       }
     }
+    &.masonary-stream-v4 {
+      .dashboard-header {
+        // display: none;
+        background-color: #004e7c;
+        height: 88px;
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .dashboard-content-v4 {
+        .call-to-action-card {
+          width: 287px;
+          height: 237px;
+          margin: 15px;
+          background: url(/assets/clus2019/action_card.png);
+          background-size: contain;
+        }
+      }
+    }
     &.polling-results {
+      overflow-x: hidden;
       &.vision-player {
         background: url(/assets/clus2019/darkblue_bg1080.jpg) !important;
         background-repeat: repeat-y;
@@ -413,6 +462,7 @@
     &.trending-discussion {
       .dashboard-content {
         margin-top: 130px;
+        background-color: rgba(#00a7e1,0.75);
       }
 
     }
