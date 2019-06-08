@@ -294,6 +294,7 @@ export default {
       "refreshrate": 150,
     },
     "masonarystreamv3": {
+      "title": "Social Feed",
       "hideBgWave": true,
       "refreshrate": 100,
     },
@@ -366,10 +367,12 @@ export default {
       "title": "Social Feed"
     },
     "masonarystreamv2": {
+      "title": "Social Feed",
       "hideBgWave": true,
       "refreshrate": 150,
     },
     "masonarystreamv3": {
+      "title": "Social Feed",
       "hideBgWave": true,
       "refreshrate": 100,
     },

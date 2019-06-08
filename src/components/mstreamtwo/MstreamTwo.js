@@ -31,14 +31,14 @@ export default class MasonaryStreamV3 extends Component {
     // console.log('MSTREAM: Render wrapper called');
     if(exp === 2) {
       // console.log('exp: ', 2);
-      let data1 = this.state.data.slice(0, 10).filter((e, i) => i%2 === 0).map((e) => {
+      let data1 = this.state.data.slice(0, 26).filter((e, i) => i%2 === 0).map((e) => {
         return (<TweetCard data={e} key={e.id} />);
       });
-      let data2 = this.state.data.slice(0, 10).filter((e, i) => i%2 !== 0).map((e) => {
+      let data2 = this.state.data.slice(0, 26).filter((e, i) => i%2 !== 0).map((e) => {
         return (<TweetCard data={e} key={e.id} />);
       });
       return (
-        <div className='parent'>
+        <div className='parentt'>
           <AnimateScroll endData={this.endCard()}>
             {data1}
           </AnimateScroll>
@@ -50,9 +50,9 @@ export default class MasonaryStreamV3 extends Component {
     } else if(exp === 1){
       // console.log('MSTREAM: exp: ', 1);
       return (
-        <div className='parent'>
+        <div className='parentt'>
           <AnimateScroll endData={this.endCard()}>
-            {this.state.data.slice(0, 10).map(e => <TweetCard data={e} key={e.id} />)}
+            {this.state.data.slice(0, 13).map(e => <TweetCard data={e} key={e.id} />)}
           </AnimateScroll>
         </div>
       )

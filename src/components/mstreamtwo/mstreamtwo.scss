@@ -6,7 +6,7 @@
   }
   .dashboard-content-v3 {
     transform: none;
-    .parent {
+    .parentt {
       display: flex;
       overflow: hidden;
       height: 93vh;
@@ -90,11 +90,13 @@
         }
 
         .image {
+          flex: none;
           background-size: cover;
+          // width: 402px;
           img {
-            width: 402px;
+            // width: 402px;
             height: auto;
-            object-fit: initial;
+            // object-fit: initial;
           }
         }
 

@@ -10,7 +10,7 @@ import BrokenMediaRemover from './../mediacarousel/BrokenMediaRemover.js'
 import RegularLayout from "./../layout/Regular.js";
 
 import './../mediacarousel/MediaCarousel.css';
-import './mstream.css';
+import './mstreamtwo.css';
 import { handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
@@ -59,7 +59,7 @@ class IndexComponent extends Component {
 
   render() {
     const data = this.state.data;
-    const { masonarystreamv2: componentConfig } = this.props.config;
+    const { masonarystreamv3: componentConfig } = this.props.config;
     return (
       <RegularLayout
         isReady={!lodash.isEmpty(data)}

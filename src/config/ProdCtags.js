@@ -388,6 +388,10 @@ export default {
     "masonarystream": {
       "title": "Social Feed"
     },
+    "masonarystreamv3": {
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
     "mediacarousel": {
       "title": "#BeTheBridge Highlights",
       "hideBgWave": true
