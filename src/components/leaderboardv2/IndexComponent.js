@@ -76,7 +76,6 @@ class IndexComponent extends Component {
   }
 
   render() {
-    console.log(this.props.config.leaderboardv2);
     const { leaderboardv2: componentConfig } = this.props.config;
     var allTweeters = this.getAllTweeters();
 
