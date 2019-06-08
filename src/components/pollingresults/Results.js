@@ -6,11 +6,10 @@ class Results extends Component {
     return (
       <div className='results'>
         <div className='first'>
-          {this.props.feed.length > 0 && <ResultCard info={this.props.feed[0]} rank={1} />}
+          {this.props.feed.slice(0, 1).map((e, i) => <ResultCard key={e.id} info={e} rank={i+1} />)}
         </div>
         <div className='second-third'>
-          {this.props.feed.length > 0 && <ResultCard info={this.props.feed[1]} rank={2} />}
-          {this.props.feed.length > 0 && <ResultCard info={this.props.feed[2]} rank={3} />}
+          {this.props.feed.slice(1, 3).map((e, i) => <ResultCard key={e.id} info={e} rank={i+2} />)}
         </div>
         <div className='rest'>
           {this.props.feed.slice(3, 6).map((e, i) => <ResultCard key={e.id } info={e} rank={i+4} />)}
