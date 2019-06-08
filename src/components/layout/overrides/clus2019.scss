@@ -410,5 +410,11 @@
         }
       }
     }
+    &.trending-discussion {
+      .dashboard-content {
+        margin-top: 130px;
+      }
+
+    }
   }
 }
