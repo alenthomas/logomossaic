@@ -29,11 +29,9 @@
         }
       }
     }
-
     &.stats {
       background-image: url(/assets/clus2019/darkblue_bg1920.jpg) !important;
     }
-
     &.carousel-container, &.stats {
       .tweet-card {
         background: url(/assets/clus2019/white_tweetCardBg.png);
@@ -65,8 +63,8 @@
         }
       }
     }
-
     &.leaderboard {
+      overflow-x: hidden;
       .leaderboard-cards {
         margin-top: 40px;
         .ranked-tweeter-card {
@@ -78,6 +76,18 @@
             .tweets {
               .count {
                 color: white;
+              }
+            }
+          }
+        }
+      }
+      @media(min-width: 1920px) {
+        .leaderboard-cards {
+          .ranked-tweeter-card {
+            .tweeter-image {
+              .image-obj {
+                max-width: none;
+                max-height: none;
               }
             }
           }
