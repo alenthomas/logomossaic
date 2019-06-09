@@ -13,6 +13,7 @@ export const API_CONFIG = getApiConfig();
 const BASE_URL = API_CONFIG.BASE_URL;
 const PHOTO_URL = API_CONFIG.PHOTO_URL;
 const POLL_URL = API_CONFIG.POLL_URL;
+const NAME_URL = API_CONFIG.NAME_URL;
 const REFRESH_RATE = 5000;
 const FAILURE_RETRY_RATE = 2000;
 
@@ -200,4 +201,8 @@ export const postVotes = (id, ctag, src, success, failure) => {
     payload => success(payload),
     error => failure(error)
   )
+}
+
+export const getName = (success, failure) => {
+  return get(`${NAME_URL}/getName?json=true`, success, failure);
 }
