@@ -464,7 +464,11 @@
         margin-top: 130px;
         background-color: rgba(#00a7e1,0.75);
       }
-
+      @media (min-width: 1920px) {
+        .dashboard-content {
+          margin-top: 50px;
+        }
+      }
     }
   }
 }
