@@ -113,7 +113,7 @@ export default {
       "refreshrate": 10,
     },
     "polling": {
-      "title": "Vote Fav !",
+      "title": "TAP and Vote",
       "hideBgWave": true
     },
     "pollingresults": {
@@ -258,6 +258,7 @@ export default {
       "title": "#CLUS Leaderboard"
     },
     "leaderboardv2": {
+      "title": "#CLUS Leaderboard",
       "hideBgWave": true,
     },
     "masonarystream": {
@@ -268,6 +269,7 @@ export default {
       "refreshrate": 150,
     },
     "masonarystreamv3": {
+      "title": "#CLUS Social Feed",
       "hideBgWave": true,
       "refreshrate": 100,
     },
@@ -312,7 +314,7 @@ export default {
     "containerCssClassname": "ciscostoreclus",
     "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/ar.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
       "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
       "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
