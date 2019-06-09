@@ -1,7 +1,6 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactResizeDetector from 'react-resize-detector';
 import twitter from '../../../public/assets/logo/twitter.svg';
 
 import { watchLeaderboard } from '../../Services.js'
@@ -12,8 +11,6 @@ import './leaderboardv2.css';
 import { handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
-const SPEED = 6.91;
-
 class IndexComponent extends Component {
   constructor(props) {
     super(props);
@@ -21,19 +18,6 @@ class IndexComponent extends Component {
     this.state = {
       allTweeters: []
     };
-  }
-
-  onResize = (w, h) => {
-    console.log('here');
-    this.setState({height: h});
-  }
-
-  animation = () => {
-    if(this.state.height) {
-      let time = this.state.height/SPEED;
-      return {animation: `scroll ${time}s linear infinite`}
-    }
-    return {};
   }
 
   loadData = (data) => {
@@ -81,7 +65,6 @@ class IndexComponent extends Component {
 
     var topThreeTweeters = this.getTopThreeTweeters();
     var remainingTweeters = this.getRemainingTweeters();
-    let animation = {}// this.animation();
 
     return (
       <RegularLayout
@@ -96,8 +79,7 @@ class IndexComponent extends Component {
               {topThreeTweeters.map(e => <Post key={e.handle} data={e} />)}
             </div>
             <div className='rest-parent' id='rest-parent'>
-              <div id='rest' className='rest' style={animation}>
-                <ReactResizeDetector handleWidth={false} handleHeight={true} onResize={this.onResize} />
+              <div id='rest' className='rest'>
                 {remainingTweeters.map((e, i) => <Post key={e.handle} data={e} rank={i} />)}
               </div>
             </div>
