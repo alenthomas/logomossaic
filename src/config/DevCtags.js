@@ -333,7 +333,8 @@ export default {
     },
     "polling": {
       "title": "Vote for your favourite post",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 250,
     },
     "pollingresults": {
       "title": "Top Winners",

@@ -299,7 +299,8 @@ export default {
     },
     "polling": {
       "title": "Vote Here !",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 250,
     },
     "pollingresults": {
       "title": "Top Winners",

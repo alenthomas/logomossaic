@@ -90,6 +90,20 @@ export const getPhotos = (ctag, filter, success, failure, safe=true) => {
   }, failure);
 }
 
+export const getPhotosPoll = (ctag, filter, success, failure, refreshRate, safe=true) => {
+  let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'});
+  let url = `${PHOTO_URL}social?${photoParams}`;
+  poll(url, (data) => {
+    removeBrokenMedia(data, (cleansedData) => {
+      removeVideoMedia(cleansedData);
+      let photoObjects = lodash.map(cleansedData, datum => new Photo(datum));
+      success(photoObjects);
+    })
+  }, failure, refreshRate * 1000);
+}
+
+
+
 export const getLatestPhotos = (ctag, filter, topicId, success, failure) => {
   const allCtagsConfig = getCtagsConfig();
   const ctagConfig = allCtagsConfig[ctag];

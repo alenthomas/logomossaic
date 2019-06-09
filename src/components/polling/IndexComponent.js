@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import lodash from 'lodash';
 
-import { getPhotos } from '../../Services.js';
+import { getPhotosPoll } from '../../Services.js';
 import Polling from './Polling.js';
 import RegularLayout from "./../layout/Regular.js";
 
@@ -21,14 +21,16 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     let params = getQueryString(this.props.location.search);
-    getPhotos(params.ctag, params.filter, this.loadData, handleError, false);
+    let { polling: {refreshrate} } = this.props.config;
+    getPhotosPoll(params.ctag, params.filter, this.loadData, handleError, refreshrate, false);
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
       let params = getQueryString(this.props.location.search);
-      getPhotos(params.ctag, params.filter, this.loadData, handleError, false);
+      let { polling: {refreshrate} } = this.props.config;
+      getPhotosPoll(params.ctag, params.filter, this.loadData, handleError, refreshrate, false);
     }
   }
 
