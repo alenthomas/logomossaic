@@ -45,7 +45,7 @@ class Polling extends Component {
     this.setState({selected: e, votes: {up: 0}});
     getVotes(e.getId(), this.setVote, handleError);
     clearTimeout(this.timeoutId);
-    // this.reset();
+    this.reset();
   }
 
   getHeight = () => {
