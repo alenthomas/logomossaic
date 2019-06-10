@@ -258,7 +258,7 @@ export default {
       "title": "#CLUS Leaderboard"
     },
     "leaderboardv2": {
-      "title": "#CLUS Leaderboard",
+      "title": "Leaderboard",
       "hideBgWave": true,
     },
     "masonarystream": {
@@ -274,6 +274,7 @@ export default {
       "refreshrate": 100,
     },
     "masonarystreamv4": {
+      "title": "Social Feed",
       "hideBgWave": true,
       "refreshrate": 100,
     },
