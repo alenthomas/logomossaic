@@ -439,7 +439,7 @@ export default {
       "title": "#CLUS Trending Topics"
     },
     "photowall": {
-      "title": "#CicosIoT Social Pulse",
+      "title": "#CiscoIoT Social Pulse",
       "tileBgText": "#CiscoIoT",
       "hideBgWave": true
     },
