@@ -114,7 +114,8 @@ export default {
     },
     "polling": {
       "title": "Vote Fav !",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 250,
     },
     "pollingresults": {
       "title": "Winners",
@@ -417,7 +418,8 @@ export default {
     },
     "polling": {
       "title": "Vote !",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 250
     },
     "pollingresults": {
       "title": "Top 6 Winners",

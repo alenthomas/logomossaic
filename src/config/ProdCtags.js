@@ -114,7 +114,8 @@ export default {
     },
     "polling": {
       "title": "TAP and Vote",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 250,
     },
     "pollingresults": {
       "title": "Winners",
@@ -1106,6 +1107,11 @@ export default {
       },
       "threecolumn": {
       }
-    }
+    },
+    "polling": {
+      "title": "Vote Here !",
+      "hideBgWave": true,
+      "refreshrate": 250,
+    },
   }
 }
