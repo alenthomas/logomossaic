@@ -55,8 +55,7 @@ class IndexComponent extends Component {
 
   getRemainingTweeters() {
     var allTweeters = this.getAllTweeters();
-    var restOfTweets = (window.innerHeight > 640) ? 8 : 4;
-    return lodash(allTweeters).drop(3).take(restOfTweets).value();
+    return lodash(allTweeters).drop(3).take(22).value();
   }
 
   render() {
