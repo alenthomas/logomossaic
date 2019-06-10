@@ -27,7 +27,7 @@ class IndexComponent extends Component {
   componentWillMount() {
     let { leaderboard: { refreshrate } } = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+    watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate, 25);
   }
 
   componentDidUpdate(prevProps) {
@@ -35,7 +35,7 @@ class IndexComponent extends Component {
       timeoutCollection.removeAll();
       let { leaderboard: { refreshrate } } = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+      watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate, 25);
     }
   }
 
