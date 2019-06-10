@@ -162,8 +162,8 @@ export const pollTextTweets = (success, failure, ctag, filter, refreshRate = 5) 
   }, failure, refreshRate * 1000);
 }
 
-export const watchLeaderboard = (success, failure, ctag, filter, refreshRate = 5) => {
-  let urlParams = qs.stringify({ctag, filter});
+export const watchLeaderboard = (success, failure, ctag, filter, refreshRate = 5, limit) => {
+  let urlParams = qs.stringify({ctag, filter, limit});
   poll(`${BASE_URL}leaderboard?${urlParams}`, success, failure, refreshRate * 1000);
 }
 

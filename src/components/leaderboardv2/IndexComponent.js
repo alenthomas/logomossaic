@@ -27,7 +27,7 @@ class IndexComponent extends Component {
   componentWillMount() {
     let { leaderboard: { refreshrate } } = this.props.config;
     let params = getQueryString(this.props.location.search);
-    watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+    watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate, 25);
   }
 
   componentDidUpdate(prevProps) {
@@ -35,7 +35,7 @@ class IndexComponent extends Component {
       timeoutCollection.removeAll();
       let { leaderboard: { refreshrate } } = this.props.config;
       let params = getQueryString(this.props.location.search);
-      watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+      watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate, 25);
     }
   }
 
@@ -55,8 +55,7 @@ class IndexComponent extends Component {
 
   getRemainingTweeters() {
     var allTweeters = this.getAllTweeters();
-    var restOfTweets = (window.innerHeight > 640) ? 8 : 4;
-    return lodash(allTweeters).drop(3).take(restOfTweets).value();
+    return lodash(allTweeters).drop(3).take(22).value();
   }
 
   render() {
