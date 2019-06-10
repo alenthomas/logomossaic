@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import {Overlay, Card} from './Overlay';
 import {queryString, handleError} from '../../Helper.js';
 import { getVotes, postVotes } from '../../Services.js';
@@ -68,7 +69,9 @@ class Polling extends Component {
   vote = (val) => {
     if(val === 1) {
       let {ctag} = queryString();
-      postVotes(this.state.selected.getId(), ctag, this.state.selected.getPhotoUrl(), this.updateVote, handleError);
+      let meta = {social: this.state.selected.getSource(), username: this.state.selected.getAuthorName(), handle: this.state.selected.data.author.handle || this.state.selected.data.author.alias || null, userpic: this.state.selected.getAuthorPhoto()};
+      let cleanedMeta = _.omitBy(meta, _.isNil);
+      postVotes(this.state.selected.getId(), ctag, this.state.selected.getPhotoUrl(), cleanedMeta, this.updateVote, handleError);
     }
     clearTimeout(this.timeoutId);
     this.reset(5000);

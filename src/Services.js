@@ -201,14 +201,14 @@ export const getVotes = (id, success, failure) => {
   return get(`${POLL_URL}/getPoll?id=${id}`, success, failure);
 }
 
-export const postVotes = (id, ctag, src, success, failure) => {
+export const postVotes = (id, ctag, src, meta, success, failure) => {
   return fetch(`${POLL_URL}/addPoll`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
       },
-    body: JSON.stringify({"id": id, "contest": ctag, "src": src})
+    body: JSON.stringify({"id": id, "contest": ctag, "src": src, "meta": meta})
   })
   .then((response) => response.json())
   .then(
