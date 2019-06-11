@@ -5,7 +5,7 @@ import lodash from 'lodash';
 import Results from './Results.js';
 import RegularLayout from "./../layout/Regular.js";
 
-import { getResults } from '../../Services.js'
+import { pollResults } from '../../Services.js'
 import './pollingresults.css';
 import { getQueryString, handleError } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
@@ -20,7 +20,8 @@ class IndexComponent extends Component {
 
   componentWillMount() {
     let params = getQueryString(this.props.location.search);
-    getResults(params.ctag, this.loadData, handleError);
+    let { pollingresults: {refreshrate} } = this.props.config;
+    pollResults(params.ctag, refreshrate, this.loadData, handleError);
   }
 
   loadData = (feed) => {
@@ -33,7 +34,8 @@ class IndexComponent extends Component {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
       let params = getQueryString(this.props.location.search);
-       getResults(params.ctag, this.loadData, handleError);
+      let { pollingresults: {refreshrate} } = this.props.config;
+       pollResults(params.ctag, refreshrate, this.loadData, handleError);
     }
   }
 

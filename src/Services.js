@@ -197,6 +197,10 @@ export const getResults = (ctag, success, failure) => {
   return get(`${POLL_URL}/getContest?contest=${ctag}`, success, failure);
 }
 
+export const pollResults = (ctag, refreshRate, success, failure) => {
+  return poll(`${POLL_URL}/getContest?contest=${ctag}`, success, failure, refreshRate * 1000);
+}
+
 export const getVotes = (id, success, failure) => {
   return get(`${POLL_URL}/getPoll?id=${id}`, success, failure);
 }

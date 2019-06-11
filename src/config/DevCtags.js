@@ -119,6 +119,7 @@ export default {
     },
     "pollingresults": {
       "title": "Winners",
+      "refreshrate": 10,
     },
   },
 
@@ -339,7 +340,8 @@ export default {
     },
     "pollingresults": {
       "title": "Top Winners",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 10,
     },
   },
 
@@ -423,7 +425,8 @@ export default {
     },
     "pollingresults": {
       "title": "Top 6 Winners",
-      "hideBgWave": true
+      "hideBgWave": true,
+      "refreshrate": 10
     },
   },
 
