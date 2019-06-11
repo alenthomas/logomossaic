@@ -256,7 +256,7 @@ export default {
       "title": "Social Feed"
     },
     "leaderboard": {
-      "title": "#CLUS Leaderboard"
+      "title": "#CLUS Daily Leaderboard"
     },
     "leaderboardv2": {
       "title": "Leaderboard",
@@ -1109,9 +1109,9 @@ export default {
       }
     },
     "polling": {
-      "title": "Vote Here !",
+      "title": "TAP to Vote!",
       "hideBgWave": true,
-      "refreshrate": 250,
+      "refreshrate": 150,
     },
   }
 }
