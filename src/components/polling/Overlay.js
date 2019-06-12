@@ -60,8 +60,8 @@ export const Overlay = ({info, closeAction, like, votedAction, votes}) => {
         </div>
         <div className='selected-card-logo'></div>
         <div className='selected-card-body'>
-          <div className='cisco-logo-bck'><div className='cisco-logo'><img src={ciscolive} alt='cisco-live'/></div></div>
-          <div className='cisco-heading'>Cisco Live</div>
+          <div className='cisco-logo-bck'><div className='cisco-logo'><img className={info.getAuthorPhoto() ? 'author-pic': 'default-pic'}src={info.getAuthorPhoto() || ciscolive} alt='cisco-live'/></div></div>
+          <div className='cisco-heading'>{info.getAuthorName() || 'Cisco Live'}</div>
           <div className='social-logo'>
             <Logo info={info} />
           </div>

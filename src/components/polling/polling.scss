@@ -78,11 +78,20 @@
         border-radius: 100%;
         background-color: #1dc0ee;
         border: 5px solid #ffffff;
-        img {
-          position: absolute;
-          top: 30px;
-          left: 10px;
-          width: 100px;
+        overflow: hidden;
+        .author-pic {
+          // img {
+            position: absolute;
+            width: 100%;
+          // }
+        }
+        .default-pic {
+          // img {
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            width: 100px;
+          // }
         }
       }
       .cisco-heading {
@@ -92,6 +101,10 @@
         color: #3d3d3d;
         top: 20px;
         left: 300px;
+        width: 390px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       .social-logo {
         position: absolute;
