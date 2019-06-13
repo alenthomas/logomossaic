@@ -459,13 +459,13 @@ export default {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cisco-live/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
           "leftLogoUrl": '',
-          "rightLogoUrl": '/assets/logo/cisco.png'
+          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
