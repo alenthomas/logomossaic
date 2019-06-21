@@ -38,15 +38,15 @@
         .tweet-card-top {
           .profile {
             .name, .handle {
-              color: #000000;
+              color: #ffffff;
             }
           }
           .timestamp {
-            color: #000000;
+            color: #ffffff;
           }
         }
         .tweet-card-middle {
-          color: #000000;
+          color: #ffffff;
         }
         .tweet-card-bottom {
           .icon {
@@ -58,7 +58,7 @@
             }
           }
           .likes, .shares {
-            color: #000000;
+            color: #ffffff;
           }
         }
       }
@@ -182,7 +182,7 @@
     &.photo-wall-container {
       .photo-wall {
         .caption {
-          font-size: 16vw;
+          font-size: 15vw;
         }
         .phototile {
           &.portrait {
