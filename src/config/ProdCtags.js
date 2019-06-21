@@ -1118,5 +1118,92 @@ export default {
     "pollingresults": {
       "refreshrate": 10,
     },
-  }
+  },
+
+  "dell.com:context=ebc-sv": {
+    "containerCssClassname": "dellebc-sv",
+    "background": "url(/assets/dell/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/dell/1.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/dell/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#CLUS Daily Leaderboard"
+    },
+    "leaderboardv2": {
+      "title": "Leaderboard",
+      "hideBgWave": true,
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+      "refreshrate": 150,
+    },
+    "masonarystreamv3": {
+      "title": "#CLUS Social Feed",
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
+    "masonarystreamv4": {
+      "title": "Social Feed",
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
+    "mediacarousel": {
+      "title": "Dell Leaders",
+      "hideBgWave": true
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "Dell Social Pulse",
+      "tileBgText": "#Dell4Impact",
+      "hideBgWave": true,
+      "loadSequentially": true,
+      "showFirst": 100,
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    },
+    "polling": {
+      "title": "Vote Here !",
+      "hideBgWave": true,
+      "refreshrate": 250,
+    },
+    "pollingresults": {
+      "title": "Top Winners",
+      "refreshrate": 10,
+      "hideBgWave": true
+    },
+  },
+
 }
