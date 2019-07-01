@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Carousel from './Carousel.js';
 import RegularLayout from "./../layout/Regular.js";
-import { pollFeatured } from '../../Services.js';
+import { pollFeatured, pollFeaturedSprinklr } from '../../Services.js';
 import { queryString, handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
 
@@ -21,7 +21,11 @@ class IndexComponent extends Component {
   componentWillMount() {
     let { mediacarousel: {refreshrate} } = this.props.config;
     let params = getQueryString(this.props.location.search);
-    pollFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+    if(params.topicId) {
+      pollFeaturedSprinklr(this.loadData, handleError, params.topicId);
+    } else {
+      pollFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -29,7 +33,11 @@ class IndexComponent extends Component {
       timeoutCollection.removeAll();
       let { mediacarousel: {refreshrate} } = this.props.config;
       let params = getQueryString(this.props.location.search);
-      pollFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+      if(params.topicId) {
+        pollFeaturedSprinklr(this.loadData, handleError, params.topicId);
+      } else {
+        pollFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);
+      }
     }
   }
 

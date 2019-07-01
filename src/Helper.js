@@ -68,6 +68,6 @@ export function removeLinks(text) {
 }
 
 export function handleError(error) {
-  console.error(error);
+  console.error('Error: ', error);
 }
 

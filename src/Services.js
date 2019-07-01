@@ -15,7 +15,7 @@ const PHOTO_URL = API_CONFIG.PHOTO_URL;
 const POLL_URL = API_CONFIG.POLL_URL;
 const NAME_URL = API_CONFIG.NAME_URL;
 const REFRESH_RATE = 5000;
-const FAILURE_RETRY_RATE = 2000;
+const FAILURE_RETRY_RATE = 10000;
 
 let get = (url, success, failure) => {
   return fetch(protoRelativeUrl(url))
@@ -78,7 +78,7 @@ export const pollPhotos = (ctag, filter, success, failure) => {
   }, failure)
 }
 
-export const getPhotos = (ctag, filter, success, failure, safe=true) => {
+export const getPhotos = (ctag, filter, success, failure) => {
   let photoParams = qs.stringify({ctag, filter, contentType: 'photo', format: 'flat'})
   let url = `${PHOTO_URL}social?${photoParams}`;
   get(url, (data) => {
@@ -86,7 +86,7 @@ export const getPhotos = (ctag, filter, success, failure, safe=true) => {
       removeVideoMedia(cleansedData);
       let photoObjects = lodash.map(cleansedData, datum => new Photo(datum));
       success(photoObjects);
-    }, safe)
+    })
   }, failure);
 }
 
@@ -110,7 +110,8 @@ export const getLatestPhotos = (ctag, filter, topicId, success, failure) => {
   if(ctagConfig.sprinklrApi) {
     const url = `${BASE_URL}sprinklr/phototweets?topicId=${topicId}`
     get(url, (data) => {
-      const photoObjects = lodash.map(data, datum => new Photo(datum));
+      const photoPosts = lodash.filter(data, datum => datum.media && datum.media.length > 0 && datum.media[0].url);
+      const photoObjects = lodash.map(photoPosts, datum => new Photo(datum));
       success(photoObjects);
     })
   } else {
@@ -136,6 +137,23 @@ export const pollFeatured = (success, failure, ctag, filter, refreshRate = 5) =>
       success(featuredFeed);
     })
   }, failure, refreshRate * 1000);
+}
+
+export const pollFeaturedSprinklr = (success, failure, topicId) => {
+  let featuredFeed = new Feed();
+  const url = `${BASE_URL}sprinklr/phototweets?topicId=${topicId}`
+  get(url, (data) => {
+    const photoPosts = lodash.filter(data, datum => datum.media && datum.media.length > 0 && datum.media[0].url);
+    const photoObjects = lodash.map(photoPosts, datum => {
+      datum.media[0].mediaType='image'
+      datum['source'] = {name: ''};
+      datum['createdAt'] = new Date(datum.createdAt).toISOString();
+      return datum;
+      }
+      );
+    featuredFeed.load(photoObjects)
+    success(featuredFeed);
+    }, failure)
 }
 
 export const watchVolume = (success, failure, ctag, filter, refreshRate = 5) => {
