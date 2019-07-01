@@ -59,6 +59,6 @@ export default class TweetCardBottomSection extends Component {
       )
     }
 
-    return ''
+    return null;
   }
 }
