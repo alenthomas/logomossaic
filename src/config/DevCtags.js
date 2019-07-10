@@ -345,6 +345,92 @@ export default {
     },
   },
 
+  "usga": {
+    "containerCssClassname": "livenation",
+    "background": "url(/assets/livenation/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/livenation/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/livenation/leftLogo.jpg',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#CLUS Leaderboard"
+    },
+    "leaderboardv2": {
+      "title": "Leaderboard",
+      "hideBgWave": true,
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+      "refreshrate": 150,
+    },
+    "masonarystreamv3": {
+      "title": "Social Feed",
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
+    "masonarystreamv4": {
+      "title": "Social Feed",
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
+    "mediacarousel": {
+      "title": "#LiveNation Highlights",
+      "hideBgWave": true
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "#LiveNation Social Pulse",
+      "tileBgText": "#LIVENATION",
+      "hideBgWave": true,
+      "loadSequentially": true,
+      "showFirst": 100,
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    },
+    "polling": {
+      "title": "Vote for your favourite post",
+      "hideBgWave": true,
+      "refreshrate": 250,
+    },
+    "pollingresults": {
+      "title": "Top Winners",
+      "hideBgWave": true,
+      "refreshrate": 10,
+    },
+  },
+
   "bethebridge": {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2019/blue-bg-1080.jpg)",
