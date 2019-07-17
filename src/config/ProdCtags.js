@@ -629,16 +629,19 @@ export default {
 
 
   "cisco.com:context=cxc": {
-    "containerCssClassname": "cisco-cxc",
-    "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
+    "containerCssClassname": "clus2019",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "leftLogoUrl": '',
+          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -681,16 +684,19 @@ export default {
   },
 
   "cisco.com:context=cxc-cisco-social": {
-    "containerCssClassname": "cisco-cxc",
-    "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
+    "containerCssClassname": "clus2019",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "leftLogoUrl": '',
+          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -722,7 +728,7 @@ export default {
     },
     "photowall": {
       "title": "Cisco Social Pulse",
-      "tileBgText": "#CISCOCXC",
+      "tileBgText": "#WEARECISCO",
       "hideBgWave": true
     },
     "tweetcounts": {
@@ -733,16 +739,19 @@ export default {
   },
 
   "cisco.com:context=cxc-leaders": {
-    "containerCssClassname": "cisco-cxc",
-    "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
+    "containerCssClassname": "clus2019",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "leftLogoUrl": '',
+          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -785,16 +794,19 @@ export default {
   },
 
   "cisco.com:context=cxc-products": {
-    "containerCssClassname": "cisco-cxc",
-    "background": "url(/assets/cisco-cxc/blue-bubbles-bg.png)",
+    "containerCssClassname": "clus2019",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cisco-cxc/${lodash.random(1, 6)}.mp4`
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/cisco-cxc/cisco-vision.png',
-          "rightLogoUrl": 'http://storage.googleapis.com/animable/cisco-cxc/clus-imagine.gif'
+          "leftLogoUrl": '',
+          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
