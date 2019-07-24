@@ -1304,4 +1304,90 @@ export default {
     },
   },
 
+  "fankave.com:context=test": {
+    "containerCssClassname": "clus2019",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#CLUS Daily Leaderboard"
+    },
+    "leaderboardv2": {
+      "title": "Leaderboard",
+      "hideBgWave": true,
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+      "refreshrate": 150,
+    },
+    "masonarystreamv3": {
+      "title": "#CLUS Social Feed",
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
+    "masonarystreamv4": {
+      "title": "Social Feed",
+      "hideBgWave": true,
+      "refreshrate": 100,
+    },
+    "mediacarousel": {
+      "title": "#BizBashLA Highlights",
+      "hideBgWave": true
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#BizBashLA Trending Topics"
+    },
+    "photowall": {
+      "title": "#BizBashLA Social Pulse",
+      "tileBgText": "#BizBashLA",
+      "hideBgWave": true,
+      "loadSequentially": true,
+      "showFirst": 100,
+    },
+    "tweetcounts": {
+      "title": "#CLUS So",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    },
+    "polling": {
+      "title": "Vote Here !",
+      "hideBgWave": true,
+      "refreshrate": 250,
+    },
+    "pollingresults": {
+      "title": "Top Winners",
+      "refreshrate": 10,
+      "hideBgWave": true
+    },
+  },
+
 }
