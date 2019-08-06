@@ -63,6 +63,7 @@ export default {
       "sides": 14,
       "cardDisplayTime": 7,
       "refreshrate": 10,
+      "hideBgWave": false,
     },
     "photogrid": {
       "title": "Photo Grid",
@@ -603,6 +604,7 @@ export default {
       "title": "#CiscoStore Highlights",
       "refreshrate": 10,
       "cardDisplayTime": 7,
+      "hideBgWave": true,
     },
     "photogrid": {
       "title": "#CiscoStore Visuals"
