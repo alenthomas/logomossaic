@@ -455,7 +455,6 @@ export default {
     }
   },
 
-
   "bethebridge": {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
@@ -525,57 +524,7 @@ export default {
     },
   },
 
-  "cisco.com:event=clus-ciscostore": {
-    "containerCssClassname": "ciscostore",
-    "background": "url(/assets/ciscostore/bg.png)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/ciscostore/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-blue.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#CLUS Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "mediacarousel": {
-      "title": "#CiscoStore Highlights"
-    },
-    "photogrid": {
-      "title": "#CiscoStore Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#CiscoStore Trending Topics"
-    },
-    "photowall": {
-      "title": "#CiscoStore Social Pulse",
-      "tileBgText": "#CiscoStore",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "#CiscoStore Social Stats",
-      "hideBgWave": true
-    }
-  },
-
+  
   "CiscoStore": {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
@@ -892,59 +841,6 @@ export default {
     }
   },
 
-
-
-  "nba.com:event=nba-allstar-all": {
-    "containerCssClassname": "nba-allstar",
-    "background": 'url("/assets/nba-allstar/bg.png") no-repeat',
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/NBA/allstar1.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "rightLogoUrl": '/assets/nba-allstar/rightLogo.png'
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
-    "mediacarousel": {
-      "title": "SFL Trending Now"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "NBA All Star"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "trendingcharttile": {
-      "title": ""
-    },
-    "wordclouldtile": {
-      "title": ""
-    }
-  },
-
   "bayclub.com:context=socialwall": {
     "containerCssClassname": "bayclub",
     "background": "url(/assets/bayclub/bg.jpg)",
@@ -997,143 +893,7 @@ export default {
     }
   },
 
-  "linkedinpinot": {
-    "containerCssClassname": "linkedin",
-    "background": "url(/assets/linkedin/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/linkedin/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/linkedin/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#CLUS Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "mediacarousel": {
-      "title": "#superchargedOLAP Highlights"
-    },
-    "photogrid": {
-      "title": "#CLUS Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#superchargedOLAP Trending Topics"
-    },
-    "photowall": {
-      "title": "#superchargedOLAP Social Pulse",
-      "tileBgText": "#superchargedOLAP",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "#CLUS Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
-  },
-
-  "tiecon2019": {
-    "containerCssClassname": "tiecon",
-    "background": "url(/assets/tiecon/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/tiecon/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/tiecon/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#TiEcon Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "mediacarousel": {
-      "title": "#TiEcon Highlights"
-    },
-    "photogrid": {
-      "title": "#CLUS Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#TiEcon Trending Topics"
-    },
-    "photowall": {
-      "title": "#TiEcon Social Pulse",
-      "tileBgText": "#TiEcon",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "#CLUS Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
-  },
-
-  "clussun1": {
-    "containerCssClassname": "clus2019",
-    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/clus2019/leftLogo.png',
-          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "polling": {
-      "title": "TAP to Vote!",
-      "hideBgWave": true,
-      "refreshrate": 150,
-    },
-    "pollingresults": {
-      "refreshrate": 10,
-    },
-  },
-
+  
   "dell.com:context=ebc-sv": {
     "containerCssClassname": "dellebc-sv",
     "background": "url(/assets/dell/bg.jpg)",
@@ -1306,11 +1066,11 @@ export default {
     },
   },
 
-  "fankave.com:context=test": {
-    "containerCssClassname": "clus2019",
-    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
+  "nuhuskies": {
+    "containerCssClassname": "nuhuskies",
+    "background": "url(/assets/nuhuskies/bg.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "url": () => `http://storage.googleapis.com/animable/nuhuskies/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
       "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
       "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
@@ -1318,7 +1078,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '',
+          "leftLogoUrl": '/assets/nuhuskies/leftLogo.png',
           "rightLogoUrl": ''
         },
         "footer": {
@@ -1335,61 +1095,206 @@ export default {
       "title": "Social Feed"
     },
     "leaderboard": {
-      "title": "#CLUS Daily Leaderboard"
-    },
-    "leaderboardv2": {
-      "title": "Leaderboard",
-      "hideBgWave": true,
+      "title": "#HowlinHuskies Leaderboard"
     },
     "masonarystream": {
       "title": "Social Feed"
     },
     "masonarystreamv2": {
       "hideBgWave": true,
-      "refreshrate": 150,
-    },
-    "masonarystreamv3": {
-      "title": "#CLUS Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "masonarystreamv4": {
-      "title": "Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
     },
     "mediacarousel": {
-      "title": "#BizBashLA Highlights",
-      "hideBgWave": true
+      "title": "NortheasternU Highlights"
     },
     "photogrid": {
-      "title": "#CLUS Visuals"
+      "title": "#NortheasternU Visuals"
     },
     "trendingdiscussion": {
-      "title": "#BizBashLA Trending Topics"
+      "title": "#NortheasternU Trending Topics"
     },
     "photowall": {
-      "title": "#BizBashLA Social Pulse",
-      "tileBgText": "#BizBashLA",
-      "hideBgWave": true,
-      "loadSequentially": true,
-      "showFirst": 100,
-    },
-    "tweetcounts": {
-      "title": "#CLUS So",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    },
-    "polling": {
-      "title": "Vote Here !",
-      "hideBgWave": true,
-      "refreshrate": 250,
-    },
-    "pollingresults": {
-      "title": "Top Winners",
-      "refreshrate": 10,
+      "title": "Social Pulse",
+      "tileBgText": "#HowlinHuskies",
       "hideBgWave": true
     },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#howlinhuskies"]
+    }
   },
 
+  "nuhuskiescs": {
+    "containerCssClassname": "nuhuskies",
+    "background": "url(/assets/nuhuskies/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/nuhuskies/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/nuhuskies/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#HowlinHuskies Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "Khoury College Highlights"
+    },
+    "photogrid": {
+      "title": "Khoury College Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "Khoury College Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#HowlinHuskies",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#howlinhuskies"]
+    }
+  },
+
+  "nuhuskiesbusiness": {
+    "containerCssClassname": "nuhuskies",
+    "background": "url(/assets/nuhuskies/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/nuhuskies/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/nuhuskies/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#HowlinHuskies Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "DAmoreMcKim BSchool Highlights"
+    },
+    "photogrid": {
+      "title": "DAmoreMcKim BSchool Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "DAmoreMcKim BSchool Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#HowlinHuskies",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#howlinhuskies"]
+    }
+  },
+
+  "nuhuskiessports": {
+    "containerCssClassname": "nuhuskies-sports",
+    "background": "url(/assets/nuhuskies/bg_sports.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/nuhuskies/loading_sports.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/nuhuskies/leftLogo.png',
+          "rightLogoUrl": '/assets/nuhuskies/rightLogo.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#HowlinHuskies Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#HowlinHuskies Highlights"
+    },
+    "photogrid": {
+      "title": "#HowlinHuskies Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#HowlinHuskies Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#HowlinHuskies",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#howlinhuskies"]
+    }
+  },
 }
