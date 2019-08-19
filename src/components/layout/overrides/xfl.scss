@@ -1,5 +1,5 @@
 .regularlayout {
-  &.nuhuskies {
+  &.xfl {
     .dashboard-header {
       background: rgba(0,0,0,0.6);
       height: 105px;
@@ -35,7 +35,7 @@
     }
     &.carousel-container, &.stats {
       .tweet-card {
-        background: url(/assets/nuhuskies/tweetCardBg.png);
+        background: url(/assets/xfl/tweetCardBg.png);
         .tweet-card-top {
           .profile {
             .name, .handle {
@@ -70,7 +70,7 @@
         margin-top: 40px;
         .ranked-tweeter-card {
           .tweeter-details {
-            background: url(/assets/nuhuskies/tweetCardBg.png);
+            background: url(/assets/xfl/tweetCardBg.png);
             .name, .twitter-handle {
               color: white;
             }
@@ -183,7 +183,7 @@
     &.photo-wall-container {
       .photo-wall {
         .caption {
-          font-size: 12vw;
+          font-size: 14vw;
         }
         .phototile {
           &.portrait {
@@ -195,7 +195,7 @@
             }
           }
           &.zoomIn {
-            background-image: url(/assets/nuhuskies/tweetCardBg.png);
+            background-image: url(/assets/xfl/tweetCardBg.png);
             img {
               margin-left: none;
             }

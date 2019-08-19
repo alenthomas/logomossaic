@@ -1297,4 +1297,62 @@ export default {
       "filterHashtags": ["#howlinhuskies"]
     }
   },
+
+  "xfl.com:context=socialwall": {
+    "containerCssClassname": "xfl",
+    "background": "url(/assets/xfl/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/xfl/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/xfl/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#XFL2020 Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#XFL2020 Highlights"
+    },
+    "photogrid": {
+      "title": "#XFL2020 Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#XFL Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#XFL2020",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#howlinhuskies"]
+    }
+  },
 }
