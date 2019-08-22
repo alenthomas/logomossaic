@@ -1358,7 +1358,7 @@ export default {
 
   "expo2020": {
     "containerCssClassname": "expo2020",
-    "background": "url(/assets/xfl/bg.jpg)",
+    "background": "url(/assets/expo2020/bg.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/expo2020/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
