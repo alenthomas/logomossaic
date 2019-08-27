@@ -1,0 +1,485 @@
+.regularlayout {
+  &.pureaccel {
+    .dashboard-header {
+      background: rgba(0,0,0,0.6);
+      height: 105px;
+
+      .logo.left-icon {
+        img {
+          max-width: 160px;
+          max-height: none;
+        }
+      }
+      .dashboard-title {
+        color: #ffffff;
+        font-size: 52px;
+        padding-top: 15px;
+      }
+      .logo.right-icon {
+        img {
+          max-width: 160px;
+          max-height: none;
+        }
+      }
+    }
+    .dashboard-footer {
+      .logo.right {
+        img {
+          width: 150px;
+          padding: 20px;
+        }
+      }
+    }
+    &.stats {
+      background-image: url(/assets/clus2019/darkblue_bg1920.jpg) !important;
+    }
+    &.carousel-container, &.stats {
+      .tweet-card {
+        background: url(/assets/pureaccel/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            .name, .handle {
+              color: #000000;
+            }
+          }
+          .timestamp {
+            color: #000000;
+          }
+        }
+        .tweet-card-middle {
+          color: #000000;
+        }
+        .tweet-card-bottom {
+          .icon {
+            &.like {
+              background-image: url(/assets/clus2019/like.png);
+            }
+            &.retweet {
+              background-image: url(/assets/clus2019/retweet.png);
+            }
+          }
+          .likes, .shares {
+            color: #000000;
+          }
+        }
+      }
+    }
+    &.leaderboard {
+      overflow-x: hidden;
+      .leaderboard-cards {
+        margin-top: 40px;
+        .ranked-tweeter-card {
+          .tweeter-details {
+            background: url(/assets/pureaccel/tweetCardBg.png);
+            .name, .twitter-handle {
+              color: white;
+            }
+            .tweets {
+              .count {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      @media(min-width: 1920px) {
+        .leaderboard-cards {
+          .ranked-tweeter-card {
+            .tweeter-image {
+              .image-obj {
+                max-width: none;
+                max-height: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.leaderboardv2 {
+      .dashboard-header {
+        background-color: #004e7c;
+        height: 88px;
+        .dashboard-title {
+          display: block;
+          position: absolute;
+          text-align: right;
+          padding-right: 10px;
+          top: 30px;
+          right: 0px;
+          font-size: 2.5em;
+          font-family: CiscoSans;
+          color: #1dbbe9;
+        }
+        .dashboard-short-title {
+          display: none;
+        }
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .container {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .header {
+          .header-logo {
+            background: url(/assets/clus2019/logo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          .heading {
+            font-size: 2em;
+          }
+        }
+        .post {
+          .post-body {
+            background: url(/assets/clus2019/white_tweetCardBg.png);
+            background-size: cover;
+            background-position: 0% 70%;
+            background-repeat: no-repeat;
+            .post-footer {
+              .post-logo {
+                margin-right: 0;
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+      @media (min-width: 1080px) {
+        font-size: 8px;
+      }
+    }
+    &.photo-wall-container {
+      .photo-wall {
+        .caption {
+          font-size: 12vw;
+        }
+        .phototile {
+          &.portrait {
+            &.zoomIn {
+              img {
+                display: block;
+                margin-left: calc(5%);
+              }
+            }
+          }
+          &.zoomIn {
+            background-image: url(/assets/pureaccel/tweetCardBg.png);
+            img {
+              margin-left: none;
+            }
+          }
+          .info {
+            &.visible {
+              .head {
+                color: #000000;
+              }
+              color: #000000;
+            }
+          }
+        }
+      }
+    }
+    &.masonary-stream-v2 {
+      .dashboard-header {
+        background-color: #004e7c;
+        height: 88px;
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .dashboard-content-v2 {
+        .call-to-action-card {
+          width: 287px;
+          height: 237px;
+          margin: 15px;
+          background: url(/assets/clus2019/action_card.png);
+          background-size: contain;
+        }
+      }
+    }
+    &.masonary-stream-v3 {
+      .dashboard-header {
+        // display: none;
+        background-color: #004e7c;
+        height: 88px;
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .dashboard-content-v3 {
+        .call-to-action-card {
+          width: 287px;
+          height: 237px;
+          margin: 15px;
+          background: url(/assets/clus2019/action_card.png);
+          background-size: contain;
+        }
+      }
+    }
+    &.masonary-stream-v4 {
+      .dashboard-header {
+        // display: none;
+        background-color: #004e7c;
+        height: 88px;
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 100px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 100px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/cisco-live-ca.png);
+            bottom: 0;
+            left: 15px;
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .dashboard-content-v4 {
+        .call-to-action-card {
+          width: 287px;
+          height: 237px;
+          margin: 15px;
+          background: url(/assets/clus2019/action_card.png);
+          background-size: contain;
+        }
+      }
+    }
+    &.polling-results {
+      overflow-x: hidden;
+      &.vision-player {
+        background: url(/assets/clus2019/darkblue_bg1080.jpg) !important;
+        background-repeat: repeat-y;
+        background-size: cover !important;
+      }
+      .dashboard-header {
+        background-color: #042030;
+        height: 200px;
+        .dashboard-title {
+          display: block;
+          position: absolute;
+          text-align: right;
+          padding-right: 10px;
+          top: 30px;
+          right: 60px;
+          font-size: 2.5em;
+          font-family: CiscoSans;
+          color: #1dbbe9;
+        }
+        .dashboard-short-title {
+          display: none;
+        }
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 200px;
+            left
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            // display: block;
+            content: url(/assets/medals/cup.png);
+            top: 30px;
+            right: 350px;
+            width: 75px;
+          }
+        }
+      }
+      .dashboard-footer {
+        .logo {
+          &.right {
+            img {
+              width: 241px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/ciscolive-cancun.png);
+            bottom: 0;
+            left: 15px;
+            width: 266px;
+            height: 144px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+    }
+    &.polling {
+      overflow: hidden;
+      &.vision-player {
+        background: url(/assets/clus2019/darkblue_bg1080.jpg) !important;
+        background-repeat: repeat-y;
+        background-size: cover !important;
+      }
+      .dashboard-header {
+        background-color: #004e7c;
+        height: 125px;
+        .dashboard-title {
+          font-size: 2.5em;
+          font-family: CiscoSans;
+          color: #1dbbe9;
+          padding-top: 40px;
+          padding-left: 100px;
+        }
+        .logo {
+          &.left-icon {
+            content: url(/assets/clus2019/rightLogo.png);
+            width: 200px;
+            img {
+              width: 100%;
+            }
+            top: 15px
+          }
+          &.right-icon {
+            display: none;
+          }
+        }
+      }
+      .dashboard-footer {
+        // position: absolute;
+        .logo {
+          &.right {
+            position: absolute;
+            img {
+              width: 241px;
+            }
+          }
+          &.left-2 {
+            background: url(/assets/logo/ciscolive-cancun.png);
+            bottom: 0;
+            left: 15px;
+            width: 266px;
+            height: 144px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+    }
+    &.trending-discussion {
+      .dashboard-content {
+        margin-top: 130px;
+        background-color: rgba(#00a7e1,0.75);
+      }
+      @media (min-width: 1920px) {
+        .dashboard-content {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}
