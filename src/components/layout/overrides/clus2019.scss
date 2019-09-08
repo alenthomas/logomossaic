@@ -1,7 +1,7 @@
 .regularlayout {
   &.clus2019 {
     .dashboard-header {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       height: 105px;
 
       .logo.left-icon {
@@ -32,12 +32,14 @@
     &.stats {
       background-image: url(/assets/clus2019/darkblue_bg1920.jpg) !important;
     }
-    &.carousel-container, &.stats {
+    &.carousel-container,
+    &.stats {
       .tweet-card {
         background: url(/assets/clus2019/white_tweetCardBg.png);
         .tweet-card-top {
           .profile {
-            .name, .handle {
+            .name,
+            .handle {
               color: #000000;
             }
           }
@@ -57,7 +59,8 @@
               background-image: url(/assets/clus2019/retweet.png);
             }
           }
-          .likes, .shares {
+          .likes,
+          .shares {
             color: #000000;
           }
         }
@@ -70,7 +73,8 @@
         .ranked-tweeter-card {
           .tweeter-details {
             background: url(/assets/clus2018/tweetCardBgBlackCube.png);
-            .name, .twitter-handle {
+            .name,
+            .twitter-handle {
               color: white;
             }
             .tweets {
@@ -81,7 +85,7 @@
           }
         }
       }
-      @media(min-width: 1920px) {
+      @media (min-width: 1920px) {
         .leaderboard-cards {
           .ranked-tweeter-card {
             .tweeter-image {
@@ -119,7 +123,7 @@
             img {
               width: 100%;
             }
-            top: 15px
+            top: 15px;
           }
           &.right-icon {
             display: none;
@@ -221,7 +225,7 @@
             img {
               width: 100%;
             }
-            top: 15px
+            top: 15px;
           }
           &.right-icon {
             display: none;
@@ -269,7 +273,7 @@
             img {
               width: 100%;
             }
-            top: 15px
+            top: 15px;
           }
           &.right-icon {
             display: none;
@@ -317,7 +321,7 @@
             img {
               width: 100%;
             }
-            top: 15px
+            top: 15px;
           }
           &.right-icon {
             display: none;
@@ -381,11 +385,10 @@
           &.left-icon {
             content: url(/assets/clus2019/rightLogo.png);
             width: 200px;
-            left
-            img {
+            left img {
               width: 100%;
             }
-            top: 15px
+            top: 15px;
           }
           &.right-icon {
             // display: block;
@@ -440,7 +443,7 @@
             img {
               width: 100%;
             }
-            top: 15px
+            top: 15px;
           }
           &.right-icon {
             display: none;
@@ -472,11 +475,114 @@
     &.trending-discussion {
       .dashboard-content {
         margin-top: 130px;
-        background-color: rgba(#00a7e1,0.75);
+        background-color: rgba(#00a7e1, 0.75);
       }
       @media (min-width: 1920px) {
         .dashboard-content {
           margin-top: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .regularlayout {
+    &.clus2019 {
+      .leaderboardv2 {
+        .container {
+          height: 84vh;
+        }
+        .top {
+          .post {
+            height: 145px;
+            .post-img {
+              img {
+                max-width: 145px;
+                max-height: 145px;
+              }
+            }
+            .post-body {
+              // .medal {
+              //   top: 0;
+              //   right: 8px;
+              //   width: 45px;
+              //   height: 60px;
+              // }
+              .post-content {
+                .author-name {
+                  width: 160px;
+                  margin-bottom: 7px;
+                  font-size: 2.5em;
+                }
+                .author-handle {
+                  font-size: 2.2em;
+                }
+              }
+              .post-footer {
+                .post-count {
+                  font-size: 2.2em;
+                  span {
+                    font-size: 2.5em;
+                  }
+                }
+                .post-logo {
+                  img {
+                    width: 35px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .rest {
+          .post {
+            height: 145px;
+            .post-img {
+              img {
+                min-width: 95px;
+                max-width: 92px;
+                max-height: 92px;
+              }
+            }
+            .post-body {
+              // .medal {
+              //   top: 0;
+              //   right: 8px;
+              //   width: 45px;
+              //   height: 60px;
+              // }
+              .post-content {
+                .rank {
+                  top: 15px;
+                  width: 45px;
+                  height: 22px;
+                  font-size: 2em;
+                }
+                .author-name {
+                  width: 160px;
+                  margin-bottom: 7px;
+                  font-size: 2.5em;
+                }
+                .author-handle {
+                  font-size: 2.2em;
+                }
+              }
+              .post-footer {
+                .post-count {
+                  font-size: 2.2em;
+                  span {
+                    font-size: 2.5em;
+                  }
+                }
+                .post-logo {
+                  img {
+                    width: 35px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

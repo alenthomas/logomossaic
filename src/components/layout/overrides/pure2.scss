@@ -1,7 +1,7 @@
 .regularlayout {
   &.pure2 {
     .dashboard-header {
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
       height: 95px;
 
       .logo.left-icon {
@@ -34,21 +34,23 @@
       background-image: url(/assets/clus2018/blue-bubbles-bg.png) !important;
     }
 
-    &.carousel-container, &.stats {
+    &.carousel-container,
+    &.stats {
       .tweet-card {
         background: url(/assets/purestorage/tweetCardBg2.png);
         .tweet-card-top {
           .profile {
-            .name, .handle {
-              color: #FFF;
+            .name,
+            .handle {
+              color: #fff;
             }
           }
           .timestamp {
-            color: #FFF;
+            color: #fff;
           }
         }
         .tweet-card-middle {
-          color: #FFF;
+          color: #fff;
         }
         .tweet-card-bottom {
           .icon {
@@ -57,10 +59,11 @@
             }
             &.retweet {
               background-image: url(/assets/clus2018/retweet.png);
-            }                  
+            }
           }
-          .likes, .shares {
-            color: #FFF;
+          .likes,
+          .shares {
+            color: #fff;
           }
         }
       }
@@ -72,7 +75,8 @@
         .ranked-tweeter-card {
           .tweeter-details {
             background: url(/assets/clus2018/tweetCardBgBlackCube.png);
-            .name, .twitter-handle {
+            .name,
+            .twitter-handle {
               color: white;
             }
             .tweets {
@@ -84,15 +88,56 @@
         }
       }
     }
+    &.leaderboardv2 {
+      .container {
+        width: 100%;
+        .top {
+        }
+        .rest-parent {
+        }
+      }
+    }
 
     &.photo-wall-container {
       .photo-wall {
         .caption {
           font-size: 12vw;
-          color: #DF5425;
+          color: #df5425;
         }
         .phototile {
           &.zoomIn {
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-height: 1152px) and (min-width: 640px) {
+  .regularlayout {
+    &.pure2 {
+      &.leaderboardv2 {
+        .container {
+          width: 70rem;
+          .top {
+          }
+          .rest-parent {
+            height: 50vh;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 640px) and (min-height: 1920px) {
+  .regularlayout {
+    &.pure2 {
+      &.leaderboardv2 {
+        .container {
+          width: 70rem;
+          .top {
+          }
+          .rest-parent {
+            height: 65vh;
           }
         }
       }
