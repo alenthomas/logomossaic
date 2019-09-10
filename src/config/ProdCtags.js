@@ -396,65 +396,6 @@ export default {
     },
   },
 
-  "ciscoiotclus": {
-    "containerCssClassname": "ciscoiotclus",
-    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/ciscoiotclus/1.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/clus2019/leftLogo.png',
-          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#CLUS Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-    },
-    "mediacarousel": {
-      "title": "#CiscoIoT Highlights",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#CLUS Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#CLUS Trending Topics"
-    },
-    "photowall": {
-      "title": "Social Pulse",
-      "tileBgText": "#CiscoIoT",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "#CLUS Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
-  },
-
   "bethebridge": {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2018/blue-bubbles-bg.png)",
@@ -576,7 +517,6 @@ export default {
       "hideBgWave": true
     }
   },
-
 
 
   "cisco.com:context=cxc": {
@@ -854,48 +794,6 @@ export default {
     }
   },
 
-  "freedomrvusa.com:context=socialwall": {
-    "containerCssClassname": "freedomrvusa",
-    "background": 'url("/assets/freedomrvusa/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/freedomrvusa/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '',
-          "rightLogoUrl": '/assets/freedomrvusa/rightLogo.png'
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "Social Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Cisco Social Stream"
-    },
-    "mediacarousel": {
-      "title": "Freedom RV Social Wall"
-    },
-    "photogrid": {
-      "title": "Freedom RV In Pictures"
-    },
-    "trendingdiscussion": {
-      "title": "Trending Topics"
-    }
-  },
-
   "bayclub.com:context=socialwall": {
     "containerCssClassname": "bayclub",
     "background": "url(/assets/bayclub/bg.jpg)",
@@ -946,179 +844,6 @@ export default {
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
     }
-  },
-
-  
-  "dell.com:context=ebc-sv": {
-    "containerCssClassname": "dellebc-sv",
-    "background": "url(/assets/dell/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/dell/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/dell/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#CLUS Daily Leaderboard"
-    },
-    "leaderboardv2": {
-      "title": "Leaderboard",
-      "hideBgWave": true,
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-      "refreshrate": 150,
-    },
-    "masonarystreamv3": {
-      "title": "#CLUS Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "masonarystreamv4": {
-      "title": "Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "mediacarousel": {
-      "title": "Dell Leaders",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#CLUS Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#CLUS Trending Topics"
-    },
-    "photowall": {
-      "title": "Dell Social Pulse",
-      "tileBgText": "#Dell4Impact",
-      "hideBgWave": true,
-      "loadSequentially": true,
-      "showFirst": 100,
-    },
-    "tweetcounts": {
-      "title": "#CLUS Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    },
-    "polling": {
-      "title": "Vote Here !",
-      "hideBgWave": true,
-      "refreshrate": 250,
-    },
-    "pollingresults": {
-      "title": "Top Winners",
-      "refreshrate": 10,
-      "hideBgWave": true
-    },
-  },
-
-  "herbalifebooth": {
-    "containerCssClassname": "herbalifebooth",
-    "background": "url(/assets/herbalifebooth/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/herbalifebooth/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/herbalifebooth/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": ''
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#CLUS Daily Leaderboard"
-    },
-    "leaderboardv2": {
-      "title": "Leaderboard",
-      "hideBgWave": true,
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-      "refreshrate": 150,
-    },
-    "masonarystreamv3": {
-      "title": "#CLUS Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "masonarystreamv4": {
-      "title": "Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "mediacarousel": {
-      "title": "#Herbalife Highlights",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#CLUS Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#Herbalife Trending Topics"
-    },
-    "photowall": {
-      "title": "#Herbalife Social Pulse",
-      "tileBgText": "#Herbalife",
-      "hideBgWave": true,
-      "loadSequentially": true,
-      "showFirst": 100,
-    },
-    "tweetcounts": {
-      "title": "#CLUS Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    },
-    "polling": {
-      "title": "Vote Here !",
-      "hideBgWave": true,
-      "refreshrate": 250,
-    },
-    "pollingresults": {
-      "title": "Top Winners",
-      "refreshrate": 10,
-      "hideBgWave": true
-    },
   },
 
   "nuhuskies": {
@@ -1518,6 +1243,122 @@ export default {
     "photowall": {
       "title": "Social Pulse",
       "tileBgText": "#PureAccelerate",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#expo2020"]
+    }
+  },
+
+  "gehealthcare": {
+    "containerCssClassname": "gehealthcare",
+    "background": "url(/assets/gehealthcare/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/gehealthcare/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/gehealthcare/leftLogo.png',
+          "rightLogoUrl": '/assets/gehealthcare/rightLogo.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#PureAccelerate Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#GEHealhCare Highlights"
+    },
+    "photogrid": {
+      "title": "#Expo2020 Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#GEHealthCare Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#GEHealthCare",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#expo2020"]
+    }
+  },
+
+  "gehealthcare": {
+    "containerCssClassname": "gehealthcare",
+    "background": "url(/assets/gehealthcare/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/gehealthcare/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/gehealthcare/leftLogo.png',
+          "rightLogoUrl": '/assets/gehealthcare/rightLogo.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#PureAccelerate Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#GEHealhCare Highlights"
+    },
+    "photogrid": {
+      "title": "#Expo2020 Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#GEHealthCare Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#GEHealthCare",
       "hideBgWave": true
     },
     "tweetcounts": {

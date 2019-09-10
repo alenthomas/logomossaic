@@ -346,91 +346,7 @@ export default {
     },
   },
 
-  "usga": {
-    "containerCssClassname": "livenation",
-    "background": "url(/assets/livenation/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/livenation/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/livenation/leftLogo.jpg',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#CLUS Leaderboard"
-    },
-    "leaderboardv2": {
-      "title": "Leaderboard",
-      "hideBgWave": true,
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-      "refreshrate": 150,
-    },
-    "masonarystreamv3": {
-      "title": "Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "masonarystreamv4": {
-      "title": "Social Feed",
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "mediacarousel": {
-      "title": "#LiveNation Highlights",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#CLUS Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#CLUS Trending Topics"
-    },
-    "photowall": {
-      "title": "#LiveNation Social Pulse",
-      "tileBgText": "#LIVENATION",
-      "hideBgWave": true,
-      "loadSequentially": true,
-      "showFirst": 100,
-    },
-    "tweetcounts": {
-      "title": "#CLUS Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    },
-    "polling": {
-      "title": "Vote for your favourite post",
-      "hideBgWave": true,
-      "refreshrate": 250,
-    },
-    "pollingresults": {
-      "title": "Top Winners",
-      "hideBgWave": true,
-      "refreshrate": 10,
-    },
-  },
+  
 
   "bethebridge": {
     "containerCssClassname": "clus2018",
@@ -1281,173 +1197,6 @@ export default {
     }
   },
 
-  "cloudflare.com:context=socialwall": {
-    "containerCssClassname": "cloudflare",
-    "background": 'url("/assets/cloudflare/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cloudflare/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/cloudflare/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
-    "mediacarousel": {
-      "title": "Cloudflare Social Pulse"
-    },
-    "photogrid": {
-      "title": "Cloudflare Photowall"
-    },
-    "trendingdiscussion": {
-      "title": "NBA All Star"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "photowall": {
-      "title": "Cloudflare Social Pulse",
-      "tileBgText": "#cloudflare",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "#VMware Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
-  },
-
-  "cloudflare.com:context=leaders": {
-    "containerCssClassname": "cloudflare",
-    "background": 'url("/assets/cloudflare/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/cloudflare/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/cloudflare/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
-    "mediacarousel": {
-      "title": "Cloudflare Leaders"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "NBA All Star"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "photowall": {
-      "title": "VMware Social Pulse",
-      "tileBgText": "#VMware",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "#VMware Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
-  },
-
-  "amatsocialwall": {
-    "containerCssClassname": "amat",
-    "background": 'url("/assets/amat/bg.jpg") no-repeat',
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/amat/loading.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/amat/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
-    "mediacarousel": {
-      "title": "#AppliedMaterials Highlights"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "NBA All Star"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "photowall": {
-      "title": "Applied Materials Social Pulse",
-      "tileBgText": "#appliedmaterials",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "#VMware Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
-  },
 
   "tmobilelovewall": {
     "containerCssClassname": "tmobile",
@@ -1510,172 +1259,120 @@ export default {
     }
   },
 
-  "pureaccel": {
-    "containerCssClassname": "pure2",
-    "background": 'url("/assets/purestorage/bg2.jpg") no-repeat',
+  "sjsugeneral": {
+    "containerCssClassname": "sjsuspartans",
+    "background": "url(/assets/sjsuspartans.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/purestorage/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/sjsuspartans/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/purestorage/leftLogo2.png',
+          "leftLogoUrl": '/assets/sjsuspartans/leftLogo.png',
           "rightLogoUrl": ''
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
         },
+      },
+      "threecolumn": {
       }
     },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "Social Leaderboard"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
     "mediacarousel": {
-      "title": "#PureAccelerate Highlights"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "Trending Topics"
-    },
-    "leaderboardtile": {
-      "title": "#PureAccelerate Leaderboard"
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "photowall": {
-      "title": "Pure Accelerate Social Pulse",
-      "tileBgText": "#PureAccelerate",
+      "title": "San Jose Spartans Highlights",
       "hideBgWave": true
     },
-    "tweetcounts": {
-      "title": "#VMware Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "San Jose Spartans Social Pulse",
+      "tileBgText": "#SJSU",
+      "hideBgWave": true
+    },
   },
 
-  "pureobject": {
-    "containerCssClassname": "pure1",
-    "background": 'url("/assets/purestorage/bg1.jpg") no-repeat',
+  "sjsusports": {
+    "containerCssClassname": "sjsuspartans",
+    "background": "url(/assets/sjsuspartans.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/purestorage/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/sjsuspartans/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/purestorage/leftLogo2.png',
+          "leftLogoUrl": '/assets/sjsuspartans/leftLogo.png',
           "rightLogoUrl": ''
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
         },
+      },
+      "threecolumn": {
       }
     },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
     "mediacarousel": {
-      "title": "#ObjectEngine Highlights"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "#ObjectEngine Trending Topics"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "photowall": {
-      "title": "#ObjectEngine Social Pulse",
-      "tileBgText": "#ObjectEngine",
+      "title": "Spartans Sports Highlights",
       "hideBgWave": true
     },
-    "tweetcounts": {
-      "title": "#VMware Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "Spartans Sports Social Pulse",
+      "tileBgText": "#SJSU",
+      "hideBgWave": true
+    },
   },
 
-  "purestorage": {
-    "containerCssClassname": "pure2",
-    "background": 'url("/assets/purestorage/bg2.jpg") no-repeat',
+  "sjsueducation": {
+    "containerCssClassname": "sjsuspartans",
+    "background": "url(/assets/sjsuspartans.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/purestorage/loading.mp4`
+      "url": () => `http://storage.googleapis.com/animable/sjsuspartans/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/purestorage/leftLogo2.png',
+          "leftLogoUrl": '/assets/sjsuspartans/leftLogo.png',
           "rightLogoUrl": ''
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
         },
+      },
+      "threecolumn": {
       }
     },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "NBA All Star"
-    },
-    "leaderboard": {
-      "title": "NBA All Star"
-    },
-    "masonarystream": {
-      "title": "NBA All Star"
-    },
     "mediacarousel": {
-      "title": "#PureStorage Highlights"
-    },
-    "photogrid": {
-      "title": "SFL In Photos"
-    },
-    "trendingdiscussion": {
-      "title": "Trending Topics"
-    },
-    "leaderboardtile": {
-      "title": ""
-    },
-    "photogridtile": {
-      "title": ""
-    },
-    "photowall": {
-      "title": "Pure Storage Social Pulse",
-      "tileBgText": "#PureStorage",
+      "title": "Spartans Education Highlights",
       "hideBgWave": true
     },
-    "tweetcounts": {
-      "title": "#VMware Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    }
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CLUS Trending Topics"
+    },
+    "photowall": {
+      "title": "Spartans Education Social Pulse",
+      "tileBgText": "#SJSU",
+      "hideBgWave": true
+    },
   },
-
 }
