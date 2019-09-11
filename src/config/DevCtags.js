@@ -1261,7 +1261,7 @@ export default {
 
   "sjsugeneral": {
     "containerCssClassname": "sjsuspartans",
-    "background": "url(/assets/sjsuspartans.jpg)",
+    "background": "url(/assets/sjsuspartans/bg.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/sjsuspartans/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
@@ -1300,7 +1300,7 @@ export default {
 
   "sjsusports": {
     "containerCssClassname": "sjsuspartans",
-    "background": "url(/assets/sjsuspartans.jpg)",
+    "background": "url(/assets/sjsuspartans/bg.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/sjsuspartans/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
@@ -1339,7 +1339,7 @@ export default {
 
   "sjsueducation": {
     "containerCssClassname": "sjsuspartans",
-    "background": "url(/assets/sjsuspartans.jpg)",
+    "background": "url(/assets/sjsuspartans/bg.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/sjsuspartans/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,

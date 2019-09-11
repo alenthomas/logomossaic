@@ -60,9 +60,9 @@ export default {
     },
     "mediacarousel": {
       "title": "Featured Content",
-      "sides": 14,
+      "sides": 20,
       "cardDisplayTime": 10,
-      "refreshrate": 10,
+      "refreshrate": 20,
       "hideBgWave": false,
     },
     "photogrid": {
@@ -100,7 +100,7 @@ export default {
       "interval": 3,
       "loadSequentially": false,
       "showFirst": 10,
-      "refreshrate": 10
+      "refreshrate": 600
     },
     "marquee": {
       "count": 20,
@@ -311,87 +311,6 @@ export default {
     "pollingresults": {
       "title": "Top Winners",
       "refreshrate": 10,
-      "hideBgWave": true
-    },
-  },
-
-  "ciscostoreclus": {
-    "containerCssClassname": "ciscostoreclus",
-    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/ar.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/ciscostore/leftLogo.png',
-          "rightLogoUrl": '/assets/clus2019/rightLogo.png'
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "#CLUS Leaderboard"
-    },
-    "leaderboardv2": {
-      "hideBgWave": true,
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-      "refreshrate": 150,
-    },
-    "masonarystreamv3": {
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "masonarystreamv4": {
-      "hideBgWave": true,
-      "refreshrate": 100,
-    },
-    "mediacarousel": {
-      "title": "#CiscoStore Highlights",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#CLUS Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "#CiscoStore Trending Topics"
-    },
-    "photowall": {
-      "title": "#CiscoStore Social Pulse",
-      "tileBgText": "#CLUS",
-      "hideBgWave": true,
-      "loadSequentially": true,
-      "showFirst": 100,
-    },
-    "tweetcounts": {
-      "title": "#CLUS Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#clus"]
-    },
-    "polling": {
-      "title": "Vote Here !",
-      "hideBgWave": true
-    },
-    "pollingresults": {
-      "title": "Top Winners",
       "hideBgWave": true
     },
   },
@@ -1297,6 +1216,122 @@ export default {
     },
     "trendingdiscussion": {
       "title": "#GEHealthCare Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#GEHealthCare",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#expo2020"]
+    }
+  },
+
+  "ciscodining": {
+    "containerCssClassname": "ciscodining",
+    "background": "url(/assets/cisodining/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/ciscodining/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "# Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "Cisco Dining Highlights"
+    },
+    "photogrid": {
+      "title": "#Expo2020 Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#GEHealthCare Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#GEHealthCare",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#expo2020"]
+    }
+  },
+
+  "discounttire": {
+    "containerCssClassname": "discounttire",
+    "background": "url(/assets/discounttire/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/discounttire/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "# Leaderboard"
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#DscountTire Highlights"
+    },
+    "photogrid": {
+      "title": "#Expo2020 Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "# Trending Topics"
     },
     "photowall": {
       "title": "Social Pulse",
