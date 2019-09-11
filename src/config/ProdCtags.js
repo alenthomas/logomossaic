@@ -1267,7 +1267,8 @@ export default {
       "hideBgWave": true,
     },
     "mediacarousel": {
-      "title": "Cisco Dining Highlights"
+      "title": "Cisco Dining Highlights",
+      "hideBgWave": true
     },
     "photogrid": {
       "title": "#Expo2020 Visuals"
@@ -1325,7 +1326,8 @@ export default {
       "hideBgWave": true,
     },
     "mediacarousel": {
-      "title": "#DscountTire Highlights"
+      "title": "#DiscountTire Highlights",
+      "hideBgWave": true
     },
     "photogrid": {
       "title": "#Expo2020 Visuals"
