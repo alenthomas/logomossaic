@@ -1231,7 +1231,7 @@ export default {
 
   "ciscodining": {
     "containerCssClassname": "ciscodining",
-    "background": "url(/assets/cisodining/bg.jpg)",
+    "background": "url(/assets/ciscodining/bg.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
