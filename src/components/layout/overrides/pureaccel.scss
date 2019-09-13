@@ -1,7 +1,7 @@
 .regularlayout {
   &.pureaccel {
     .dashboard-header {
-      background: rgba(0,0,0,0.2);
+      background: url(/assets/pureaccel/headerCard.png);
       height: 105px;
 
       .logo.left-icon {
@@ -11,8 +11,8 @@
         }
       }
       .dashboard-title {
-        color: #ffffff;
-        font-size: 52px;
+        color: #fe6f00;
+        font-size: 48px;
         padding-top: 15px;
       }
       .logo.right-icon {
