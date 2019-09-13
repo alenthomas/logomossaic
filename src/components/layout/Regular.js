@@ -17,6 +17,8 @@ class Regular extends Component {
     const urlVertical = this.getVerticalMediaUrl(loadingMedia);
     const urlVertical320 = this.getVerticalMediaUrl(loadingMedia, 320);
     const urlVertical640 = this.getVerticalMediaUrl(loadingMedia, 640);
+    const urlVertical1152 = this.getVerticalMediaUrl(loadingMedia, 1152);
+    const urlVertical1920 = this.getVerticalMediaUrl(loadingMedia, 1920);
     this.state = {
       isReady: false,
       loadingMedia: {
@@ -24,7 +26,9 @@ class Regular extends Component {
         url: `${loadingMedia.url()}`,
         urlVertical,
         urlVertical320,
-        urlVertical640
+        urlVertical640,
+        urlVertical1152,
+        urlVertical1920
       }
     };
 
@@ -38,6 +42,12 @@ class Regular extends Component {
       }
       if (resolution === 640) {
         return `${media.urlVertical640()}`;
+      }
+      if (resolution === 1152) {
+        return `${media.urlVertical1152()}`;
+      }
+      if (resolution === 1920) {
+        return `${media.urlVertical1920()}`;
       }
       return `${media.urlVertical()}`;
     } catch (err) {

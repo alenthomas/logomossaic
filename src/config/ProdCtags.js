@@ -384,7 +384,7 @@ export default {
     },
   },
 
-  
+
   "CiscoStore": {
     "containerCssClassname": "ciscostore",
     "background": "url(/assets/ciscostore/bg.png)",
@@ -1117,10 +1117,10 @@ export default {
     "containerCssClassname": "pureaccel",
     "background": "url(/assets/pureaccel/bg.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/pureaccelerate/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+      "url": () => `https://storage.googleapis.com/animable/pureaccelerate/loading.mp4`,
+      "urlVertical": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`,
+      "urlVertical1152": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1152.mp4`,
+      "urlVertical1920": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`
     },
     "layout": {
       "regular": {
@@ -1143,6 +1143,10 @@ export default {
     },
     "leaderboard": {
       "title": "#PureAccelerate Leaderboard"
+    },
+    "leaderboardv2": {
+      "title": "Leaderboard",
+      "hideBgWave": false,
     },
     "masonarystream": {
       "title": "Social Feed"

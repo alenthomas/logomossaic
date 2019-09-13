@@ -346,8 +346,6 @@ export default {
     },
   },
 
-  
-
   "bethebridge": {
     "containerCssClassname": "clus2018",
     "background": "url(/assets/clus2019/blue-bg-1080.jpg)",
@@ -1374,5 +1372,67 @@ export default {
       "tileBgText": "#SJSU",
       "hideBgWave": true
     },
+  },
+
+  "pureaccel": {
+    "containerCssClassname": "pureaccel",
+    "background": "url(/assets/pureaccel/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `https://storage.googleapis.com/animable/pureaccelerate/loading.mp4`,
+      "urlVertical": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`,
+      "urlVertical1152": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1152.mp4`,
+      "urlVertical1920": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/pureaccel/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "conversationvolume": {
+      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
+    },
+    "horizontalstream": {
+      "title": "Social Feed"
+    },
+    "leaderboard": {
+      "title": "#PureAccelerate Leaderboard"
+    },
+    "leaderboardv2": {
+      "title": "Leaderboard",
+      "hideBgWave": false,
+    },
+    "masonarystream": {
+      "title": "Social Feed"
+    },
+    "masonarystreamv2": {
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#PureAccelerate Highlights"
+    },
+    "photogrid": {
+      "title": "#Expo2020 Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#PureAccelerate Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#PureAccelerate",
+      "hideBgWave": true
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#expo2020"]
+    }
   },
 }

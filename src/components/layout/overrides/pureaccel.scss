@@ -473,11 +473,42 @@
     &.trending-discussion {
       .dashboard-content {
         margin-top: 130px;
-        background-color: rgba(#00a7e1,0.75);
       }
       @media (min-width: 1920px) {
         .dashboard-content {
           margin-top: 50px;
+        }
+      }
+    }
+  }
+}
+@media (min-height: 1152px) and (min-width: 640px) {
+  .regularlayout {
+    &.pureaccel {
+      &.leaderboardv2 {
+        .container {
+          width: 70rem;
+          .top {
+          }
+          .rest-parent {
+            height: 50vh;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 640px) and (min-height: 1920px) {
+  .regularlayout {
+    &.pureaccel {
+      &.leaderboardv2 {
+        .container {
+          width: 70rem;
+          .top {
+          }
+          .rest-parent {
+            height: 65vh;
+          }
         }
       }
     }
