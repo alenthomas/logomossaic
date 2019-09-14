@@ -18,7 +18,7 @@ class TweetCount extends Component {
             <span className="text">{tweetCount}</span>
           </CSSTransitionGroup>
         </span>
-        <img className="twitter-bird" src="/assets/logo/twitter.svg" alt="Twitter bird"/>
+        <i className='icon-twitter' />
       </div>
     );
   }

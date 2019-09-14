@@ -6,7 +6,7 @@
 
       .logo.left-icon {
         img {
-          max-width: 160px;
+          max-width: 200px;
           max-height: none;
         }
       }
@@ -66,21 +66,55 @@
     }
     &.leaderboard {
       overflow-x: hidden;
+    //   .dashboard-header {
+    //     .dashboard-short-title {
+    //       display: block;
+    //       color:#fd5000;
+    //       padding-top: 25px;
+    //       padding-left: 250px;
+    //     }
+    //   }
       .leaderboard-cards {
         margin-top: 40px;
         .ranked-tweeter-card {
+          .tweeter-image {
+            &.card-element {
+              z-index: 2;
+            }
+          }
           .tweeter-details {
             background: url(/assets/pureaccel/tweetCardBg.png);
-            .name, .twitter-handle {
-              color: white;
+            margin-left: -10px;
+            .name {
+              color: #000000;
+            }.twitter-handle {
+              color: #fd5000;
             }
             .tweets {
               .count {
-                color: white;
+                color:#000000;
               }
+              .icon-twitter {
+                  color: #fd5000;
+                }
             }
           }
         }
+        .tweeter-card {
+          .tweeter-details {
+            .details {
+              .twitter-handle {
+                color: #fd5000;
+              }
+            }
+          }
+          .tweets {
+            .icon-twitter {
+              color: #fd5000;
+            }
+          }
+        }
+
       }
       @media(min-width: 1920px) {
         .leaderboard-cards {
@@ -496,6 +530,52 @@
 @media (min-width: 640px) and (min-height: 1152px) {
   .regularlayout {
     &.pureaccel {
+      &.leaderboard {
+        .dashboard-header {
+          .dashboard-title {
+            display: block;
+            font-size: 4em;
+            padding-top: 20px;
+            padding-left: 115px;
+          }
+        }
+        .dashboard-content {
+          &.leaderboard-cards {
+            margin-top: 150px;
+            .ranked-tweeter-card {
+              width: 100%;
+              justify-content: center;
+              .tweeter-image {
+                .image-obj {
+                  max-width: 120px;
+                  max-height: 120px;
+                }
+              }
+              .tweeter-details {
+                width: 460px;
+                .tweets {
+                  width: 95%;
+                }
+              }
+              &:nth-last-child(1) {
+                margin-bottom: 100px;
+              }
+            }
+            .tweeter-card {
+              .tweeter-details {
+                .tweeter-image {
+                  z-index: 2;
+                }
+              }
+              .tweets {
+                  .count {
+                    padding-left: 130px;
+                  }
+              }
+            }
+          }
+        }
+      }
       &.leaderboardv2 {
         .container {
           width: 70rem;

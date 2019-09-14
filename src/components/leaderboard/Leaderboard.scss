@@ -130,12 +130,12 @@
             }
           }
 
-          .twitter-bird {
-            height: 33px;
-            width: 38px;
+          .icon-twitter {
+            font-size: 2.5em;
             position: absolute;
             bottom: 0px;
             right: 20px;
+            color: #3aaae1;
           }
         }
       }
@@ -230,13 +230,17 @@
           }
         }
 
-        .twitter-bird {
-          height: 24px;
-          width: 28px;
-          position: absolute;
+
+        .icon-twitter {
+            // height: 33px;
+            // width: 38px;
+            font-size: 2.5em;
+            position: absolute;
           bottom: 0px;
           right: 0px;
-        }
+            color: #3aaae1;
+          }
+
       }
     }
 
@@ -288,7 +292,7 @@
           }
 
           .tweets {
-            .twitter-bird {
+            .icon-twitter {
               bottom: 10px;
             }
           }
@@ -314,9 +318,9 @@
         }
 
         .tweets {
-          .twitter-bird {
-            height: 33px;
-            width: 38px;
+          .icon-twitter {
+            // height: 33px;
+            // width: 38px;
             bottom: 10px;
           }
         }

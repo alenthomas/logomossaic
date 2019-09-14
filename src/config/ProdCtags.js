@@ -1125,7 +1125,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/pureaccel/leftLogo.png',
+          "leftLogoUrl": '/assets/pureaccel/leftLogonew.png',
           "rightLogoUrl": ''
         },
         "footer": {
