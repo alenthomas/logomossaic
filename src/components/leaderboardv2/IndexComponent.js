@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import twitter from '../../../public/assets/logo/twitter.svg';
+// import twitter from '../../../public/assets/logo/twitter.svg';
 
 import { watchLeaderboard } from '../../Services.js'
 
@@ -103,7 +103,7 @@ const Post = ({data, rank}) => {
         </div>
         <div className='post-footer'>
           <div className='post-count'>Tweets <span>{data.count}</span></div>
-          <div className='post-logo'><img src={twitter} alt='twitter-logo' /></div>
+          <div className='post-logo'><i className='icon-twitter' /></div>
         </div>
       </div>
     </div>

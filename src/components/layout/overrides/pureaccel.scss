@@ -97,7 +97,7 @@
     }
     &.leaderboardv2 {
       .dashboard-header {
-        background-color: #004e7c;
+        background-color: #ffffff;
         height: 88px;
         .dashboard-title {
           display: block;
@@ -108,15 +108,15 @@
           right: 0px;
           font-size: 2.5em;
           font-family: CiscoSans;
-          color: #1dbbe9;
+          color: #fd5000;
         }
         .dashboard-short-title {
           display: none;
         }
         .logo {
           &.left-icon {
-            content: url(/assets/clus2019/rightLogo.png);
-            width: 100px;
+            content: url(/assets/pureaccel/leftLogonew.png);
+            width: 200px;
             img {
               width: 100%;
             }
@@ -135,7 +135,7 @@
             }
           }
           &.left-2 {
-            background: url(/assets/logo/cisco-live-ca.png);
+            // background: url(/assets/logo/cisco-live-ca.png);
             bottom: 0;
             left: 15px;
             width: 90px;
@@ -163,12 +163,23 @@
         }
         .post {
           .post-body {
-            background: url(/assets/clus2019/white_tweetCardBg.png);
             background-size: cover;
             background-position: 0% 70%;
             background-repeat: no-repeat;
+            .post-content {
+              .rank {
+                background-color: #fd5000;
+                color: #ffffff;
+              }
+              .author-handle {
+                color:#fd5000;
+              }
+            }
             .post-footer {
               .post-logo {
+                .icon-twitter {
+                  color: #fd5000;
+                }
                 margin-right: 0;
                 margin-top: 0;
               }
@@ -482,7 +493,7 @@
     }
   }
 }
-@media (min-height: 1152px) and (min-width: 640px) {
+@media (min-width: 640px) and (min-height: 1152px) {
   .regularlayout {
     &.pureaccel {
       &.leaderboardv2 {
