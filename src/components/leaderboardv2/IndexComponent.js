@@ -14,6 +14,8 @@ import { timeoutCollection } from 'time-events-manager';
 class IndexComponent extends Component {
   constructor(props) {
     super(props);
+    let objParam = getQueryString(this.props.location.search);
+    this.DISPLAY_VERT_SIZE = objParam.vert;
 
     this.state = {
       allTweeters: []
@@ -72,7 +74,8 @@ class IndexComponent extends Component {
         className="leaderboardv2"
         title={componentConfig.title}
         shortTitle=''
-        hideBgWave={componentConfig.hideBgWave}>
+        hideBgWave={componentConfig.hideBgWave}
+        vert={this.DISPLAY_VERT_SIZE}>
           <div className='container'>
             <div className='top'>
               {topThreeTweeters.map(e => <Post key={e.handle} data={e} />)}

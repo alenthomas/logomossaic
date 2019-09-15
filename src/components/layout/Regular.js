@@ -28,7 +28,8 @@ class Regular extends Component {
         urlVertical320,
         urlVertical640,
         urlVertical1152,
-        urlVertical1920
+        urlVertical1920,
+        vert: this.props.vert
       }
     };
 
@@ -78,6 +79,7 @@ class Regular extends Component {
           isReady={this.isReady()}
           loadingMedia={loadingMedia}
           onLoadingVidEnded={this.onLoadingVidEnded}
+          vert={this.props.vert}
         />
       );
     }
