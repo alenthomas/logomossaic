@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'ProximaNova';
+  src: url(/fonts/ProximaNova-Regular.ttf);
+}
 .regularlayout {
   &.pureaccel {
+    font-family: ProximaNova;
     .dashboard-header {
       background: url(/assets/pureaccel/headerCard.png);
       height: 105px;
@@ -66,6 +71,11 @@
     }
     &.leaderboard {
       overflow-x: hidden;
+      .dashboard-header {
+        .dashboard-title {
+          font-family: ProximaNova;
+        }
+      }
     //   .dashboard-header {
     //     .dashboard-short-title {
     //       display: block;
@@ -86,11 +96,14 @@
             background: url(/assets/pureaccel/tweetCardBg.png);
             margin-left: -10px;
             .name {
+              font-family: ProximaNova;
               color: #000000;
             }.twitter-handle {
+              font-family: ProximaNova;
               color: #fd5000;
             }
             .tweets {
+              font-family: ProximaNova;
               .count {
                 color:#000000;
               }
@@ -103,8 +116,12 @@
         .tweeter-card {
           .tweeter-details {
             .details {
+              .name {
+                font-family: ProximaNova;
+              }
               .twitter-handle {
                 color: #fd5000;
+                font-family: ProximaNova;
               }
             }
           }
@@ -141,7 +158,7 @@
           top: 30px;
           right: 0px;
           font-size: 2.5em;
-          font-family: CiscoSans;
+          font-family: ProximaNova;
           color: #fd5000;
         }
         .dashboard-short-title {
@@ -184,6 +201,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        font-family: ProximaNova;
         .header {
           .header-logo {
             background: url(/assets/clus2019/logo.png);
@@ -207,9 +225,17 @@
               }
               .author-handle {
                 color:#fd5000;
+                font-family: ProximaNova;
+              }
+              .author-name {
+                font-family: ProximaNova;
               }
             }
             .post-footer {
+              font-family: ProximaNova;
+              .post-count {
+                font-family: ProximaNova;
+              }
               .post-logo {
                 .icon-twitter {
                   color: #fd5000;
@@ -226,9 +252,12 @@
       }
     }
     &.photo-wall-container {
+      font-family: ProximaNova;
       .photo-wall {
         .caption {
           font-size: 12vw;
+          color: #fd5000;
+          font-family: ProximaNova;
         }
         .phototile {
           &.portrait {
@@ -246,11 +275,18 @@
             }
           }
           .info {
+            background-color: rgba(47, 44, 44, 0.5);
             &.visible {
+              font-family: ProximaNova;
               .head {
-                color: #000000;
+                font-family: ProximaNova;
+                color: #fd5000;
+                .handle {
+                  font-family: ProximaNova;
+                  color: #fd5000;
+                }
               }
-              color: #000000;
+              color: #ffffff;
             }
           }
         }

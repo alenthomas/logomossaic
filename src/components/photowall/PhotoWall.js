@@ -99,7 +99,6 @@ class PhotoWall extends Component {
   }
 
   layTiles() {
-    console.log(this.props);
     return lodash.map(this.props.photosGrid, (photoGrid, i) => {
       return (
         <div onClick={this.zoomIn.bind(this, i)} key={i}>
