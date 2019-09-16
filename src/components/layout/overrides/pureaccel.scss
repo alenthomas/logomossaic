@@ -683,6 +683,17 @@
             .tweeter-details {
               width: 240px;
               height: 150px;
+              .tweets {
+                .count {
+                  .text {
+                    font-size: 1.8em;
+                  }
+                }
+                .icon-twitter {
+                  bottom: -3px;
+                  font-size: 2em;
+                }
+              }
             }
           }
           .tweeter-card {
@@ -700,6 +711,10 @@
                 .text {
                   font-size: 2rem;
                 }
+              }
+              .icon-twitter {
+                font-size: 1.8em;
+                bottom: -3px;
               }
             }
           }
