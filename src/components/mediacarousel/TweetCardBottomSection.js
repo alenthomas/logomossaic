@@ -8,7 +8,7 @@ export default class TweetCardBottomSection extends Component {
   renderLikes = (likes) => {
     return likes ? (
       <div className='likes'>
-        <div className='icon like' />
+        <span className='icon'><i className='icon-heart-empty' /></span>
         <span>{formatNumber(likes)}</span>
       </div>
     ): null;
@@ -17,14 +17,14 @@ export default class TweetCardBottomSection extends Component {
   renderShares = (shares) => {
     return shares ? (
       <div className="shares">
-        <div className="icon retweet"/>
+        <span className='icon'><i className='icon-retweet' /></span>
         <span>{formatNumber(shares)}</span>
       </div>
     ) : null;
   }
 
-  renderLogo = (logoSvg, logoName) => {
-    return (<img className="twitter-bird" src={logoSvg} alt={logoName}/>)
+  renderLogo = (logoName) => {
+    return (<i className={`icon-${logoName}`} />)
   }
 
   render() {
@@ -39,7 +39,7 @@ export default class TweetCardBottomSection extends Component {
         {this.renderLikes(likes)}
         </div>
         <div className="twitter-logo">
-          {this.renderLogo('/assets/logo/instagram.svg', 'instagram')}
+          {this.renderLogo('instagram')}
         </div>
       </div>
       )
@@ -53,7 +53,7 @@ export default class TweetCardBottomSection extends Component {
           {this.renderShares(shares)}
           </div>
           <div className="twitter-logo">
-            {this.renderLogo('/assets/logo/twitter.svg', 'twitter')}
+            {this.renderLogo('twitter')}
           </div>
         </div>
       )

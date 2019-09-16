@@ -225,60 +225,50 @@
     display: flex;
     flex-direction: row;
 
-    .icon {
-      display: inline-block;
-      height: 35px;
-      width: 50px;
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
-      vertical-align: middle;
-
-      &.like {
-        background-image: url(/assets/icons/like.png);
-      }
-      &.retweet {
-        background-image: url(/assets/icons/retweet.png);
-      }
-    }
-
     .twitter-logo {
       margin-left: auto;
-
-      img.twitter-bird {
-        width: 40px;
+      .icon-twitter {
+        color: #197dff;
+        font-size: 2rem;
+      }
+      .icon-instagram {
+        color: #ffffff;
+        opacity: 1;
+        font-size: 2em;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        border-radius: 5px;
+        background: radial-gradient(
+                  circle at 30% 107%,
+                  #fdf497 0%,
+                  #fdf497 5%,
+                  #fd5949 45%,
+                  #d6249f 60%,
+                  #285aeb 90%
+                );
       }
     }
 
     .metrics {
       display: flex;
       padding-top: 5px;
+      .icon {
+        margin-left: 10px;
+        .icon-heart-empty {
+          font-size: 1em;
+        }
+        .icon-retweet {
+          font-size: 1em;
+        }
+      }
 
       .likes, .shares {
         font-size: 25px;
         color: #c3c3c3;
-        img {
-          position: relative;
-          top: 5px;
-        }
         span {
-          padding: 0 15px;
+          padding: 0 5px;
         }
-      }
 
-      .likes {
-        padding-right: 40px;
-        img {
-          height: 32px;
-          width: 32px;
-        }
-      }
-
-      .shares {
-        img {
-          height: 32px;
-          width: 52px;
-        }
       }
     }
   }
