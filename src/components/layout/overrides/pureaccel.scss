@@ -672,12 +672,13 @@
     &.pureaccel {
       &.leaderboard {
         .dashboard-content {
-          margin-top: 70px;
+          margin-top: 50px;
           &.leaderboard-cards {
             justify-content: center;
             align-items: center;
           }
           .ranked-tweeter-card {
+            margin: 10px 5px 20px 5px;
             .tweeter-image {
               width: 210px;
               height: 210px;
@@ -691,6 +692,9 @@
               }
             }
             .tweeter-details {
+              .name {
+                font-size: 1.75rem;
+              }
               width: 240px;
               height: 150px;
               .tweets {
@@ -708,7 +712,11 @@
           }
           .tweeter-card {
             height: 130px;
+            margin-bottom: 20px;
             .tweeter-details {
+              .name {
+                font-size: 1.5rem;
+              }
               .tweeter-image {
                 .image-obj {
                   width: 90px;
