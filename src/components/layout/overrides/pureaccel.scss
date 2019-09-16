@@ -572,10 +572,14 @@
       &.photo-wall-container {
         .dashboard-header {
           .dashboard-title {
+            position: absolute;
+            top: 0px;
+            right: 10px;
             display: block;
             width: 100%;
             font-size: 4.5em;
-            margin-left: 250px;
+            // margin-left: 250px;
+            text-align: right;
             margin-top: 3px;
           }
         }
