@@ -13,6 +13,11 @@ class IndexComponent extends Component {
 
   constructor(props) {
     super(props);
+    let objParam = getQueryString(this.props.location.search);
+
+    this.DISPLAY_VERT_SIZE = objParam.vert;
+    this.DISPLAY_HOR_SIZE = objParam.hor;
+
     this.state = {
       feed: new Feed()
     }
@@ -62,7 +67,10 @@ class IndexComponent extends Component {
         config={this.props.config}
         title={componentConfig.title}
         className="carousel-container"
-        hideBgWave={componentConfig.hideBgWave}>
+        hideBgWave={componentConfig.hideBgWave}
+        vert={this.DISPLAY_VERT_SIZE}
+        hor={this.DISPLAY_HOR_SIZE}
+      >
 
         <div className="dashboard-content">
           <Carousel key={this.state.feed.getAll().count} feed={this.state.feed} type={type} componentConfig={componentConfig}/>

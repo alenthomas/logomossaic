@@ -16,6 +16,7 @@ class IndexComponent extends Component {
     super(props);
     let objParam = getQueryString(this.props.location.search);
     this.DISPLAY_VERT_SIZE = objParam.vert;
+    this.DISPLAY_HOR_SIZE = objParam.hor;
 
     this.state = {
       allTweeters: []
@@ -75,7 +76,8 @@ class IndexComponent extends Component {
         title={componentConfig.title}
         shortTitle=''
         hideBgWave={componentConfig.hideBgWave}
-        vert={this.DISPLAY_VERT_SIZE}>
+        vert={this.DISPLAY_VERT_SIZE}
+        hor={this.DISPLAY_HOR_SIZE}>
           <div className='container'>
             <div className='top'>
               {topThreeTweeters.map(e => <Post key={e.handle} data={e} />)}
