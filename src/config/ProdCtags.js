@@ -1156,7 +1156,7 @@ export default {
       "hideBgWave": true,
     },
     "mediacarousel": {
-      "title": "#PureAccelerate Highlights"
+      "title": "Social Highlights"
     },
     "photogrid": {
       "title": "#Expo2020 Visuals"

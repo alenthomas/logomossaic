@@ -36,11 +36,14 @@
     }
     &.carousel-container, &.stats {
       .tweet-card {
+        font-family: ProximaNova;
         background: url(/assets/pureaccel/tweetCardBg.png);
         .tweet-card-top {
           .profile {
-            .name, .handle {
-              color: #000000;
+            font-family: ProximaNova;
+            color: #000000;
+            .handle {
+              color: #fd5000;
             }
           }
           .timestamp {
@@ -51,16 +54,20 @@
           color: #000000;
         }
         .tweet-card-bottom {
-          .icon {
-            &.like {
-              background-image: url(/assets/clus2019/like.png);
-            }
-            &.retweet {
-              background-image: url(/assets/clus2019/retweet.png);
-            }
+          .twitter-logo {
+            .icon-twitter {
+               color: #fd5000;
+               font-size: 2.5em;
+             }
+             .icon-instagram {
+               font-size: 2.5em;
+               background: none;
+               color: #fd5000;
+             }
           }
           .likes, .shares {
-            color: #000000;
+            font-size: 2em;
+            color: #fd5000;
           }
         }
       }
