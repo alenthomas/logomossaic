@@ -3,7 +3,7 @@
     font-family: ProximaNova;
     .dashboard-header {
       background: url(/assets/pureaccel/headerCard.png);
-      height: 105px;
+      height: 100px;
 
       .logo.left-icon {
         img {
@@ -252,8 +252,8 @@
       .photo-wall {
         .caption {
           font-size: 12vw;
-          color: #fd5000;
-          font-family: ProximaNova;
+          color: #ffffff;
+          font-family: ProximaNovaBlack;
         }
         .phototile {
           &.portrait {
@@ -271,15 +271,15 @@
             }
           }
           .info {
-            background-color: rgba(47, 44, 44, 0.5);
+            background-color: rgba(47, 44, 44, 0.6);
             &.visible {
               font-family: ProximaNova;
               .head {
                 font-family: ProximaNova;
-                color: #fd5000;
+                color: #ffffff;
                 .handle {
                   font-family: ProximaNova;
-                  color: #fd5000;
+                  color: #ffffff;
                 }
               }
               color: #ffffff;
@@ -562,6 +562,18 @@
 @media (min-width: 640px) and (min-height: 1152px) {
   .regularlayout {
     &.pureaccel {
+      &.photo-wall-container {
+        .dashboard-header {
+          .dashboard-title {
+            display: block;
+            width: 100%;
+            font-size: 4.5em;
+            margin-left: 250px;
+            margin-top: 3px;
+          }
+        }
+
+      }
       &.leaderboard {
         .dashboard-header {
           .dashboard-title {
