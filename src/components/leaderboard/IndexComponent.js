@@ -17,6 +17,7 @@ class IndexComponent extends Component {
     super(props);
     let objParam = getQueryString(this.props.location.search);
     this.DISPLAY_VERT_SIZE = objParam.vert;
+    this.DISPLAY_HOR_SIZE = objParam.hor;
     this.state = {
       allTweeters: []
     };
@@ -77,6 +78,7 @@ class IndexComponent extends Component {
         shortTitle={"Leaderboard"}
         hideBgWave={componentConfig.hideBgWave}
         vert={this.DISPLAY_VERT_SIZE}
+        hor={this.DISPLAY_HOR_SIZE}
       >
         <div className="dashboard-content leaderboard-cards">
           {

@@ -1381,7 +1381,8 @@ export default {
       "url": () => `https://storage.googleapis.com/animable/pureaccelerate/loading.mp4`,
       "urlVertical": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`,
       "urlVertical1152": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1152.mp4`,
-      "urlVertical1920": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`
+      "urlVertical1920": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`,
+      "urlHorizontal768": () => `https://storage.googleapis.com/animable/pureaccelerate/loading1920*768.mp4`
     },
     "layout": {
       "regular": {

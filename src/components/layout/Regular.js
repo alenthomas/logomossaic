@@ -19,6 +19,7 @@ class Regular extends Component {
     const urlVertical640 = this.getVerticalMediaUrl(loadingMedia, 640);
     const urlVertical1152 = this.getVerticalMediaUrl(loadingMedia, 1152);
     const urlVertical1920 = this.getVerticalMediaUrl(loadingMedia, 1920);
+    const urlHorizontal768 = this.getHorizontalMediaUrl(loadingMedia, 768);
     this.state = {
       isReady: false,
       loadingMedia: {
@@ -29,11 +30,25 @@ class Regular extends Component {
         urlVertical640,
         urlVertical1152,
         urlVertical1920,
-        vert: this.props.vert
+        urlHorizontal768,
+        vert: this.props.vert,
+        hor: this.props.hor
       }
     };
 
     this.onLoadingVidEnded = this.onLoadingVidEnded.bind(this);
+  }
+
+  getHorizontalMediaUrl(media, resolution = null) {
+    try {
+      if (resolution === 768) {
+        return `${media.urlHorizontal768()}`
+      }
+       return `${media.url()}`;
+    } catch (err) {
+      console.log('no horizontal video')
+      return `${media.url()}`;
+    }
   }
 
   getVerticalMediaUrl(media, resolution = null) {
@@ -80,6 +95,7 @@ class Regular extends Component {
           loadingMedia={loadingMedia}
           onLoadingVidEnded={this.onLoadingVidEnded}
           vert={this.props.vert}
+          hor={this.props.hor}
         />
       );
     }

@@ -20,6 +20,7 @@ class IndexComponent extends Component {
     this.HEIGHT = objParam.height || TILE_SIZE.DEFAULT.HEIGHT;
     this.WIDTH = objParam.width || TILE_SIZE.DEFAULT.WIDTH;
     this.DISPLAY_VERT_SIZE = objParam.vert;
+    this.DISPLAY_HOR_SIZE = objParam.hor;
 
     this.state = {
       photosGrid: [],
@@ -130,6 +131,7 @@ class IndexComponent extends Component {
         title={componentConfig && componentConfig.title}
         hideBgWave={componentConfig && componentConfig.hideBgWave}
         vert={this.DISPLAY_VERT_SIZE}
+        hor={this.DISPLAY_HOR_SIZE}
       >
         {this.renderTopicsPicker()}
         <PhotoWall

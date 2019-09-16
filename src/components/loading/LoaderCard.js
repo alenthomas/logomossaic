@@ -13,7 +13,10 @@ class LoaderCard extends Component {
     this.setState({width: window.screen.width, height: window.screen.height})
   }
   content() {
-    const { loadingMedia: { url, urlVertical, urlVertical320, urlVertical640, urlVertical1152, urlVertical1920 }, onLoadingVidEnded, vert } = this.props;
+    const { loadingMedia: { url, urlVertical, urlVertical320, urlVertical640, urlVertical1152, urlVertical1920, urlHorizontal768 }, onLoadingVidEnded, vert, hor } = this.props;
+    if (hor === '768') {
+      return (<VideoComponent onEnded={onLoadingVidEnded} src={urlHorizontal768} type='video/mp4'/>)
+    }
     if (vert === '1152') {
       return (<VideoComponent onEnded={onLoadingVidEnded} src={urlVertical1152} type='video/mp4' />)
     }
