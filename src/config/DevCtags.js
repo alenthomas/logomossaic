@@ -1408,7 +1408,7 @@ export default {
     },
     "leaderboardv2": {
       "title": "Social Leaderboard",
-      "hideBgWave": false
+      "hideBgWave": true
     },
     "masonarystream": {
       "title": "Social Feed"
