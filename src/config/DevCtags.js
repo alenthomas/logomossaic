@@ -1404,11 +1404,11 @@ export default {
       "title": "Social Feed"
     },
     "leaderboard": {
-      "title": "#PureAccelerate Leaderboard"
+      "title": "Social Leaderboard"
     },
     "leaderboardv2": {
-      "title": "Leaderboard",
-      "hideBgWave": false,
+      "title": "Social Leaderboard",
+      "hideBgWave": false
     },
     "masonarystream": {
       "title": "Social Feed"

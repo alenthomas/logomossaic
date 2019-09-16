@@ -1143,10 +1143,10 @@ export default {
       "title": "Social Feed"
     },
     "leaderboard": {
-      "title": "#PureAccelerate Leaderboard"
+      "title": "Social Leaderboard"
     },
     "leaderboardv2": {
-      "title": "Leaderboard",
+      "title": "Social Leaderboard",
       "hideBgWave": false,
     },
     "masonarystream": {

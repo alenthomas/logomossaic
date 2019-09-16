@@ -151,9 +151,9 @@
           position: absolute;
           text-align: right;
           padding-right: 10px;
-          top: 30px;
+          top: 10px;
           right: 0px;
-          font-size: 2.5em;
+          font-size: 3.2em;
           font-family: ProximaNova;
           color: #fd5000;
         }
@@ -643,6 +643,58 @@
           }
           .rest-parent {
             height: 65vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-height: 768px) {
+  .regularlayout {
+    &.pureaccel {
+      &.leaderboard {
+        .dashboard-content {
+          margin-top: 70px;
+          &.leaderboard-cards {
+            justify-content: center;
+            align-items: center;
+          }
+          .ranked-tweeter-card {
+            .tweeter-image {
+              width: 210px;
+              height: 210px;
+              .image-obj {
+                width: 210px;
+              height: 210px;
+              }
+              img {
+                width: 210px;
+                height: 210px;
+              }
+            }
+            .tweeter-details {
+              width: 240px;
+              height: 150px;
+            }
+          }
+          .tweeter-card {
+            height: 130px;
+            .tweeter-details {
+              .tweeter-image {
+                .image-obj {
+                  width: 90px;
+                  height: 90px;
+                }
+              }
+            }
+            .tweets {
+              .count {
+                .text {
+                  font-size: 2rem;
+                }
+              }
+            }
           }
         }
       }
