@@ -90,6 +90,11 @@
         }
         .tweet-card-middle {
           color: #000000;
+          &.portrait {
+            .text-content {
+              font-size: 30px;
+            }
+          }
         }
         .tweet-card-bottom {
           .twitter-logo {
