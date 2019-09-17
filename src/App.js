@@ -31,6 +31,7 @@ import Ticker from './components/ticker/IndexComponent.js';
 import Polling from './components/polling/IndexComponent.js';
 import ArWelcome from './components/arwelcome/IndexComponent.js';
 import PollingResults from './components/pollingresults/IndexComponent.js';
+import VerticalCarousel from "./components/carouselvertical/IndexComponent.js";
 
 class App extends Component {
   render() {
@@ -59,6 +60,7 @@ class App extends Component {
           <Route path="/polling" exact={true} render={(props) => <Polling config={getCurrentConfig()} {...props} />} />
           <Route path="/polling/results" exact={true} render={(props) => <PollingResults config={getCurrentConfig()} {...props} />} />
           <Route path="/ar" component={ArWelcome} />
+          <Route path="/verticalcarousel" render={(props) => <VerticalCarousel config={getCurrentConfig()} {...props} />}/>
         </div>
       </Router>
     );

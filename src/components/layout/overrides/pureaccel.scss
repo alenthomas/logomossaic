@@ -72,6 +72,44 @@
         }
       }
     }
+    &.vertical-carousel-container {
+      .tweet-card {
+        font-family: ProximaNova;
+        background: url(/assets/pureaccel/tweetCardBg.png);
+        .tweet-card-top {
+          .profile {
+            font-family: ProximaNova;
+            color: #000000;
+            .handle {
+              color: #fd5000;
+            }
+          }
+          .timestamp {
+            color: #000000;
+          }
+        }
+        .tweet-card-middle {
+          color: #000000;
+        }
+        .tweet-card-bottom {
+          .twitter-logo {
+            .icon-twitter {
+               color: #fd5000;
+               font-size: 2.5em;
+             }
+             .icon-instagram {
+               font-size: 2.5em;
+               background: none;
+               color: #fd5000;
+             }
+          }
+          .likes, .shares {
+            font-size: 2em;
+            color: #fd5000;
+          }
+        }
+      }
+    }
     &.leaderboard {
       overflow-x: hidden;
       .dashboard-header {
@@ -647,6 +685,49 @@
           }
         }
       }
+      &.carousel-container {
+        .dashboard-content {
+          .carousel {
+            width: 700px;
+            height: 980px;
+            .tweet-card {
+              height: 70%;
+              width: 90%;
+              .tweet-card-top {
+
+              }
+            }
+          }
+        }
+      }
+      &.vertical-carousel-container {
+        .dashboard-header {
+          .dashboard-title {
+            display: block;
+            position: absolute;
+            text-align: right;
+            padding-right: 10px;
+            top: 10px;
+            right: 0px;
+            font-size: 3.2em;
+            font-family: ProximaNova;
+            color: #fd5000;
+          }
+        }
+        .dashboard-content {
+          .vertical-carousel {
+            width: 700px;
+            height: 980px;
+            .tweet-card {
+              height: 70%;
+              width: 90%;
+              .tweet-card-top {
+
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -660,6 +741,34 @@
           }
           .rest-parent {
             height: 65vh;
+          }
+        }
+      }
+      &.vertical-carousel-container {
+        .dashboard-content {
+          .vertical-carousel {
+            width: 700px;
+            height: 980px;
+            .tweet-card {
+              height: 70%;
+              width: 90%;
+              .tweet-card-top {
+
+              }
+            }
+          }
+        }
+        .dashboard-header {
+          .dashboard-title {
+            display: block;
+            position: absolute;
+            text-align: right;
+            padding-right: 10px;
+            top: 10px;
+            right: 0px;
+            font-size: 3.2em;
+            font-family: ProximaNova;
+            color: #fd5000;
           }
         }
       }

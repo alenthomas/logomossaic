@@ -65,6 +65,13 @@ export default {
       "refreshrate": 10,
       "hideBgWave": false,
     },
+    "verticalcarousel": {
+      "title": "Featured Content",
+      "sides": 14,
+      "cardDisplayTime": 7,
+      "refreshrate": 10,
+      "hideBgWave": true,
+    },
     "photogrid": {
       "title": "Photo Grid",
       "refreshrate": 10,
@@ -1418,6 +1425,10 @@ export default {
     },
     "mediacarousel": {
       "title": "Social Highlights"
+    },
+    "verticalcarousel": {
+      "title": "Social Highlights",
+      "hideBgWave": true,
     },
     "photogrid": {
       "title": "#Expo2020 Visuals"
