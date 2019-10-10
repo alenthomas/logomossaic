@@ -6,6 +6,7 @@
     "@researchgate/react-intersection-observer": "^1.0.0",
     "CBuffer": "^2.0.0",
     "classnames": "^2.2.5",
+    "dayjs": "^1.8.16",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-15": "^1.1.0",
     "flexboxgrid": "^6.3.1",
