@@ -1,0 +1,309 @@
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.agenda-container {
+  .group-agenda {
+    padding: 2vw;
+    width: 96vw;
+    height: 96vh;
+    background: url(/assets/cancun/bg-green.png);
+    animation: fadeinout 10s linear infinite;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    .live-logo {
+      width: 200px;
+      height: 100px;
+    .logo {
+      background: url(/assets/cancun/live-logo.png);
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: contain;
+      height: 75%;
+    }
+    }
+    .session-name {
+    color: #ffffff;
+    font-family: CiscoSans;
+    font-size: 4em;
+    text-align: right;
+    // height: 20vh;
+    margin-bottom: 2vh;
+    }
+    .session-abstract {
+    color: #ffffff;
+    font-family: CiscoSans;
+    font-size: 2.2em;
+    text-align: left;
+    // height: 20vh;
+    margin-bottom: 4vh;
+    }
+    .details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .time-and-room {
+      width:100%;
+      .time {
+        color: #ffffff;
+      font-family: CiscoSans;
+      font-size: 2.2em;
+      text-align: left;
+      // height: 20vh;
+      // margin-bottom: 2vh;
+      }
+      .room {
+        color: #ffffff;
+        font-family: CiscoSans;
+        font-size: 2.2em;
+        text-align: left;
+        // height: 20vh;
+        margin-bottom: 2vh;
+      }
+    }
+    .author {
+        color: #ffffff;
+        font-family: CiscoSans;
+        font-size: 2.2em;
+        text-align: left;
+        // height: 20vh;
+        margin-bottom: 2vh;
+        width: 30%;
+        margin-left: 1vw;
+        .job-title {
+          font-size: 0.8em;
+        }
+        .company {
+          font-size: 0.8em;
+        }
+    }
+    }
+    .agenda {
+    // background-color: #ffffff;
+    margin-bottom: 100px;
+    .date {
+      font-size: 3em;
+      span {}
+    }
+    .room {
+      font-size: 2em;
+      .capacity {
+        font-size: 1em;
+        margin-left: 20px;
+      }
+    }
+    .session {
+      font-size: 2em;
+    }
+    .session-timing {
+      font-size: 2em;
+      margin: 10px;
+      .session-start {
+
+      }
+      .session-end {
+
+      }
+      .total-session-time {
+
+      }
+    }
+    }
+  }
+  .general-agenda {
+    font-family: CiscoSans;
+    display: flex;
+    flex-direction: column;
+    background: url(/assets/cancun/bg-green.png);
+    width: 100vw;
+    height: 100vh;
+    .header {
+      .logo-right {
+
+
+      }
+      .logo-left {
+        background: url(/assets/cancun/live-logo.png);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: contain;
+        height: 75%;
+      }
+    }
+    .agenda {
+      width: 100%;
+      .heading {
+        font-size: 3em;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #ffffff;
+        color: #18864a;
+        // height: 10vh;
+      }
+      .sub-heading {
+        font-size: 2em;
+        width: 100%;
+        // border-radius: 10px;
+        background-color: #ffffff;
+        color: #18864a;
+      }
+      .content {
+        table {
+          width: 100%;
+          padding: 2vw;
+          color: #757575;
+          thead {
+            background-color: #ffffff;
+            text-align: left;
+            color: #18864a;
+            tr {
+              margin-top: 10px;
+              margin-bottom: 10px;
+              &:first-child {
+                width: 20%;
+              }
+              th {
+                padding: 1vw;
+                font-size: 1em;
+                &:first-child {
+                  width: 10%;
+                }
+              }
+            }
+          }
+          tbody {
+            background-color: #ffffff;
+            text-align: left;
+            tr {
+              td {
+                padding: 1vw;
+                font-size: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .room-agenda {
+    padding: 2vw;
+    width: 96vw;
+    height: 96vh;
+    background: url(/assets/cancun/bg-green.png);
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    .live-logo {
+      width: 200px;
+      height: 100px;
+    .logo {
+      background: url(/assets/cancun/live-logo.png);
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: contain;
+      height: 75%;
+    }
+    }
+    .session-name {
+    color: #ffffff;
+    font-family: CiscoSans;
+    font-size: 4em;
+    text-align: right;
+    // height: 20vh;
+    margin-bottom: 2vh;
+    }
+    .session-abstract {
+    color: #ffffff;
+    font-family: CiscoSans;
+    font-size: 2.2em;
+    text-align: left;
+    // height: 20vh;
+    margin-bottom: 4vh;
+    }
+    .details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .time-and-room {
+      width:100%;
+      .time {
+        color: #ffffff;
+      font-family: CiscoSans;
+      font-size: 2.2em;
+      text-align: left;
+      // height: 20vh;
+      // margin-bottom: 2vh;
+      }
+      .room {
+        color: #ffffff;
+        font-family: CiscoSans;
+        font-size: 2.2em;
+        text-align: left;
+        // height: 20vh;
+        margin-bottom: 2vh;
+      }
+    }
+    .author {
+        color: #ffffff;
+        font-family: CiscoSans;
+        font-size: 2.2em;
+        text-align: left;
+        // height: 20vh;
+        margin-bottom: 2vh;
+        width: 30%;
+        margin-left: 1vw;
+        .job-title {
+          font-size: 0.8em;
+        }
+        .company {
+          font-size: 0.8em;
+        }
+    }
+    }
+    .agenda {
+    // background-color: #ffffff;
+    margin-bottom: 100px;
+    .date {
+      font-size: 3em;
+      span {}
+    }
+    .room {
+      font-size: 2em;
+      .capacity {
+        font-size: 1em;
+        margin-left: 20px;
+      }
+    }
+    .session {
+      font-size: 2em;
+    }
+    .session-timing {
+      font-size: 2em;
+      margin: 10px;
+      .session-start {
+
+      }
+      .session-end {
+
+      }
+      .total-session-time {
+
+      }
+    }
+    }
+  }
+}
