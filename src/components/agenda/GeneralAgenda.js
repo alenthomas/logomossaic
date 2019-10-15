@@ -26,9 +26,9 @@ export class GeneralAgenda extends Component {
 
   shuffleVertical = () => {
     if (this.state.counter < this.props.data.length) {
-      this.setState(prevState => ({counter: prevState.counter+6, data: this.props.data.slice(prevState.counter, prevState.counter+6)}))
+      this.setState(prevState => ({counter: prevState.counter+8, data: this.props.data.slice(prevState.counter, prevState.counter+8)}))
     } else {
-      this.setState({counter: 6, data: this.props.data.slice(0, 6)})
+      this.setState({counter: 8, data: this.props.data.slice(0, 8)})
     }
   }
 

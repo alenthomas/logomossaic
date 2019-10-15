@@ -4,11 +4,15 @@
       background: none;
     }
     .dashboard-header {
-      background: rgba(0, 0, 0, 0.2);
+      background: none;
       height: 95px;
 
       .logo.left-icon {
-        display: none;
+        left: 45%;
+        img {
+          max-width: 250px;
+          max-height: none;
+        }
       }
       .dashboard-title {
         font-size: 52px;
@@ -16,7 +20,7 @@
       }
       .logo.right-icon {
         img {
-          max-width: 140px;
+          max-width: 180px;
           max-height: none;
         }
       }

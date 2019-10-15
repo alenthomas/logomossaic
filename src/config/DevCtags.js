@@ -140,7 +140,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/logo/it-cancun.png',
+          "leftLogoUrl": '/assets/cancun/possible-logo.png',
           "rightLogoUrl": '/assets/cancun/live-logo.png'
         },
         "footer": {

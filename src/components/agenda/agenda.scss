@@ -27,8 +27,8 @@
       // background-color: #ffffff;
       .intro {
         width: 92%;
-        padding: 2vw 2vw 0vw 2vw;
-        margin: 2vw 2vw 0vw 2vw;
+        padding: 1vw 3vw 0vw 1vw;
+        margin: 1vw 1vw 0vw 2vw;
         background-color: #ffffff;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
@@ -56,7 +56,7 @@
           width: 100%;
           padding: 0vw 2vw 2vw 2vw;
           color: #757575;
-          // animation: fadeinout 15s linear infinite;
+          animation: fadeinout 15s linear infinite;
           thead {
             background-color: #ffffff;
             text-align: left;
@@ -117,8 +117,8 @@
       // background-color: #ffffff;
       .intro {
         width: 92%;
-        padding: 2vw 2vw 0vw 2vw;
-        margin: 2vw 2vw 0vw 2vw;
+        padding: 1vw 3vw 0vw 1vw;
+        margin: 1vw 1vw 0vw 2vw;
         background-color: #ffffff;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
@@ -146,7 +146,7 @@
           width: 100%;
           padding: 0vw 2vw 2vw 2vw;
           color: #757575;
-          // animation: fadeinout 15s linear infinite;
+          animation: fadeinout 15s linear infinite;
           thead {
             background-color: #ffffff;
             text-align: left;
@@ -167,7 +167,7 @@
                 border-top: 8px solid #59b44a;
                 border-collapse: collapse;
                 &:first-child {
-                  width: 15%;
+                  width: 25%;
                 }
               }
             }
