@@ -39,13 +39,11 @@ export class GeneralAgenda extends Component {
   render() {
     return (
       <div className='general-agenda'>
-        <div className='header'>
-          <div className='logo-right' />
-          <div className='logo-left'/>
-        </div>
         <div className='agenda'>
-          <div className='heading'>AGENDA GENERAL</div>
-          <div className='sub-heading'>GENERAL AGENDA</div>
+          <div className='intro'>
+            <div className='heading'>AGENDA GENERAL</div>
+            <div className='sub-heading'>GENERAL AGENDA</div>
+            </div>
           <div className='content'>
             <table>
               <thead>

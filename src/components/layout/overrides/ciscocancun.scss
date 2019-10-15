@@ -1,0 +1,35 @@
+.regularlayout {
+  &.cisco-cancun {
+    &.dashboard {
+      background: none;
+    }
+    .dashboard-header {
+      background: rgba(0, 0, 0, 0.2);
+      height: 95px;
+
+      .logo.left-icon {
+        display: none;
+      }
+      .dashboard-title {
+        font-size: 52px;
+        padding-top: 15px;
+      }
+      .logo.right-icon {
+        img {
+          max-width: 140px;
+          max-height: none;
+        }
+      }
+    }
+    .dashboard-footer {
+      .logo.right {
+        display: none;
+      }
+    }
+    &.agenda-container {
+      .dashboard-content {
+        margin-top: 9vh;
+      }
+    }
+  }
+}

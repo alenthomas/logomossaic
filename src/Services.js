@@ -190,6 +190,14 @@ export const watchWordcloud = (success, failure, ctag, filter, refreshRate = 5) 
   poll(`${BASE_URL}wordcloud?${urlParams}`, success, failure, refreshRate * 1000);
 }
 
+export const watchGeneralAgenda = (success, failure, refreshRate = 10) => {
+  poll(`${BASE_URL}agenda/cancun/general`, success, failure, refreshRate * 1000);
+}
+
+export const watchEventAgenda = (success, failure, refreshRate = 10) => {
+  poll(`${BASE_URL}agenda/cancun/all`, success, failure, refreshRate * 1000);
+}
+
 export const getTweetStats = (ctag, success, failure) => {
   let statParams = qs.stringify({ctag});
   let url = `${PHOTO_URL}social/aggregates?${statParams}`;

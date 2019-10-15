@@ -129,8 +129,29 @@ export default {
       "title": "Winners",
       "refreshrate": 10,
     },
+    "agenda": {
+      "title": "Agenda"
+    }
   },
 
+  "ciscocancun": {
+    "containerCssClassname": "cisco-cancun",
+    "background": "url(/assets/cancun/bg-green.png)",
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/logo/it-cancun.png',
+          "rightLogoUrl": '/assets/cancun/live-logo.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/fankave-cornered.png'
+        },
+      }
+    },
+    "agenda": {
+      "title": ""
+    }
+  },
   "CiscoSprinklr": {
     "sprinklrApi": {
       "topics": {

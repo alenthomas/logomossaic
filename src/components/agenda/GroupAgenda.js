@@ -42,10 +42,11 @@ export class GroupAgenda extends Component {
   render() {
     return (
       <div className='group-agenda'>
-        <div className='live-logo'><div className='logo'></div></div>
         <div className='agenda'>
-          <div className='heading'>AGENDA GENERAL</div>
-          <div className='sub-heading'>GENERAL AGENDA</div>
+          <div className='intro'>
+            <div className='heading'>AGENDA GENERAL</div>
+            <div className='sub-heading'>GENERAL AGENDA</div>
+            </div>
           <div className='content'>
             <table>
               <thead>
