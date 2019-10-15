@@ -5,50 +5,69 @@ export class GroupAgenda extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: 0
+      current: 0,
+      data: []
     }
   }
-  componentWillMount() {
-    this.interval = setInterval(() => {
-      // console.log('in setInterval', this.state.current, this.props.data.length);
-      if (this.state.current < this.props.data.length) {
-        // console.log('incrementing current');
-        this.setState(prevState => ({ current: prevState.current + 1 }));
-      }
-      if (this.state.current >= this.props.data.length) {
-        // console.log('resetting current');
-        this.setState({ current: 0 });
-    }}, 10000)
+  componentDidMount() {
+    this.setState({ data: this.props.data })
+    if (window.innerWidth > window.innerHeight) {
+      this.shuffleHorizontal();
+      this.interval = setInterval(this.shuffleHorizontal, 15000)
+    } else {
+      this.shuffleVertical();
+      this.interval = setInterval(this.shuffleVertical, 15000)
+    }
   }
+  shuffleHorizontal = () => {
+    if (this.state.counter < this.props.data.length) {
+      this.setState(prevState => ({counter: prevState.counter+4, data: this.props.data.slice(prevState.counter, prevState.counter+4)}))
+    } else {
+      this.setState({counter: 4, data: this.props.data.slice(0, 4)})
+    }
+  }
+
+  shuffleVertical = () => {
+    if (this.state.counter < this.props.data.length) {
+      this.setState(prevState => ({counter: prevState.counter+6, data: this.props.data.slice(prevState.counter, prevState.counter+6)}))
+    } else {
+      this.setState({counter: 6, data: this.props.data.slice(0, 6)})
+    }
+  }
+
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+
   render() {
-    const agenda = this.props.data[this.state.current];
     return (
       <div className='group-agenda'>
-        <div className='live-logo'>
-          <div className='logo'></div>
-        </div>
-        <div className='session-name'>
-          {agenda.getSessionTitle()}
-        </div>
-        <div className='details'>
-         <div className='time-and-room'>
-           <div className='time'>
-             {`${dayjs(`${agenda.getDate()} ${agenda.getStartTime()}`).format('dddd MMM DD, hh:mm a')} - ${dayjs(`${agenda.getDate()} ${agenda.getEndTime()}`).format('hh:mm a')}`}
-           </div>
-           <div className='room'>
-             {`| ${agenda.getRoom()}`}
-           </div>
-         </div>
-            {agenda.getAuthors().map(e => (
-              <div key={e.fullName} className='author'>
-                <div className='name'>{e.fullName}</div>
-                <div className='job-title'>{e.jobTitle}</div>
-                <div className='company'>{e.companyName}</div>
-              </div>
-            ))}
+        <div className='live-logo'><div className='logo'></div></div>
+        <div className='agenda'>
+          <div className='heading'>AGENDA GENERAL</div>
+          <div className='sub-heading'>GENERAL AGENDA</div>
+          <div className='content'>
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Topic</th>
+                  <th>Room</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.data.map(dt => (
+                  <tr key={dt.getSessionTitle()}>
+                    <td>
+                      {`${dayjs(`${dt.getDate()} ${dt.getStartTime()}`).format('hh:mm a')} - ${dayjs(`${dt.getDate()} ${dt.getEndTime()}`).format('hh:mm a')}`}
+                    </td>
+                    <td>{dt.getSessionTitle()}</td>
+                    <td>{dt.getRoom()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     )
