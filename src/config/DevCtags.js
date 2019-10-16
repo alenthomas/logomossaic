@@ -134,7 +134,7 @@ export default {
     }
   },
 
-  "ciscocancun": {
+  "ciscolivela": {
     "containerCssClassname": "cisco-cancun",
     "background": "url(/assets/cancun/bg-green.png)",
     "layout": {
@@ -149,7 +149,8 @@ export default {
       }
     },
     "agenda": {
-      "title": ""
+      "title": "",
+      "hideBgWave": true
     }
   },
   "CiscoSprinklr": {

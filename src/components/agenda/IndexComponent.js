@@ -39,10 +39,17 @@ class IndexComponent extends Component {
     watchGeneralAgenda(this.loadGeneralData, handleError)
   }
 
-  filter = () => {
+  getDefaultDate = () => {
     const defaultDate = dayjs('2019-10-10 19:30').format('YYYY-MM-DD');
-    const { room, date, type } = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
+    const { date } = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
     const releventDate = date || defaultDate;
+    return releventDate;
+  }
+
+  filter = () => {
+    // const defaultDate = dayjs('2019-10-10 19:30').format('YYYY-MM-DD');
+    const { room, type } = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
+    const releventDate = this.getDefaultDate()
     if (type === 'general') {
       return this.state.feedsGeneral.filter(e => e.getSessionType().toLowerCase() === 'general').filter(e => dayjs(e.getDate()).format('YYYY-MM-DD') === dayjs(releventDate).format('YYYY-MM-DD'))
     }
@@ -70,10 +77,11 @@ class IndexComponent extends Component {
 
   renderExperience = () => {
     const agendas = this.filter();
+    const releventDate = this.getDefaultDate()
     if (qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).type === 'general') {
       return (
         <div className='agenda-container'>
-          <div className='day'>{`${weekdays[dayjs().format('dddd').toLowerCase()]}`} . {`${dayjs().format('dddd D')}`}</div>
+          <div className='day'>{`${weekdays[dayjs(releventDate).format('dddd').toLowerCase()]}`} . {`${dayjs(releventDate).format('dddd D')}`}</div>
           <GeneralAgenda data={agendas} />
         </div>
       )
@@ -81,7 +89,7 @@ class IndexComponent extends Component {
     if (qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).type === 'group') {
       return (
         <div className='agenda-container'>
-          <div className='day'>{`${weekdays[dayjs().format('dddd').toLowerCase()]}`} . {`${dayjs().format('dddd D')}`}</div>
+          <div className='day'>{`${weekdays[dayjs(releventDate).format('dddd').toLowerCase()]}`} . {`${dayjs(releventDate).format('dddd D')}`}</div>
           <GroupAgenda data={agendas} />
         </div>
       )
