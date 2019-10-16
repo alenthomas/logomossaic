@@ -129,6 +129,10 @@ export default {
       "title": "Winners",
       "refreshrate": 10,
     },
+    "agenda": {
+      "title": "Agenda",
+      "hideBgWave": true
+    }
   },
 
 
@@ -1351,6 +1355,10 @@ export default {
       "hideBgWave": true,
       "filterHashtags": ["#clus"]
     },
+    "agenda": {
+      "title": "",
+      "hideBgWave": true
+    }
   },
 
 }
