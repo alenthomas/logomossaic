@@ -1304,11 +1304,11 @@ export default {
     }
   },
 
-  "discounttire": {
-    "containerCssClassname": "discounttire",
-    "background": "url(/assets/discounttire/bg.jpg)",
+  "ciscolivela": {
+    "containerCssClassname": "ciscolivela",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
       "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
       "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
@@ -1316,8 +1316,8 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/discounttire/leftLogo.png',
-          "rightLogoUrl": ''
+          "leftLogoUrl": '/assets/cancun/possible-logo.png',
+          "rightLogoUrl": '/assets/cancun/live-logo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -1326,218 +1326,31 @@ export default {
       "threecolumn": {
       }
     },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
     "leaderboard": {
-      "title": "# Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
+      "title": "#CicoLiveLA Daily Leaderboard"
     },
     "mediacarousel": {
-      "title": "#DiscountTire Highlights",
+      "title": "#CLUS Highlights",
       "hideBgWave": true
     },
     "photogrid": {
-      "title": "#Expo2020 Visuals"
+      "title": "#CLUS Visuals"
     },
     "trendingdiscussion": {
-      "title": "# Trending Topics"
+      "title": "#CiscoLiveLA Trending Topics"
     },
     "photowall": {
-      "title": "Social Pulse",
-      "tileBgText": "#GEHealthCare",
-      "hideBgWave": true
+      "title": "#CiscoLiveLA Social Pulse",
+      "tileBgText": "#CiscoLiveLA",
+      "hideBgWave": true,
+      "loadSequentially": true,
+      "showFirst": 100,
     },
     "tweetcounts": {
-      "title": "Social Stats",
+      "title": "#CLUS Social Stats",
       "hideBgWave": true,
-      "filterHashtags": ["#expo2020"]
-    }
-  },
-
-  "alshaya": {
-    "containerCssClassname": "alshaya",
-    "background": "url(/assets/alshaya/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+      "filterHashtags": ["#clus"]
     },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/alshaya/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "# Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-    },
-    "mediacarousel": {
-      "title": "Alshaya Highlights",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#Expo2020 Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "# Trending Topics"
-    },
-    "photowall": {
-      "title": "Social Pulse",
-      "tileBgText": "#GEHealthCare",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#expo2020"]
-    }
-  },
-
-  "bancolombia": {
-    "containerCssClassname": "bancolombia",
-    "background": "url(/assets/bancolombia/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/bancolombia/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "# Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-    },
-    "mediacarousel": {
-      "title": "Bancolombia Highlights",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#Expo2020 Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "# Trending Topics"
-    },
-    "photowall": {
-      "title": "Social Pulse",
-      "tileBgText": "#GEHealthCare",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#expo2020"]
-    }
-  },
-
-  "aviva": {
-    "containerCssClassname": "aviva",
-    "background": "url(/assets/aviva/bg.jpg)",
-    "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
-      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
-      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
-      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
-    },
-    "layout": {
-      "regular": {
-        "header": {
-          "leftLogoUrl": '/assets/aviva/leftLogo.png',
-          "rightLogoUrl": ''
-        },
-        "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
-        },
-      },
-      "threecolumn": {
-      }
-    },
-    "conversationvolume": {
-      "title": { 'day': 'Volume This Week', 'hour': "Volume Today" }
-    },
-    "horizontalstream": {
-      "title": "Social Feed"
-    },
-    "leaderboard": {
-      "title": "# Leaderboard"
-    },
-    "masonarystream": {
-      "title": "Social Feed"
-    },
-    "masonarystreamv2": {
-      "hideBgWave": true,
-    },
-    "mediacarousel": {
-      "title": "Aviva Highlights",
-      "hideBgWave": true
-    },
-    "photogrid": {
-      "title": "#Expo2020 Visuals"
-    },
-    "trendingdiscussion": {
-      "title": "# Trending Topics"
-    },
-    "photowall": {
-      "title": "Social Pulse",
-      "tileBgText": "#GEHealthCare",
-      "hideBgWave": true
-    },
-    "tweetcounts": {
-      "title": "Social Stats",
-      "hideBgWave": true,
-      "filterHashtags": ["#expo2020"]
-    }
   },
 
 }
