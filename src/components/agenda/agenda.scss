@@ -45,14 +45,17 @@
   }
   .group-agenda {
     font-family: CiscoSans;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
-    // background: url(/assets/cancun/bg-green.png);
     width: 100vw;
     height: 100vh;
+    position: relative;
     .agenda {
+      position: absolute;
+      top: 250px;
       width: 100%;
-      margin-top: 50px;
       // background-color: #ffffff;
       .intro {
         width: 92%;
@@ -66,12 +69,14 @@
           width: 100%;
           border-radius: 10px;
           color: #18864a;
+          font-family: CiscoSansBold;
           // height: 10vh;
           // background-color: #ffffff;
         }
         .sub-heading {
           font-size: 2em;
           width: 100%;
+          font-family: CiscoSans;
           // background-color: #ffffff;
           // border-radius: 10px;
           // background-color: #ffffff;
@@ -82,6 +87,7 @@
       .content {
         table {
           border-spacing: 0px;
+          table-layout: fixed;
           width: 100%;
           padding: 0vw 2vw 2vw 2vw;
           color: #757575;
@@ -94,21 +100,32 @@
             tr {
               margin-top: 10px;
               margin-bottom: 10px;
-              &:first-child {
-                width: 40%;
+              // &:first-child {
+              //   width: 40%;
               }
               th {
                 // padding: 1vw;
                 padding-left: 1.5vw;
-                line-height: 2.69;
+                line-height: 1.69;
                 font-size: 1.8em;
                 border-bottom: 8px solid #59b44a;
                 border-top: 8px solid #59b44a;
                 border-collapse: collapse;
-                &:first-child {
+                &:nth-child(1) {
                   width: 15%;
                 }
-              }
+                &:nth-child(2) {
+                  width: 60%;
+                }
+                &:nth-child(3) {
+                  width: 25%
+                }
+                // &:first-child {
+                //   width: 20%;
+                // }
+                // &:nth-child(3) {
+                //   width: 20%;
+                // }
             }
             border: 1px solid #18864a;
           }
@@ -124,9 +141,9 @@
               &:nth-child(even) {
                 background-color: #ededed;
               }
-              &:nth-child(2) {
-                width: 50vw;
-              }
+              // &:nth-child(3) {
+              //   width: 50vw;
+              // }
             }
           }
         }

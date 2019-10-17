@@ -51,9 +51,9 @@ export class GroupAgenda extends Component {
             <table>
               <thead>
                 <tr>
-                  <th>Time</th>
-                  <th>Topic</th>
-                  <th>Room</th>
+                  <th>Time - Hora</th>
+                  <th>Topic - Tema</th>
+                  <th>Location - Locación</th>
                 </tr>
               </thead>
               <tbody>
