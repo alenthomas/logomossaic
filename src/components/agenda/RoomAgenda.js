@@ -16,11 +16,17 @@ export class RoomAgenda extends Component {
   }
   filter = () => {
     let currentTime = dayjs().unix();
+    console.log(this.props.data);
     let data = this.props.data.filter(e => {
       let t = dayjs(`${e.getDate()} ${e.getEndTime()}`).unix()
       return t - currentTime > 0;
     });
-    this.setState({ data })
+    this.setState(prevState => {
+      if (prevState.data.length === 0 && prevState.current === 0) {
+        return {current: 0, data}
+      }
+      return { current: prevState.current + 1, data }
+    })
 
   }
 
@@ -29,7 +35,7 @@ export class RoomAgenda extends Component {
     return string.map(e => e[0].toUpperCase() + e.slice(1).toLowerCase()).join(' ')
   }
   render() {
-    const agenda = this.state.data[0];
+    const agenda = this.state.data[this.state.current];
     if (this.state.data.length > 0) {
       return (
         <div className='room-agenda'>
@@ -53,7 +59,7 @@ export class RoomAgenda extends Component {
                 {/* {`${dayjs(`${agenda.getDate()} ${agenda.getEndTime()}`).format('hh:mm a')`} */}
               </div>
             </div>
-              {agenda.getAuthors().map(e => (
+              {agenda.getAuthors().filter((e, i) => i === 0).map(e => (
                 <div key={e.fullName} className='author'>
                   <div className='name'>{e.fullName}</div>
                   <div className='job-title'>{this.formatJobTitle(e.jobTitle) }</div>
@@ -67,9 +73,8 @@ export class RoomAgenda extends Component {
     }
     return (
       <div className='room-agenda'>
-        <div className='live-logo'>
-          <div className='logo'></div>
-        </div>
+        <div className='logo-left'></div>
+        <div className='logo-center'></div>
       </div>
     )
   }
