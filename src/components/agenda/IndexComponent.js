@@ -11,7 +11,8 @@ import { RoomAgenda } from './RoomAgenda';
 import './agenda.css';
 import { RainFocusSessionSimplified } from './RainFocusModel';
 
-const weekdays = { 'sunday': 'Domingo', 'monday': 'Lunes', 'tuesday': 'Martes', 'wednesday': 'Miércoles', 'thursday': 'Jueves', 'friday': 'Viernes', 'saturday': 'Sábado' };
+export const weekdays = { 'sunday': 'Domingo', 'monday': 'Lunes', 'tuesday': 'Martes', 'wednesday': 'Miércoles', 'thursday': 'Jueves', 'friday': 'Viernes', 'saturday': 'Sábado' };
+export const months = {'october': 'octubre', 'november': 'noviembre', 'december': 'diciembre'}
 
 class IndexComponent extends Component {
 
@@ -101,7 +102,7 @@ class IndexComponent extends Component {
     }
     return (
       <div className='agenda-container'>
-        <RoomAgenda data={agendas} />
+        <RoomAgenda data={agendas} releventDate={releventDate} />
       </div>
     )
   }
