@@ -4,14 +4,43 @@
 }
 
 .agenda-container {
+  background-image: url(/assets/cancun/dark-green-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .logos {
+    .logo-left {
+      position: absolute;
+      top:5%;
+      left: 40%;
+      width: 300px;
+      height: 155px;
+      margin: 25px;
+      background-image: url(/assets/cancun/possible-logo.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .logo-right {
+      position: absolute;
+      top:0;
+      right: 0;
+      width: 250px;
+      height: 108px;
+      margin: 25px;
+      background-image: url(/assets/cancun/live-logo.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
   .day {
     font-size: 2em;
     color: #ffffff;
     text-align: left;
     position: absolute;
-    top: 100px;
-    top: 0px;
-    right: 10px;
+    top: 200px;
+    right: 45px;
     font-family: CiscoSans;
   }
   .group-agenda {
@@ -111,28 +140,33 @@
     // background: url(/assets/cancun/bg-green.png);
     width: 100vw;
     height: 100vh;
+    position: relative;
     .agenda {
+      position: absolute;
+      top: 250px;
       width: 100%;
-      margin-top: 50px;
+      // margin-top: 50px;
       // background-color: #ffffff;
       .intro {
         width: 92%;
         padding: 1vw 3vw 0vw 1vw;
         margin: 1vw 1vw 0vw 2vw;
         background-color: #ffffff;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
+        // border-top-right-radius: 10px;
+        // border-top-left-radius: 10px;
         .heading {
           font-size: 3em;
           width: 100%;
           border-radius: 10px;
           color: #18864a;
+          font-family: CiscoSansBold;
           // height: 10vh;
           // background-color: #ffffff;
         }
         .sub-heading {
           font-size: 2em;
           width: 100%;
+          font-family: CiscoSans;
           // background-color: #ffffff;
           // border-radius: 10px;
           // background-color: #ffffff;
@@ -166,6 +200,7 @@
                 border-bottom: 8px solid #59b44a;
                 border-top: 8px solid #59b44a;
                 border-collapse: collapse;
+                font-family: CiscoSansBold;
                 &:first-child {
                   width: 25%;
                 }
@@ -293,6 +328,34 @@
 
       }
     }
+    }
+  }
+}
+@media(min-height: 1920px) {
+  .agenda-container {
+    .logos {
+      .logo-left {
+        position: absolute;
+        top:1%;
+        left: 5%;
+        width: 300px;
+        height: 155px;
+        margin: 25px;
+        background-image: url(/assets/cancun/possible-logo.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .logo-right {
+        position: absolute;
+        top:0;
+        right: 0;
+        width: 250px;
+        height: 108px;
+        margin: 25px;
+        background-image: url(/assets/cancun/live-logo.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
   }
 }

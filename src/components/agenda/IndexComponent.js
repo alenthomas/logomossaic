@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import dayjs from 'dayjs';
 import qs from 'qs';
-import RegularLayout from "./../layout/Regular.js";
-// import PropTypes from 'prop-types';
-// import RegularLayout from "./../layout/Regular.js";
 import { watchEventAgenda, watchGeneralAgenda } from '../../Services.js';
 import { handleError } from '../../Helper.js';
 // import { timeoutCollection } from 'time-events-manager';
@@ -81,6 +78,10 @@ class IndexComponent extends Component {
     if (qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).type === 'general') {
       return (
         <div className='agenda-container'>
+          <div className='logos'>
+            <div className='logo-left'></div>
+            <div className='logo-right'></div>
+          </div>
           <div className='day'>{`${weekdays[dayjs(releventDate).format('dddd').toLowerCase()]}`} . {`${dayjs(releventDate).format('dddd D')}`}</div>
           <GeneralAgenda data={agendas} />
         </div>
@@ -89,6 +90,10 @@ class IndexComponent extends Component {
     if (qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).type === 'group') {
       return (
         <div className='agenda-container'>
+          <div className='logos'>
+            <div className='logo-left'></div>
+            <div className='logo-right'></div>
+          </div>
           <div className='day'>{`${weekdays[dayjs(releventDate).format('dddd').toLowerCase()]}`} . {`${dayjs(releventDate).format('dddd D')}`}</div>
           <GroupAgenda data={agendas} />
         </div>
@@ -96,31 +101,17 @@ class IndexComponent extends Component {
     }
     return (
       <div className='agenda-container'>
-
         <RoomAgenda data={agendas} />
       </div>
     )
   }
 
-  isReady() {
-    return !this.state.feedsGeneral.length <= 0 && !this.state.feedsEvent.length <= 0;
-  }
-
   render() {
-    const { agenda: componentConfig } = this.props.config;
     return (
-      <RegularLayout
-        isReady={this.isReady()}
-        config={this.props.config}
-        title={componentConfig.title}
-        className="agenda-container"
-        hideBgWave={componentConfig.hideBgWave}
-    >
       <div className='dashboard-content'>
         { this.renderExperience() }
       </div>
-
-    </RegularLayout>)
+    )
   }
 }
 
