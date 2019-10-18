@@ -11,14 +11,20 @@ export class GroupAgenda extends Component {
   }
   componentDidMount() {
     this.setState({ data: this.props.data })
-    if (window.innerWidth > window.innerHeight) {
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.data.length > 0 && this.props.data.length !== prevProps.data.length) {
+      if (window.innerWidth > window.innerHeight) {
       this.shuffleHorizontal();
-      this.interval = setInterval(this.shuffleHorizontal, 15000)
+      this.interval = setInterval(this.shuffleHorizontal, 20000)
     } else {
       this.shuffleVertical();
-      this.interval = setInterval(this.shuffleVertical, 15000)
+      this.interval = setInterval(this.shuffleVertical, 20000)
+    }
     }
   }
+
   shuffleHorizontal = () => {
     if (this.state.counter < this.props.data.length) {
       this.setState(prevState => ({counter: prevState.counter+4, data: this.props.data.slice(prevState.counter, prevState.counter+4)}))

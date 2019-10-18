@@ -7,16 +7,17 @@ export class RoomAgenda extends Component {
     super(props);
     this.state = { current: 0, data: [] };
   }
-  componentDidMount() {
-    this.filter();
-    this.interval = setInterval(this.filter, 30000)
+  componentDidUpdate(prevProps) {
+    if (this.props.data.length > 0 && this.props.data.length !== prevProps.data.length) {
+      this.filter();
+      this.interval = setInterval(this.filter, 30000)
+    }
   }
   componentWillUnmount() {
     clearInterval(this.interval);
   }
   filter = () => {
     let currentTime = dayjs().unix();
-    console.log(this.props.data);
     let data = this.props.data.filter(e => {
       let t = dayjs(`${e.getDate()} ${e.getEndTime()}`).unix()
       return t - currentTime > 0;

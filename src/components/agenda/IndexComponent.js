@@ -12,7 +12,7 @@ import './agenda.css';
 import { RainFocusSessionSimplified } from './RainFocusModel';
 
 export const weekdays = { 'sunday': 'Domingo', 'monday': 'Lunes', 'tuesday': 'Martes', 'wednesday': 'Miércoles', 'thursday': 'Jueves', 'friday': 'Viernes', 'saturday': 'Sábado' };
-export const months = {'october': 'octubre', 'november': 'noviembre', 'december': 'diciembre'}
+export const months = {'october': 'Octubre', 'november': 'Noviembre', 'december': 'Diciembre'}
 
 class IndexComponent extends Component {
 
@@ -108,6 +108,7 @@ class IndexComponent extends Component {
   }
 
   render() {
+    // console.log(this.state);
     return (
       <div className='dashboard-content'>
         { this.renderExperience() }
