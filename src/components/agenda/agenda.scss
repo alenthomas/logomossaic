@@ -112,7 +112,7 @@
                 border-top: 8px solid #59b44a;
                 border-collapse: collapse;
                 &:nth-child(1) {
-                  width: 15%;
+                  width: 10%;
                 }
                 &:nth-child(2) {
                   width: 60%;
@@ -134,8 +134,8 @@
             text-align: left;
             tr {
               td {
-                padding: 2vw;
-                font-size: 2em;
+                padding: 1.5vw;
+                font-size: 1.5em;
                 color: #757575;
               }
               &:nth-child(even) {
