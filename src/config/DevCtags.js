@@ -130,7 +130,8 @@ export default {
       "refreshrate": 10,
     },
     "agenda": {
-      "title": "Agenda"
+      "title": "Agenda",
+      "hideBgWave": true
     }
   },
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { weekdays, months } from './IndexComponent';
+dayjs.extend(customParseFormat);
 
 export class RoomAgenda extends Component {
   constructor(props) {
@@ -17,9 +19,9 @@ export class RoomAgenda extends Component {
     clearInterval(this.interval);
   }
   filter = () => {
-    let currentTime = dayjs().unix();
+    let currentTime = dayjs(`${this.props.releventDate} ${this.props.releventTime}`, 'YYYY-MM-DD HH:mm').unix();
     let data = this.props.data.filter(e => {
-      let t = dayjs(`${e.getDate()} ${e.getEndTime()}`).unix()
+      let t = dayjs(`${e.getDate()} ${e.getEndTime()}`, 'YYYY-MM-DD HH:mm').unix()
       return t - currentTime > 0;
     });
     this.setState(prevState => {
@@ -28,7 +30,6 @@ export class RoomAgenda extends Component {
       }
       return { current: prevState.current + 1, data }
     })
-
   }
 
   formatJobTitle = (s) => {
@@ -36,7 +37,7 @@ export class RoomAgenda extends Component {
     return string.map(e => e[0].toUpperCase() + e.slice(1).toLowerCase()).join(' ')
   }
   render() {
-    const agenda = this.state.data[this.state.current];
+    const agenda = this.state.data[0];
     if (this.state.data.length > 0) {
       return (
         <div className='room-agenda'>

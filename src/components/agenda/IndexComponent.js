@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 import qs from 'qs';
 import { watchEventAgenda, watchGeneralAgenda } from '../../Services.js';
 import { handleError } from '../../Helper.js';
@@ -12,7 +13,9 @@ import './agenda.css';
 import { RainFocusSessionSimplified } from './RainFocusModel';
 
 export const weekdays = { 'sunday': 'Domingo', 'monday': 'Lunes', 'tuesday': 'Martes', 'wednesday': 'Miércoles', 'thursday': 'Jueves', 'friday': 'Viernes', 'saturday': 'Sábado' };
-export const months = {'october': 'Octubre', 'november': 'Noviembre', 'december': 'Diciembre'}
+export const months = { 'october': 'Octubre', 'november': 'Noviembre', 'december': 'Diciembre' }
+
+dayjs.extend(customParseFormat);
 
 class IndexComponent extends Component {
 
@@ -22,13 +25,13 @@ class IndexComponent extends Component {
   }
   loadEventData = (data) => {
     const feeds = data.map(e => new RainFocusSessionSimplified(e));
-    const sortedFeeds = feeds.sort((a, b) => dayjs(`${a.getDate()} ${a.getStartTime()}`).unix() - dayjs(`${b.getDate()} ${b.getStartTime()}`).unix());
+    const sortedFeeds = feeds.sort((a, b) => dayjs(`${a.getDate()} ${a.getStartTime()}`, 'YYYY-MM-DD HH:mm').unix() - dayjs(`${b.getDate()} ${b.getStartTime()}`, 'YYYY-MM-DD HH:mm').unix());
     this.setState({ feedsEvent: sortedFeeds })
   }
 
   loadGeneralData = (data) => {
     const feeds = data.map(e => new RainFocusSessionSimplified(e));
-    const sortedFeeds = feeds.sort((a, b) => dayjs(`${a.getDate()} ${a.getStartTime()}`).unix() - dayjs(`${b.getDate()} ${b.getStartTime()}`).unix());
+    const sortedFeeds = feeds.sort((a, b) => dayjs(`${a.getDate()} ${a.getStartTime()}`, 'YYYY-MM-DD HH:mm').unix() - dayjs(`${b.getDate()} ${b.getStartTime()}`, 'YYYY-MM-DD HH:mm').unix());
     this.setState({ feedsGeneral: sortedFeeds })
   }
 
@@ -38,10 +41,17 @@ class IndexComponent extends Component {
   }
 
   getDefaultDate = () => {
-    const defaultDate = dayjs('2019-10-10 19:30').format('YYYY-MM-DD');
-    const { date } = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
+    const defaultDate = dayjs().format('YYYY-MM-DD');
+    let { date } = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
     const releventDate = date || defaultDate;
     return releventDate;
+  }
+
+  getDefaultTime = () => {
+    const defaultTime = dayjs().format('HH:mm');
+    let { time } = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
+    const releventTime = time || defaultTime;
+    return releventTime;
   }
 
   filter = () => {
@@ -75,7 +85,8 @@ class IndexComponent extends Component {
 
   renderExperience = () => {
     const agendas = this.filter();
-    const releventDate = this.getDefaultDate()
+    const releventDate = this.getDefaultDate();
+    const releventTime = this.getDefaultTime();
     if (qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).type === 'general') {
       return (
         <div className='agenda-container'>
@@ -102,7 +113,7 @@ class IndexComponent extends Component {
     }
     return (
       <div className='agenda-container'>
-        <RoomAgenda data={agendas} releventDate={releventDate} />
+        <RoomAgenda data={agendas} releventDate={releventDate} releventTime={releventTime} />
       </div>
     )
   }
