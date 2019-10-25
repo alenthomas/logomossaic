@@ -76,6 +76,9 @@
             .name,
             .twitter-handle {
               color: white;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
             }
             .tweets {
               .count {
