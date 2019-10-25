@@ -90,17 +90,11 @@
         .tweeter-card {
           .tweeter-details {
             .details {
-              .name {
+              .name, .twitter-handle {
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
-                max-width: 60%;
-              }
-              .twitter-handle {
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                max-width: 100%;
+                max-width: 250px;
               }
             }
           }
