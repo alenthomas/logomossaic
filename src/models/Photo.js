@@ -17,7 +17,7 @@ class Photo {
     this.raw = datum;
     this.data = datum;
     this.sizes = this.data.media[0].sizes;
-    this.fullSize = this.sizes.full;
+    this.fullSize = this.getFullSize();
   }
 
   getId() {
@@ -25,12 +25,15 @@ class Photo {
   }
 
   getFullSize() {
-    return this.sizes.full;
+    try {
+      return this.sizes.full;
+    } catch (err) {
+      return ({w: 1024, h: 1024});
+    }
   }
 
   getAspectRatio() {
     let fullSize = this.getFullSize();
-
     return fullSize.w / fullSize.h;
   }
 
@@ -48,7 +51,7 @@ class Photo {
   }
 
   getThumbnailUrl() {
-    return this.data.media[0].thumbUrl;
+    return this.data.media[0].url;
   }
 
   getPhotoSize() {
@@ -82,7 +85,7 @@ class Photo {
   }
 
   getAuthorHandle() {
-    return `@${this.data.author.alias}` || "";
+    return this.data.author.alias ? `@${this.data.author.alias}`:  "";
   }
 
   getAuthorPhoto() {

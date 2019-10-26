@@ -136,6 +136,7 @@ export default {
   },
 
   "ciscolivela": {
+
     "containerCssClassname": "cisco-cancun",
     "background": "url(/assets/cancun/bg-green.png)",
     "layout": {
@@ -154,6 +155,26 @@ export default {
       "hideBgWave": true
     }
   },
+  "fankave.com:context=test": {
+    "containerCssClassname": "cisco-cancun",
+    "background": "url(/assets/cancun/bg-green.png)",
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/cancun/possible-logo.png',
+          "rightLogoUrl": '/assets/cancun/live-logo.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/fankave-cornered.png'
+        },
+      }
+    },
+    "agenda": {
+      "title": "",
+      "hideBgWave": true
+    }
+  },
+
   "CiscoSprinklr": {
     "sprinklrApi": {
       "topics": {
@@ -1224,7 +1245,6 @@ export default {
       "filterHashtags": ["#clus"]
     }
   },
-
 
   "tmobilelovewall": {
     "containerCssClassname": "tmobile",

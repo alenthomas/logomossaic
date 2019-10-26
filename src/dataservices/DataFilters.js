@@ -16,13 +16,13 @@ export const removeBrokenMedia = (data, done) => {
 
   let urlPromises = mediaData.map((d) => {
     let mediaUrl = d.media[0].url;
-    return fetch(mediaUrl, { method: 'HEAD' })
+    return fetch(mediaUrl, { method: 'GET' })
     .then(response => response)
     .catch(err => err)
   })
 
   Promise.all(urlPromises).then((responses) => {
-    responses.forEach((response,i) => {
+    responses.forEach((response, i) => {
       if(response.status === 200) {
         valid.push(mediaData[i]);
       }
