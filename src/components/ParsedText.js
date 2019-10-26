@@ -21,4 +21,8 @@ ParsedText.propTypes = {
   style: PropTypes.object,
 };
 
+ParsedText.defaultProps = {
+  data: ''
+}
+
 export default ParsedText;

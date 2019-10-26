@@ -16,7 +16,7 @@ export default class TweetCardTopSection extends Component {
         </div>
         <div className="timestamp">
           <img className="clock" src="/assets/icons/clock.svg" alt="Clock"/>
-          <span>{twitterTimeAgo(new Date(Date.parse(embed.createdAt)))}</span>
+          <span>{embed.createdAt ? twitterTimeAgo(new Date(Date.parse(embed.createdAt))): ''}</span>
         </div>
       </div>
     );
