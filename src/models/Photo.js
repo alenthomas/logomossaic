@@ -51,7 +51,7 @@ class Photo {
   }
 
   getThumbnailUrl() {
-    return this.data.media[0].url;
+    return this.isVideo() ? this.data.media[0].thumbUrl: this.data.media[0].url;
   }
 
   getPhotoSize() {
