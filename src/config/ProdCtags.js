@@ -1331,7 +1331,7 @@ export default {
       }
     },
     "leaderboard": {
-      "title": "#CicoLiveLA Daily Leaderboard",
+      "title": "#CiscoLiveLA Leaderboard",
       "hideBgWave": true,
     },
     "mediacarousel": {
