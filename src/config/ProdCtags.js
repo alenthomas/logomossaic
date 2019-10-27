@@ -1331,7 +1331,8 @@ export default {
       }
     },
     "leaderboard": {
-      "title": "#CicoLiveLA Daily Leaderboard"
+      "title": "#CicoLiveLA Daily Leaderboard",
+      "hideBgWave": true,
     },
     "mediacarousel": {
       "title": "#CLUS Highlights",
@@ -1347,8 +1348,6 @@ export default {
       "title": "#CiscoLiveLA Social Pulse",
       "tileBgText": "#CiscoLiveLA",
       "hideBgWave": true,
-      "loadSequentially": true,
-      "showFirst": 100,
     },
     "tweetcounts": {
       "title": "#CLUS Social Stats",
