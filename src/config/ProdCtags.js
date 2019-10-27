@@ -1335,7 +1335,7 @@ export default {
       "hideBgWave": true,
     },
     "mediacarousel": {
-      "title": "#CLUS Highlights",
+      "title": "#CiscoLiveLA Highlights",
       "hideBgWave": true
     },
     "photogrid": {
