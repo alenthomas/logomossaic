@@ -1360,4 +1360,57 @@ export default {
     }
   },
 
+"neimanmarcus": {
+    "containerCssClassname": "neimanmarcus",
+    "background": "url(/assets/neimanmarcus/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/neimanmarcus/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "leaderboard": {
+      "title": "#CiscoLiveLA Leaderboard",
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "NeimanMarcus Highlights",
+      "hideBgWave": true
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CiscoLiveLA Trending Topics"
+    },
+    "photowall": {
+      "title": "#CiscoLiveLA Social Pulse",
+      "tileBgText": "#CiscoLiveLA",
+      "hideBgWave": true,
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    },
+    "agenda": {
+      "title": "",
+      "hideBgWave": true
+    }
+  },
+
+
 }
