@@ -67,7 +67,7 @@ class IndexComponent extends Component {
         .filter(e => dayjs(e.getDate()).format('YYYY-MM-DD') === dayjs(releventDate).format('YYYY-MM-DD'))
     }
     if (type === 'room' && room && releventDate) {
-      return this.state.feedsEvent.filter(e => e.getSessionType().toLowerCase() !== 'general').filter(e => (e.getRoom().toLowerCase() === room.toLowerCase()) && (dayjs(e.getDate()).format('YYYY-MM-DD') === dayjs(releventDate).format('YYYY-MM-DD')))
+      return this.state.feedsEvent.filter(e => e.getSessionType().toLowerCase() !== 'general').filter(e => (e.getRoom().toLowerCase() === room.toLowerCase()) && (dayjs(e.getDate()).unix() >= dayjs(releventDate).unix()))
     }
     if (room) {
       return this.state.feedsEvent.filter(e => e.getSessionType().toLowerCase() !== 'general').filter(e => e.getRoom().toLowerCase() === room.toLowerCase());

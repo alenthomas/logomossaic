@@ -24,6 +24,9 @@ export class RoomAgenda extends Component {
       let t = dayjs(`${e.getDate()} ${e.getEndTime()}`, 'YYYY-MM-DD HH:mm').unix()
       return t - currentTime > 0;
     });
+    if (data.length === 0 && this.props.data.length > 0) {
+      data = [this.props.data[this.props.data.length - 1]];
+    }
     this.setState(prevState => {
       if (prevState.data.length === 0 && prevState.current === 0) {
         return {current: 0, data}
@@ -33,7 +36,7 @@ export class RoomAgenda extends Component {
   }
 
   formatJobTitle = (s) => {
-    let string = s.split(' ');
+    let string = s.replace('.', " ").split(' ');
     return string.map(e => e[0].toUpperCase() + e.slice(1).toLowerCase()).join(' ')
   }
   render() {
@@ -55,10 +58,9 @@ export class RoomAgenda extends Component {
                 {`${dayjs(`${agenda.getDate()} ${agenda.getStartTime()}`).format('dddd, MMMM DD')}`}
                 <div className='time-spanish'>{`${weekdays[`${dayjs(`${agenda.getDate()}`).format('dddd').toLowerCase()}`]} ${dayjs(`${agenda.getDate()}`).format('DD')}, ${months[`${dayjs(agenda.getDate()).format('MMMM').toLowerCase()}`]}`}</div>
                 <div className='start-end'>
-                  {`${dayjs(`${agenda.getDate()} ${agenda.getStartTime()}`).format('hh:mm a')} -`}
+                  {`${dayjs(`${agenda.getDate()} ${agenda.getStartTime()}`).format('hh:mm a')} - `}
                   {`${dayjs(`${agenda.getDate()} ${agenda.getEndTime()}`).format('hh:mm a')}`}
                 </div>
-                {/* {`${dayjs(`${agenda.getDate()} ${agenda.getEndTime()}`).format('hh:mm a')`} */}
               </div>
             </div>
               {agenda.getAuthors().filter((e, i) => i === 0).map(e => (
