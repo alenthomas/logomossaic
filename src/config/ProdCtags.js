@@ -1387,7 +1387,7 @@ export default {
       "hideBgWave": true,
     },
     "mediacarousel": {
-      "title": "NeimanMarcus Highlights",
+      "title": "#NeimanMarcus Highlights",
       "hideBgWave": true
     },
     "photogrid": {
