@@ -1360,6 +1360,57 @@ export default {
     }
   },
 
+  "ciscolivekeynote": {
+    "containerCssClassname": "ciscolivela",
+    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/cancun/possible-logo.png',
+          "rightLogoUrl": '/assets/cancun/live-logo.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "leaderboard": {
+      "title": "#CiscoLiveLA Leaderboard",
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#CiscoLiveLA Keynote Highlights"
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CiscoLiveLA Trending Topics"
+    },
+    "photowall": {
+      "title": "#CiscoLiveLA Social Pulse",
+      "tileBgText": "#CiscoLiveLA",
+      "hideBgWave": true,
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    },
+    "agenda": {
+      "title": "",
+      "hideBgWave": true
+    }
+  },
+
 "neimanmarcus": {
     "containerCssClassname": "neimanmarcus",
     "background": "url(/assets/neimanmarcus/bg.jpg)",
