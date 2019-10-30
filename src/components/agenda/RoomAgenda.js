@@ -20,10 +20,15 @@ export class RoomAgenda extends Component {
   }
   filter = () => {
     let currentTime = dayjs(`${this.props.releventDate} ${this.props.releventTime}`, 'YYYY-MM-DD HH:mm').unix();
-    let data = this.props.data.filter(e => {
+    const sortedFeeds = this.props.data.sort((a, b) => dayjs(`${a.getDate()} ${a.getStartTime()}`, 'YYYY-MM-DD HH:mm').unix() - dayjs(`${b.getDate()} ${b.getStartTime()}`, 'YYYY-MM-DD HH:mm').unix());
+    // console.log('sorted');
+    // sortedFeeds.map(e => console.log('s', e.getDate(), e.getStartTime(), e.getEndTime()))
+    let data = sortedFeeds.filter(e => {
       let t = dayjs(`${e.getDate()} ${e.getEndTime()}`, 'YYYY-MM-DD HH:mm').unix()
       return t - currentTime > 0;
     });
+    // console.log('data');
+    // data.map(e => console.log('d', e.getDate(), e.getStartTime(), e.getEndTime()));
     if (data.length === 0 && this.props.data.length > 0) {
       data = [this.props.data[this.props.data.length - 1]];
     }
