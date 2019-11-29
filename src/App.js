@@ -33,6 +33,7 @@ import ArWelcome from './components/arwelcome/IndexComponent.js';
 import PollingResults from './components/pollingresults/IndexComponent.js';
 import VerticalCarousel from "./components/carouselvertical/IndexComponent.js";
 import Agenda from "./components/agenda/IndexComponent.js";
+import SocialCluster from "./components/socialcluster/IndexComponent.js";
 
 class App extends Component {
   render() {
@@ -63,6 +64,7 @@ class App extends Component {
           <Route path="/ar" component={ArWelcome} />
           <Route path="/verticalcarousel" render={(props) => <VerticalCarousel config={getCurrentConfig()} {...props} />} />
           <Route path="/agenda" render={(props) => <Agenda config={getCurrentConfig()} {...props} />}/>
+          <Route path="/socialcluster" render={(props) => <SocialCluster config={getCurrentConfig()} {...props} />}/>
         </div>
       </Router>
     );
