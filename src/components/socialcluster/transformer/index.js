@@ -12,7 +12,7 @@ import packer from './packer'
 function transformPosts(data, width, height){
 
   return reduce((final, photo)=> {
-    const {data: photoData, sizes} = photo
+    const {data: photoData} = photo
     const likes = getOr(0, ['metrics', 'likes'])(photoData)
     const comments = getOr(0, ['metrics', 'comments'])(photoData)
     const name = getOr('', ['author', 'name'])(photoData)
@@ -24,12 +24,12 @@ function transformPosts(data, width, height){
     return [
       ...final,
       {
-        likes, 
-        comments, 
-        name, 
-        userImage, 
-        userName, 
-        postText, 
+        likes,
+        comments,
+        name,
+        userImage,
+        userName,
+        postText,
         postImage,
         count
       }

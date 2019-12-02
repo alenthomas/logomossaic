@@ -19,8 +19,8 @@ class Cluster extends Component {
   }
 
   componentDidMount(){
-    
-    
+
+
     if(this.canvas){
 
        // Mutation Alert
@@ -29,13 +29,13 @@ class Cluster extends Component {
          itemTransit=index
        }
        // Mutation Alert
-  
+
       const canvas = d3.select(this.canvas);
       const { data } = this.props
       const {cluster, cover} = data
       this.firstTransit = true
       const transit = canvas.transition().delay(3000).duration(1000).ease(d3.easeLinear)
-      
+
 
       canvas.append('div').attr('id', 'cover')
       .selectAll('.coverCircles').data(cover)
@@ -68,7 +68,8 @@ class Cluster extends Component {
           `${getSize(d, 1) * 0.8}px`
       )
       .transition()
-      .delay(200).remove()
+        .delay(200).remove()
+      let items;
 
 
       const main = canvas.append('div').attr('id', 'main')
@@ -76,8 +77,8 @@ class Cluster extends Component {
         this.firstTransit = false
         transitElement(items, this.modalCoordinates, setItemTransit)
       })
-      
-      const items = main
+
+      items = main
       .selectAll('.mainCircles')
       .data(cluster)
       .enter()
@@ -115,7 +116,7 @@ class Cluster extends Component {
 
       items.append('div')
       .attr('class', 'left')
-      
+
       items.append('div')
       .attr('class', 'right')
 
@@ -130,7 +131,7 @@ class Cluster extends Component {
       .append('div')
       .attr('class', 'username')
       .text((d)=> d.data.userName)
-      
+
       items.select('.left')
       .append('div')
       .attr('class', 'social-values')
@@ -145,11 +146,11 @@ class Cluster extends Component {
       .attr('class', 'comments')
       .text((d)=> d.data.comments)
 
-      
+
       items.select('.right')
       .append('div')
       .attr('class', 'right-content')
-      
+
       items.select('.right-content')
       .append('div')
       .attr('class', 'post-image')
@@ -189,7 +190,7 @@ class Cluster extends Component {
         (d) =>
           `${getSize(d, 1) * 0.8}px`
       )
-      
+
 
       items
       .select('.image')
@@ -206,7 +207,7 @@ class Cluster extends Component {
         (d) =>
           `${getSize(d, 1) * 0.8}px`
       )
-    
+
     }
   }
 
