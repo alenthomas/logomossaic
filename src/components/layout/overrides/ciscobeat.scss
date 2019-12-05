@@ -78,7 +78,7 @@
             }
           }
           &.zoomIn {
-            background-image: url(/assets/ciscobeat/tweetCardBg.png);
+            background-image: url(/assets/ciscobeat/tweetCardBg2.png);
             img {
               margin-left: none;
             }
@@ -86,9 +86,9 @@
           .info {
             &.visible {
               .head {
-                color: #000000;
+                color: #ffffff;
               }
-              color: #000000;
+              color: #ffffff;
             }
           }
         }
