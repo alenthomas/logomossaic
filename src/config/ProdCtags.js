@@ -1360,11 +1360,11 @@ export default {
     }
   },
 
-  "ciscolivekeynote": {
-    "containerCssClassname": "ciscolivela",
-    "background": "url(/assets/clus2019/darkblue_bg1920.jpg)",
+  "ciscobeat": {
+    "containerCssClassname": "ciscobeat",
+    "background": "url(/assets/ciscobeat/bg.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
+      "url": () => `http://storage.googleapis.com/animable/ciscobeat/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
       "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
       "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
@@ -1372,8 +1372,8 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/cancun/possible-logo.png',
-          "rightLogoUrl": '/assets/cancun/live-logo.png'
+          "leftLogoUrl": '/assets/ciscobeat/leftLogo.png',
+          "rightLogoUrl": '/assets/ciscobeat/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-white.png'
@@ -1387,7 +1387,7 @@ export default {
       "hideBgWave": true,
     },
     "mediacarousel": {
-      "title": "#CiscoLiveLA Keynote Highlights"
+      "title": "#CiscoBeat Highlights"
     },
     "photogrid": {
       "title": "#CLUS Visuals"
@@ -1396,8 +1396,60 @@ export default {
       "title": "#CiscoLiveLA Trending Topics"
     },
     "photowall": {
-      "title": "#CiscoLiveLA Social Pulse",
-      "tileBgText": "#CiscoLiveLA",
+      "title": "#CiscoBeat Social Pulse",
+      "tileBgText": "#CiscoBeat",
+      "hideBgWave": true,
+    },
+    "tweetcounts": {
+      "title": "#CLUS Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    },
+    "agenda": {
+      "title": "",
+      "hideBgWave": true
+    }
+  },
+
+  "oakpanthers": {
+    "containerCssClassname": "oakpanthers",
+    "background": "url(/assets/oakpanthers/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/oakpanthers/loading.mp4`,
+      "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
+      "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
+      "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/oakpanthers/leftLogo.png',
+          "rightLogoUrl": ''
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "leaderboard": {
+      "title": "#CiscoLiveLA Leaderboard",
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "#OaklandPanthers Highlights",
+      "hideBgWave": true
+    },
+    "photogrid": {
+      "title": "#CLUS Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "#CiscoLiveLA Trending Topics"
+    },
+    "photowall": {
+      "title": "#OaklandPanthers Social Pulse",
+      "tileBgText": "#OaklandPanthers",
       "hideBgWave": true,
     },
     "tweetcounts": {
