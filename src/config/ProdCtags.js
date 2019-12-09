@@ -1396,7 +1396,7 @@ export default {
       "title": "#CiscoLiveLA Trending Topics"
     },
     "photowall": {
-      "title": "#CiscoBeat Social Pulse",
+      "title": "#CiscoBeat Highlights",
       "tileBgText": "#CiscoBeat",
       "hideBgWave": true,
     },
