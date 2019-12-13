@@ -1,7 +1,7 @@
 .regularlayout {
   &.oakpanthers {
     .dashboard-header {
-      background: rgba(0,0,0,0.1);
+      background: rgba(0,0,0,0.5);
       height: 105px;
 
       .logo.left-icon {
@@ -11,7 +11,7 @@
         }
       }
       .dashboard-title {
-        color: #ffffff;
+        color: #b5985a;
         font-size: 52px;
         padding-top: 15px;
       }
@@ -67,6 +67,7 @@
       .photo-wall {
         .caption {
           font-size: 10vw;
+          color: #b5985a;
         }
         .phototile {
           &.portrait {

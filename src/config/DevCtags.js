@@ -1431,7 +1431,7 @@ export default {
     "containerCssClassname": "pureaccel",
     "background": "url(/assets/pureaccel/bg.jpg)",
     "loadingMedia": {
-      "url": () => `https://storage.googleapis.com/animable/pureaccelerate/loading.mp4`,
+      "url": () => `http://storage.googleapis.com/animable/oakpanthers/${lodash.random(1, 2)}.mp4`,
       "urlVertical": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`,
       "urlVertical1152": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1152.mp4`,
       "urlVertical1920": () => `https://storage.googleapis.com/animable/pureaccelerate/loading768*1920.mp4`,
