@@ -1498,7 +1498,7 @@ export default {
     "containerCssClassname": "oakpanthers",
     "background": "url(/assets/oakpanthers/bg.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/oakpanthers/${lodash.random(1, 2)}.mp4`,
+      "url": () => `http://storage.googleapis.com/animable/oakpanthers/1.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
       "urlVertical320": () => `http://storage.googleapis.com/animable/clus2019/320/2.mp4`,
       "urlVertical640": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`
