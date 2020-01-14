@@ -1,0 +1,163 @@
+@-webkit-keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+.ask-fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    margin-left: 10px;
+    margin-top: 50%;
+    border-radius: 3px;
+    background-color: #1890ff;
+    padding: 7px 20px;
+    color: white;
+    outline: 0;
+    border-style: none;
+
+  }
+}
+
+.marquee-container-qr {
+  .left, .right {
+    background: linear-gradient(to top, #ffffff, #dcdcdc, #ffffff);
+  }
+
+  .left {
+    position: fixed;
+    width: 75%;
+    height: 100px;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    .tweet {
+      display: inline-block;
+      border-right: 3px solid #9c9c9c;
+      border-radius: 3px;
+
+      .tweet-content {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+
+        .medal {
+          display: none;
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 31px;
+          width: 25px;
+          position: relative;
+          top: -10px;
+          left: 20px;
+
+          &.medal-0 {
+            display: block;
+            background-image: url("/assets/medals/gold.png");
+          }
+
+          &.medal-1 {
+            display: block;
+            background-image: url("/assets/medals/silver.png");
+          }
+
+          &.medal-2 {
+            display: block;
+            background-image: url("/assets/medals/bronze.png");
+          }
+        }
+
+        .avatar {
+          width: 50px;
+          height: 50px;
+          padding-left: 25px;
+
+          img, object {
+            border: 1px solid #DDD;
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+          }
+        }
+
+        .handle, .text, .timeago {
+          font-family: Roboto;
+          font-weight: bold;
+        }
+
+        .handle, .text {
+          color: #464646;
+        }
+
+        .handle {
+          font-size: 1.3em;
+          font-family: Roboto;
+          padding-left: 35px;
+          padding-top: 1em;
+          color: #373737;
+        }
+
+        .image {
+          img {
+            padding-left: 20px;
+            width: 70px;
+            height: 70px;
+          }
+        }
+
+        .text {
+          padding-left: 32px;
+          font-size: 31px;
+          .emoji {
+            width: 28px;
+            height: 28px;
+            padding: 0;
+          }
+        }
+
+        .timeago {
+          padding-left: 37px;
+          padding-top: 5px;
+          font-size: 1em;
+          color: #373737;
+          display: block;
+          font-weight: 300;
+          span {
+            font-weight: 400;
+          }
+        }
+
+        .twitter-bird {
+          height: 64px;
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 25%;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+
+    img {
+      display: none;
+      margin: 0 15px;
+      width: 192px;
+      height: 51px;
+      margin: auto;
+    }
+  }
+}

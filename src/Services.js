@@ -255,3 +255,8 @@ export const postVotes = (id, ctag, src, meta, success, failure) => {
 export const getName = (success, failure) => {
   return get(`${NAME_URL}/getName?json=true`, success, failure);
 }
+
+export const getLeaders = (success, failure, refreshRate = 25) => {
+  console.log('refreshRate', refreshRate)
+  return poll(`${BASE_URL}qrcode/all?filter=name`, success, failure, refreshRate * 1000);
+}
