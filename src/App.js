@@ -35,6 +35,7 @@ import VerticalCarousel from "./components/carouselvertical/IndexComponent.js";
 import Agenda from "./components/agenda/IndexComponent.js";
 import SocialCluster from "./components/socialcluster/IndexComponent.js";
 import MarqueeLeader from './components/marqueeLeader/IndexComponent.js';
+import LeaderboardQr from './components/leaderboardqr/IndexComponent.js';
 
 class App extends Component {
   render() {
@@ -66,7 +67,8 @@ class App extends Component {
           <Route path="/verticalcarousel" render={(props) => <VerticalCarousel config={getCurrentConfig()} {...props} />} />
           <Route path="/agenda" render={(props) => <Agenda config={getCurrentConfig()} {...props} />}/>
           <Route path="/socialcluster" render={(props) => <SocialCluster config={getCurrentConfig()} {...props} />} />
-          <Route path='/marqueeLeader' render={(props) => <MarqueeLeader config={getCurrentConfig()} {...props} />} />
+          <Route path='/marqueeleader' render={(props) => <MarqueeLeader config={getCurrentConfig()} {...props} />} />
+          <Route path='/leaderboardqr' render={(props) => <LeaderboardQr config={getCurrentConfig()} {...props} />} />
         </div>
       </Router>
     );

@@ -132,6 +132,14 @@ export default {
     "agenda": {
       "title": "Agenda",
       "hideBgWave": true
+    },
+    "leaderboardqr": {
+      "title": "Leaderboard",
+      "hideBgWave": true,
+    },
+    "marqueeleader": {
+      "count": 10,
+      "refresh": 25
     }
   },
 

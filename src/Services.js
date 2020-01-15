@@ -257,6 +257,5 @@ export const getName = (success, failure) => {
 }
 
 export const getLeaders = (success, failure, refreshRate = 25) => {
-  console.log('refreshRate', refreshRate)
   return poll(`${BASE_URL}qrcode/all?filter=name`, success, failure, refreshRate * 1000);
 }

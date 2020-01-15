@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import TwitterAvatar from './../mediacarousel/TwitterAvatar.js';
 import defaultImage from '../../../public/assets/defaultCircle.png';
 import ParsedText from '../ParsedText.js';
 
