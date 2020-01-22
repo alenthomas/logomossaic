@@ -136,12 +136,14 @@
   background-color: white;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  background-image: linear-gradient(to top,#bb6492, #9b67bb);
   // border: 0.5px solid whitesmoke;
   // border-bottom: 0.5px solid whitesmoke;
 }
 .flipCard.fold span {
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
+          background-image: linear-gradient(to top,#bb6492, #9b67bb);
 }
 
 .fold {
@@ -149,6 +151,7 @@
           animation: fold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+          background-image: linear-gradient(to top,#bb6492, #9b67bb);
 }
 
 .unfold {
@@ -156,6 +159,7 @@
           animation: unfold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+          background-image: linear-gradient(to top,#bb6492, #9b67bb);
 }
 
 @-webkit-keyframes fold {
