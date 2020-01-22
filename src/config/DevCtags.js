@@ -1552,4 +1552,51 @@ export default {
       "hideBgWave": true
     }
   },
+  "qrcisco": {
+    "containerCssClassname": "qrcisco",
+    "background": "url(/assets/qrcisco/bg.jpg)",
+    "loadingMedia": {
+      "url": () => `http://storage.googleapis.com/animable/ciscobeat/loading.mp4`,
+    },
+    "layout": {
+      "regular": {
+        "header": {
+          "leftLogoUrl": '/assets/qrcisco/leftLogo.png',
+          "rightLogoUrl": '/assets/logo/cisco-vision.png'
+        },
+        "footer": {
+          "logoUrl": '/assets/logo/pow-by-fankave-white.png'
+        },
+      },
+      "threecolumn": {
+      }
+    },
+    "leaderboard": {
+      "title": "Leaderboard",
+      "hideBgWave": true,
+    },
+    "mediacarousel": {
+      "title": "Highlights"
+    },
+    "photogrid": {
+      "title": "Visuals"
+    },
+    "trendingdiscussion": {
+      "title": "Trending Topics"
+    },
+    "photowall": {
+      "title": "Social Pulse",
+      "tileBgText": "#Social Pulse",
+      "hideBgWave": true,
+    },
+    "tweetcounts": {
+      "title": "Social Stats",
+      "hideBgWave": true,
+      "filterHashtags": ["#clus"]
+    },
+    "agenda": {
+      "title": "",
+      "hideBgWave": true
+    }
+  },
 }

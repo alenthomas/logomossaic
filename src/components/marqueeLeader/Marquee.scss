@@ -32,8 +32,8 @@
 
   .left {
     position: fixed;
-    width: 75%;
-    height: 100px;
+    width: 80%;
+    height: 120px;
     bottom: 0;
     overflow: hidden;
     display: flex;
@@ -145,8 +145,8 @@
   }
 
   .right {
-    width: 25%;
-    height: 100px;
+    width: 21%;
+    height: 120px;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -155,7 +155,7 @@
     img {
       // display: none;
       margin: 0 15px;
-      width: 192px;
+      // width: 192px;
       height: 51px;
       margin: auto;
     }

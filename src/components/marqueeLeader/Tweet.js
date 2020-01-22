@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import defaultImage from '../../../public/assets/defaultCircle.png';
+import defaultImage from '../../../public/assets/defCircle.png';
 import ParsedText from '../ParsedText.js';
 
 export default class Tweet extends Component {

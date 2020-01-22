@@ -15,7 +15,7 @@ export default class Marquee extends Component {
       </div>
 
       <div className='right'>
-        <img src="/assets/marquee/logo.png" alt="Fankave" />
+        <img src="/assets/marquee/pow-by-fankave-blue.png" alt="Fankave" />
       </div>
     </div>
   }
