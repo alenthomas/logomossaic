@@ -1,0 +1,201 @@
+.flipclock-container {
+  width: 35%;
+  height: 126px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  bottom: -19%;
+  left: 1.5%;
+  background-image: linear-gradient(to top, #dcc4a1, #ddb587);
+  border-radius: 7px;
+
+  .social {
+    padding-left: 10px;
+    padding-right: 20px;
+    margin-left: 10px;
+    margin-right: 30px;
+    img {
+      width: 100px;
+    height: 100px;
+    }
+  }
+}
+
+.flipClock {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  // position: absolute;
+  // bottom: -20%;
+  // left: 1%;
+}
+
+.flipUnitContainer {
+  display: block;
+  position: relative;
+  width: 140px;
+  height: 100px;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  -webkit-perspective: 300px;
+          perspective: 300px;
+  // background-color: white;
+
+  border-radius: 5px;
+  // box-shadow: inset 0px 1px 0 0 rgba(255, 255, 255, 0.18);
+  // border: solid 1px #000000;
+  // box-shadow: 0px 10px 10px -10px grey;
+}
+
+.upperCard, .lowerCard {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 60px;
+  height: 50%;
+  overflow: hidden;
+  // border: 1px solid whitesmoke;
+  background-image: linear-gradient(to top, #dc6069,#bb6492, #9b67bb);
+}
+.upperCard span, .lowerCard span {
+  font-size: 3em;
+  font-family: "Droid Sans Mono", monospace;
+  font-weight: lighter;
+  color: #ffffff;
+}
+
+.upperCard {
+  align-items: flex-end;
+  // border-bottom: 0.5px solid whitesmoke;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-image: linear-gradient(to top, #dc6069,#bb6492);
+}
+.upperCard span {
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.lowerCard {
+  align-items: flex-start;
+  // border-top: 0.5px solid whitesmoke;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-image: linear-gradient(to top,#bb6492, #9b67bb);
+}
+.lowerCard span {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.flipCard {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.flipCard span {
+  font-family: "Droid Sans Mono", monospace;
+  font-size: 3em;
+  font-weight: lighter;
+  color: #ffffff;
+}
+.flipCard.unfold {
+  top: 50%;
+  width: 60px;
+  align-items: flex-start;
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  // background-color: white;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  // border: 0.5px solid whitesmoke;
+  // border-top: 0.5px solid whitesmoke;
+  background-image: linear-gradient(to top,#bb6492, #9b67bb);
+}
+.flipCard.unfold span {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.flipCard.fold {
+  top: 0%;
+  width: 60px;
+  align-items: flex-end;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  background-color: white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  // border: 0.5px solid whitesmoke;
+  // border-bottom: 0.5px solid whitesmoke;
+}
+.flipCard.fold span {
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.fold {
+  -webkit-animation: fold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+          animation: fold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.unfold {
+  -webkit-animation: unfold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+          animation: unfold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+@-webkit-keyframes fold {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+
+@keyframes fold {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+@-webkit-keyframes unfold {
+  0% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+@keyframes unfold {
+  0% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
