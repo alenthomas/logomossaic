@@ -1556,7 +1556,7 @@ export default {
     "containerCssClassname": "qrcisco",
     "background": "url(/assets/qrcisco/bg.jpg)",
     "loadingMedia": {
-      "url": () => `http://storage.googleapis.com/animable/ciscobeat/loading.mp4`,
+      "url": () => `http://storage.googleapis.com/animable/clus2019/1920/${lodash.random(1, 5)}.mp4`,
     },
     "layout": {
       "regular": {
