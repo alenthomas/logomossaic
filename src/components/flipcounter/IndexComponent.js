@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import './flipcounter.css';
 
 class IndexComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+render() {
     return (
       <div className='flipclock-container'>
-        <span className='social'><img src='/assets/instaCircle.png' /></span>
+        <span className='social'><img src='/assets/instaCircle.png' alt='instagram' /></span>
         <FlipClock />
       </div>
     )
