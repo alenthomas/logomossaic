@@ -24,7 +24,7 @@ class IndexComponent extends Component {
   }
 
   loadData = (data) => {
-    let qrLeaders = data.map((datum, i) => new QrLeaders(datum)).filter(e => e.getScans() > 0).slice(0, 11)
+    let qrLeaders = data.map((datum, i) => new QrLeaders(datum)).sort((a, b) => b.scans-a.scans).slice(0, 11)
     this.setState({allTweeters: qrLeaders});
   }
 

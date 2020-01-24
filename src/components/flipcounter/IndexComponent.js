@@ -5,8 +5,9 @@ class IndexComponent extends Component {
 
   getFollowersCount = (arr, handle) => {
     let number = 0;
-    number = arr.reduce((acc, curr) => {
-      if (curr.author && curr.author.alias === handle && curr.author.followers) {
+    let relevent = arr.filter(e => (e.author) && (e.author.alias) && (e.author.alias.toLowerCase() === handle));
+    number = relevent.reduce((acc, curr) => {
+      if (curr.author.followers) {
         if (curr.author.followers > acc) {
           return curr.author.followers;
         }

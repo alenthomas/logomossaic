@@ -1,6 +1,6 @@
 .flipclock-container {
-  width: 35%;
-  height: 126px;
+  width: 30%;
+  height: 100px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -12,12 +12,12 @@
 
   .social {
     padding-left: 10px;
-    padding-right: 20px;
+    padding-right: 10px;
     margin-left: 10px;
     margin-right: 30px;
     img {
-      width: 100px;
-    height: 100px;
+      width: 75px;
+    height: 75px;
     }
   }
 }
@@ -25,7 +25,7 @@
 .flipClock {
   display: flex;
   justify-content: space-between;
-  width: 500px;
+  width: 450px;
   // position: absolute;
   // bottom: -20%;
   // left: 1%;
@@ -35,7 +35,7 @@
   display: block;
   position: relative;
   width: 140px;
-  height: 100px;
+  height: 65px;
   -webkit-perspective-origin: 50% 50%;
           perspective-origin: 50% 50%;
   -webkit-perspective: 300px;

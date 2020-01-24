@@ -27,13 +27,13 @@ class IndexComponent extends Component {
   }
 
   componentWillMount() {
-    getLeaders(this.loadData, handleError, 10)
+    getLeaders(this.loadData, handleError, 30)
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      getLeaders(this.loadData, handleError, 10);
+      getLeaders(this.loadData, handleError, 30);
     }
   }
 
