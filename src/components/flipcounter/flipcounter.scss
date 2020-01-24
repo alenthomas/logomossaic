@@ -1,6 +1,6 @@
 .flipclock-container {
-  width: 30%;
-  height: 100px;
+  width: 25%;
+  height: 90px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -16,8 +16,8 @@
     margin-left: 10px;
     margin-right: 30px;
     img {
-      width: 75px;
-    height: 75px;
+      width: 60px;
+    height: 60px;
     }
   }
 }
@@ -25,7 +25,7 @@
 .flipClock {
   display: flex;
   justify-content: space-between;
-  width: 450px;
+  width: 350px;
   // position: absolute;
   // bottom: -20%;
   // left: 1%;
@@ -52,14 +52,14 @@
   display: flex;
   position: relative;
   justify-content: center;
-  width: 60px;
+  width: 50px;
   height: 50%;
   overflow: hidden;
   // border: 1px solid whitesmoke;
   background-image: linear-gradient(to top, #dc6069,#bb6492, #9b67bb);
 }
 .upperCard span, .lowerCard span {
-  font-size: 3em;
+  font-size: 2em;
   font-family: "Droid Sans Mono", monospace;
   font-weight: lighter;
   color: #ffffff;
@@ -102,13 +102,13 @@
 }
 .flipCard span {
   font-family: "Droid Sans Mono", monospace;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: lighter;
   color: #ffffff;
 }
 .flipCard.unfold {
   top: 50%;
-  width: 60px;
+  width: 50px;
   align-items: flex-start;
   -webkit-transform-origin: 50% 0%;
           transform-origin: 50% 0%;
@@ -127,7 +127,7 @@
 }
 .flipCard.fold {
   top: 0%;
-  width: 60px;
+  width: 50px;
   align-items: flex-end;
   -webkit-transform-origin: 50% 100%;
           transform-origin: 50% 100%;
