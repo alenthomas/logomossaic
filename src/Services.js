@@ -257,20 +257,5 @@ export const getName = (success, failure) => {
 }
 
 export const getLeaders = (success, failure, refreshRate = 25) => {
-  let data = [
-    { title: 'Name User 1', scans: 10, id: 'id1' },
-    { title: 'Name User 2', scans: 110, id: 'id2' },
-    { title: 'Name User 3', scans: 20, id: 'id14' },
-    { title: 'Name User 4', scans: 30, id: 'id15' },
-    { title: 'Name User 5', scans: 30, id: 'id16' },
-    { title: 'Name User 6', scans: 40, id: 'id17' },
-    { title: 'Name User 7', scans: 12, id: 'id8' },
-    { title: 'Name User 8', scans: 1, id: 'id10' },
-    { title: 'Name User 9', scans: 2, id: 'id9' },
-    { title: 'Name User 10', scans: 16, id: 'id10' },
-    { title: 'Name User 11', scans: 200, id: 'id11' },
-    { title: 'Name User 12', scans: 10, id: 'id12' }
-  ]
-  return success(data);
-  // return get(`${BASE_URL}qrcode/all?filter=name`, success, failure, refreshRate * 1000);
+  return get(`${BASE_URL}qrcode/all?filter=name`, success, failure, refreshRate * 1000);
 }

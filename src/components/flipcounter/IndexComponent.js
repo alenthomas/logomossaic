@@ -2,11 +2,25 @@ import React, { Component } from 'react';
 import './flipcounter.css';
 
 class IndexComponent extends Component {
-render() {
+
+  getFollowersCount = (arr, handle) => {
+    let number = 0;
+    number = arr.reduce((acc, curr) => {
+      if (curr.author && curr.author.alias === handle && curr.author.followers) {
+        if (curr.author.followers > acc) {
+          return curr.author.followers;
+        }
+      }
+      return acc;
+    }, 0);
+    return number;
+  }
+  render() {
+    let number = this.getFollowersCount(this.props.data, this.props.handle);
     return (
       <div className='flipclock-container'>
         <span className='social'><img src='/assets/instaCircle.png' alt='instagram' /></span>
-        <FlipClock />
+        <FlipClock number={number} />
       </div>
     )
   }
@@ -107,15 +121,15 @@ class FlipClock extends React.Component {
     this.state = {
       tenthousands: 0,
       tenthousandsShuffle: true,
-      thousands: 5,
+      thousands: 0,
       thousandsShuffle: true,
-      hundreds: 7,
+      hundreds: 0,
       hundredsShuffle: true,
-      tens: 9,
+      tens: 0,
       tensShuffle: true,
-      ones: 3,
+      ones: 0,
       onesShuffle: true,
-      number: 5793,
+      number: this.props.number,
 			// hours: 0,
 			// hoursShuffle: true,
 			// minutes: 0,
@@ -126,19 +140,24 @@ class FlipClock extends React.Component {
 	}
 
 	componentDidMount() {
-		this.timerID = setInterval(
-			() => this.updateNumberAndCallAnimation(),
-			5000
-		);
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.timerID);
+		// this.timerID = setInterval(
+		// 	() => this.updateNumberAndCallAnimation(),
+		// 	5000
+		// );
+    this.updateTime();
   }
 
-  updateNumberAndCallAnimation = () => {
-    this.setState((prevState)=> ({number: prevState.number+1}), this.updateTime)
+  componentDidUpdate() {
+    // this.updateTime();
   }
+
+	// componentWillUnmount() {
+	// 	clearInterval(this.timerID);
+  // }
+
+  // updateNumberAndCallAnimation = () => {
+  //   this.setState((prevState)=> ({number: prevState.number+1}), this.updateTime)
+  // }
 
 	updateTime() {
 		// get new date

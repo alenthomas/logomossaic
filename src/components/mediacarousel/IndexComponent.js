@@ -5,6 +5,7 @@ import RegularLayout from "./../layout/Regular.js";
 import { pollFeatured, pollFeaturedSprinklr } from '../../Services.js';
 import { queryString, handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager';
+import FlipCounter from '../flipcounter/IndexComponent';
 
 import './MediaCarousel.css';
 import Feed from '../../dataservices/Feed.js';
@@ -73,7 +74,8 @@ class IndexComponent extends Component {
       >
 
         <div className="dashboard-content">
-          <Carousel key={this.state.feed.getAll().count} feed={this.state.feed} type={type} componentConfig={componentConfig}/>
+          <Carousel key={this.state.feed.getAll().count} feed={this.state.feed} type={type} componentConfig={componentConfig} />
+          {componentConfig.displayCounter ? <FlipCounter data={this.state.feed.getAll()} handle={componentConfig.counterHandle} /> : null}
         </div>
 
       </RegularLayout>

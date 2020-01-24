@@ -11,7 +11,6 @@ import './Leaderboard.css';
 import { handleError, getQueryString } from '../../Helper.js';
 import { timeoutCollection } from 'time-events-manager'
 import QrLeaders from '../../models/Qr.js';
-import FlipCounter from '../flipcounter/IndexComponent';
 
 class IndexComponent extends Component {
   constructor(props) {
@@ -25,7 +24,7 @@ class IndexComponent extends Component {
   }
 
   loadData = (data) => {
-    let qrLeaders = data.slice(0, 11).map((datum, i) => new QrLeaders(datum))
+    let qrLeaders = data.map((datum, i) => new QrLeaders(datum)).filter(e => e.getScans() > 0).slice(0, 11)
     this.setState({allTweeters: qrLeaders});
   }
 
@@ -94,7 +93,6 @@ class IndexComponent extends Component {
               return <RankedTweeterCard norank={true} key={`${tweeter.handle}${index}`} tweeter={tweeter}/>;
             })
           }
-          <FlipCounter />
         </div>
       </RegularLayout>
     )

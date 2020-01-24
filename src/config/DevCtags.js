@@ -64,6 +64,8 @@ export default {
       "cardDisplayTime": 7,
       "refreshrate": 10,
       "hideBgWave": false,
+      "displayCounter": false,
+      "counterHandle": ""
     },
     "verticalcarousel": {
       "title": "Featured Content",
@@ -134,7 +136,7 @@ export default {
       "hideBgWave": true
     },
     "leaderboardqr": {
-      "title": "Leaderboard",
+      "title": "Scanify Leaderboard",
       "hideBgWave": true,
     },
     "marqueeleader": {
@@ -546,7 +548,7 @@ export default {
 
   "CiscoStore": {
     "containerCssClassname": "ciscostore",
-    "background": "url(/assets/ciscostore/bg.png)",
+    "background": "url(/assets/ciscostore/bg.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
@@ -555,7 +557,7 @@ export default {
       "regular": {
         "header": {
           "leftLogoUrl": '/assets/ciscostore/leftLogo.png',
-          "rightLogoUrl": ''
+          "rightLogoUrl": '/assets/ciscostore/rightLogo.png'
         },
         "footer": {
           "logoUrl": '/assets/logo/pow-by-fankave-blue.png'
@@ -581,6 +583,8 @@ export default {
       "refreshrate": 10,
       "cardDisplayTime": 7,
       "hideBgWave": true,
+      "displayCounter": true,
+      "counterHandle": "ciscostore"
     },
     "photogrid": {
       "title": "#CiscoStore Visuals"
@@ -605,7 +609,11 @@ export default {
     "marqueeblue": {
       "count": 10,
       "refreshrate": 5,
-    }
+    },
+    "leaderboardqr": {
+      "title": "Scanify Leaderboard",
+      "hideBgWave": true,
+    },
   },
 
   "xfl.com:context=socialwall": {
@@ -1561,7 +1569,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/qrcisco/leftLogo.png',
+          "leftLogoUrl": 'url(/assets/ciscostore/bg.png)',
           "rightLogoUrl": '/assets/logo/cisco-vision.png'
         },
         "footer": {

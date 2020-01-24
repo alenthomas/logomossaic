@@ -5,7 +5,7 @@ import Tweet from './Tweet.js';
 export default class Marquee extends Component {
   render() {
     const { data } = this.props;
-    const animationDuration = data.length * 25;
+    const animationDuration = data.length * 3;
 
     return <div className="marquee-container-qr">
       <div className="left">

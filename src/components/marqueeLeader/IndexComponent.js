@@ -22,20 +22,18 @@ class IndexComponent extends Component {
   }
 
   loadData = (data) => {
-    let qrResults = data.map(qr => new QrLeaders(qr)).sort((a, b) => b.scans-a.scans);
+    let qrResults = data.map(qr => new QrLeaders(qr)).filter(e => e.getScans() > 0).sort((a, b) => b.scans-a.scans);
     this.setState({ data: qrResults });
   }
 
   componentWillMount() {
-    let refreshrate = this.state.data.length > 0 ? this.state.data.length * 25 : undefined;
-    getLeaders(this.loadData, handleError, refreshrate)
+    getLeaders(this.loadData, handleError, 10)
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.search !== this.props.location.search) {
       timeoutCollection.removeAll();
-      let refreshrate = this.state.data.length > 0 ? this.state.data.length * 25 : undefined;
-      getLeaders(this.loadData, handleError, refreshrate);
+      getLeaders(this.loadData, handleError, 10);
     }
   }
 
