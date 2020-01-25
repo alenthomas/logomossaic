@@ -4,8 +4,10 @@ import './flipcounter.css';
 class IndexComponent extends Component {
 
   getFollowersCount = (arr, handle) => {
+    // console.log('data length', arr.length, '\nhandle', handle )
     let number = 0;
     let relevent = arr.filter(e => (e.author) && (e.author.alias) && (e.author.alias.toLowerCase() === handle));
+    // console.log('counts', relevent.map(e => e.author.followers));
     number = relevent.reduce((acc, curr) => {
       if (curr.author.followers) {
         if (curr.author.followers > acc) {
@@ -14,6 +16,7 @@ class IndexComponent extends Component {
       }
       return acc;
     }, 0);
+    // console.log('number retured: ', number);
     return number;
   }
   render() {
@@ -148,9 +151,13 @@ class FlipClock extends React.Component {
     this.updateTime();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.number !== this.state.number) {
+      this.setState(() => ({ number: this.props.number }), this.updateTime);
+    }
     // this.updateTime();
   }
+
 
 	// componentWillUnmount() {
 	// 	clearInterval(this.timerID);
