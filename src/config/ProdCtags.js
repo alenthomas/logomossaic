@@ -416,14 +416,14 @@ export default {
 
   "CiscoStore": {
     "containerCssClassname": "ciscostore",
-    "background": "url(/assets/ciscostore/bg.jpg)",
+    "background": "url(/assets/ciscostore/bg.png)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`
     },
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/ciscostore/leftLogo.png',
+          "leftLogoUrl": '',
           "rightLogoUrl": '/assets/ciscostore/rightLogo.png'
         },
         "footer": {
