@@ -39,27 +39,27 @@
         .tweet-card-top {
           .profile {
             .name, .handle {
-              color: #000000;
+              color: #1e1e1e;
             }
           }
           .timestamp {
-            color: #000000;
+            color: #1e1e1e;
           }
         }
         .tweet-card-middle {
-          color: #000000;
+          color: #1e1e1e;
         }
         .tweet-card-bottom {
           .icon {
             &.like {
-              background-image: url(/assets/clus2019/like.png);
+              background-image: url(/assets/icons/like.png);
             }
             &.retweet {
-              background-image: url(/assets/clus2019/retweet.png);
+              background-image: url(/assets/icons/retweet.png);
             }
           }
           .likes, .shares {
-            color: #000000;
+            color: #1e1e1e;
           }
         }
       }
@@ -183,7 +183,8 @@
     &.photo-wall-container {
       .photo-wall {
         .caption {
-          font-size: 12vw;
+          font-size: 13vw;
+          color: #cf0b27;
         }
         .phototile {
           &.portrait {

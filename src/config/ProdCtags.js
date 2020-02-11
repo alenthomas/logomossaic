@@ -1489,7 +1489,7 @@ export default {
 
 "neimanmarcus": {
     "containerCssClassname": "neimanmarcus",
-    "background": "url(/assets/neimanmarcus/bg.jpg)",
+    "background": "url(/assets/neimanmarcus/bg1.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/clus2019/640/2.mp4`,
@@ -1499,7 +1499,7 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/neimanmarcus/leftLogo.png',
+          "leftLogoUrl": '/assets/neimanmarcus/leftLogo1.png',
           "rightLogoUrl": ''
         },
         "footer": {
@@ -1514,7 +1514,7 @@ export default {
       "hideBgWave": true,
     },
     "mediacarousel": {
-      "title": "#NeimanMarcus Highlights",
+      "title": "#ForçaBarça Highlights",
       "hideBgWave": true
     },
     "photogrid": {
@@ -1524,8 +1524,8 @@ export default {
       "title": "#CiscoLiveLA Trending Topics"
     },
     "photowall": {
-      "title": "#CiscoLiveLA Social Pulse",
-      "tileBgText": "#CiscoLiveLA",
+      "title": "FC Barcelona Social Pulse",
+      "tileBgText": "#ForçaBarça",
       "hideBgWave": true,
     },
     "tweetcounts": {
