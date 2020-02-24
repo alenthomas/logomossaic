@@ -1,8 +1,7 @@
 import lodash from 'lodash';
+import { ALL_SIZES } from "./Photo.js";
 
 const ROW_CAPACITY = 6;
-
-import {ALL_SIZES} from "./Photo.js";
 
 class Grid {
   constructor(photos) {

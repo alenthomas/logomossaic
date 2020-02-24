@@ -6,7 +6,7 @@ function isNonMediaData(datum) {
 }
 
 export const protoRelativeUrl = (url) => {
-  return location.protocol+url.replace(/^https?:/i, "")
+  return window.location.protocol+url.replace(/^https?:/i, "")
 }
 
 export const removeBrokenMedia = (data, done) => {

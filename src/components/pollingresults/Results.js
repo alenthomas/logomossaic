@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import defaultpic from '../../../public/assets/default.jpg';
+const defaultpic = '/assets/default.jpg';
 
 class Results extends Component {
   render() {

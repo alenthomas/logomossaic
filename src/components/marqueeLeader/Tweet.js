@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
-import defaultImage from '../../../public/assets/defCircle.png';
 import ParsedText from '../ParsedText.js';
+
+const defaultImage = '/assets/defCircle.png';
 
 export default class Tweet extends Component {
 
