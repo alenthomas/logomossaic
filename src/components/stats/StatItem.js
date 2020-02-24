@@ -9,7 +9,7 @@ class StatItem extends Component {
     this.showWithDelay();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.showWithDelay();
   }
 

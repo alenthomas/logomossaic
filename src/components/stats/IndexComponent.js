@@ -19,7 +19,7 @@ class IndexComponent extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { tweetcounts: componentConfig } = this.props.config;
     let params = getQueryString(this.props.location.search);
     getTweetStats(params.ctag, (stats) => {

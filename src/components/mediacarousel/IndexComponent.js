@@ -24,7 +24,7 @@ class IndexComponent extends Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let { mediacarousel: {refreshrate} } = this.props.config;
     let params = getQueryString(this.props.location.search);
     if(params.topicId) {

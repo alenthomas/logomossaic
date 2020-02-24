@@ -62,7 +62,7 @@ export default class TweetColumn extends Component {
     this.setState(state);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.interval = setInterval(this.rotateData.bind(this), sliderInterval + Math.random() * 5000);
   }
 
@@ -70,7 +70,7 @@ export default class TweetColumn extends Component {
     clearInterval(this.interval);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     let { dataIds } = this.state;
 
     lodash.map(nextProps.data, (datum) =>{

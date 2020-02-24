@@ -15,7 +15,7 @@ export default class Ticker extends Component {
     this.tweetRefs = []
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     let newTweets = newProps.feed.getAdded();
     if(newTweets.length > 0) {
       let newList = this.state.tweetList;

@@ -28,7 +28,7 @@ export default class Carousel extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     let feed = nextProps.feed;
     let newState = {};
     this.state.cardsToAdd.unshift(...feed.getAdded());
@@ -67,7 +67,7 @@ export default class Carousel extends Component {
   computeZoomOut() {
     // https://mycurvefit.com/ Found the exponential curve that matches the 3d perspective card view for
     // different screen heights
-    let offset = 3341497000 * window.innerHeight ** -2.387867;
+    let offset = 3341497000 * (window.innerHeight ** -2.387867);
     return -(this.state.translateZ + offset);
   }
 

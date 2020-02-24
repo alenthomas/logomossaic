@@ -19,7 +19,7 @@ class Tile extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     let { zoomIn, zoomOut } = nextProps;
     if (zoomIn) {
       setTimeout(() => {

@@ -19,7 +19,7 @@ class IndexComponent extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let {photogridtile: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
     watchPhotos(this.loadData, handleError, params.ctag, params.filter, refreshrate);

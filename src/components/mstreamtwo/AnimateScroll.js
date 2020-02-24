@@ -45,7 +45,7 @@ export class AnimateScroll extends Component {
     console.error('Error in component', e);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     clearTimeout(this.triggerTimeout);
   }
 

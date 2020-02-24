@@ -61,7 +61,7 @@ export default class TweetColumn extends Component {
     this.setState(state);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     let { dataIds } = this.state;
 
     lodash.map(nextProps.data, (datum) =>{

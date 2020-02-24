@@ -19,7 +19,7 @@ class IndexComponent extends Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let params = getQueryString(this.props.location.search);
     let { polling: {refreshrate} } = this.props.config;
     getPhotosPoll(params.ctag, params.filter, this.loadData, handleError, refreshrate, false);

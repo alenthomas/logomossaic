@@ -31,7 +31,7 @@ export default class MasonaryStream extends Component {
     return columns;
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     let { columns } = this.state;
     const existingIds = lodash.chain(columns).values().flatten().value();
 

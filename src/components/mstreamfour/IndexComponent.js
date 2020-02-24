@@ -37,7 +37,7 @@ class IndexComponent extends Component {
     return;
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let {masonarystreamv4: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
     watchSocial(this.loadData, handleError, params.ctag, params.filter, 150, refreshrate);

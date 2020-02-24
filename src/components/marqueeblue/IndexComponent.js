@@ -23,7 +23,7 @@ class IndexComponent extends Component {
     this.setState({data: filtered});
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let { marqueeblue: {count, refreshrate} } = this.props.config;
     let params = getQueryString(this.props.location.search);
     watchSocial(this.loadData, handleError, params.ctag, params.filter, count, refreshrate);

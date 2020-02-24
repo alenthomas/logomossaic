@@ -29,7 +29,7 @@ class StatsView extends Component {
     clearTimeout(this.swapper);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     let {stats, tweets, hashtags} = nextProps;
     this.loadStats(stats, tweets, hashtags);
   }

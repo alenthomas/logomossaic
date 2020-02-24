@@ -44,7 +44,7 @@ class BackgroundWave extends Component {
     this.renderer.setSize(width, height);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.initCamera();
     this.scene = new THREE.Scene();
 

@@ -27,7 +27,7 @@ class IndexComponent extends Component {
     this.setState({allTweeters: data});
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let { leaderboard: { refreshrate } } = this.props.config;
     let params = getQueryString(this.props.location.search);
     watchLeaderboard(this.loadData, handleError, params.ctag, params.filter, refreshrate, 25);

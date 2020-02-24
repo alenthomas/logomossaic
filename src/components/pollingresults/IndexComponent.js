@@ -18,7 +18,7 @@ class IndexComponent extends Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let params = getQueryString(this.props.location.search);
     let { pollingresults: {refreshrate} } = this.props.config;
     pollResults(params.ctag, refreshrate, this.loadData, handleError);

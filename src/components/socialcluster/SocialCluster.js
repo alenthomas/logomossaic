@@ -20,7 +20,7 @@ class SocialCluster extends Component {
       }
   }
 
-  componentWillReceiveProps(nextProps){
+  UNSAFE_componentWillReceiveProps(nextProps){
   //     if(!isEqual(this.props.data, nextProps.data)){
   //        const {data : rawData} = nextProps
   //        const {width, height} = this.state

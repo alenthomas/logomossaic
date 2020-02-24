@@ -19,7 +19,7 @@ class IndexComponent extends Component {
       };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const params = getQueryString(this.props.location.search);
     getPhotos(params.ctag, params.filter, this.loadData, handleError);
   }

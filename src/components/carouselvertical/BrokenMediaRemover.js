@@ -34,11 +34,11 @@ export default class BrokenMediaRemover extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.investigate()
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const existingInvestigationIds = this.investigationIds();
 
     const newData = lodash.filter(nextProps.data, (datum) => {

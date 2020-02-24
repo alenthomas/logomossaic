@@ -19,7 +19,7 @@ class PhotoWall extends Component {
     this.showTiles();
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     //Start watcher for every second
     this.interval = setInterval(() => {
       this.watcher();

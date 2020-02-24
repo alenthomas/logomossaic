@@ -35,7 +35,7 @@ class IndexComponent extends Component {
     return;
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let {masonarystreamv2: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
 

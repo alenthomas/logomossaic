@@ -22,7 +22,7 @@ class IndexComponent extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let {mediacarouseltile: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
     watchFeatured(this.loadData, handleError, params.ctag, params.filter, refreshrate);

@@ -32,7 +32,7 @@ test('should remove tile marked for delete from the tiles list', () => {
 
   let newData = [tweet1, tweet2, tweet3, buildDatum()];
   feed.load(newData);
-  carousel.componentWillReceiveProps({feed: feed});
+  carousel.UNSAFE_componentWillReceiveProps({feed: feed});
   carousel.rotate();
   expect(carousel.state.cardsToRemove.length).toBe(1);
   carousel.rotate();

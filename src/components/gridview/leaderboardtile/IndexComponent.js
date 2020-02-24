@@ -18,7 +18,7 @@ class IndexComponent extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let {leaderboardtile: {refreshrate}} = this.props.config;
     let params = getQueryString(this.props.location.search);
     watchLeaderboardInfo(this.loadData, handleError, params.ctag, params.filter, refreshrate)

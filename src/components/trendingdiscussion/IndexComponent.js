@@ -33,7 +33,7 @@ class IndexComponent extends Component {
     this.setState({ trendingDiscussions: data });
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let {
       trendingdiscussion: { refreshrate }
     } = this.props.config;

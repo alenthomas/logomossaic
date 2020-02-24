@@ -35,7 +35,7 @@ class IndexComponent extends Component {
     this.setState({ feedsGeneral: sortedFeeds })
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     watchEventAgenda(this.loadEventData, handleError)
     watchGeneralAgenda(this.loadGeneralData, handleError)
   }

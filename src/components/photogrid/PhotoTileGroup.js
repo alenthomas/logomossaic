@@ -21,7 +21,7 @@ class PhotoTileGroup extends Component {
     this.setState({currentIndex: nextIndex});
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if(lodash.isUndefined(nextProps.photos[this.state.currentIndex])) {
       this.setState({currentIndex: 0});
     }

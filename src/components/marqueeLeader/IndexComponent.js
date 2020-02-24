@@ -26,7 +26,7 @@ class IndexComponent extends Component {
     this.setState({ data: qrResults });
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     getLeaders(this.loadData, handleError, 30)
   }
 

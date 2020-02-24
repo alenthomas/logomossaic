@@ -28,7 +28,7 @@ class IndexComponent extends Component {
     this.setState({allTweeters: qrLeaders});
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // let { leaderboardqr: { refreshrate } } = this.props.config;
     // let params = getQueryString(this.props.location.search);
     getLeaders(this.loadData, handleError, 25);
