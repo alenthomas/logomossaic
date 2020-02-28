@@ -19,7 +19,7 @@ class IndexComponent extends Component {
 
     let objParam = getQueryString(this.props.location.search);
 
-    this.TILE_SIZE = objParam.tile || 20;
+    this.TILE_SIZE = parseInt(objParam.tile, 10) || 10;
 
     this.state = {
       photos: [],
