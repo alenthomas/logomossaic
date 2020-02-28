@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/logomossaic/f7ffa099772b4121cfcc.worker.js"
   },
   {
-    "revision": "aa2727a075321a4feb463c66dcdd8593",
+    "revision": "1e7e94efe7bc07653ac31c5ea945af43",
     "url": "/logomossaic/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/logomossaic/static/css/2.18f57b05.chunk.css"
   },
   {
-    "revision": "ab8e54fd1ca1900cc288",
-    "url": "/logomossaic/static/css/main.cd7489d2.chunk.css"
+    "revision": "e443cecce8448aed16ed",
+    "url": "/logomossaic/static/css/main.f95c7ffc.chunk.css"
   },
   {
     "revision": "e1ecea57a611f4bc0307",
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/logomossaic/static/js/2.d5b8f828.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ab8e54fd1ca1900cc288",
+    "revision": "e443cecce8448aed16ed",
     "url": "/logomossaic/static/js/main.05803bd0.chunk.js"
   },
   {

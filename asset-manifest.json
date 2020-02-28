@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/logomossaic/static/css/main.cd7489d2.chunk.css",
+    "main.css": "/logomossaic/static/css/main.f95c7ffc.chunk.css",
     "main.js": "/logomossaic/static/js/main.05803bd0.chunk.js",
     "main.js.map": "/logomossaic/static/js/main.05803bd0.chunk.js.map",
     "runtime-main.js": "/logomossaic/static/js/runtime-main.5d50e5d3.js",
@@ -11,10 +11,10 @@
     "f7ffa099772b4121cfcc.worker.js": "/logomossaic/f7ffa099772b4121cfcc.worker.js",
     "f7ffa099772b4121cfcc.worker.js.map": "/logomossaic/f7ffa099772b4121cfcc.worker.js.map",
     "index.html": "/logomossaic/index.html",
-    "precache-manifest.8a434f389df105f7a089578e9fae71d9.js": "/logomossaic/precache-manifest.8a434f389df105f7a089578e9fae71d9.js",
+    "precache-manifest.460aebf28b7bac95d4d238c7fccfe9d8.js": "/logomossaic/precache-manifest.460aebf28b7bac95d4d238c7fccfe9d8.js",
     "service-worker.js": "/logomossaic/service-worker.js",
     "static/css/2.18f57b05.chunk.css.map": "/logomossaic/static/css/2.18f57b05.chunk.css.map",
-    "static/css/main.cd7489d2.chunk.css.map": "/logomossaic/static/css/main.cd7489d2.chunk.css.map",
+    "static/css/main.f95c7ffc.chunk.css.map": "/logomossaic/static/css/main.f95c7ffc.chunk.css.map",
     "static/js/2.d5b8f828.chunk.js.LICENSE.txt": "/logomossaic/static/js/2.d5b8f828.chunk.js.LICENSE.txt",
     "static/media/pollingresults.css": "/logomossaic/static/media/fontello.bf0d5daf.ttf"
   },
@@ -22,7 +22,7 @@
     "static/js/runtime-main.5d50e5d3.js",
     "static/css/2.18f57b05.chunk.css",
     "static/js/2.d5b8f828.chunk.js",
-    "static/css/main.cd7489d2.chunk.css",
+    "static/css/main.f95c7ffc.chunk.css",
     "static/js/main.05803bd0.chunk.js"
   ]
 }
