@@ -2,7 +2,8 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 // import classNames from 'classnames';
 
-import { handleError, getQueryString } from '../../Helper.js';
+// import { handleError, getQueryString } from '../../Helper.js';
+import { generateGrid, handleError, getQueryString } from '../../Helper.js';
 // import PhotoWall from './PhotoWall.js';
 import LogoMossaic from './LogoMossaic.js';
 import RegularLayout from './../layout/Regular.js';
@@ -18,7 +19,7 @@ class IndexComponent extends Component {
 
     let objParam = getQueryString(this.props.location.search);
 
-    this.TILE_SIZE = objParam.tile || 50;
+    this.TILE_SIZE = objParam.tile || 20;
 
     this.state = {
       photos: [],
@@ -48,7 +49,9 @@ class IndexComponent extends Component {
       params.filter,
       '',
       photos => {
-        this.setState({ photos });
+        // let grid = generateGrid(photos, WIDTH, HEIGHT);
+        // this.setState({ photosGrid: grid });
+        this.setState({photos})
       },
       handleError
     );

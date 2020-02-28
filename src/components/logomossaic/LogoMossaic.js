@@ -1,11 +1,14 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { getRandomInt } from '../../Helper.js';
+import { getRandomInt, generateGrid } from '../../Helper.js';
+// import { generateGrid, handleError, getQueryString } from '../../Helper.js';
 
 import worker from 'workerize-loader!./worker'; // eslint-disable-line import/no-webpack-loader-syntax
-// import { Tile } from './Tile.js';
+import { Tile } from './Tile.js';
 
 import './logomossaic.css';
+
+const AVERAGE_TILES_DISPLAY_TIME = 70000; // Time taken for the tiles to align after animation
 
 class LogoMossaic extends Component {
   constructor(props) {
@@ -14,6 +17,7 @@ class LogoMossaic extends Component {
     this.image = null;
     this.state = {
       show: false,
+      showBackgroundCaption: false, // When tiles are zoomed, the caption will not have empty spaces
       lastEvent: -1,
       tileNum: -1,
       data: null,
@@ -21,21 +25,65 @@ class LogoMossaic extends Component {
       divPoints: [],
       xIndex: null,
       yIndex: null,
-      placements: null,
+      placements: [],
       randomString: ''
     };
-    // this.showTiles();
+    this.showTiles();
   }
+
+  UNSAFE_componentWillMount() {
+    this.interval = setInterval(() => {
+      this.watcher();
+    }, 1000);
+
+    const { initialLoadTime } = this.props.componentConfig;
+    this.initialload = setTimeout(() => {
+      this.zoomIn();
+    }, initialLoadTime * 1000 + AVERAGE_TILES_DISPLAY_TIME);
+
+  }
+
+  now() {
+    return new Date().getTime() / 1000;
+  }
+
 
   sortInWorker(points) {
     const workerInstance = worker();
     workerInstance.addEventListener('message', (message) => {
       if (message.data.result) {
         // console.log('points', message.data.result)
-        this.setState({ divPoints: message.data.result });
+        this.setState({ divPoints: message.data.result }, this.processY);
       }
     })
     workerInstance.sort(points, 'y');
+  }
+
+  layTiles = () => {
+    /*
+    grid = [{left, top, src}, left, top, src]
+    */
+    if (this.state.placements.length <= 0) {
+      return null;
+    }
+    // console.log('--------------------', this.props.photos);
+    // return null;
+    return _.map(this.state.placements, (photoGrid, i) => {
+      return (
+        <div onClick={this.zoomIn.bind(this, i)} key={i}>
+          <Tile
+            photos={this.props.photos}
+            photoGrid={photoGrid}
+            caption={'cisco'}
+            show={this.state.show}
+            zoomIn={this.state.zoomedInTile === i}
+            zoomOut={false}
+            width={this.props.tileSize}
+            height={this.props.tileSize}
+          ></Tile>
+        </div>
+      );
+    });
   }
 
   getDelaunayPoints() {
@@ -107,17 +155,16 @@ class LogoMossaic extends Component {
   }
 
   watcher() {
-    // const { cardDisplayTime, interval } = this.props.componentConfig;
-    // let timeSinceLastEvent = this.now() - this.state.lastEvent;
-    // if (timeSinceLastEvent > interval && this.state.zoomedInTile === -1) {
-    //   this.zoomIn();
-    // } else if (
-    //   timeSinceLastEvent > cardDisplayTime &&
-    //   this.state.zoomedInTile !== -1
-    // ) {
-    //   this.zoomOutCurrentTile();
-    // }
-    this.chooseRandomTile();
+    const { cardDisplayTime, interval } = this.props.componentConfig;
+    let timeSinceLastEvent = this.now() - this.state.lastEvent;
+    if (timeSinceLastEvent > interval && this.state.zoomedInTile === -1) {
+      this.zoomIn();
+    } else if (
+      timeSinceLastEvent > cardDisplayTime &&
+      this.state.zoomedInTile !== -1
+    ) {
+      this.zoomOutCurrentTile();
+    }
 
   }
 
@@ -143,7 +190,7 @@ class LogoMossaic extends Component {
   zoomIn(tileNum) {
     this.zoomOutCurrentTile();
     let { showFirst, loadSequentially } = this.props.componentConfig;
-    let maxTiles = this.props.photosGrid.length;
+    let maxTiles = this.state.placements.length; //this.props.photosGrid.length;
     // sequentially zoomIn first N photos
     if (loadSequentially && this.state.tileNum < showFirst) {
       let newTileNum = this.state.tileNum + 1;
@@ -204,47 +251,12 @@ class LogoMossaic extends Component {
   }
 
   processY = () => {
-    let divs = [];
-    let buffer = 30;
+    // let divs = [];
+    let buffer = this.props.tileSize;
     let placements = [];
     let randomString;
-    if (this.state.divPoints.length <= 0) {
-      return divs;
-    }
-    if (this.state.placements) {
-      for (let i = 0; i < this.state.placements.length; i++) {
-        let [top, left, index] = this.state.placements[i].split('-');
-        // console.log(top, left, index)
-        // console.log(`${i}-${left}-${index}`)
-        divs.push(
-            <div
-              key={`${i}-${left}`}
-              style={{
-                position: 'absolute',
-                top: `${top}px`,
-                left: `${left}px`,
-                width: `${buffer}px`,
-                height: `${buffer}px`,
-                // backgroundColor: this.randomColor(),
-                // backgroundColor: 'rgb(182, 207, 239)',
-                backgroundColor: '#fff',
-                // border: '1px solid black',
-                borderRadius: `${buffer}px`
-              }}
-              className={`photos-rect ${ this.state.randomString === `${top}-${left}-${index}` ? 'zoom': ''}`}>
-              {/* {`y x:${Math.round(left).toString().split('.')} y:${Math.round(top).toString().split('.')}`} */}
-              <img style={{
-                width: `${buffer}px`,
-                height: `${buffer}px`,
-                borderRadius: `${buffer}px`
-              }}
-                src={this.props.photos[index].getThumbnailUrl()} alt='profile' />
-            </div>
-          )
-      }
-      return divs;
-    }
     // this.chooseRandomTile(buffer);
+    // for (let i = 0; i < this.state.divPoints.length; i += buffer) { // buffer/4
     for (let i = 0; i < this.state.divPoints.length; i += buffer) { // buffer/4
     // for (let i = 0; i < this.state.divPoints.length; i += buffer - 10) { //buffer/2
     // for (let i = 0; i < this.state.divPoints.length; i += buffer) {
@@ -261,7 +273,7 @@ class LogoMossaic extends Component {
     //       console.log('------------------photo url----------', this.props.photos[index])
 
           // console.log(this.state.xIndex === left)
-          placements.push(`${i}-${left}-${index}`);
+          placements.push({top: i, left: left, index});
         }
       }
     }
@@ -269,19 +281,18 @@ class LogoMossaic extends Component {
       this.setState({placements})
     // }
 
-    return divs;
+    // return divs;
   }
 
   render() {
-    console.log('randomString', this.state.randomString.split('-'))
+    // console.log('randomString', this.state.placements)
     return (
       <div className="logomossaic">
-        <div className='parent'>
           {/* <div className='x'>{this.processX()}</div> */}
-          <div className='y'>{this.state.divPoints.length > 0 ? this.processY() : null}</div>
+          {/* <div className='y'>{this.state.divPoints.length > 0 ? this.processY() : null}</div> */}
           {/* <div className='y'>{json.length > 0 ? this.processJson() : null}</div> */}
-        </div>
-        <div className="caption" >
+          {this.layTiles()}
+        <div className="canvas" >
           {/* {this.state.caption} */}
           <canvas ref={node => this.canvas = node} style={{ display: 'none' }}  id="myCanvas">
             <img ref={node => this.image = node} alt='logo' src={this.props.logo} />

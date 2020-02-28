@@ -1,11 +1,11 @@
-.logomossaic {
-  .parent {
-    .y {
-      position: relative;
-      top: -250px;
-      left: 250px;
-      .photos-rect {
-        &.zoom {
+.logomossaicc {
+  .parentc {
+    .yc {
+      // position: relative;
+      // top: -250px;
+      // left: 250px;
+      .photos-rectc {
+        &.zoomc {
           position: absolute;
           // top: -120px !important;
           // left: -100px !important;
@@ -19,7 +19,7 @@
             position: absolute;
             top: 50%;
             left: 10px;
-            animation: bong 5s ease-in-out infinite;
+            animation: bongc 5s ease-in-out infinite;
             // position: relative;
             // top: 50% !important;
             // left: 50% !important;
@@ -32,19 +32,19 @@
   }
 }
 
-@keyframes zoomin {
+@keyframes zoominc {
   from {
-    margin-left: 100%;
-    width: 300%;
+    // margin-left: 100%;
+    // width: 300%;
   }
 
   to {
-    margin-left: 0%;
-    width: 100%;
+    // margin-left: 0%;
+    // width: 100%;
   }
 }
 
-@keyframes bong {
+@keyframes bongc {
   0% {
     -webkit-transform: scale(0.25);
             transform: scale(0.25);
@@ -61,4 +61,227 @@
     -webkit-transform: scale(0.1);
             transform: scale(0.1);
   }
+}
+
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+@keyframes bong {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  2% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  4% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  6% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.logomossaic {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  perspective: 5000px;
+
+  .phototile {
+    position: absolute;
+    // background-color: black;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 100px;
+
+    &.portrait {
+      text-align: left;
+      .info {
+        left: auto;
+        right: 0;
+        top: 0;
+        width: 46%;
+      }
+    }
+
+    img {
+      transition: all 1s;
+      opacity: 0.5;
+      image-rendering: optimizeSpeedBS;
+      border-radius: 10px;
+    }
+    .info {
+      transition: opacity 2s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: rgba(0,0,0, 0.3);
+      font-size: 20px;
+      line-height: 22px;
+      color: white;
+      text-align: left;
+      font-family: CiscoSans;
+      padding: 10px 20px;
+      opacity: 1;
+      .head {
+        margin-bottom: 10px;
+        font-family: CiscoSansBold;
+        line-height: 32px;
+        font-size: 24px;
+        img {
+          float: left;
+          height: 30px;
+          margin-right: 10px;
+        }
+        .handle {
+          font-size: 18px;
+          display: inline-block;
+          margin-left: 10px;
+        }
+      }
+      .emoji {
+        width: 25px;
+        height: 25px;
+        padding: 0;
+      }
+    }
+    &.show {
+      transform: translateZ(0px) !important;
+      -webkit-transform: translateZ(0px) !important;
+    }
+    &.zoomIn {
+      z-index: 50;
+      padding: 10px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      box-shadow: 0px 3px 90px 0 rgba(0, 0, 0, 0.61);
+      transition: all 2s !important;
+      background-image: url(/assets/celtics/tweetCardBg.png);
+      img {
+        opacity: 1;
+      }
+      .caption {
+        opacity: 0;
+        display: none;
+      }
+      .info {
+        &.visible {
+          opacity: 1;
+        }
+      }
+    }
+    &.zoomOut {
+      transition: all 1s !important;
+      z-index: 40;
+    }
+  }
+  .caption {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 1s;
+    font-family: CiscoSansBold;
+    font-size: 48vh;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20vh;
+    color: #197dff;
+    opacity: 0.75;
+    // text-shadow: 2px 2px black;
+    pointer-events: none;
+  }
+}
+
+.emoji {
+  width: 40px;
+  height: 40px;
+  padding: 0 5px;
+}
+
+.topics-view {
+  position: absolute;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  transition: background-color 1s;
+  overflow-y: hidden;
+
+  &.show {
+    background: #101011b0;
+    pointer-events: all;
+    .topics {
+      transform: translateY(-50%);
+    }
+  }
+
+  .selector {
+    float: right;
+    width: 50px;
+    height: 50px;
+    background: url(/assets/hamburger.png) no-repeat;
+    background-size: contain;
+    margin: 30px;
+    animation: bong 3s ease-in-out infinite;
+    cursor: pointer;
+    pointer-events: all;
+  }
+
+  .topics {
+    margin-top: 50vh;
+    transform: translateY(200%);
+    transition: transform 1s;
+    text-align: center;
+
+    &>span {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      border-radius: 50%;
+      margin: 20px;
+      background: url(/assets/blue-circle.png) no-repeat;
+      background-size: contain;
+      animation: float 6s ease-in-out infinite;
+      cursor: pointer;
+
+      &:nth-child(2n) {
+        animation-delay: #{random(2)}s;
+      }
+
+      &>div {
+        margin-top: 50%;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+        padding: 10px;
+        font-size: 22px;
+        color: white;
+      }
+    }
+
+  }
+
 }
