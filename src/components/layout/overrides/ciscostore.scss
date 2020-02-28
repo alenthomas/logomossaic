@@ -31,12 +31,12 @@
     }
 
     &.stats {
-      background-image: url(/assets/clus2018/blue-bubbles-bg.png) !important;
+      background-image: url(/logomossaic/assets/clus2018/blue-bubbles-bg.png) !important;
     }
 
     &.carousel-container, &.stats {
       .tweet-card {
-        background: url(/assets/ciscostore/tweetCardBg.png);
+        background: url(/logomossaic/assets/ciscostore/tweetCardBg.png);
         .tweet-card-top {
           .profile {
             .name, .handle {
@@ -53,10 +53,10 @@
         .tweet-card-bottom {
           .icon {
             &.like {
-              background-image: url(/assets/clus2018/like.png);
+              background-image: url(/logomossaic/assets/clus2018/like.png);
             }
             &.retweet {
-              background-image: url(/assets/clus2018/retweet.png);
+              background-image: url(/logomossaic/assets/clus2018/retweet.png);
             }
           }
           .likes, .shares {
@@ -71,7 +71,7 @@
         margin-top: 40px;
         .ranked-tweeter-card {
           .tweeter-details {
-            background: url(/assets/clus2018/tweetCardBgBlackCube.png);
+            background: url(/logomossaic/assets/clus2018/tweetCardBgBlackCube.png);
             .name, .twitter-handle {
               color: white;
             }
