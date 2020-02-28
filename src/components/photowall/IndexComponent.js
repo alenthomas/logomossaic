@@ -30,7 +30,7 @@ class IndexComponent extends Component {
     };
   }
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     this.initTopics();
   }
 
