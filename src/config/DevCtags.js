@@ -562,7 +562,7 @@ export default {
 
   "CiscoStore": {
     "containerCssClassname": "ciscostore",
-    "background": "url(/assets/ciscostore/bg.jpg)",
+    "background": "url(/logomossaic/assets/ciscostore/bg.jpg)",
     "loadingMedia": {
       "url": () => `http://storage.googleapis.com/animable/ciscostore/loading.mp4`,
       "urlVertical": () => `http://storage.googleapis.com/animable/tiecon/loading_vertical.mp4`
@@ -570,11 +570,11 @@ export default {
     "layout": {
       "regular": {
         "header": {
-          "leftLogoUrl": '/assets/ciscostore/leftLogo.png',
-          "rightLogoUrl": '/assets/ciscostore/rightLogo.png'
+          "leftLogoUrl": '/logomossaic/assets/ciscostore/leftLogo.png',
+          "rightLogoUrl": '/logomossaic/assets/ciscostore/rightLogo.png'
         },
         "footer": {
-          "logoUrl": '/assets/logo/pow-by-fankave-blue.png'
+          "logoUrl": '/logomossaic/assets/logo/pow-by-fankave-blue.png'
         },
       },
       "threecolumn": {
