@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/logomossaic/static/css/main.681b4c31.chunk.css",
-    "main.js": "/logomossaic/static/js/main.56bfe4cf.chunk.js",
-    "main.js.map": "/logomossaic/static/js/main.56bfe4cf.chunk.js.map",
+    "main.js": "/logomossaic/static/js/main.f0ef3c2a.chunk.js",
+    "main.js.map": "/logomossaic/static/js/main.f0ef3c2a.chunk.js.map",
     "runtime-main.js": "/logomossaic/static/js/runtime-main.5d50e5d3.js",
     "runtime-main.js.map": "/logomossaic/static/js/runtime-main.5d50e5d3.js.map",
     "static/css/2.18f57b05.chunk.css": "/logomossaic/static/css/2.18f57b05.chunk.css",
@@ -11,7 +11,7 @@
     "f7ffa099772b4121cfcc.worker.js": "/logomossaic/f7ffa099772b4121cfcc.worker.js",
     "f7ffa099772b4121cfcc.worker.js.map": "/logomossaic/f7ffa099772b4121cfcc.worker.js.map",
     "index.html": "/logomossaic/index.html",
-    "precache-manifest.936102411bcea2bc4ac03a854c0eda8b.js": "/logomossaic/precache-manifest.936102411bcea2bc4ac03a854c0eda8b.js",
+    "precache-manifest.8ed0bd45e2cb02b7b2f3649784a20905.js": "/logomossaic/precache-manifest.8ed0bd45e2cb02b7b2f3649784a20905.js",
     "service-worker.js": "/logomossaic/service-worker.js",
     "static/css/2.18f57b05.chunk.css.map": "/logomossaic/static/css/2.18f57b05.chunk.css.map",
     "static/css/main.681b4c31.chunk.css.map": "/logomossaic/static/css/main.681b4c31.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.18f57b05.chunk.css",
     "static/js/2.d5b8f828.chunk.js",
     "static/css/main.681b4c31.chunk.css",
-    "static/js/main.56bfe4cf.chunk.js"
+    "static/js/main.f0ef3c2a.chunk.js"
   ]
 }
