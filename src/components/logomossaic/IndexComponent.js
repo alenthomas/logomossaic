@@ -59,6 +59,7 @@ class IndexComponent extends Component {
 
   render() {
     const { logomossaic: componentConfig } = this.props.config;
+    const params = getQueryString(this.props.location.search);
     const data = this.state.photos;
     if (_.isEmpty(data)) {
       return false;
@@ -75,7 +76,7 @@ class IndexComponent extends Component {
         <LogoMossaic
           photos={data}
           componentConfig={componentConfig}
-          logo={componentConfig.logo}
+          logo={params.logo || componentConfig.logo}
           tileSize={this.TILE_SIZE}
         />
       </RegularLayout>
