@@ -2,6 +2,7 @@
   "name": "digital-signage",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alenthomas.github.io/logomossaic",
   "dependencies": {
     "@researchgate/react-intersection-observer": "^1.0.0",
     "CBuffer": "^2.0.0",
@@ -35,6 +36,7 @@
     "workerize-loader": "^1.1.0"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "jest-fetch-mock": "^1.5.0",
     "node-gyp": "^3.6.1",
     "node-sass": "^4.9.2",
@@ -52,7 +54,9 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
