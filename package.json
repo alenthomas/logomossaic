@@ -7,6 +7,7 @@
     "CBuffer": "^2.0.0",
     "classnames": "^2.2.5",
     "d3": "^5.15.0",
+    "d3-delaunay": "^5.2.1",
     "dayjs": "^1.8.16",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-15": "^1.1.0",
@@ -30,7 +31,8 @@
     "twemoji": "^11.0.1",
     "twitter-timeago": "^1.0.2",
     "uuid": "^3.3.2",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "workerize-loader": "^1.1.0"
   },
   "devDependencies": {
     "jest-fetch-mock": "^1.5.0",

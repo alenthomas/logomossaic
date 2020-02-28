@@ -1,0 +1,64 @@
+.logomossaic {
+  .parent {
+    .y {
+      position: relative;
+      top: -250px;
+      left: 250px;
+      .photos-rect {
+        &.zoom {
+          position: absolute;
+          // top: -120px !important;
+          // left: -100px !important;
+          // left: 50% !important;
+          // top: 50% !important;
+          border-radius: 20px;
+          z-index: 100;
+          // transition: transform 1s;
+          // transform:
+          img {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            animation: bong 5s ease-in-out infinite;
+            // position: relative;
+            // top: 50% !important;
+            // left: 50% !important;
+            width: 150px !important;
+            height: 150px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes zoomin {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes bong {
+  0% {
+    -webkit-transform: scale(0.25);
+            transform: scale(0.25);
+  }
+  30% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  70% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+}

@@ -36,6 +36,7 @@ import Agenda from "./components/agenda/IndexComponent.js";
 import SocialCluster from "./components/socialcluster/IndexComponent.js";
 import MarqueeLeader from './components/marqueeLeader/IndexComponent.js';
 import LeaderboardQr from './components/leaderboardqr/IndexComponent.js';
+import LogoMossaic from './components/logomossaic/IndexComponent.js';
 
 class App extends Component {
   render() {
@@ -69,6 +70,8 @@ class App extends Component {
           <Route path="/socialcluster" render={(props) => <SocialCluster config={getCurrentConfig()} {...props} />} />
           <Route path='/marqueeleader' render={(props) => <MarqueeLeader config={getCurrentConfig()} {...props} />} />
           <Route path='/leaderboardqr' render={(props) => <LeaderboardQr config={getCurrentConfig()} {...props} />} />
+          <Route path='/logomossaic' render={(props) => <LogoMossaic config={getCurrentConfig()} {...props} />} />
+
         </div>
       </Router>
     );

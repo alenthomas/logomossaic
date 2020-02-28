@@ -1,0 +1,83 @@
+import _ from 'lodash';
+import React, { Component } from 'react';
+// import classNames from 'classnames';
+
+import { handleError, getQueryString } from '../../Helper.js';
+// import PhotoWall from './PhotoWall.js';
+import LogoMossaic from './LogoMossaic.js';
+import RegularLayout from './../layout/Regular.js';
+import { getLatestPhotos } from '../../Services.js';
+// import { TILE_SIZE } from './Tile.js';
+import { timeoutCollection } from 'time-events-manager';
+
+import './logomossaic.css';
+
+class IndexComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    let objParam = getQueryString(this.props.location.search);
+
+    this.TILE_SIZE = objParam.tile || 50;
+
+    this.state = {
+      photos: [],
+    };
+  }
+
+  UNSAFE_componentWillMount() {
+    this.initCanvas();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.location.search !== this.props.location.search) {
+      timeoutCollection.removeAll();
+      this.initCanvas();
+    }
+  }
+
+  initCanvas() {
+    this.loadPhotos()
+  }
+
+
+  loadPhotos() {
+    let params = getQueryString(this.props.location.search);
+    getLatestPhotos(
+      params.ctag,
+      params.filter,
+      '',
+      photos => {
+        this.setState({ photos });
+      },
+      handleError
+    );
+  }
+
+  render() {
+    const { logomossaic: componentConfig } = this.props.config;
+    const data = this.state.photos;
+    if (_.isEmpty(data)) {
+      return false;
+    }
+
+    return (
+      <RegularLayout
+        isReady={!_.isEmpty(data)}
+        config={this.props.config}
+        className="logomossaic-container"
+        title={componentConfig && componentConfig.title}
+        hideBgWave={componentConfig && componentConfig.hideBgWave}
+      >
+        <LogoMossaic
+          photos={data}
+          componentConfig={componentConfig}
+          logo={componentConfig.logo}
+          tileSize={this.TILE_SIZE}
+        />
+      </RegularLayout>
+    );
+  }
+}
+
+export default IndexComponent;

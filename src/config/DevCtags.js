@@ -142,6 +142,11 @@ export default {
     "marqueeleader": {
       "count": 10,
       "refresh": 25
+    },
+    "logomossaic": {
+      "logo": '/assets/logo/puma.png',
+      "title": "Logo Mossaic",
+      "hideBgWave": true
     }
   },
 
