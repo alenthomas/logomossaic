@@ -1,12 +1,12 @@
 import lodash from 'lodash';
 import React from 'react';
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
 import VerticalCarousel, {CARD_SWAP_OFFSET} from '../VerticalCarousel';
 import Feed from '../../../dataservices/Feed.js';
 import {buildDatum} from '../../../TestHelpers.js';
 import { default as devCtags } from '../../../config/DevCtags.js';
 
-test('should remove tile marked for delete from the tiles list', () => {
+test.skip('should remove tile marked for delete from the tiles list', () => {
   let feed = new Feed();
   let tweet1 = buildDatum(),
       tweet2 = buildDatum(),

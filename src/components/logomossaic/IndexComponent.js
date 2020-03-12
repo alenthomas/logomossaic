@@ -84,7 +84,7 @@ class IndexComponent extends Component {
         />
         <div className='percentage'>
           <div>{`Percentage : ${this.LOGO_PERCENTAGE}%  `}
-            <a href="https://twitter.com/intent/tweet?text=%23CiscoLiveAPJC" target="_blank">
+            <a href="https://twitter.com/intent/tweet?text=%23CiscoLiveAPJC" target="_blank" rel="noopener noreferrer">
               Tweet #CiscoLiveAPJC
             </a>
           </div>
