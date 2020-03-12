@@ -52,7 +52,6 @@ class LogoMossaic extends Component {
     const workerInstance = worker();
     workerInstance.addEventListener('message', (message) => {
       if (message.data.result) {
-        // console.log('points', message.data.result)
         this.setState({ divPoints: message.data.result }, this.processY);
       }
     })
@@ -304,6 +303,7 @@ class LogoMossaic extends Component {
             <img ref={node => this.image = node} alt='logo' src={this.props.logo} />
             Your browser does not support the HTML5 canvas tag.
           </canvas>
+          <img className='rev' alt='log-rev' src={this.props.logo_rev} />
         </div>
         {/* {this.layTiles()} */}
       </div>

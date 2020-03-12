@@ -20,7 +20,7 @@ class IndexComponent extends Component {
     let objParam = getQueryString(this.props.location.search);
 
     this.TILE_SIZE = parseInt(objParam.tile, 10) || 10;
-    this.LOGO_PERCENTAGE = parseInt(objParam.percetage, 10) || 100;
+    this.LOGO_PERCENTAGE = parseInt(objParam.percentage, 10) || 50;
 
     this.state = {
       photos: [],
@@ -78,9 +78,17 @@ class IndexComponent extends Component {
           photos={data}
           componentConfig={componentConfig}
           logo={params.logo || componentConfig.logo}
+          logo_rev={componentConfig['logo-rev']}
           tileSize={this.TILE_SIZE}
           percent={this.LOGO_PERCENTAGE}
         />
+        <div className='percentage'>
+          <div>{`Percentage : ${this.LOGO_PERCENTAGE}%  `}
+            <a href="https://twitter.com/intent/tweet?text=%23CiscoLiveAPJC" target="_blank">
+              Tweet #CiscoLiveAPJC
+            </a>
+          </div>
+        </div>
       </RegularLayout>
     );
   }

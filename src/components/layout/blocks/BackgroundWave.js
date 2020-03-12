@@ -51,7 +51,7 @@ class BackgroundWave extends Component {
   }
 
   initRenderer = (devicePixelRatio) => {
-    this.renderer = new THREE.WebGLRenderer();
+    this.renderer = new THREE.WebGLRenderer({alpha: true});
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.state.width, this.state.height);

@@ -145,6 +145,7 @@ export default {
     },
     "logomossaic": {
       "logo": '/assets/logo/ciscologo.png',
+      "logo-rev": '/assets/logo/cisco-rev.png',
       "title": "#Cisco",
       "tileBgText": "#Cisco",
       "hideBgWave": true,
