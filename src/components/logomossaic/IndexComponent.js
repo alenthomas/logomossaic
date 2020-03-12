@@ -20,6 +20,7 @@ class IndexComponent extends Component {
     let objParam = getQueryString(this.props.location.search);
 
     this.TILE_SIZE = parseInt(objParam.tile, 10) || 10;
+    this.LOGO_PERCENTAGE = parseInt(objParam.percetage, 10) || 100;
 
     this.state = {
       photos: [],
@@ -78,6 +79,7 @@ class IndexComponent extends Component {
           componentConfig={componentConfig}
           logo={params.logo || componentConfig.logo}
           tileSize={this.TILE_SIZE}
+          percent={this.LOGO_PERCENTAGE}
         />
       </RegularLayout>
     );

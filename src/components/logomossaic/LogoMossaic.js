@@ -56,7 +56,7 @@ class LogoMossaic extends Component {
         this.setState({ divPoints: message.data.result }, this.processY);
       }
     })
-    workerInstance.sort(points, 'y');
+    workerInstance.sort(points, 'x');
   }
 
   layTiles = () => {
@@ -66,6 +66,7 @@ class LogoMossaic extends Component {
     if (this.state.placements.length <= 0) {
       return null;
     }
+    // console.log('------------', this.state.placements.length)
     // console.log('--------------------', this.props.photos);
     // return null;
     return _.map(this.state.placements, (photoGrid, i) => {
@@ -250,6 +251,16 @@ class LogoMossaic extends Component {
     return;
   }
 
+  calculateLogoPercentage = () => {
+    if (this.props.percent) {
+      let pointsLength = this.state.divPoints.length;
+      let length = Math.round(pointsLength * this.props.percent / 100);
+      return length;
+
+    }
+    return this.state.divPoints.length;
+  }
+
   processY = () => {
     // let divs = [];
     let buffer = this.props.tileSize;
@@ -257,7 +268,8 @@ class LogoMossaic extends Component {
     let randomString;
     // this.chooseRandomTile(buffer);
     // for (let i = 0; i < this.state.divPoints.length; i += buffer) { // buffer/4
-    for (let i = 0; i < this.state.divPoints.length; i += buffer) { // buffer/4
+    let length = this.calculateLogoPercentage();
+    for (let i = 0; i < length; i += buffer) { // buffer/4
     // for (let i = 0; i < this.state.divPoints.length; i += buffer - 10) { //buffer/2
     // for (let i = 0; i < this.state.divPoints.length; i += buffer) {
       // for each y points
@@ -273,7 +285,7 @@ class LogoMossaic extends Component {
     //       console.log('------------------photo url----------', this.props.photos[index])
 
           // console.log(this.state.xIndex === left)
-          placements.push({top: i, left: left, index});
+          placements.push({top: left, left: i, index});
         }
       }
     }

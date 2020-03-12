@@ -56,6 +56,7 @@ function comararatorY(a, b) {
 
 export const sort = (arr, order='x') => {
   const sorted1d = [];
+  // console.log('points', arr.slice(0, 100))
   const arr2d = split(arr);
   if (order === 'x') {
     arr2d.sort(comparatorX)
@@ -74,21 +75,35 @@ export const sort = (arr, order='x') => {
   let newnew = [];
   let arrayfornum = [];
   for (let i = 0; i < arr2d.length; i++) {
+    // var arrXvalue = arr2d[i][0];
+    // var arrYvalue = arr2d[i][1];
+    // if (arrYvalue > num) {
+    //   if (arrYvalue >= num && arrYvalue < num + 1) {
+    //     arrayfornum.push(arrXvalue)
+    //   } else {
+    //     arrayfornum.sort((a, b) => a - b)
+    //     newnew.push(arrayfornum)
+    //     arrayfornum = []
+    //     num += 1
+    //   }
+    // }
+
+    // sorted1d.push(arrXvalue);
+    // sorted1d.push(arrYvalue);
     var arrXvalue = arr2d[i][0];
     var arrYvalue = arr2d[i][1];
-    if (arrYvalue > num) {
-      if (arrYvalue >= num && arrYvalue < num + 1) {
-        arrayfornum.push(arrXvalue)
+    if (arrXvalue > num) {
+      if (arrXvalue >= num && arrXvalue < num + 1) {
+        arrayfornum.push(arrYvalue);
       } else {
-        arrayfornum.sort((a, b) => a - b)
-        newnew.push(arrayfornum)
-        arrayfornum = []
-        num += 1
+        arrayfornum.sort((a, b) => a - b);
+        newnew.push(arrayfornum);
+        arrayfornum = [];
+        num += 1;
       }
     }
-
-    sorted1d.push(arrXvalue);
     sorted1d.push(arrYvalue);
+    sorted1d.push(arrXvalue);
   }
   // return placeInDiv(newnew, buffer);
   // console.log('-----------newnew', newnew)
@@ -102,6 +117,7 @@ const split = (arr) => {
     let y = arr[i + 1];
     arr2d.push([x, y]);
   }
+  // console.log('--------split', arr2d)
   return arr2d;
 }
 
