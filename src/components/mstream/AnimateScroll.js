@@ -3,7 +3,6 @@ import 'intersection-observer';
 import Observer from '@researchgate/react-intersection-observer';
 import ReactResizeDetector from 'react-resize-detector';
 import './animationscroll.css';
-import _ from 'lodash';
 IntersectionObserver.prototype.POLL_INTERVAL = 500; // Time in milliseconds.
 
 const SPEED = 25;

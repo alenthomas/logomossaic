@@ -145,11 +145,9 @@ export default {
     },
     "logomossaic": {
       "logo": '/assets/logo/ciscologo.png',
-      "title": "Logo Mossaic",
       "hideBgWave": true,
       "title": "#Cisco",
       "tileBgText": "#Cisco",
-      "hideBgWave": true,
       "cardDisplayTime": 7,
       "initialLoadTime": 3,
       "interval": 3,

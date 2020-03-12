@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import classNames from 'classnames';
 
 // import { handleError, getQueryString } from '../../Helper.js';
-import { generateGrid, handleError, getQueryString } from '../../Helper.js';
+import { handleError, getQueryString } from '../../Helper.js';
 // import PhotoWall from './PhotoWall.js';
 import LogoMossaic from './LogoMossaic.js';
 import RegularLayout from './../layout/Regular.js';

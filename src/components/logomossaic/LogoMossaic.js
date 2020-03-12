@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { getRandomInt, generateGrid } from '../../Helper.js';
+import { getRandomInt } from '../../Helper.js';
 // import { generateGrid, handleError, getQueryString } from '../../Helper.js';
 
 import worker from 'workerize-loader!./worker'; // eslint-disable-line import/no-webpack-loader-syntax
@@ -151,10 +151,6 @@ class LogoMossaic extends Component {
     clearTimeout(this.initialload);
   }
 
-  now() {
-    return new Date().getTime() / 1000;
-  }
-
   watcher() {
     const { cardDisplayTime, interval } = this.props.componentConfig;
     let timeSinceLastEvent = this.now() - this.state.lastEvent;
@@ -265,7 +261,6 @@ class LogoMossaic extends Component {
     // let divs = [];
     let buffer = this.props.tileSize;
     let placements = [];
-    let randomString;
     // this.chooseRandomTile(buffer);
     // for (let i = 0; i < this.state.divPoints.length; i += buffer) { // buffer/4
     let length = this.calculateLogoPercentage();
@@ -274,7 +269,6 @@ class LogoMossaic extends Component {
     // for (let i = 0; i < this.state.divPoints.length; i += buffer) {
       // for each y points
       // console.log('********************************', i, this.state.divPoints)
-      let top = i;
       let currentX = this.state.divPoints[i][0];
       for (let j = 0, n=this.state.divPoints[i].length; j < n; j++) {
         let left = this.state.divPoints[i][j];

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './animationscroll.css';
-import _ from 'lodash';
 
 const SPEED = 25;
 
