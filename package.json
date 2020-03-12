@@ -2,7 +2,6 @@
   "name": "digital-signage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alenthomas.github.io/logomossaic",
   "dependencies": {
     "@researchgate/react-intersection-observer": "^1.0.0",
     "CBuffer": "^2.0.0",

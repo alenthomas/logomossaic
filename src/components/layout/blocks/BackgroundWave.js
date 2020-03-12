@@ -1,107 +1,91 @@
 import React, {Component} from 'react';
-import * as THREE from 'three-canvas-renderer';
+import * as THREE from 'three';
+import circle from './circle.svg';
 
-const PI2 = Math.PI * 2;
+
 const SEPARATION = 150, AMOUNTX = 50, AMOUNTY = 35;
 
 class BackgroundWave extends Component {
-  constructor() {
-    super();
-
-    this.state = {height: 100, width: 100};
-
+  constructor(props) {
+    super(props);
+    this.state = { width: 100, height: 100 };
+    this.myRef = React.createRef();
     this.particles = [];
     this.count = 0;
-
-    this._onAnimate = this._onAnimate.bind(this);
-    this.resetDimensions = this.resetDimensions.bind(this);
   }
 
-  initCamera() {
-    this.camera = new THREE.PerspectiveCamera(
-      75,
-      this.state.width / this.state.height,
-      1,
-      10000
-    );
+  componentDidMount() {
+    this.oldWillMount();
+    this.oldDidMount();
 
-    this.camera.position.z = 10000;
   }
 
-  updateCamera(width, height) {
-    this.camera.aspect = width / height;
-    this.camera.updateProjectionMatrix();
-  }
-
-  initRenderer(devicePixelRatio) {
-    this.renderer = new THREE.CanvasRenderer();
-    this.renderer.setClearColor(0x000000, 0);
-    this.renderer.setPixelRatio(devicePixelRatio);
-    this.renderer.setSize(this.state.width, this.state.height);
-  }
-
-  updateRenderer(width, height) {
-    this.renderer.setSize(width, height);
-  }
-
-  UNSAFE_componentWillMount() {
+  oldWillMount = () => {
+    this.initCamera();
     this.initCamera();
     this.scene = new THREE.Scene();
+    const spriteMap = new THREE.TextureLoader().load(circle);
+    const spriteMaterial = new THREE.SpriteMaterial({color: 0xffffff, map: spriteMap});
 
-    var material = new THREE.SpriteCanvasMaterial({
-      color: 0xffffff,
-      program: function ( context ) {
-        context.beginPath();
-        context.arc( 0, 0, 0.5, 0, PI2, true );
-        context.fill();
-      }
-    });
+    let particles = this.particles;
 
-    var particles = this.particles;
+    let i = 0;
 
-    var i = 0;
-
-    for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
-      for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
-        var particle = particles[ i ++ ] = new THREE.Sprite( material );
+    for ( let ix = 0; ix < AMOUNTX; ix ++ ) {
+      for ( let iy = 0; iy < AMOUNTY; iy ++ ) {
+        let particle = particles[ i ++ ] = new THREE.Sprite( spriteMaterial );
         particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
         particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
         this.scene.add(particle);
       }
     }
-  }
 
-  componentDidMount() {
     this.initRenderer(window.devicePixelRatio);
-    this.refs.canvasContainer.appendChild(this.renderer.domElement);
+  }
 
-    window.addEventListener('resize', this.resetDimensions);
-
+  oldDidMount = () => {
+    this.initRenderer(window.devicePixelRatio);
+    this.myRef.current.appendChild(this.renderer.domElement);
     this.resetDimensions();
-
-    this._onAnimate();
+    this.onAnimate();
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.resetDimensions);
+  initRenderer = (devicePixelRatio) => {
+    this.renderer = new THREE.WebGLRenderer();
+    this.renderer.setClearColor(0x000000, 0);
+    this.renderer.setPixelRatio(devicePixelRatio);
+    this.renderer.setSize(this.state.width, this.state.height);
   }
 
-  resetDimensions() {
+  initCamera = () => {
+    this.camera = new THREE.PerspectiveCamera(75, this.state.width / this.state.height, 1, 10000);
+    this.camera.position.z = 10000;
+  }
+
+  resetDimensions = () => {
     let width = window.innerWidth;
     let height = window.innerHeight / 3;
 
     this.setState({
       width: width,
       height: height
+    }, () => {
+      this.updateCamera(width, height);
+      this.updateRenderer(width, height);
     });
-
-    this.updateCamera(width, height);
-    this.updateRenderer(width, height);
   }
 
-  _onAnimate() {
-    requestAnimationFrame(this._onAnimate);
+  updateCamera = (width, height) => {
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+  }
 
+  updateRenderer = (width, height) => {
+    this.renderer.setSize(width, height);
+  }
+
+  onAnimate = () => {
+    window.requestAnimationFrame(this.onAnimate);
     this.camera.position.set(0, 355, 122);
     var i = 0;
 
@@ -128,8 +112,8 @@ class BackgroundWave extends Component {
 
   render() {
     return (
-      <div className="background-wave" ref="canvasContainer"/>
-    );
+      <div className='background-wave' ref={this.myRef} />
+    )
   }
 }
 

@@ -146,7 +146,7 @@ export default {
     "logomossaic": {
       "logo": '/assets/logo/ciscologo.png',
       "title": "Logo Mossaic",
-      "hideBgWave": true,
+      "hideBgWave": false,
       "title": "#Cisco",
       "tileBgText": "#Cisco",
       "hideBgWave": true,
@@ -596,7 +596,7 @@ export default {
       "title": "#CiscoStore Highlights",
       "refreshrate": 10,
       "cardDisplayTime": 7,
-      "hideBgWave": true,
+      "hideBgWave": false,
       "displayCounter": true,
       "counterHandle": "ciscostore"
     },
@@ -609,7 +609,7 @@ export default {
     "photowall": {
       "title": "#CiscoStore Social Pulse",
       "tileBgText": "#CiscoStore",
-      "hideBgWave": true,
+      "hideBgWave": false,
       "refreshrate": 5,
     },
     "tweetcounts": {
